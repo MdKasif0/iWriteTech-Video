@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>iWriteTech Launch Video</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg-light: #F4EFE6;
+    --bg-dark: #0E0D0C;
+    --fg-light: #1C1A17;
+    --fg-dark: #F2EEE6;
+    --gold-light: #866432;
+    --gold-dark: #C9A66B;
+    --card-light: #EAE3D5;
+    --card-dark: #1B1917;
+    --border-light: #E4DDCE;
+    --border-dark: #2C2925;
+    --muted-light: #665f57;
+    --muted-dark: #a69f96;
+  }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Geist', -apple-system, sans-serif;
+    background: #000;
+    position: relative;
+  }
+
+  /* ==================== SCENE CONTAINER ==================== */
+  .scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ==================== SCENE 1: HOOK (0s - 3s) ==================== */
+  .scene-1 {
+    background: #000;
+    flex-direction: column;
+    gap: 0;
+    animation: scene1-visibility 20s ease forwards;
+  }
+
+  @keyframes scene1-visibility {
+    0%    { opacity: 1; }
+    14%   { opacity: 1; }
+    15%   { opacity: 0; }
+    100%  { opacity: 0; }
+  }
+
+  .hook-text {
+    font-family: 'Literata', serif;
+    font-size: 64px;
+    font-weight: 500;
+    color: var(--gold-dark);
+    text-align: center;
+    max-width: 900px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: hookFadeIn 20s ease forwards;
+  }
+
+  @keyframes hookFadeIn {
+    0%    { opacity: 0; transform: translateY(20px); }
+    3%    { opacity: 1; transform: translateY(0); }
+    10%   { opacity: 1; transform: translateY(0); }
+    14%   { opacity: 0; transform: translateY(-10px); }
+    100%  { opacity: 0; }
+  }
+
+  /* Subtle golden glow behind hook text */
+  .hook-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,166,107,0.08) 0%, transparent 70%);
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+  }
+
+  /* ==================== SCENE 2: REVEAL (3s - 7s) ==================== */
+  .scene-2 {
+    background: var(--bg-light);
+    flex-direction: column;
+    gap: 32px;
+    animation: scene2-visibility 20s ease forwards;
+  }
+
+  @keyframes scene2-visibility {
+    0%    { opacity: 0; }
+    14%   { opacity: 0; }
+    15%   { opacity: 1; }
+    34%   { opacity: 1; }
+    35%   { opacity: 0; }
+    100%  { opacity: 0; }
+  }
+
+  .reveal-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: revealEyebrow 20s ease forwards;
+  }
+
+  @keyframes revealEyebrow {
+    0%, 16% { opacity: 0; transform: translateX(-20px); }
+    19%     { opacity: 1; transform: translateX(0); }
+    33%     { opacity: 1; }
+    35%     { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+
+  .reveal-eyebrow .line {
+    width: 32px;
+    height: 1px;
+    background: var(--gold-light);
+  }
+
+  .reveal-eyebrow .label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gold-light);
+  }
+
+  .reveal-logo {
+    font-family: 'Literata', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--fg-light);
+    letter-spacing: -0.03em;
+    opacity: 0;
+    animation: revealLogo 20s ease forwards;
+  }
+
+  @keyframes revealLogo {
+    0%, 17% { opacity: 0; transform: scale(0.95); }
+    20%     { opacity: 1; transform: scale(1); }
+    33%     { opacity: 1; }
+    35%     { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+
+  .reveal-logo .i-accent { color: var(--gold-light); }
+
+  .reveal-tagline {
+    font-family: 'Literata', serif;
+    font-size: 56px;
+    font-weight: 500;
+    color: var(--fg-light);
+    text-align: center;
+    max-width: 1000px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: revealTagline 20s ease forwards;
+  }
+
+  @keyframes revealTagline {
+    0%, 19% { opacity: 0; transform: translateY(20px); }
+    22%     { opacity: 1; transform: translateY(0); }
+    33%     { opacity: 1; }
+    35%     { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+
+  .reveal-stats {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-light);
+    opacity: 0;
+    animation: revealStats 20s ease forwards;
+  }
+
+  @keyframes revealStats {
+    0%, 22% { opacity: 0; transform: translateY(20px); }
+    25%     { opacity: 1; transform: translateY(0); }
+    33%     { opacity: 1; }
+    35%     { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+
+  .stat {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--muted-light);
+  }
+
+  .stat .value {
+    font-family: 'Geist Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--fg-light);
+  }
+
+  /* ==================== SCENE 3: PRODUCT (7s - 11s) ==================== */
+  .scene-3 {
+    background: var(--bg-light);
+    padding: 80px 120px;
+    gap: 60px;
+    animation: scene3-visibility 20s ease forwards;
+  }
+
+  @keyframes scene3-visibility {
+    0%    { opacity: 0; }
+    34%   { opacity: 0; }
+    35%   { opacity: 1; }
+    54%   { opacity: 1; }
+    55%   { opacity: 0; }
+    100%  { opacity: 0; }
+  }
+
+  .product-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    opacity: 0;
+    animation: productLeft 20s ease forwards;
+  }
+
+  @keyframes productLeft {
+    0%, 36% { opacity: 0; transform: translateX(-40px); }
+    39%     { opacity: 1; transform: translateX(0); }
+    53%     { opacity: 1; }
+    55%     { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+
+  .product-left .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .product-left .section-label .line {
+    width: 24px;
+    height: 1px;
+    background: var(--gold-light);
+  }
+
+  .product-left .section-label span:last-child {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--gold-light);
+  }
+
+  .product-left h2 {
+    font-family: 'Literata', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--fg-light);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    max-width: 500px;
+  }
+
+  .product-left p {
+    font-size: 20px;
+    color: var(--muted-light);
+    line-height: 1.6;
+    max-width: 460px;
+  }
+
+  .categories-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+    opacity: 0;
+    animation: categoriesIn 20s ease forwards;
+  }
+
+  @keyframes categoriesIn {
+    0%, 40% { opacity: 0; transform: translateY(12px); }
+    43%     { opacity: 1; transform: translateY(0); }
+    53%     { opacity: 1; }
+    55%     { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+
+  .cat-pill {
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid var(--border-light);
+    color: var(--fg-light);
+    background: var(--card-light);
+  }
+
+  .cat-pill.active {
+    background: var(--gold-light);
+    color: var(--bg-light);
+    border-color: var(--gold-light);
+  }
+
+  /* Product card on the right */
+  .product-card-wrapper {
+    flex: 0 0 480px;
+    position: relative;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    opacity: 0;
+    animation: productCard 20s ease forwards;
+  }
+
+  @keyframes productCard {
+    0%, 37% { opacity: 0; transform: translateX(60px); }
+    41%     { opacity: 1; transform: translateX(0); }
+    53%     { opacity: 1; }
+    55%     { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+
+  .product-card {
+    background: var(--card-light);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+  }
+
+  .product-card-image {
+    width: calc(100% - 48px);
+    margin: 24px auto 0;
+    aspect-ratio: 4/3;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #d5cec0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* CSS-only desk setup illustration */
+  .desk-illustration {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #c9b896 0%, #b8a67c 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .desk-illustration .monitor {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55%;
+    height: 45%;
+    background: #1a1a1a;
+    border-radius: 8px;
+    border: 3px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .desk-illustration .monitor .screen {
+    width: 90%;
+    height: 85%;
+    background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .code-line {
+    height: 3px;
+    border-radius: 2px;
+    opacity: 0.6;
+  }
+  .code-line.l1 { width: 60%; background: #89b4fa; }
+  .code-line.l2 { width: 45%; background: #a6e3a1; margin-left: 12px; }
+  .code-line.l3 { width: 70%; background: #f5c2e7; }
+  .code-line.l4 { width: 35%; background: #fab387; margin-left: 12px; }
+  .code-line.l5 { width: 55%; background: #89b4fa; }
+  .code-line.l6 { width: 40%; background: #cba6f7; margin-left: 12px; }
+
+  .desk-illustration .stand {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12%;
+    height: 10%;
+    background: #555;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .desk-illustration .base {
+    position: absolute;
+    top: 69%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22%;
+    height: 3%;
+    background: #555;
+    border-radius: 4px;
+  }
+
+  .desk-illustration .keyboard {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35%;
+    height: 10%;
+    background: #2a2a2a;
+    border-radius: 6px;
+    border: 2px solid #3a3a3a;
+  }
+
+  .desk-illustration .plant {
+    position: absolute;
+    bottom: 15%;
+    left: 12%;
+    width: 12%;
+    height: 25%;
+  }
+
+  .plant .pot {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 35%;
+    background: #8B6F47;
+    border-radius: 4px 4px 6px 6px;
+  }
+
+  .plant .leaf {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    width: 20px;
+    height: 30px;
+    background: #4a8c5c;
+    border-radius: 50% 50% 50% 0;
+    transform-origin: bottom center;
+  }
+  .plant .leaf:nth-child(2) { transform: translateX(-50%) rotate(-30deg); }
+  .plant .leaf:nth-child(3) { transform: translateX(-50%) rotate(25deg); }
+  .plant .leaf:nth-child(4) { transform: translateX(-50%) rotate(-10deg) translateY(-8px); }
+
+  .desk-illustration .lamp {
+    position: absolute;
+    top: 10%;
+    right: 12%;
+    width: 8%;
+    height: 35%;
+  }
+
+  .lamp .shade {
+    width: 100%;
+    height: 40%;
+    background: var(--gold-dark);
+    border-radius: 50% 50% 0 0;
+    position: relative;
+  }
+
+  .lamp .shade::after {
+    content: '';
+    position: absolute;
+    bottom: -60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 60%;
+    background: #666;
+  }
+
+  .desk-illustration .desk-surface {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background: linear-gradient(180deg, #5c4a35 0%, #4a3b2a 100%);
+    border-top: 2px solid #6b5640;
+  }
+
+  .product-card .card-eyebrow {
+    padding: 20px 24px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .product-card .card-eyebrow .line {
+    width: 24px;
+    height: 1px;
+    background: var(--gold-light);
+  }
+
+  .product-card .card-eyebrow span:last-child {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--gold-light);
+  }
+
+  .product-card .card-footer {
+    padding: 16px 24px 20px;
+  }
+
+  .product-card .card-footer h3 {
+    font-family: 'Literata', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--fg-light);
+    margin-bottom: 4px;
+  }
+
+  .product-card .card-footer p {
+    font-size: 14px;
+    color: var(--muted-light);
+  }
+
+  .product-card .card-footer .meta {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--muted-light);
+  }
+
+  .product-card-shadow {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(228,221,206,0.5);
+    border-radius: 16px;
+    z-index: 1;
+  }
+
+  /* ==================== SCENE 4: EXPERIENCE (11s - 15s) ==================== */
+  .scene-4 {
+    flex-direction: column;
+    gap: 40px;
+    animation: scene4-visibility 20s ease forwards;
+    overflow: hidden;
+  }
+
+  @keyframes scene4-visibility {
+    0%    { opacity: 0; }
+    54%   { opacity: 0; }
+    55%   { opacity: 1; }
+    74%   { opacity: 1; }
+    75%   { opacity: 0; }
+    100%  { opacity: 0; }
+  }
+
+  /* Light/Dark split */
+  .split-container {
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    position: relative;
+  }
+
+  .split-left {
+    flex: 1;
+    background: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    position: relative;
+    opacity: 0;
+    animation: splitLeft 20s ease forwards;
+  }
+
+  @keyframes splitLeft {
+    0%, 56% { opacity: 0; }
+    58%     { opacity: 1; }
+    73%     { opacity: 1; }
+    75%     { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+
+  .split-right {
+    flex: 1;
+    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    position: relative;
+    opacity: 0;
+    animation: splitRight 20s ease forwards;
+  }
+
+  @keyframes splitRight {
+    0%, 57% { opacity: 0; }
+    60%     { opacity: 1; }
+    73%     { opacity: 1; }
+    75%     { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+
+  .mode-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-bottom: 24px;
+  }
+
+  .split-left .mode-label { color: var(--gold-light); }
+  .split-right .mode-label { color: var(--gold-dark); }
+
+  /* Mini article card for split view */
+  .mini-card {
+    width: 380px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .split-left .mini-card {
+    background: var(--card-light);
+    border: 1px solid var(--border-light);
+  }
+
+  .split-right .mini-card {
+    background: var(--card-dark);
+    border: 1px solid var(--border-dark);
+  }
+
+  .mini-card .mini-header {
+    padding: 20px 24px;
+  }
+
+  .mini-card .mini-header h4 {
+    font-family: 'Literata', serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .split-left .mini-card h4 { color: var(--fg-light); }
+  .split-right .mini-card h4 { color: var(--fg-dark); }
+
+  .mini-card .mini-body {
+    padding: 0 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mini-card .mini-body .text-line {
+    height: 10px;
+    border-radius: 5px;
+  }
+
+  .split-left .text-line { background: var(--border-light); }
+  .split-right .text-line { background: var(--border-dark); }
+
+  .text-line:nth-child(1) { width: 100%; }
+  .text-line:nth-child(2) { width: 90%; }
+  .text-line:nth-child(3) { width: 95%; }
+  .text-line:nth-child(4) { width: 70%; }
+
+  /* Divider line in center */
+  .split-divider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 5%, var(--gold-dark) 30%, var(--gold-dark) 70%, transparent 95%);
+    opacity: 0;
+    animation: dividerIn 20s ease forwards;
+    z-index: 10;
+  }
+
+  @keyframes dividerIn {
+    0%, 58% { opacity: 0; height: 0; }
+    62%     { opacity: 1; height: 100%; }
+    73%     { opacity: 1; }
+    75%     { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+
+  /* Overlay text */
+  .experience-text {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    text-align: center;
+    opacity: 0;
+    animation: experienceText 20s ease forwards;
+  }
+
+  @keyframes experienceText {
+    0%, 62% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    65%     { opacity: 1; transform: translateX(-50%) translateY(0); }
+    73%     { opacity: 1; }
+    75%     { opacity: 0; }
+    100%    { opacity: 0; }
+  }
+
+  .experience-text h3 {
+    font-family: 'Literata', serif;
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    letter-spacing: -0.01em;
+  }
+
+  /* ==================== SCENE 5: OUTRO (15s - 20s) ==================== */
+  .scene-5 {
+    background: var(--bg-dark);
+    flex-direction: column;
+    gap: 28px;
+    animation: scene5-visibility 20s ease forwards;
+  }
+
+  @keyframes scene5-visibility {
+    0%    { opacity: 0; }
+    74%   { opacity: 0; }
+    75%   { opacity: 1; }
+    100%  { opacity: 1; }
+  }
+
+  .outro-logo {
+    font-family: 'Literata', serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--fg-dark);
+    letter-spacing: -0.03em;
+    opacity: 0;
+    animation: outroLogo 20s ease forwards;
+  }
+
+  @keyframes outroLogo {
+    0%, 77% { opacity: 0; transform: scale(0.9); }
+    81%     { opacity: 1; transform: scale(1); }
+    100%    { opacity: 1; }
+  }
+
+  .outro-logo .i-accent { color: var(--gold-dark); }
+
+  .outro-url {
+    font-family: 'Geist Mono', monospace;
+    font-size: 20px;
+    color: var(--gold-dark);
+    letter-spacing: 0.05em;
+    opacity: 0;
+    animation: outroUrl 20s ease forwards;
+  }
+
+  @keyframes outroUrl {
+    0%, 82% { opacity: 0; transform: translateY(10px); }
+    86%     { opacity: 1; transform: translateY(0); }
+    100%    { opacity: 1; }
+  }
+
+  .outro-tagline {
+    font-family: 'Literata', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--muted-dark);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: outroTagline 20s ease forwards;
+    margin-top: 20px;
+  }
+
+  @keyframes outroTagline {
+    0%, 87% { opacity: 0; transform: translateY(10px); }
+    91%     { opacity: 1; transform: translateY(0); }
+    100%    { opacity: 1; }
+  }
+
+  /* Subtle golden line decoration */
+  .outro-line {
+    width: 80px;
+    height: 2px;
+    background: var(--gold-dark);
+    opacity: 0;
+    animation: outroLine 20s ease forwards;
+  }
+
+  @keyframes outroLine {
+    0%, 79% { opacity: 0; width: 0; }
+    83%     { opacity: 1; width: 80px; }
+    100%    { opacity: 1; }
+  }
+
+  /* Ambient golden particles for outro */
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold-dark);
+    opacity: 0;
+  }
+
+  .particle:nth-child(1) { top: 20%; left: 15%; animation: particleFloat 20s ease forwards; animation-delay: 0s; }
+  .particle:nth-child(2) { top: 70%; left: 80%; animation: particleFloat 20s ease forwards; animation-delay: 0.3s; }
+  .particle:nth-child(3) { top: 30%; left: 75%; animation: particleFloat 20s ease forwards; animation-delay: 0.6s; width: 3px; height: 3px; }
+  .particle:nth-child(4) { top: 60%; left: 25%; animation: particleFloat 20s ease forwards; animation-delay: 0.9s; width: 2px; height: 2px; }
+  .particle:nth-child(5) { top: 45%; left: 90%; animation: particleFloat 20s ease forwards; animation-delay: 1.2s; width: 3px; height: 3px; }
+
+  @keyframes particleFloat {
+    0%, 78% { opacity: 0; }
+    82%     { opacity: 0.3; }
+    90%     { opacity: 0.15; transform: translateY(-20px); }
+    100%    { opacity: 0.2; transform: translateY(-30px); }
+  }
+</style>
+</head>
+<body>
+
+  <!-- SCENE 1: Hook -->
+  <div class="scene scene-1">
+    <div class="hook-glow"></div>
+    <div class="hook-text">Still scrolling Amazon for desk tech?</div>
+  </div>
+
+  <!-- SCENE 2: Reveal -->
+  <div class="scene scene-2">
+    <div class="reveal-eyebrow">
+      <span class="line"></span>
+      <span class="label">Curated Tech</span>
+    </div>
+    <div class="reveal-logo"><span class="i-accent">i</span>WriteTech</div>
+    <div class="reveal-tagline">Tech that looks as good as it performs.</div>
+    <div class="reveal-stats">
+      <div class="stat">
+        <span class="value">100%</span>
+        <span>Hands-On Tested</span>
+      </div>
+      <div class="stat">
+        <span class="value">100%</span>
+        <span>Editorially Independent</span>
+      </div>
+      <div class="stat">
+        <span class="value">11</span>
+        <span>Categories</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 3: Product -->
+  <div class="scene scene-3">
+    <div class="product-left">
+      <div class="section-label">
+        <span class="line"></span>
+        <span>What We Cover</span>
+      </div>
+      <h2>Every gadget, handpicked and tested.</h2>
+      <p>From mechanical keyboards to minimal desk setups — we curate so you don't have to scroll through thousands of listings.</p>
+      <div class="categories-row">
+        <span class="cat-pill active">Desk Setups</span>
+        <span class="cat-pill">Keyboards</span>
+        <span class="cat-pill">MacBook</span>
+        <span class="cat-pill">Gaming</span>
+        <span class="cat-pill">Smart Home</span>
+        <span class="cat-pill">Productivity</span>
+      </div>
+    </div>
+    <div class="product-card-wrapper">
+      <div class="product-card">
+        <div class="card-eyebrow">
+          <span class="line"></span>
+          <span>Featured Find</span>
+        </div>
+        <div class="product-card-image">
+          <img src="images/hero-setup.png" alt="Featured Desk Setup" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px;">
+        </div>
+        <div class="card-footer">
+          <h3>The Ultimate Developer Desk Setup for 2026</h3>
+          <p>How to build a clean, productive workspace</p>
+          <div class="meta">
+            <span>5 min read</span>
+            <span>·</span>
+            <span>July 8, 2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-card-shadow"></div>
+    </div>
+  </div>
+
+  <!-- SCENE 4: Experience (Light/Dark Split) -->
+  <div class="scene scene-4">
+    <div class="split-container">
+      <div class="split-left">
+        <div class="mode-label">Light Mode</div>
+        <div class="mini-card">
+          <div style="height: 170px; overflow: hidden; border-radius: 12px 12px 0 0; background: #e0d8ca;">
+            <img src="images/keyboard-hero.png" alt="Keyboard" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div class="mini-header">
+            <h4>Best Mechanical Keyboards Under $100</h4>
+            <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 12px; color: var(--muted-light);">
+              <span>Keychron C3 Pro</span> · <span>8 min read</span>
+            </div>
+          </div>
+          <div class="mini-body">
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="split-right">
+        <div class="mode-label">Dark Mode</div>
+        <div class="mini-card">
+          <div style="height: 170px; overflow: hidden; border-radius: 12px 12px 0 0; background: #141210;">
+            <img src="images/premium-keyboard.png" alt="Keyboard Dark" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div class="mini-header">
+            <h4>Best Mechanical Keyboards Under $100</h4>
+            <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 12px; color: var(--muted-dark);">
+              <span>Keychron C3 Pro</span> · <span>8 min read</span>
+            </div>
+          </div>
+          <div class="mini-body">
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+            <div class="text-line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="split-divider"></div>
+      <div class="experience-text">
+        <h3>Beautiful to read. Beautiful to browse.</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 5: Outro -->
+  <div class="scene scene-5">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="outro-logo"><span class="i-accent">i</span>WriteTech</div>
+    <div class="outro-line"></div>
+    <div class="outro-url">iwritetech.com</div>
+    <div class="outro-tagline">Curated · Tested · Aesthetic</div>
+  </div>
+
+  <script>
+    window.isReady = false;
+    document.fonts.ready.then(() => {
+      window.isReady = true;
+    });
+
+    window.seekTo = function(tSec) {
+      const tMs = Math.max(0, Math.min(20000, tSec * 1000));
+      const anims = document.getAnimations();
+      for (let i = 0; i < anims.length; i++) {
+        const a = anims[i];
+        if (a.playState !== 'paused') a.pause();
+        a.currentTime = tMs;
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# Ignore nested website repo
+iWriteTech/
+
+# Logs & temp profiles
+*.log
+**/chrome-*/
+**/work/work/
+**/frames/

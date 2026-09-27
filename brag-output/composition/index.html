@@ -3,82 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1920, height=1080">
-<title>iWriteTech Launch Video</title>
+<title>iWriteTech Launch Film</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;0,7..72,800;1,7..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg-main: #F8FAFC;
-    --text-primary: #0F172A;
-    --text-secondary: #475569;
-    --text-muted: #94A3B8;
-    --brand-gold: #D97706;
-    --brand-gold-glow: rgba(217, 119, 6, 0.18);
-    --brand-emerald: #059669;
-    --brand-blue: #2563EB;
-    --border-subtle: rgba(226, 232, 240, 0.85);
-    --border-strong: rgba(203, 213, 225, 0.9);
+    --cream-bg: #F4EFE6;
+    --cream-card: #FAF7F2;
+    --cream-border: rgba(28, 25, 23, 0.08);
+    --dark-bg: #0B0E14;
+    --dark-surface: #121721;
+    --dark-card: #18202E;
+    --dark-border: rgba(255, 255, 255, 0.08);
+    --text-dark: #1C1917;
+    --text-muted: #78716C;
+    --text-light: #F8FAFC;
+    --text-dim: #94A3B8;
+    --accent-orange: #FF5722;
+    --accent-orange-glow: rgba(255, 87, 34, 0.25);
+    --accent-cyan: #38BDF8;
+    --accent-blue: #2563EB;
+    --accent-green: #10B981;
+    --accent-purple: #A855F7;
   }
 
   body {
     width: 1920px;
     height: 1080px;
     overflow: hidden;
-    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-    background: radial-gradient(120% 90% at 50% 12%, #FFFFFF 0%, #F8FAFC 52%, #ECF1F6 100%);
-    color: var(--text-primary);
-    position: relative;
+    background-color: var(--cream-bg);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-dark);
     user-select: none;
     -webkit-font-smoothing: antialiased;
+    position: relative;
   }
 
-  /* Studio Background Grid & Lighting */
-  .ambient-grid {
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(148, 163, 184, 0.14) 1.2px, transparent 1.2px);
-    background-size: 32px 32px;
-    pointer-events: none;
-    opacity: 0.75;
-  }
-
-  .ambient-glow-1 {
-    position: absolute;
-    width: 900px;
-    height: 900px;
-    top: -240px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: radial-gradient(circle, rgba(217, 119, 6, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
-    filter: blur(70px);
-    pointer-events: none;
-  }
-
-  .ambient-glow-2 {
-    position: absolute;
-    width: 1000px;
-    height: 800px;
-    bottom: -220px;
-    right: -100px;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
-    filter: blur(80px);
-    pointer-events: none;
-  }
-
-  /* Master Viewport */
-  .scene-viewport {
+  /* Universal Viewport Container */
+  #viewport {
     position: absolute;
     inset: 0;
     width: 1920px;
     height: 1080px;
+    overflow: hidden;
   }
 
   .scene {
     position: absolute;
     inset: 0;
+    width: 1920px;
+    height: 1080px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,2169 +64,2700 @@
     transform-origin: center center;
   }
 
-  /* =========================================================================
-     SCENE 1: KINETIC TYPOGRAPHY EXPANSION (0.0s - 14.5s)
-     ========================================================================= */
-  .scene-kinetic {
-    flex-direction: column;
-    text-align: center;
-    padding: 0 140px;
-  }
-
-  .kinetic-phrase {
+  /* Universal mouse cursor */
+  .cursor-pointer {
     position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 24px;
+    height: 24px;
+    z-index: 9999;
+    pointer-events: none;
     opacity: 0;
-    transform-origin: center center;
-  }
-
-  .kinetic-line {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 78px;
-    font-weight: 800;
-    letter-spacing: -0.035em;
-    line-height: 1.1;
-    color: var(--text-primary);
-  }
-
-  .kinetic-word-prefix {
-    white-space: nowrap;
-    display: inline-block;
-  }
-
-  .kinetic-pill-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 6px 24px;
-    border-radius: 999px;
-    font-size: 54px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    background: #FFFFFF;
-    border: 2px solid var(--border-strong);
-    box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.15);
-    margin: 0 14px;
-    vertical-align: middle;
-    overflow: hidden;
-    transform-origin: center center;
-  }
-
-  .kinetic-pill-badge.blue {
-    color: #1D4ED8;
-    background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-    border-color: #BFDBFE;
-  }
-
-  .kinetic-pill-badge.amber {
-    color: #B45309;
-    background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
-    border-color: #FDE68A;
-  }
-
-  .kinetic-pill-badge.emerald {
-    color: #047857;
-    background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
-    border-color: #A7F3D0;
-  }
-
-  .kinetic-word-suffix {
-    white-space: nowrap;
-    display: inline-block;
-  }
-
-  .kinetic-subline {
-    margin-top: 32px;
-    font-size: 28px;
-    font-weight: 500;
-    color: var(--text-secondary);
-    letter-spacing: -0.015em;
-    max-width: 960px;
-    line-height: 1.4;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
   }
 
   /* =========================================================================
-     SCENE 2: MACRO ZOOM TYPING & VALIDATION BUBBLES (14.5s - 25.5s)
+     SCENE 1: WARM GALLERY & KINETIC CODE ATMOSPHERE (0.0s - 6.5s)
      ========================================================================= */
-  .scene-macro {
-    perspective: 1200px;
+  #scene1 {
+    background-color: var(--cream-bg);
   }
 
-  .macro-center-stage {
-    position: relative;
-    width: 1040px;
-    height: 520px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform-origin: center center;
-  }
-
-  /* Floating Search Capsule */
-  .search-capsule {
+  .code-token {
     position: absolute;
-    width: 920px;
-    height: 88px;
-    background: #FFFFFF;
-    border-radius: 999px;
-    border: 1.5px solid var(--border-subtle);
-    box-shadow: 0 28px 70px -14px rgba(15, 23, 42, 0.18), 0 0 1px rgba(0, 0, 0, 0.12);
-    display: flex;
-    align-items: center;
-    padding: 0 34px;
-    gap: 22px;
-    transform-origin: center center;
-  }
-
-  .search-icon-box {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #F1F5F9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #475569;
-    flex-shrink: 0;
-  }
-
-  .search-input-text {
-    font-size: 34px;
-    font-weight: 600;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
-    flex: 1;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: rgba(28, 25, 23, 0.45);
     white-space: nowrap;
+    pointer-events: none;
+    transition: transform 0.1s linear;
   }
 
-  .search-cursor {
+  .token-orange { color: #EA580C; font-weight: 600; }
+  .token-blue { color: #0284C7; font-weight: 600; }
+  .token-green { color: #059669; }
+  .token-pink {
     display: inline-block;
-    width: 3px;
-    height: 38px;
-    background: #2563EB;
-    margin-left: 4px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #FB7185;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .token-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #1C1917;
+    margin: 0 4px;
+    vertical-align: middle;
+  }
+  .token-ring {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(28,25,23,0.4);
+    margin: 0 4px;
     vertical-align: middle;
   }
 
-  .search-badge-kbd {
-    padding: 8px 16px;
-    background: #F8FAFC;
-    border: 1.5px solid #E2E8F0;
-    border-radius: 10px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 15px;
-    font-weight: 700;
-    color: #64748B;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-    flex-shrink: 0;
-  }
-
-  /* Product Card Morph */
-  .product-hero-card {
-    position: absolute;
-    inset: 0;
-    width: 1040px;
-    height: 520px;
-    background: #FFFFFF;
-    border-radius: 32px;
-    border: 1.5px solid var(--border-subtle);
-    box-shadow: 0 36px 80px -18px rgba(15, 23, 42, 0.2), 0 10px 20px -5px rgba(15, 23, 42, 0.06);
-    display: flex;
-    padding: 40px;
-    gap: 40px;
-    transform-origin: center center;
-    overflow: hidden;
-  }
-
-  .card-media-side {
-    width: 420px;
-    height: 100%;
-    border-radius: 24px;
-    background: radial-gradient(100% 100% at 50% 50%, #FFFFFF 0%, #F1F5F9 100%);
-    border: 1px solid #E2E8F0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .card-media-side img {
-    width: 95%;
-    height: 95%;
-    object-fit: contain;
-    filter: drop-shadow(0 20px 30px rgba(15, 23, 42, 0.18));
-    transform: scale(1.08) rotate(-2deg);
-  }
-
-  .card-media-badge {
-    position: absolute;
-    top: 18px;
-    left: 18px;
-    padding: 6px 14px;
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(8px);
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #047857;
-    border: 1px solid #A7F3D0;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  }
-
-  .card-content-side {
-    flex: 1;
+  .s1-center-wrap {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .card-category-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .card-category-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #D97706;
-  }
-
-  .card-rating-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 14px;
-    background: #FEF3C7;
-    border-radius: 999px;
-    color: #92400E;
-    font-size: 14px;
-    font-weight: 800;
-  }
-
-  .card-product-title {
-    font-family: 'Literata', serif;
-    font-size: 46px;
-    font-weight: 800;
-    color: var(--text-primary);
-    letter-spacing: -0.035em;
-    line-height: 1.15;
-    margin-top: 6px;
-  }
-
-  .card-price-row {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    margin-top: 4px;
-  }
-
-  .card-price {
-    font-size: 38px;
-    font-weight: 800;
-    color: #0F172A;
-    letter-spacing: -0.02em;
-  }
-
-  .card-price-sub {
-    font-size: 16px;
-    color: #64748B;
-    font-weight: 600;
-  }
-
-  .card-specs-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 16px 0;
-  }
-
-  .spec-chip {
-    padding: 7px 14px;
-    background: #F1F5F9;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #334155;
-    border: 1px solid #E2E8F0;
-  }
-
-  .card-verdict-box {
-    background: #F8FAFC;
-    border-left: 3.5px solid #2563EB;
-    padding: 12px 16px;
-    border-radius: 0 12px 12px 0;
-    font-size: 14.5px;
-    font-style: italic;
-    color: #475569;
-    line-height: 1.45;
-  }
-
-  /* Social Validation Bubbles */
-  .social-bubble {
-    position: absolute;
-    background: #FFFFFF;
-    border: 1.5px solid var(--border-subtle);
-    border-radius: 20px;
-    padding: 18px 24px;
-    box-shadow: 0 24px 50px -12px rgba(15, 23, 42, 0.2);
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    width: 440px;
-    transform-origin: center center;
-    z-index: 15;
-  }
-
-  .bubble-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
-    color: #FFFFFF;
-    display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  .bubble-avatar.green {
-    background: linear-gradient(135deg, #10B981 0%, #047857 100%);
-  }
-
-  .bubble-avatar.amber {
-    background: linear-gradient(135deg, #F59E0B 0%, #B45309 100%);
-  }
-
-  .bubble-text-wrap {
-    flex: 1;
-  }
-
-  .bubble-author {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .bubble-handle {
-    font-weight: 500;
-    color: var(--text-muted);
-  }
-
-  .bubble-quote {
-    font-size: 14px;
-    color: var(--text-secondary);
-    margin-top: 3px;
-    line-height: 1.4;
-  }
-
-  .bubble-pos-1 {
-    top: -24px;
-    left: -240px;
-    width: 440px;
-  }
-
-  .bubble-pos-2 {
-    bottom: -24px;
-    right: -240px;
-    width: 440px;
-  }
-
-  .bubble-pos-3 {
-    bottom: 110px;
-    left: -250px;
-    width: 440px;
-  }
-
-  .macro-stats-pill {
-    position: absolute;
-    bottom: -64px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #0F172A;
-    color: #FFFFFF;
-    padding: 14px 32px;
-    border-radius: 999px;
-    box-shadow: 0 20px 40px -8px rgba(15, 23, 42, 0.4);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 17px;
-    font-weight: 700;
-    white-space: nowrap;
-    z-index: 15;
-  }
-
-  .stats-pulse-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #10B981;
-    box-shadow: 0 0 12px #10B981;
-  }
-
-  /* =========================================================================
-     SCENE 3: 2.5D MASSIVE MATRIX PERSPECTIVE GRID (25.5s - 37.0s)
-     ========================================================================= */
-  .scene-matrix {
-    perspective: 1400px;
-    overflow: hidden;
-  }
-
-  .matrix-stage {
-    position: absolute;
-    width: 2800px;
-    height: 1800px;
-    top: 50%;
-    left: 50%;
-    transform-origin: center center;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 28px;
-    padding: 40px;
-  }
-
-  .grid-card {
-    background: #FFFFFF;
-    border: 1.5px solid var(--border-subtle);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.1);
-    display: flex;
-    flex-direction: column;
-    height: 340px;
-  }
-
-  .grid-card-thumb {
-    width: 100%;
-    height: 200px;
-    background: #F1F5F9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .grid-card-thumb img {
-    width: 85%;
-    height: 85%;
-    object-fit: contain;
-  }
-
-  .grid-card-score {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(6px);
-    font-size: 13px;
-    font-weight: 700;
-    color: #047857;
-    border: 1px solid #A7F3D0;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  }
-
-  .grid-card-info {
-    padding: 16px 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .grid-card-cat {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 600;
-    color: #D97706;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  .grid-card-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.25;
-    margin-top: 4px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
-
-  .grid-card-price {
-    font-size: 15px;
-    font-weight: 700;
-    color: #64748B;
-  }
-
-  .matrix-header-overlay {
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(16px);
-    border: 1.5px solid var(--border-subtle);
-    padding: 20px 48px;
-    border-radius: 999px;
-    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.12);
-    text-align: center;
     z-index: 10;
   }
 
-  .matrix-header-title {
-    font-size: 28px;
+  .s1-headline {
+    font-size: 58px;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    color: #1C1917;
+    text-align: center;
+    line-height: 1.15;
+    position: absolute;
+  }
+
+  .s1-tag-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #44403C;
+    background: rgba(28, 25, 23, 0.05);
+    border: 1px solid rgba(28, 25, 23, 0.08);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+
+  .s1-brand-reveal {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .s1-brand-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #1C1917;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px -5px rgba(28,25,23,0.25);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .s1-brand-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #F4EFE6;
+  }
+
+  .s1-brand-icon::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-orange);
+    box-shadow: 0 0 8px var(--accent-orange);
+  }
+
+  .s1-brand-title {
+    font-size: 48px;
     font-weight: 800;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
+    color: #1C1917;
   }
 
-  .matrix-header-sub {
-    font-size: 16px;
+  /* =========================================================================
+     SCENE 2: FLOATING VIEWPORT HERO & 5-COLUMN MATRIX (6.5s - 14.5s)
+     ========================================================================= */
+  #scene2 {
+    background-color: var(--cream-bg);
+  }
+
+  .hero-viewport-card {
+    width: 1480px;
+    height: 840px;
+    border-radius: 28px;
+    background: #0E131F;
+    border: 1.5px solid rgba(28, 25, 23, 0.12);
+    box-shadow: 0 40px 100px -20px rgba(28, 25, 23, 0.32), 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .viewport-topbar {
+    height: 52px;
+    background: rgba(14, 19, 31, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 20;
+  }
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .topbar-dots {
+    display: flex;
+    gap: 7px;
+  }
+
+  .topbar-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #E2E8F0;
+  }
+
+  .topbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 12px;
     font-weight: 500;
-    color: var(--text-secondary);
-    margin-top: 4px;
+    color: #94A3B8;
   }
 
-  .matrix-blur-top {
+  .topbar-nav span.active {
+    color: #F8FAFC;
+    font-weight: 600;
+  }
+
+  .topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .topbar-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: #38BDF8;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 3px 10px;
+    border-radius: 6px;
+  }
+
+  .viewport-hero-media {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .viewport-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: brightness(0.88) contrast(1.05);
+    transform-origin: center center;
+  }
+
+  .viewport-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(14, 19, 31, 0.15) 0%, rgba(14, 19, 31, 0.75) 85%, #0E131F 100%);
+  }
+
+  .viewport-banner-text {
+    position: absolute;
+    left: 48px;
+    bottom: 24px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .banner-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-orange);
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    width: fit-content;
+  }
+
+  .banner-title {
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    line-height: 1.05;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+
+  .viewport-columns-bar {
+    height: 240px;
+    background: #0B0E17;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+    z-index: 15;
+  }
+
+  .col-item {
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    background: rgba(18, 23, 34, 0.4);
+    transition: background 0.2s ease;
+  }
+
+  .col-item:last-child {
+    border-right: none;
+  }
+
+  .col-item.active {
+    background: rgba(30, 41, 59, 0.6);
+  }
+
+  .col-item.active::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 180px;
-    background: linear-gradient(to bottom, #F8FAFC 20%, rgba(248, 250, 252, 0) 100%);
-    pointer-events: none;
-    z-index: 5;
+    height: 2px;
+    background: var(--accent-orange);
   }
 
-  .matrix-blur-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 220px;
-    background: linear-gradient(to top, #EDF2F7 30%, rgba(237, 242, 247, 0) 100%);
-    pointer-events: none;
-    z-index: 5;
-  }
-
-  /* =========================================================================
-     SCENE 4: VERTICAL STEPPER PIPELINE & BENCHMARK LAB (37.0s - 48.0s)
-     ========================================================================= */
-  .scene-pipeline {
-    padding: 0 120px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 70px;
-  }
-
-  /* Left Vertical Stepper Rail */
-  .stepper-rail-column {
-    width: 500px;
-    position: relative;
+  .col-header {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 4px;
   }
 
-  .stepper-track-bg {
-    position: absolute;
-    left: 27px;
-    top: 24px;
-    bottom: 24px;
-    width: 4px;
-    background: #E2E8F0;
-    border-radius: 2px;
-  }
-
-  .stepper-track-fill {
-    position: absolute;
-    left: 27px;
-    top: 24px;
-    width: 4px;
-    height: 0%;
-    background: linear-gradient(to bottom, #2563EB, #10B981, #D97706);
-    border-radius: 2px;
-    box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
-  }
-
-  .stepper-node-row {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
-    z-index: 2;
-  }
-
-  .stepper-node-dot {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: #FFFFFF;
-    border: 3px solid #CBD5E1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 18px;
+  .col-title {
+    font-size: 17px;
     font-weight: 700;
-    color: #64748B;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    flex-shrink: 0;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .stepper-node-dot.active {
-    border-color: #2563EB;
-    background: #2563EB;
-    color: #FFFFFF;
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
-    transform: scale(1.1);
-  }
-
-  .stepper-node-dot.done {
-    border-color: #10B981;
-    background: #10B981;
-    color: #FFFFFF;
-  }
-
-  .stepper-node-info {
-    padding-top: 4px;
-  }
-
-  .stepper-node-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #64748B;
-  }
-
-  .stepper-node-title {
-    font-size: 21px;
-    font-weight: 800;
-    color: var(--text-primary);
-    margin-top: 2px;
     letter-spacing: -0.02em;
+    color: #F8FAFC;
   }
 
-  .stepper-node-desc {
-    font-size: 14.5px;
-    color: var(--text-secondary);
-    margin-top: 3px;
+  .col-desc {
+    font-size: 12px;
+    color: #94A3B8;
     line-height: 1.35;
   }
 
-  /* Right Inspection Lab Dashboard */
-  .lab-dashboard-column {
-    flex: 1;
-    height: 640px;
-    background: #FFFFFF;
-    border-radius: 28px;
-    border: 1.5px solid var(--border-subtle);
-    box-shadow: 0 32px 64px -16px rgba(15, 23, 42, 0.14);
-    padding: 36px 40px;
-    position: relative;
+  .col-media-thumb {
+    width: 100%;
+    height: 100px;
+    border-radius: 12px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .lab-top-bar {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #F1F5F9;
-    padding-bottom: 16px;
-    margin-bottom: 24px;
-    flex-shrink: 0;
-  }
-
-  .lab-badge {
-    padding: 6px 14px;
-    background: #F1F5F9;
-    border-radius: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 700;
-    color: #2563EB;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .lab-live-status {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #059669;
-  }
-
-  .lab-phase-container {
-    flex: 1;
+    justify-content: center;
     position: relative;
   }
 
-  .lab-phase {
+  .col-media-thumb img {
+    max-width: 90%;
+    max-height: 85%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+  }
+
+  /* =========================================================================
+     SCENE 3: SNAPPED PILL & LAB FREQUENCY SPECTRUM (14.5s - 21.5s)
+     ========================================================================= */
+  #scene3 {
+    background-color: var(--cream-bg);
+  }
+
+  .s3-pill-stage {
     position: absolute;
-    inset: 0;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    z-index: 30;
+  }
+
+  .snapped-pill-btn {
+    height: 64px;
+    padding: 0 32px;
+    border-radius: 999px;
+    background: #FAF7F2;
+    border: 2px solid #1C1917;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #1C1917;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 30px -5px rgba(28,25,23,0.12);
+    white-space: nowrap;
+  }
+
+  .snapped-pill-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1C1917;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -8px;
+    z-index: 2;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  }
+
+  .snapped-pill-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: #F4EFE6;
+  }
+
+  /* Motion Blur Pill Streaks */
+  .motion-pill-bar {
+    position: absolute;
+    height: 54px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(255,87,34,0.85) 0%, rgba(244,114,182,0.85) 50%, rgba(251,191,36,0.85) 100%);
+    filter: blur(14px);
     opacity: 0;
     pointer-events: none;
   }
 
-  /* Phase 1: Waveforms */
-  .phase-1-center {
+  /* The Precision Acoustic Lab Board */
+  .lab-acoustic-board {
+    position: absolute;
+    width: 1560px;
+    height: 860px;
+    background: #0F141F;
+    border: 1.5px solid rgba(255, 255, 255, 0.09);
+    border-radius: 28px;
+    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.5);
+    padding: 36px 44px;
     display: flex;
-    align-items: center;
-    gap: 36px;
-    margin: auto 0;
+    flex-direction: column;
+    gap: 28px;
+    z-index: 10;
   }
 
-  .waveform-box {
-    flex: 1;
-    height: 230px;
-    background: #F8FAFC;
-    border-radius: 16px;
-    border: 1px solid #E2E8F0;
+  .lab-board-top {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 20px;
+  }
+
+  .lab-title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .lab-main-title {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #F8FAFC;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .lab-subtitle {
+    font-size: 13px;
+    color: #94A3B8;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .lab-top-metrics {
+    display: flex;
+    gap: 24px;
+  }
+
+  .lab-metric-chip {
+    padding: 10px 18px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .lab-metric-chip .label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748B;
+  }
+
+  .lab-metric-chip .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-cyan);
+  }
+
+  .lab-board-content {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 32px;
+    flex: 1;
+  }
+
+  .acoustic-spectrum-card {
+    background: rgba(18, 23, 34, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .spectrum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .spectrum-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #E2E8F0;
+  }
+
+  .frequency-bars-container {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .freq-bar-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    height: 100%;
+    justify-content: flex-end;
+  }
+
+  .freq-bar-fill {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    background: linear-gradient(180deg, var(--accent-orange) 0%, rgba(255, 87, 34, 0.25) 100%);
+    transition: height 0.05s linear;
+  }
+
+  .freq-bar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #64748B;
+  }
+
+  .sound-test-cards-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .sound-profile-card {
+    padding: 18px 22px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     position: relative;
     overflow: hidden;
   }
 
-  .wave-bar {
-    flex: 1;
-    background: linear-gradient(to top, #3B82F6, #60A5FA);
-    border-radius: 4px;
-    height: 40%;
+  .sound-profile-card.highlight {
+    background: rgba(255, 87, 34, 0.07);
+    border-color: rgba(255, 87, 34, 0.35);
   }
 
-  .phase-metric-box {
-    width: 260px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .metric-card {
-    background: #F8FAFC;
-    border: 1px solid #E2E8F0;
-    border-radius: 14px;
-    padding: 16px 20px;
-  }
-
-  .metric-label {
-    font-size: 12px;
-    font-weight: 700;
-    color: #64748B;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .metric-value {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 32px;
-    font-weight: 800;
-    color: #0F172A;
-    margin-top: 4px;
-  }
-
-  /* Phase 4: Independence */
-  .independence-seal-box {
-    margin: auto 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .seal-emblem {
-    width: 104px;
-    height: 104px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
-    border: 4px solid #F59E0B;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 44px;
-    box-shadow: 0 16px 32px rgba(245, 158, 11, 0.25);
-  }
-
-  .seal-title {
-    font-size: 36px;
-    font-weight: 800;
-    color: #0F172A;
-    letter-spacing: -0.02em;
-  }
-
-  .seal-desc {
-    font-size: 18px;
-    color: #475569;
-    max-width: 580px;
-    line-height: 1.5;
-  }
-
-  /* Phase 5: Stamp Verdict */
-  .verdict-stamp-box {
-    margin: auto 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 24px;
-  }
-
-  .gold-stamp {
-    display: inline-block;
-    padding: 16px 44px;
-    border: 5px solid #D97706;
-    border-radius: 18px;
-    color: #D97706;
-    font-size: 44px;
-    font-weight: 900;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    transform: rotate(-4deg);
-    box-shadow: 0 20px 40px rgba(217, 119, 6, 0.25);
-    background: rgba(254, 243, 199, 0.45);
-  }
-
-  /* =========================================================================
-     SCENE 5: CATEGORY FLIPPER & 3D FLOATING SEARCH (48.0s - 58.5s)
-     ========================================================================= */
-  .scene-categories {
-    perspective: 1100px;
-    flex-direction: column;
-  }
-
-  .cat-flipper-stage {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .flipper-tag-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 120px;
-  }
-
-  .flipper-badge {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 16px 42px;
-    background: #FFFFFF;
-    border: 2px solid var(--border-strong);
-    border-radius: 999px;
-    font-size: 44px;
-    font-weight: 800;
-    color: var(--text-primary);
-    box-shadow: 0 24px 48px -8px rgba(15, 23, 42, 0.16);
-    transform-origin: center center;
-  }
-
-  /* 3D Ground Field */
-  .cat-3d-ground {
-    position: absolute;
-    width: 1400px;
-    height: 600px;
-    top: 50%;
-    left: 50%;
-    transform-origin: center 70%;
-    display: flex;
-    justify-content: center;
-    gap: 36px;
-  }
-
-  .trio-card {
-    width: 400px;
-    height: 480px;
-    background: #FFFFFF;
-    border: 1.5px solid var(--border-subtle);
-    border-radius: 28px;
-    box-shadow: 0 32px 64px -16px rgba(15, 23, 42, 0.18);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  .trio-thumb {
-    width: 100%;
-    height: 280px;
-    background: #F8FAFC;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-  }
-
-  .trio-thumb img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-    filter: drop-shadow(0 12px 20px rgba(0,0,0,0.1));
-  }
-
-  .trio-body {
-    padding: 24px 28px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .trio-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
-  }
-
-  .trio-role {
-    font-size: 15px;
-    color: #64748B;
-    margin-top: 4px;
-  }
-
-  .trio-score-row {
+  .sp-card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .elevated-search-bar {
-    position: absolute;
-    top: 140px;
-    width: 760px;
-    height: 74px;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(16px);
-    border: 2px solid var(--border-strong);
-    border-radius: 999px;
-    box-shadow: 0 28px 60px -10px rgba(15, 23, 42, 0.22);
-    display: flex;
-    align-items: center;
-    padding: 0 28px;
-    gap: 18px;
-    z-index: 20;
-  }
-
-  .elevated-search-text {
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--text-primary);
-    flex: 1;
-  }
-
-  /* =========================================================================
-     SCENE 6: PUNCHLINE, GRAND LOGO REVEAL & OUTRO (58.5s - 73.45s)
-     ========================================================================= */
-  .scene-outro {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .outro-punchline-box {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 200px;
-  }
-
-  .punchline-h1 {
-    font-family: 'Literata', serif;
-    font-size: 78px;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.035em;
-    line-height: 1.15;
-    max-width: 1200px;
-  }
-
-  .punchline-sub {
-    font-size: 30px;
-    font-weight: 500;
-    color: var(--text-secondary);
-    margin-top: 28px;
-    max-width: 900px;
-    line-height: 1.4;
-  }
-
-  .outro-brand-lockup {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .brand-logo-emblem {
-    width: 96px;
-    height: 96px;
-    border-radius: 28px;
-    background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    font-size: 48px;
-    font-family: 'Literata', serif;
-    font-weight: 700;
-    box-shadow: 0 20px 40px rgba(217, 119, 6, 0.35);
-    margin-bottom: 24px;
-  }
-
-  .brand-wordmark {
-    font-family: 'Literata', serif;
-    font-size: 88px;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
-  .brand-wordmark span {
-    color: #D97706;
-  }
-
-  .brand-tagline {
-    font-size: 26px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    margin-top: 12px;
-    letter-spacing: -0.015em;
-  }
-
-  .brand-pillars-row {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-top: 36px;
-  }
-
-  .brand-pillar-pill {
-    padding: 10px 22px;
-    background: #FFFFFF;
-    border: 1.5px solid var(--border-subtle);
-    border-radius: 999px;
+  .sp-card-name {
     font-size: 16px;
     font-weight: 700;
-    color: #334155;
-    box-shadow: 0 6px 16px -2px rgba(15, 23, 42, 0.06);
+    color: #F8FAFC;
     display: flex;
     align-items: center;
     gap: 8px;
   }
 
-  .brand-cta-button {
-    margin-top: 48px;
-    padding: 20px 54px;
-    background: #0F172A;
+  .sp-card-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(16, 185, 129, 0.15);
+    color: #10B981;
+  }
+
+  .sp-card-tags {
+    display: flex;
+    gap: 8px;
+  }
+
+  .sp-tag {
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    color: #94A3B8;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  /* =========================================================================
+     SCENE 4: MOBILE REPORT & TERMINAL HARD CUT (21.5s - 27.5s)
+     ========================================================================= */
+  #scene4 {
+    background-color: var(--cream-bg);
+  }
+
+  .mobile-report-card {
+    width: 480px;
+    height: 820px;
+    background: #0E131F;
+    border-radius: 40px;
+    border: 3px solid #1C1917;
+    box-shadow: 0 40px 100px -20px rgba(28,25,23,0.35);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 240px;
+  }
+
+  .mobile-top-media {
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mobile-top-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mobile-top-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, #0E131F 100%);
+  }
+
+  .mobile-appbar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .mobile-pill-brand {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
     color: #FFFFFF;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    padding: 6px 14px;
     border-radius: 999px;
-    font-size: 24px;
+  }
+
+  .mobile-github-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+
+  .mobile-github-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: #1C1917;
+  }
+
+  .mobile-content {
+    flex: 1;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mobile-score-box {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .mobile-score-title {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+  }
+
+  .mobile-score-desc {
+    font-size: 13px;
+    color: #94A3B8;
+  }
+
+  .mobile-spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 13px;
+  }
+
+  .mobile-spec-row .k { color: #64748B; }
+  .mobile-spec-row .v { color: #E2E8F0; font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+
+  .mobile-action-btn {
+    width: 100%;
+    height: 52px;
+    border-radius: 16px;
+    background: var(--accent-orange);
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* Right Side Studio Showcase in Scene 4 */
+  .s4-right-gallery {
+    position: absolute;
+    right: 200px;
+    width: 820px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .s4-feature-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-orange);
+    background: rgba(255, 87, 34, 0.08);
+    border: 1px solid rgba(255, 87, 34, 0.2);
+    padding: 6px 14px;
+    border-radius: 8px;
+    width: fit-content;
+  }
+
+  .s4-main-headline {
+    font-size: 54px;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    color: #1C1917;
+  }
+
+  .s4-card-preview {
+    width: 100%;
+    height: 380px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1.5px solid rgba(28,25,23,0.1);
+    box-shadow: 0 20px 50px -10px rgba(0,0,0,0.15);
+    position: relative;
+  }
+
+  .s4-card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* TERMINAL HARD-CUT OVERLAY (Scene 4 Transition) */
+  .terminal-hardcut-overlay {
+    position: absolute;
+    inset: 0;
+    background: #090D14;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+  }
+
+  .terminal-watermark {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #64748B;
+  }
+
+  .terminal-command-container {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px 44px;
+    border-radius: 16px;
+    background: rgba(18, 23, 34, 0.8);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  }
+
+  .term-arrow { color: #22C55E; margin-right: 24px; }
+  .term-cmd { color: #FFFFFF; margin-right: 18px; }
+  .term-arg { color: #F97316; margin-right: 18px; }
+  .term-highlight {
+    background: #2563EB;
+    color: #FFFFFF;
+    padding: 0 12px;
+    border-radius: 6px;
+    margin-right: 14px;
+  }
+  .term-cursor {
+    width: 6px;
+    height: 72px;
+    background: #FFFFFF;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  /* =========================================================================
+     SCENE 5: AI AGENT WORKSPACE & 3D HARDWARE APPROVAL (27.5s - 35.5s)
+     ========================================================================= */
+  #scene5 {
+    background-color: var(--cream-bg);
+  }
+
+  .ai-studio-window {
+    width: 1720px;
+    height: 940px;
+    background: #0D111A;
+    border-radius: 28px;
+    border: 1.5px solid rgba(28, 25, 23, 0.15);
+    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.45);
+    display: grid;
+    grid-template-columns: 460px 1fr 380px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Left AI Chat Panel */
+  .ai-chat-panel {
+    background: #111622;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+  }
+
+  .ai-chat-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ai-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent-orange), #EC4899);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-avatar svg { width: 20px; height: 20px; fill: #FFFFFF; }
+
+  .ai-user-prompt-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 16px 18px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #E2E8F0;
+  }
+
+  .ai-thought-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ai-plan-text {
+    font-size: 13.5px;
+    color: #CBD5E1;
+    line-height: 1.45;
+  }
+
+  .ai-approval-modal {
+    background: #18202E;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  }
+
+  .approval-header {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .approval-pkg-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent-orange);
+  }
+
+  .approval-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .btn-approve {
+    flex: 1;
+    height: 38px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #0F172A;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255,255,255,0.2);
+  }
+
+  .btn-reject {
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-input-bottom {
+    margin-top: auto;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #64748B;
+  }
+
+  .ai-send-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-send-btn svg { width: 14px; height: 14px; fill: #000000; }
+
+  /* Center 3D Hardware Viewport */
+  .ai-center-stage {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, rgba(30, 41, 59, 0.5) 0%, #0D111A 70%);
+  }
+
+  .center-stage-header {
+    position: absolute;
+    top: 28px;
+    left: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stage-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-orange);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .stage-title {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #F8FAFC;
+  }
+
+  .hardware-3d-model {
+    width: 680px;
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
+    transform-origin: center center;
+  }
+
+  .interactive-hover-chip {
+    position: absolute;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid var(--accent-cyan);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .chip-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+  }
+
+  .chip-val {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  /* Right Specs & Configuration Panel */
+  .ai-right-panel {
+    background: #111622;
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .right-panel-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #E2E8F0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    padding-bottom: 14px;
+  }
+
+  .spec-progress-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .spec-prog-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #94A3B8;
+  }
+
+  .spec-prog-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .spec-prog-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: var(--accent-orange);
+  }
+
+  .specs-cta-btn {
+    margin-top: auto;
+    height: 48px;
+    background: #0284C7;
+    border-radius: 12px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.35);
+  }
+
+  /* =========================================================================
+     SCENE 6: THERMAL SCAN & VERIFICATION MATRIX (35.5s - 42.5s)
+     ========================================================================= */
+  #scene6 {
+    background-color: var(--cream-bg);
+  }
+
+  .thermal-container {
+    width: 1620px;
+    height: 900px;
+    border-radius: 32px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(28,25,23,0.1);
+    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .thermal-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.8) contrast(1.1);
+  }
+
+  .thermal-spectral-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 60% 40%, rgba(255, 87, 34, 0.5) 0%, rgba(244, 63, 94, 0.3) 30%, rgba(56, 189, 248, 0.35) 70%, rgba(15, 23, 42, 0.6) 100%);
+    mix-blend-mode: color;
+    pointer-events: none;
+  }
+
+  .thermal-scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #FFFFFF, transparent);
+    box-shadow: 0 0 20px #FFFFFF, 0 0 40px var(--accent-cyan);
+    pointer-events: none;
+  }
+
+  .thermal-center-btn {
+    position: absolute;
+    background: #1C1917;
+    color: #FFFFFF;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: -0.01em;
+    padding: 16px 36px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .thermal-center-btn svg { width: 22px; height: 22px; fill: var(--accent-orange); }
+
+  /* Diagnostic Verification Popover */
+  .diagnostic-card {
+    position: absolute;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 28px 36px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    border: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 30;
+    width: 580px;
+  }
+
+  .diag-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .diag-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .diag-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    background: #F1F5F9;
+    color: #475569;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .diag-msg {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #10B981;
+    font-weight: 600;
+  }
+
+  .diag-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .diag-btn {
+    height: 42px;
+    padding: 0 24px;
+    border-radius: 10px;
+    background: #1C1917;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Matrix of Glowing Green Shields (Scene 6 Part B) */
+  .security-matrix-grid {
+    position: absolute;
+    inset: 0;
+    background: #090D14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 40;
+    opacity: 0;
+  }
+
+  .matrix-canvas-wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 64px);
+    grid-template-rows: repeat(4, 64px);
+    gap: 28px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .matrix-cell {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .matrix-shield {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: #84CC16;
+    stroke-width: 2.2;
+    filter: drop-shadow(0 0 10px rgba(132, 204, 22, 0.4));
+  }
+
+  .matrix-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .publish-pill-btn {
+    position: absolute;
+    bottom: 120px;
+    background: #1C1917;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px 32px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+
+  /* =========================================================================
+     SCENE 7: MASTER STUDIO DASHBOARD (42.5s - 46.5s)
+     ========================================================================= */
+  #scene7 {
+    background-color: var(--cream-bg);
+  }
+
+  .studio-dashboard-card {
+    width: 1680px;
+    height: 900px;
+    background: #0B0E14;
+    border: 1.5px solid rgba(28,25,23,0.12);
+    border-radius: 28px;
+    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.5);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    overflow: hidden;
+  }
+
+  .dash-sidebar {
+    background: #080A0F;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+    gap: 28px;
+  }
+
+  .dash-side-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748B;
+  }
+
+  .dash-side-icon.active {
+    background: rgba(255, 87, 34, 0.15);
+    color: var(--accent-orange);
+  }
+
+  .dash-main-area {
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow: hidden;
+  }
+
+  .dash-hero-banner {
+    height: 200px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+    padding: 36px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .dash-hero-title {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+  }
+
+  .dash-hero-sub {
+    font-size: 14px;
+    color: #94A3B8;
+  }
+
+  .dash-three-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr 380px;
+    gap: 24px;
+    flex: 1;
+  }
+
+  .dash-telemetry-box {
+    background: #111622;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 12px;
+  }
+
+  .stat-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 36px;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .dash-gear-feed {
+    background: #111622;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .gear-feed-item {
     display: flex;
     align-items: center;
     gap: 16px;
-    box-shadow: 0 24px 50px -10px rgba(15, 23, 42, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 12px 16px;
   }
 
-  .cta-arrow {
-    display: inline-block;
-    transition: transform 0.2s;
+  .gear-thumb {
+    width: 60px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .gear-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .gear-name { font-size: 14px; font-weight: 700; color: #FFFFFF; }
+  .gear-rating { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent-orange); }
+
+  .dash-quote-card {
+    background: #111622;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .editorial-quote {
+    font-family: 'Literata', serif;
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.5;
+    color: #E2E8F0;
+  }
+
+  /* =========================================================================
+     SCENE 8: CLIMACTIC OUTRO & BRAND SIGNATURE (46.5s - 50.13s)
+     ========================================================================= */
+  #scene8 {
+    background-color: var(--cream-bg);
+  }
+
+  .outro-punchline {
+    position: absolute;
+    font-size: 72px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: #1C1917;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  .outro-brand-block {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .outro-lockup {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .outro-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 20px;
+    background: #1C1917;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 16px 36px -6px rgba(28,25,23,0.3);
+    position: relative;
+  }
+
+  .outro-icon svg {
+    width: 38px;
+    height: 38px;
+    fill: #F4EFE6;
+  }
+
+  .outro-icon::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent-orange);
+    box-shadow: 0 0 10px var(--accent-orange);
+  }
+
+  .outro-name {
+    font-size: 76px;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    color: #1C1917;
+  }
+
+  .outro-tagline {
+    font-size: 20px;
+    font-weight: 500;
+    color: #78716C;
+    letter-spacing: -0.01em;
+  }
+
+  .outro-cta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    background: #1C1917;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    box-shadow: 0 12px 28px -4px rgba(28,25,23,0.25);
+    margin-top: 8px;
+  }
+
+  .outro-cta-pill svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    transition: transform 0.2s ease;
   }
 
 </style>
 </head>
 <body>
 
-  <!-- Ambient Backdrop -->
-  <div class="ambient-grid"></div>
-  <div class="ambient-glow-1"></div>
-  <div class="ambient-glow-2"></div>
+<div id="viewport">
 
-  <div class="scene-viewport">
+  <!-- =======================================================================
+       SCENE 1: WARM GALLERY & KINETIC CODE ATMOSPHERE (0.0s - 6.5s)
+       ======================================================================= -->
+  <section id="scene1" class="scene">
+    <!-- Floating tokens scattered in negative space (reinterpreting ref2 frame 2) -->
+    <div id="tok1" class="code-token token-orange" style="top: 140px; left: 240px;">const stack = await curate();</div>
+    <div id="tok2" class="code-token" style="top: 220px; right: 280px;"><span class="token-ring"></span> client_id="iwritetech-lab"</div>
+    <div id="tok3" class="code-token" style="top: 320px; left: 160px;"><span class="token-pink"></span> lumens: 420;</div>
+    <div id="tok4" class="code-token token-blue" style="top: 280px; right: 460px;">switch: "Tactile 62g"</div>
+    <div id="tok5" class="code-token" style="top: 680px; left: 260px;">(gear, bench) =&gt; { <span class="token-dot"></span><span class="token-dot"></span></div>
+    <div id="tok6" class="code-token token-green" style="top: 720px; right: 320px;">thock.profile();</div>
+    <div id="tok7" class="code-token" style="top: 780px; left: 480px;"><span class="token-ring"></span> decibels: 48.2 dBA</div>
+    <div id="tok8" class="code-token" style="top: 840px; right: 240px;">&gt; git push origin production</div>
 
-    <!-- =====================================================================
-         SCENE 1: KINETIC TYPOGRAPHY EXPANSION (0.0s - 14.5s)
-         ===================================================================== -->
-    <div id="scene1" class="scene scene-kinetic">
-      <!-- Phrase 1: The Internet -->
-      <div id="kineticP1" class="kinetic-phrase">
-        <div class="kinetic-line">
-          <span id="p1Prefix" class="kinetic-word-prefix">the</span>
-          <span id="p1Pill" class="kinetic-pill-badge blue">
-            <span>🌐</span>
-            <span>internet</span>
-          </span>
-          <span id="p1Suffix" class="kinetic-word-suffix">is drowning in SEO garbage.</span>
+    <div class="s1-center-wrap">
+      <div id="s1Headline1" class="s1-headline">
+        <div class="s1-tag-badge">&lt; DESK INTELLIGENCE &gt;</div>
+        <div>engineered for focus</div>
+      </div>
+      <div id="s1Headline2" class="s1-headline" style="opacity: 0;">
+        <div class="s1-tag-badge">&lt; HARDWARE LAB &gt;</div>
+        <div>built to last</div>
+      </div>
+      <div id="s1Brand" class="s1-brand-reveal" style="opacity: 0;">
+        <div class="s1-brand-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm3 3h2v2H7V8zm4 0h2v2h-2V8zm4 0h2v2h-2V8zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h10v2H7v-2z"/></svg>
         </div>
-        <div id="p1Sub" class="kinetic-subline">Every search result is an ad or affiliate farm in disguise.</div>
+        <div class="s1-brand-title">iWriteTech</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SCENE 2: FLOATING VIEWPORT HERO & 5-COLUMN MATRIX (6.5s - 14.5s)
+       ======================================================================= -->
+  <section id="scene2" class="scene">
+    <div id="heroCard" class="hero-viewport-card">
+      <div class="viewport-topbar">
+        <div class="topbar-left">
+          <div class="topbar-dots">
+            <div class="topbar-dot"></div>
+            <div class="topbar-dot"></div>
+            <div class="topbar-dot"></div>
+          </div>
+          <div class="topbar-brand">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#E2E8F0"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm3 3h2v2H7V8zm4 0h2v2h-2V8zm4 0h2v2h-2V8zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h10v2H7v-2z"/></svg>
+            iWriteTech Studio
+          </div>
+        </div>
+        <div class="topbar-nav">
+          <span class="active">Desk Setups</span>
+          <span>Mechanical Keyboards</span>
+          <span>Displays &amp; Docks</span>
+          <span>Lab Benchmarks</span>
+        </div>
+        <div class="topbar-actions">
+          <div class="topbar-badge">v2.4 ACTIVE</div>
+        </div>
       </div>
 
-      <!-- Phrase 2: Amazon Reviews -->
-      <div id="kineticP2" class="kinetic-phrase">
-        <div class="kinetic-line">
-          <span id="p2Prefix" class="kinetic-word-prefix">amazon</span>
-          <span id="p2Pill" class="kinetic-pill-badge amber">
-            <span>⭐</span>
-            <span>reviews</span>
-          </span>
-          <span id="p2Suffix" class="kinetic-word-suffix">are 90% fake affiliate junk.</span>
+      <div class="viewport-hero-media">
+        <img id="heroMediaImg" class="viewport-hero-img" src="images/hero-setup.png" alt="Hero Workspace">
+        <div class="viewport-hero-overlay"></div>
+        <div class="viewport-banner-text">
+          <div class="banner-pill">Curated Architecture</div>
+          <div class="banner-title">Craft your ultimate sanctuary ✦</div>
         </div>
-        <div id="p2Sub" class="kinetic-subline">Bots reviewing bots. 5 stars on paper, broken in two weeks.</div>
       </div>
 
-      <!-- Phrase 3: The Antidote -->
-      <div id="kineticP3" class="kinetic-phrase">
-        <div class="kinetic-line">
-          <span id="p3Prefix" class="kinetic-word-prefix">the</span>
-          <span id="p3Pill" class="kinetic-pill-badge emerald">
-            <span>✨</span>
-            <span>antidote</span>
-          </span>
-          <span id="p3Suffix" class="kinetic-word-suffix">is honest, obsessively tested tech.</span>
+      <div class="viewport-columns-bar">
+        <div id="col1" class="col-item active">
+          <div class="col-header">
+            <div class="col-title">Custom Keyboards</div>
+            <div class="col-desc">Acoustic dampening &amp; switches</div>
+          </div>
+          <div class="col-media-thumb">
+            <img src="images/keychron.png" alt="Keychron">
+          </div>
         </div>
-        <div id="p3Sub" class="kinetic-subline">Self-funded. Tested in real developer workflows. Zero sponsored fluff.</div>
+
+        <div id="col2" class="col-item">
+          <div class="col-header">
+            <div class="col-title">Studio Displays</div>
+            <div class="col-desc">Color accuracy &amp; 144Hz</div>
+          </div>
+          <div class="col-media-thumb">
+            <img src="images/light_bar.png" alt="Light Bar">
+          </div>
+        </div>
+
+        <div id="col3" class="col-item">
+          <div class="col-header">
+            <div class="col-title">Desk Mat &amp; Oak</div>
+            <div class="col-desc">Felt textures &amp; walnut rise</div>
+          </div>
+          <div class="col-media-thumb">
+            <img src="images/walnut_stand.png" alt="Walnut Stand">
+          </div>
+        </div>
+
+        <div id="col4" class="col-item">
+          <div class="col-header">
+            <div class="col-title">Thunderbolt Docks</div>
+            <div class="col-desc">Single-cable 100W PD hubs</div>
+          </div>
+          <div class="col-media-thumb">
+            <img src="images/satechi_hub.png" alt="Hub">
+          </div>
+        </div>
+
+        <div id="col5" class="col-item">
+          <div class="col-header">
+            <div class="col-title">Smart Lighting</div>
+            <div class="col-desc">Asymmetric monitor lightbars</div>
+          </div>
+          <div class="col-media-thumb">
+            <img src="images/belkin_charger.png" alt="Charger">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SCENE 3: SNAPPED PILL & LAB FREQUENCY SPECTRUM (14.5s - 21.5s)
+       ======================================================================= -->
+  <section id="scene3" class="scene">
+    <!-- Motion blur streaks across canvas -->
+    <div id="pillBlur1" class="motion-pill-bar" style="top: 380px; width: 380px;"></div>
+    <div id="pillBlur2" class="motion-pill-bar" style="top: 480px; width: 480px;"></div>
+    <div id="pillBlur3" class="motion-pill-bar" style="top: 580px; width: 320px;"></div>
+
+    <div id="s3PillStage" class="s3-pill-stage">
+      <div id="pillLeft" class="snapped-pill-btn">Hardware Lab</div>
+      <div id="pillCenterIcon" class="snapped-pill-icon">
+        <svg viewBox="0 0 24 24"><path d="M11 2v9H7l6 11v-9h4l-6-11z"/></svg>
+      </div>
+      <div id="pillRight" class="snapped-pill-btn">Sound Spectrum</div>
+    </div>
+
+    <div id="labBoard" class="lab-acoustic-board" style="opacity: 0;">
+      <div class="lab-board-top">
+        <div class="lab-title-wrap">
+          <div class="lab-main-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#38BDF8"><path d="M12 3v18M8 6v12M4 9v6M16 6v12M20 9v6" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/></svg>
+            Acoustic Frequency Spectrum
+          </div>
+          <div class="lab-subtitle">ISO-7779 CERTIFIED ANECHOIC CHAMBER BENCHMARK · 96kHz / 24-BIT</div>
+        </div>
+        <div class="lab-top-metrics">
+          <div class="lab-metric-chip">
+            <span class="label">Peak Frequency</span>
+            <span class="value">420 Hz (Thock)</span>
+          </div>
+          <div class="lab-metric-chip">
+            <span class="label">Sound Pressure</span>
+            <span class="value">48.2 dBA</span>
+          </div>
+          <div class="lab-metric-chip">
+            <span class="label">Clack Suppression</span>
+            <span class="value">-18.4 dB</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lab-board-content">
+        <div class="acoustic-spectrum-card">
+          <div class="spectrum-header">
+            <span class="spectrum-title">Real-Time Fast Fourier Transform (FFT)</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent-cyan);">ACTIVE MIC PING</span>
+          </div>
+          <div class="frequency-bars-container">
+            <div class="freq-bar-col"><div id="fb1" class="freq-bar-fill" style="height:35%;"></div><span class="freq-bar-label">63Hz</span></div>
+            <div class="freq-bar-col"><div id="fb2" class="freq-bar-fill" style="height:55%;"></div><span class="freq-bar-label">125Hz</span></div>
+            <div class="freq-bar-col"><div id="fb3" class="freq-bar-fill" style="height:88%;"></div><span class="freq-bar-label">250Hz</span></div>
+            <div class="freq-bar-col"><div id="fb4" class="freq-bar-fill" style="height:96%;"></div><span class="freq-bar-label">500Hz</span></div>
+            <div class="freq-bar-col"><div id="fb5" class="freq-bar-fill" style="height:72%;"></div><span class="freq-bar-label">1kHz</span></div>
+            <div class="freq-bar-col"><div id="fb6" class="freq-bar-fill" style="height:48%;"></div><span class="freq-bar-label">2kHz</span></div>
+            <div class="freq-bar-col"><div id="fb7" class="freq-bar-fill" style="height:32%;"></div><span class="freq-bar-label">4kHz</span></div>
+            <div class="freq-bar-col"><div id="fb8" class="freq-bar-fill" style="height:18%;"></div><span class="freq-bar-label">8kHz</span></div>
+          </div>
+        </div>
+
+        <div class="sound-test-cards-col">
+          <div class="sound-profile-card highlight">
+            <div class="sp-card-header">
+              <div class="sp-card-name">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF5722"><circle cx="12" cy="12" r="10"/></svg>
+                Keychron Q1 Pro (Double Gasket)
+              </div>
+              <div class="sp-card-badge">98.4 RATING</div>
+            </div>
+            <div class="sp-card-tags">
+              <span class="sp-tag">Banana Tactile</span>
+              <span class="sp-tag">FR4 Plate</span>
+              <span class="sp-tag">Poron Foam</span>
+            </div>
+          </div>
+
+          <div class="sound-profile-card">
+            <div class="sp-card-header">
+              <div class="sp-card-name">Mode Sonnet</div>
+              <div class="sp-card-badge" style="color:#38BDF8; background:rgba(56,189,248,0.15);">96.8 RATING</div>
+            </div>
+            <div class="sp-card-tags">
+              <span class="sp-tag">Copper Weight</span>
+              <span class="sp-tag">Top Mount</span>
+            </div>
+          </div>
+
+          <div class="sound-profile-card">
+            <div class="sp-card-header">
+              <div class="sp-card-name">NuPhy Air75 V2</div>
+              <div class="sp-card-badge" style="color:#A855F7; background:rgba(168,85,247,0.15);">94.2 RATING</div>
+            </div>
+            <div class="sp-card-tags">
+              <span class="sp-tag">Cowberry Linear</span>
+              <span class="sp-tag">Low Profile</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SCENE 4: MOBILE REPORT & TERMINAL HARD CUT (21.5s - 27.5s)
+       ======================================================================= -->
+  <section id="scene4" class="scene">
+    <div id="mobileCard" class="mobile-report-card">
+      <div class="mobile-top-media">
+        <img src="images/desk-hero.jpg" alt="Desk Setup">
+        <div class="mobile-appbar">
+          <div class="mobile-pill-brand">✦ iWriteTech</div>
+          <div id="s4GithubBtn" class="mobile-github-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-content">
+        <div class="mobile-score-box">
+          <div class="mobile-score-title">Benchmark Complete</div>
+          <div class="mobile-score-desc">Overall Ergonomics &amp; Acoustic Score: 98.4%</div>
+        </div>
+
+        <div>
+          <div class="mobile-spec-row">
+            <span class="k">Footprint Width</span>
+            <span class="v">120 cm</span>
+          </div>
+          <div class="mobile-spec-row">
+            <span class="k">Lumens / Lux</span>
+            <span class="v">450 Lux (5000K)</span>
+          </div>
+          <div class="mobile-spec-row">
+            <span class="k">Acoustic Damping</span>
+            <span class="v">-14.2 dBA</span>
+          </div>
+        </div>
+
+        <div class="mobile-action-btn">
+          View Complete Spec Sheet ➔
+        </div>
       </div>
     </div>
 
-    <!-- =====================================================================
-         SCENE 2: MACRO ZOOM TYPING & VALIDATION BUBBLES (14.5s - 25.5s)
-         ===================================================================== -->
-    <div id="scene2" class="scene scene-macro">
-      <div id="macroStage" class="macro-center-stage">
-        
-        <!-- Search Capsule -->
-        <div id="searchCapsule" class="search-capsule">
-          <div class="search-icon-box">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <div id="s4RightGallery" class="s4-right-gallery">
+      <div class="s4-feature-badge">LAB VERIFIED ARCHITECTURE</div>
+      <div class="s4-main-headline">Engineered for absolute daily clarity.</div>
+      <div class="s4-card-preview">
+        <img src="images/gaming_setup.jpg" alt="Setup Preview">
+      </div>
+    </div>
+
+    <!-- TERMINAL HARD-CUT OVERLAY -->
+    <div id="termOverlay" class="terminal-hardcut-overlay">
+      <div class="terminal-watermark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#64748B"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm3 3h2v2H7V8zm4 0h2v2h-2V8zm4 0h2v2h-2V8zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h10v2H7v-2z"/></svg>
+        iWriteTech Developer CLI
+      </div>
+      <div class="terminal-command-container">
+        <span class="term-arrow">➔</span>
+        <span class="term-cmd">iwritetech</span>
+        <span class="term-arg">setup</span>
+        <span id="termHighlight" class="term-highlight">--preset minimal-dev</span>
+        <span id="termCursor" class="term-cursor"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SCENE 5: AI AGENT WORKSPACE & 3D HARDWARE APPROVAL (27.5s - 35.5s)
+       ======================================================================= -->
+  <section id="scene5" class="scene">
+    <div id="aiStudioWindow" class="ai-studio-window">
+      <!-- Left: AI Chat Stream -->
+      <div class="ai-chat-panel">
+        <div class="ai-chat-header">
+          <div class="ai-avatar">
+            <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2zM7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18 2.5 2.5 0 0 0 10 15.5 2.5 2.5 0 0 0 7.5 13zm9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5z"/></svg>
           </div>
-          <div class="search-input-text">
-            <span id="typewriterText"></span><span id="searchCursor" class="search-cursor"></span>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#FFFFFF;">iWriteTech Agent</div>
+            <div style="font-size:11px; color:#64748B;">Automated Curation Engine</div>
           </div>
-          <div class="search-badge-kbd">ENTER ↵</div>
         </div>
 
-        <!-- Hero Product Card (Morphed) -->
-        <div id="productHeroCard" class="product-hero-card">
-          <div class="card-media-side">
-            <span class="card-media-badge">✓ LAB VERIFIED</span>
-            <img src="images/keychron.png" alt="Keychron C3 Pro">
+        <div class="ai-user-prompt-card">
+          "Pair an acoustic-damped 75% mechanical keyboard with a curved ultrawide for a 120cm desk"
+        </div>
+
+        <div class="ai-thought-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#94A3B8"><circle cx="12" cy="12" r="10"/></svg>
+          Thought for 1.4s ❯
+        </div>
+
+        <div class="ai-plan-text">
+          I'll install verified lab sound test profiles and compute desk clearance:
+        </div>
+
+        <div class="ai-approval-modal">
+          <div class="approval-header">
+            <span>Approval Required</span>
+            <span style="font-size:11px; color:#10B981; font-family:'JetBrains Mono';">MATCH 99.4%</span>
           </div>
-          <div class="card-content-side">
-            <div class="card-category-row">
-              <span class="card-category-tag">KEYBOARDS &bull; EDITORS' CHOICE</span>
-              <span class="card-rating-pill">★ 4.9 / 5.0</span>
+          <div class="approval-pkg-list">
+            <span>@iwritetech/keychron-q1-pro</span>
+            <span>@iwritetech/screenbar-halo</span>
+          </div>
+          <div class="approval-actions">
+            <div id="btnApprove" class="btn-approve">Approve Setup</div>
+            <div class="btn-reject">Reject</div>
+          </div>
+        </div>
+
+        <div class="ai-input-bottom">
+          <span>What would you like to refine?</span>
+          <div class="ai-send-btn">
+            <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: 3D Hardware Stage -->
+      <div class="ai-center-stage">
+        <div class="center-stage-header">
+          <div class="stage-badge">Lab Verified Hardware</div>
+          <div class="stage-title">Keychron Q1 Pro · Tactile Edition</div>
+        </div>
+
+        <img id="hardware3d" class="hardware-3d-model" src="images/keyboard-hero.png" alt="Keyboard 3D">
+
+        <div id="hoverChip1" class="interactive-hover-chip" style="top: 320px; left: 420px;">
+          <span class="chip-tag">Actuation Force</span>
+          <span class="chip-val">45cN Tactile (Banana)</span>
+        </div>
+      </div>
+
+      <!-- Right Specs & Configuration Panel -->
+      <div class="ai-right-panel">
+        <div class="right-panel-title">Component Specifications</div>
+
+        <div class="spec-progress-block">
+          <div class="spec-prog-header">
+            <span>Acoustic Thock Index</span>
+            <span style="color:#FF5722; font-weight:700;">9.8 / 10</span>
+          </div>
+          <div class="spec-prog-bar"><div class="spec-prog-fill" style="width: 98%;"></div></div>
+        </div>
+
+        <div class="spec-progress-block">
+          <div class="spec-prog-header">
+            <span>Desk Footprint</span>
+            <span style="color:#38BDF8; font-weight:700;">32.5 cm</span>
+          </div>
+          <div class="spec-prog-bar"><div class="spec-prog-fill" style="width: 45%; background:#38BDF8;"></div></div>
+        </div>
+
+        <div class="spec-progress-block">
+          <div class="spec-prog-header">
+            <span>Wireless Polling Rate</span>
+            <span style="color:#10B981; font-weight:700;">1000 Hz</span>
+          </div>
+          <div class="spec-prog-bar"><div class="spec-prog-fill" style="width: 95%; background:#10B981;"></div></div>
+        </div>
+
+        <div class="specs-cta-btn">
+          Export Build Config ➔
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SCENE 6: THERMAL SCAN & VERIFICATION MATRIX (35.5s - 42.5s)
+       ======================================================================= -->
+  <section id="scene6" class="scene">
+    <div id="thermalContainer" class="thermal-container">
+      <img class="thermal-bg-image" src="images/gaming_setup.jpg" alt="Thermal View">
+      <div class="thermal-spectral-overlay"></div>
+      <div id="thermalScanLine" class="thermal-scan-line"></div>
+
+      <div id="thermalBtn" class="thermal-center-btn">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        Start Security &amp; Lab Check
+      </div>
+
+      <div id="diagCard" class="diagnostic-card" style="opacity: 0;">
+        <div class="diag-top">
+          <div class="diag-title">LabReport <span class="diag-pill">PUBLIC</span></div>
+          <span style="font-family:'JetBrains Mono'; font-size:12px; color:#10B981;">100% UNBIASED</span>
+        </div>
+        <div class="diag-msg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#10B981"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Zero sponsored gear. 100% self-purchased lab testing.
+        </div>
+        <div class="diag-actions">
+          <div class="diag-btn">Apply Fixes</div>
+          <div class="diag-btn" style="background:var(--accent-orange);">Publish Review</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Security Shields Matrix Overlay (Reinterpreting ref2 frame 41) -->
+    <div id="secMatrixGrid" class="security-matrix-grid">
+      <div class="matrix-canvas-wrapper">
+        <!-- 28 grid cells with shields and dots -->
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><div class="matrix-dot"></div></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><div class="matrix-dot"></div></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+
+        <div class="matrix-cell"><div class="matrix-dot"></div></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><div class="matrix-dot"></div></div>
+
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><div class="matrix-dot"></div></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+
+        <div class="matrix-cell"><div class="matrix-dot"></div></div>
+        <div class="matrix-cell"><div class="matrix-dot"></div></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><div class="matrix-dot"></div></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
+        <div class="matrix-cell"><div class="matrix-dot"></div></div>
+      </div>
+      <div id="publishBtn" class="publish-pill-btn">Deploy Review ➔</div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SCENE 7: MASTER STUDIO DASHBOARD (42.5s - 46.5s)
+       ======================================================================= -->
+  <section id="scene7" class="scene">
+    <div id="studioDashCard" class="studio-dashboard-card">
+      <div class="dash-sidebar">
+        <div class="dash-side-icon active">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+        </div>
+        <div class="dash-side-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5h-2v-2h2zm0-4h-2V7h2z"/></svg>
+        </div>
+        <div class="dash-side-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        </div>
+      </div>
+
+      <div class="dash-main-area">
+        <div class="dash-hero-banner">
+          <div class="dash-hero-title">Studio Sanctuary 01 · Minimalist Engineering</div>
+          <div class="dash-hero-sub">Complete ergonomic review · Acoustically isolated · Natural walnut palette</div>
+        </div>
+
+        <div class="dash-three-grid">
+          <div class="dash-telemetry-box">
+            <div class="stat-block">
+              <span class="stat-val">1,420+</span>
+              <span class="stat-label">Verified Lab Tests</span>
             </div>
-            <div>
-              <h2 class="card-product-title">Keychron C3 Pro</h2>
-              <div class="card-price-row">
-                <span class="card-price">$36.99</span>
-                <span class="card-price-sub">Best Budget Mechanical Board</span>
+            <div class="stat-block">
+              <span class="stat-val">0%</span>
+              <span class="stat-label">Sponsored Bias</span>
+            </div>
+            <div class="stat-block" style="border:none;">
+              <span class="stat-val" style="color:var(--accent-orange);">48.2k</span>
+              <span class="stat-label">Active Builders</span>
+            </div>
+          </div>
+
+          <div class="dash-gear-feed">
+            <div class="gear-feed-item">
+              <img class="gear-thumb" src="images/keychron.png" alt="Keychron">
+              <div class="gear-info">
+                <span class="gear-name">Keychron Q1 Pro (Double Gasket)</span>
+                <span class="gear-rating">★ 9.8 / 10 · EDITOR CHOICE</span>
               </div>
             </div>
-            <div class="card-specs-grid">
-              <span class="spec-chip">Red Linear Switches</span>
-              <span class="spec-chip">Gasket Mount</span>
-              <span class="spec-chip">QMK / VIA Programmable</span>
-              <span class="spec-chip">Acoustic Foam</span>
-              <span class="spec-chip">Mac / Windows</span>
-            </div>
-            <div class="card-verdict-box">
-              "The most astonishing sub-$40 typing experience ever tested. Outclasses $150 boards in acoustics."
-            </div>
-          </div>
-        </div>
 
-        <!-- Social Validation Bubbles -->
-        <div id="bubble1" class="social-bubble bubble-pos-1">
-          <div class="bubble-avatar">AC</div>
-          <div class="bubble-text-wrap">
-            <div class="bubble-author">Alex Chen <span class="bubble-handle">@alexchen_dev</span></div>
-            <div class="bubble-quote">"Replaced my $220 custom board with this based on your review. The acoustics are absurdly good."</div>
-          </div>
-        </div>
-
-        <div id="bubble2" class="social-bubble bubble-pos-2">
-          <div class="bubble-avatar green">SJ</div>
-          <div class="bubble-text-wrap">
-            <div class="bubble-author">Sarah Jenkins <span class="bubble-handle">@sarah_ux</span></div>
-            <div class="bubble-quote">"Finally honest reviews without sponsored regurgitation. iWriteTech saved me hours of research."</div>
-          </div>
-        </div>
-
-        <div id="bubble3" class="social-bubble bubble-pos-3">
-          <div class="bubble-avatar amber">MV</div>
-          <div class="bubble-text-wrap">
-            <div class="bubble-author">Marcus Vance <span class="bubble-handle">@marcustech</span></div>
-            <div class="bubble-quote">"The switch latency and acoustic damping breakdown was 100% spot-on. Instant bookmark."</div>
-          </div>
-        </div>
-
-        <!-- Stats Pill -->
-        <div id="macroStatsPill" class="macro-stats-pill">
-          <span class="stats-pulse-dot"></span>
-          <span id="counterStats">14,820 engineers guided this month</span>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- =====================================================================
-         SCENE 3: 2.5D MASSIVE MATRIX PERSPECTIVE GRID (25.5s - 37.0s)
-         ===================================================================== -->
-    <div id="scene3" class="scene scene-matrix">
-      <div class="matrix-blur-top"></div>
-      <div class="matrix-blur-bottom"></div>
-
-      <div id="matrixHeader" class="matrix-header-overlay">
-        <div class="matrix-header-title">150+ OBSESSIVELY TESTED GUIDES</div>
-        <div class="matrix-header-sub">From $35 budget marvels to endgame developer battlestations</div>
-      </div>
-
-      <div id="matrixStage" class="matrix-stage">
-        <!-- 30 Cards with real high-res photography -->
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.8</span><img src="images/keychron.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">KEYBOARDS</span><div class="grid-card-title">Keychron C3 Pro Mechanical</div><div class="grid-card-price">$36.99</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.9</span><img src="images/light_bar.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">LIGHTING</span><div class="grid-card-title">BenQ ScreenBar Halo Wireless</div><div class="grid-card-price">$179.00</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.7</span><img src="images/walnut_stand.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">STANDS</span><div class="grid-card-title">Grovemade Solid Walnut Desk Shelf</div><div class="grid-card-price">$260.00</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.6</span><img src="images/satechi_hub.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">DOCKS</span><div class="grid-card-title">Satechi Thunderbolt 4 Slim Hub</div><div class="grid-card-price">$189.99</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.5</span><img src="images/belkin_charger.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">POWER</span><div class="grid-card-title">Belkin BoostCharge Pro 3-in-1</div><div class="grid-card-price">$149.95</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.8</span><img src="images/desk_mat.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">ACCESSORIES</span><div class="grid-card-title">Felt &amp; Vegan Leather Desk Pad</div><div class="grid-card-price">$48.00</div></div>
-        </div>
-
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.7</span><img src="images/twelve_south.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">LAPTOP STANDS</span><div class="grid-card-title">Twelve South Curve Flex MacBook</div><div class="grid-card-price">$79.99</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.9</span><img src="images/setup_hero.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">SETUPS</span><div class="grid-card-title">The Minimalist Wood &amp; Aluminum Studio</div><div class="grid-card-price">Build Guide</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.6</span><img src="images/keyboard_mech.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">CUSTOM BOARDS</span><div class="grid-card-title">NuPhy Air75 V2 Low Profile</div><div class="grid-card-price">$119.95</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.8</span><img src="images/setup_study.jpg"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">WORKSTATIONS</span><div class="grid-card-title">Dual 4K Monitor Developer Rig</div><div class="grid-card-price">Editorial</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.5</span><img src="images/wireless_charger.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">CHARGING</span><div class="grid-card-title">Anker MagGo Qi2 Magnetic Stand</div><div class="grid-card-price">$99.99</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.7</span><img src="images/desk-hero.jpg"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">FURNITURE</span><div class="grid-card-title">Herman Miller Embody Chair Guide</div><div class="grid-card-price">$1,795.00</div></div>
-        </div>
-
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.8</span><img src="images/keyboard_prem.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">KEYBOARDS</span><div class="grid-card-title">Mode Sonnet Custom Aluminum</div><div class="grid-card-price">$349.00</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.5</span><img src="images/satechi_hub.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">CONNECTIVITY</span><div class="grid-card-title">CalDigit TS4 Thunderbolt 4 Station</div><div class="grid-card-price">$399.99</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.9</span><img src="images/light_bar.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">LIGHTING</span><div class="grid-card-title">Xiaomi Computer Monitor Light Bar</div><div class="grid-card-price">$49.99</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.6</span><img src="images/keychron.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">KEYBOARDS</span><div class="grid-card-title">Keychron Q1 Pro Wireless Custom</div><div class="grid-card-price">$199.00</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.8</span><img src="images/gaming_setup.jpg"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">HYBRID SETUPS</span><div class="grid-card-title">Stealth Dark Mode Ultrawide Station</div><div class="grid-card-price">Build Guide</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.7</span><img src="images/walnut_stand.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">ORGANIZERS</span><div class="grid-card-title">Oakywood Dual Monitor Stand Wood</div><div class="grid-card-price">$180.00</div></div>
-        </div>
-
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.5</span><img src="images/belkin_charger.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">POWER</span><div class="grid-card-title">Nomad Base One Max MagSafe</div><div class="grid-card-price">$150.00</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.9</span><img src="images/desk-hero.jpg"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">DESKS</span><div class="grid-card-title">Uplift V2 Commercial Standing Desk</div><div class="grid-card-price">$749.00</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.8</span><img src="images/twelve_south.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">ACCESSORIES</span><div class="grid-card-title">Roost V3 Ultra-Portable Laptop Stand</div><div class="grid-card-price">$89.95</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.7</span><img src="images/setup_hero.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">CREATIVE GEAR</span><div class="grid-card-title">Studio Display Minimalist Rig</div><div class="grid-card-price">Curated</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.6</span><img src="images/keyboard_mech.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">SWITCHES</span><div class="grid-card-title">Gateron Oil King Linear Guide</div><div class="grid-card-price">$65.00</div></div>
-        </div>
-        <div class="grid-card">
-          <div class="grid-card-thumb"><span class="grid-card-score">9.9</span><img src="images/desk_mat.png"></div>
-          <div class="grid-card-info"><span class="grid-card-cat">DESK PADS</span><div class="grid-card-title">Orbitkey Desk Mat with Toolbar</div><div class="grid-card-price">$89.00</div></div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- =====================================================================
-         SCENE 4: VERTICAL STEPPER PIPELINE & BENCHMARK LAB (37.0s - 48.0s)
-         ===================================================================== -->
-    <div id="scene4" class="scene scene-pipeline">
-      <!-- Left Stepper Rail -->
-      <div class="stepper-rail-column">
-        <div class="stepper-track-bg"></div>
-        <div id="stepperTrackFill" class="stepper-track-fill"></div>
-
-        <div id="stepNode1" class="stepper-node-row">
-          <div class="stepper-node-dot">01</div>
-          <div class="stepper-node-info">
-            <div class="stepper-node-label">DISCOVERY &amp; SELECTION</div>
-            <div class="stepper-node-title">Top 10 Contenders Filtered</div>
-            <div class="stepper-node-desc">Screened from community consensus, not affiliate rankings.</div>
-          </div>
-        </div>
-
-        <div id="stepNode2" class="stepper-node-row">
-          <div class="stepper-node-dot">02</div>
-          <div class="stepper-node-info">
-            <div class="stepper-node-label">LAB STRESS TESTING</div>
-            <div class="stepper-node-title">30 Days of Real Workflows</div>
-            <div class="stepper-node-desc">500,000+ keystrokes of software engineering &amp; writing.</div>
-          </div>
-        </div>
-
-        <div id="stepNode3" class="stepper-node-row">
-          <div class="stepper-node-dot">03</div>
-          <div class="stepper-node-info">
-            <div class="stepper-node-label">ACOUSTICS &amp; TACTILITY</div>
-            <div class="stepper-node-title">Decibel &amp; Switch Profiling</div>
-            <div class="stepper-node-desc">Anechoic chamber recordings and switch spring curves.</div>
-          </div>
-        </div>
-
-        <div id="stepNode4" class="stepper-node-row">
-          <div class="stepper-node-dot">04</div>
-          <div class="stepper-node-info">
-            <div class="stepper-node-label">EDITORIAL INTEGRITY</div>
-            <div class="stepper-node-title">100% Self-Funded &amp; Unbiased</div>
-            <div class="stepper-node-desc">Bought at retail. Zero PR loaners. Zero sponsored verdicts.</div>
-          </div>
-        </div>
-
-        <div id="stepNode5" class="stepper-node-row">
-          <div class="stepper-node-dot">05</div>
-          <div class="stepper-node-info">
-            <div class="stepper-node-label">THE VERDICT</div>
-            <div class="stepper-node-title">Definitive Recommendation</div>
-            <div class="stepper-node-desc">Only the top 1% hardware receives our Editors' Choice seal.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Inspection Dashboard -->
-      <div class="lab-dashboard-column">
-        <!-- Lab Top Bar -->
-        <div class="lab-top-bar">
-          <div class="lab-badge">
-            <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563EB;"></span>
-            <span>iWriteTech Hardware Testing Protocol v4.2</span>
-          </div>
-          <div class="lab-live-status">
-            <span class="stats-pulse-dot"></span>
-            <span>BENCHMARK ACTIVE</span>
-          </div>
-        </div>
-
-        <!-- Phase Container -->
-        <div class="lab-phase-container">
-          <!-- Phase 1: Waveforms -->
-          <div id="labPhase1" class="lab-phase">
-            <div>
-              <h3 style="font-size:30px;font-weight:800;color:#0F172A;letter-spacing:-0.02em;">Acoustic Spectrum &amp; Switch Response</h3>
-              <p style="font-size:15px;color:#64748B;margin-top:4px;">High-frequency condenser capture during 120 WPM code typing session</p>
-            </div>
-            <div class="phase-1-center">
-              <div class="waveform-box" id="waveformBox"></div>
-              <div class="phase-metric-box">
-                <div class="metric-card">
-                  <div class="metric-label">SOUND PROFILE</div>
-                  <div class="metric-value" style="color:#047857;">42.4 dB</div>
-                  <div style="font-size:12px;color:#64748B;margin-top:4px;">Creamy deep thock, zero ping</div>
-                </div>
-                <div class="metric-card">
-                  <div class="metric-label">INPUT LATENCY</div>
-                  <div class="metric-value" style="color:#2563EB;">1.1 ms</div>
-                  <div style="font-size:12px;color:#64748B;margin-top:4px;">1000Hz polling rate verified</div>
-                </div>
+            <div class="gear-feed-item">
+              <img class="gear-thumb" src="images/light_bar.png" alt="Light Bar">
+              <div class="gear-info">
+                <span class="gear-name">BenQ ScreenBar Halo</span>
+                <span class="gear-rating">★ 9.6 / 10 · ZERO GLARE</span>
               </div>
             </div>
-            <div style="display:flex;gap:12px;">
-              <span class="spec-chip">✓ Red Linears Factory Lubed</span>
-              <span class="spec-chip">✓ Steel Plate Resonance Dampened</span>
-              <span class="spec-chip">✓ Screw-in Stabilizers Tuned</span>
-            </div>
-          </div>
 
-          <!-- Phase 2: Keystroke Endurance -->
-          <div id="labPhase2" class="lab-phase">
-            <div>
-              <h3 style="font-size:30px;font-weight:800;color:#0F172A;letter-spacing:-0.02em;">30-Day Heavy Workflow Endurance</h3>
-              <p style="font-size:15px;color:#64748B;margin-top:4px;">Continuous daily production test across macOS, Windows, and Linux</p>
-            </div>
-            <div class="phase-1-center">
-              <div style="flex:1;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:16px;">
-                <div style="display:flex;justify-content:space-between;align-items:center;">
-                  <span style="font-size:15px;font-weight:700;color:#334155;">Keystrokes Logged</span>
-                  <span style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:#0F172A;" id="keystrokeCounter">524,800</span>
-                </div>
-                <div style="width:100%;height:10px;background:#E2E8F0;border-radius:5px;overflow:hidden;">
-                  <div style="width:100%;height:100%;background:linear-gradient(to right, #2563EB, #10B981);"></div>
-                </div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
-                  <div style="background:#FFF;padding:12px;border-radius:8px;border:1px solid #E2E8F0;">
-                    <div style="font-size:12px;color:#64748B;">Keycap Shine Test</div>
-                    <div style="font-size:16px;font-weight:700;color:#047857;margin-top:2px;">Zero Degradation</div>
-                  </div>
-                  <div style="background:#FFF;padding:12px;border-radius:8px;border:1px solid #E2E8F0;">
-                    <div style="font-size:12px;color:#64748B;">Gasket Flex Recovery</div>
-                    <div style="font-size:16px;font-weight:700;color:#047857;margin-top:2px;">100% Elasticity</div>
-                  </div>
-                </div>
-              </div>
-              <div class="phase-metric-box">
-                <div class="metric-card">
-                  <div class="metric-label">OVERALL ENDURANCE</div>
-                  <div class="metric-value" style="color:#047857;">9.9 / 10</div>
-                  <div style="font-size:12px;color:#64748B;margin-top:4px;">Built like a tank</div>
-                </div>
-              </div>
-            </div>
-            <div style="display:flex;gap:12px;">
-              <span class="spec-chip">✓ Zero Chattering</span>
-              <span class="spec-chip">✓ Solid USB-C Retention</span>
-              <span class="spec-chip">✓ No Creaking</span>
-            </div>
-          </div>
-
-          <!-- Phase 4: Independence Pledge -->
-          <div id="labPhase4" class="lab-phase">
-            <div class="independence-seal-box">
-              <div class="seal-emblem">🛡️</div>
-              <h2 class="seal-title">100% Independent Editorial Charter</h2>
-              <p class="seal-desc">Every single piece of gear is purchased with our own funds. We accept zero manufacturer payments, zero review embargos, and zero affiliate kickback bias. Truth in tech journalism.</p>
-              <div style="display:flex;gap:16px;margin-top:8px;">
-                <span class="brand-pillar-pill">✓ SELF-PURCHASED</span>
-                <span class="brand-pillar-pill">✓ ZERO SPONSORED GRADES</span>
-                <span class="brand-pillar-pill">✓ OPEN TESTING DATA</span>
+            <div class="gear-feed-item">
+              <img class="gear-thumb" src="images/satechi_hub.png" alt="Satechi Hub">
+              <div class="gear-info">
+                <span class="gear-name">Satechi Thunderbolt 4 Multiport</span>
+                <span class="gear-rating">★ 9.5 / 10 · 40Gbps</span>
               </div>
             </div>
           </div>
 
-          <!-- Phase 5: Stamp Verdict -->
-          <div id="labPhase5" class="lab-phase">
-            <div class="verdict-stamp-box">
-              <div class="gold-stamp" id="goldStamp">★ EDITORS' CHOICE 2026</div>
-              <h2 style="font-size:38px;font-weight:800;color:#0F172A;letter-spacing:-0.02em;">Keychron C3 Pro</h2>
-              <p style="font-size:19px;color:#475569;max-width:600px;line-height:1.45;">"A masterclass in modern hardware value. Demonstrates that extraordinary ergonomics and typing acoustics don't require spending hundreds of dollars."</p>
+          <div class="dash-quote-card">
+            <div class="editorial-quote">
+              “The most rigorously tested workspace reviews on the internet. Built for developers who care about every millimeter.”
+            </div>
+            <div style="font-size:12px; font-weight:700; color:#94A3B8;">
+              — iWriteTech Editorial Board
             </div>
           </div>
         </div>
-
       </div>
     </div>
+  </section>
 
-    <!-- =====================================================================
-         SCENE 5: CATEGORY FLIPPER & 3D PERSPECTIVE SEARCH (48.0s - 58.5s)
-         ===================================================================== -->
-    <div id="scene5" class="scene scene-categories">
-      
-      <!-- Center Category Flipper -->
-      <div id="catFlipperStage" class="cat-flipper-stage">
-        <div class="flipper-tag-row">
-          <div id="flipper1" class="flipper-badge"><span>⌨️</span><span>KEYBOARDS &amp; SWITCHES</span></div>
-          <div id="flipper2" class="flipper-badge"><span>🖥️</span><span>MINIMALIST DESK SETUPS</span></div>
-          <div id="flipper3" class="flipper-badge"><span>💻</span><span>MACBOOK PRO GEAR</span></div>
-          <div id="flipper4" class="flipper-badge"><span>🎧</span><span>AUDIO &amp; FOCUS HARDWARE</span></div>
-        </div>
-      </div>
-
-      <!-- Floating Elevated Search Bar -->
-      <div id="elevatedSearchBar" class="elevated-search-bar">
-        <div class="search-icon-box">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        </div>
-        <div class="elevated-search-text">
-          <span id="elevatedSearchInput"></span><span id="elevatedCursor" class="search-cursor"></span>
-        </div>
-        <div class="search-badge-kbd">CURATED STACK</div>
-      </div>
-
-      <!-- 3D Perspective Ground Plane with Trio Cards -->
-      <div id="cat3dGround" class="cat-3d-ground">
-        
-        <div class="trio-card" id="trioCard1">
-          <div class="trio-thumb"><img src="images/light_bar.png" alt="Light Bar"></div>
-          <div class="trio-body">
-            <div>
-              <span class="card-category-tag">LIGHTING</span>
-              <div class="trio-title">BenQ ScreenBar Halo</div>
-              <div class="trio-role">Zero-Glare Backlight System</div>
-            </div>
-            <div class="trio-score-row">
-              <span class="card-rating-pill">★ 9.9 / 10</span>
-              <span class="card-price" style="font-size:24px;">$179</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="trio-card" id="trioCard2">
-          <div class="trio-thumb"><img src="images/walnut_stand.png" alt="Walnut Stand"></div>
-          <div class="trio-body">
-            <div>
-              <span class="card-category-tag">DESK ERGONOMICS</span>
-              <div class="trio-title">Grovemade Desk Shelf</div>
-              <div class="trio-role">American Walnut &amp; Aluminum</div>
-            </div>
-            <div class="trio-score-row">
-              <span class="card-rating-pill">★ 9.8 / 10</span>
-              <span class="card-price" style="font-size:24px;">$260</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="trio-card" id="trioCard3">
-          <div class="trio-thumb"><img src="images/satechi_hub.png" alt="Thunderbolt Hub"></div>
-          <div class="trio-body">
-            <div>
-              <span class="card-category-tag">CONNECTIVITY</span>
-              <div class="trio-title">Satechi Thunderbolt 4</div>
-              <div class="trio-role">Single-Cable 96W Dock</div>
-            </div>
-            <div class="trio-score-row">
-              <span class="card-rating-pill">★ 9.7 / 10</span>
-              <span class="card-price" style="font-size:24px;">$189</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
+  <!-- =======================================================================
+       SCENE 8: CLIMACTIC OUTRO & BRAND SIGNATURE (46.5s - 50.13s)
+       ======================================================================= -->
+  <section id="scene8" class="scene">
+    <div id="outroPunchline" class="outro-punchline">
+      Build your sanctuary.
     </div>
 
-    <!-- =====================================================================
-         SCENE 6: PUNCHLINE, GRAND LOGO REVEAL & OUTRO (58.5s - 73.45s)
-         ===================================================================== -->
-    <div id="scene6" class="scene scene-outro">
-      
-      <!-- Part A: Punchline (58.5s - 63.5s) -->
-      <div id="outroPunchline" class="outro-punchline-box">
-        <h1 class="punchline-h1">Why settle for generic recommendations?</h1>
-        <p class="punchline-sub">Hardware journalism built for developers, writers, and creators who actually obsess over their craft.</p>
-      </div>
-
-      <!-- Part B: Brand Reveal & CTA (63.5s - 73.45s) -->
-      <div id="outroBrand" class="outro-brand-lockup">
-        <div class="brand-logo-emblem">iW</div>
-        <h1 class="brand-wordmark">iWrite<span>Tech</span></h1>
-        <div class="brand-tagline">The Definitive Hardware &amp; Desk Setup Journal</div>
-        
-        <div class="brand-pillars-row">
-          <div class="brand-pillar-pill">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>100% Self-Funded</span>
-          </div>
-          <div class="brand-pillar-pill">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Tested for Weeks</span>
-          </div>
-          <div class="brand-pillar-pill">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Zero Affiliate Fluff</span>
-          </div>
+    <div id="outroBrand" class="outro-brand-block" style="opacity: 0;">
+      <div class="outro-lockup">
+        <div class="outro-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm3 3h2v2H7V8zm4 0h2v2h-2V8zm4 0h2v2h-2V8zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h10v2H7v-2z"/></svg>
         </div>
-
-        <div class="brand-cta-button" id="brandCtaBtn">
-          <span>Explore iwritetech.com</span>
-          <span class="cta-arrow">➔</span>
-        </div>
+        <div class="outro-name">iWriteTech</div>
       </div>
-
+      <div class="outro-tagline">The Definitive Standard for Desk Tech &amp; Workspaces.</div>
+      <div class="outro-cta-pill">
+        explore iwritetech.com
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
     </div>
+  </section>
 
+  <!-- UNIVERSAL MOUSE CURSOR -->
+  <div id="globalCursor" class="cursor-pointer">
+    <svg width="24" height="24" viewBox="0 0 24 24">
+      <path d="M3 3l7 18 3-7 7-3L3 3z" fill="#000000" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/>
+    </svg>
   </div>
 
+</div>
+
 <script>
-  /* =========================================================================
-     MATHEMATICAL EASING & INTERPOLATION HELPERS
-     ========================================================================= */
-  function clamp(v, min, max) {
-    return Math.max(min, Math.min(max, v));
-  }
-
-  function lerp(start, end, t) {
-    return start + (end - start) * t;
-  }
-
-  function smoothstep(min, max, value) {
-    const x = Math.max(0, Math.min(1, (value - min) / (max - min)));
+  // Math & Animation Helper Library
+  function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function smoothstep(min, max, val) {
+    const x = Math.max(0, Math.min(1, (val - min) / (max - min)));
     return x * x * (3 - 2 * x);
   }
-
-  function easeOutCubic(t) {
-    return 1 - Math.pow(1 - t, 3);
+  function easeOutCubic(x) { return 1 - Math.pow(1 - x, 3); }
+  function easeInOutCubic(x) {
+    return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  }
+  function easeOutBack(x) {
+    const c1 = 1.70158;
+    const c3 = c1 + 1;
+    return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+  }
+  function spring(t, t0, duration, stiffness, damping) {
+    if (t < t0) return 0;
+    const p = clamp((t - t0) / duration, 0, 1);
+    const decay = Math.exp(-damping * p);
+    const osc = Math.cos(stiffness * p * Math.PI);
+    return 1 - decay * osc;
   }
 
-  function easeInOutCubic(t) {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  }
+  // DOM Elements
+  const scene1 = document.getElementById('scene1');
+  const scene2 = document.getElementById('scene2');
+  const scene3 = document.getElementById('scene3');
+  const scene4 = document.getElementById('scene4');
+  const scene5 = document.getElementById('scene5');
+  const scene6 = document.getElementById('scene6');
+  const scene7 = document.getElementById('scene7');
+  const scene8 = document.getElementById('scene8');
+  const cursor = document.getElementById('globalCursor');
 
-  // High-fidelity spring physics simulation
-  function spring(t, start, duration, freq = 3.5, decay = 5.0) {
-    if (t < start) return 0;
-    const progress = (t - start) / duration;
-    if (progress >= 1) return 1;
-    return 1 - Math.exp(-decay * progress) * Math.cos(freq * progress * Math.PI);
-  }
-
-  // Populate waveform bars for Scene 4
-  const waveformBox = document.getElementById('waveformBox');
-  const waveBarCount = 28;
-  const waveBars = [];
-  for (let i = 0; i < waveBarCount; i++) {
-    const bar = document.createElement('div');
-    bar.className = 'wave-bar';
-    waveformBox.appendChild(bar);
-    waveBars.push(bar);
-  }
-
-  /* =========================================================================
-     DETERMINISTIC TIMELINE SEEKER: window.seekTo(t)
-     ========================================================================= */
+  // Master Deterministic Timeline Seek
   window.seekTo = function(t) {
-    t = Math.max(0, Math.min(73.45, t));
-
-    const scene1 = document.getElementById('scene1');
-    const scene2 = document.getElementById('scene2');
-    const scene3 = document.getElementById('scene3');
-    const scene4 = document.getElementById('scene4');
-    const scene5 = document.getElementById('scene5');
-    const scene6 = document.getElementById('scene6');
-
-    // -----------------------------------------------------------------------
-    // SCENE 1: KINETIC TYPOGRAPHY (0.0s - 14.5s)
-    // -----------------------------------------------------------------------
-    if (t < 14.8) {
+    // -------------------------------------------------------------------------
+    // SCENE 1: WARM GALLERY & KINETIC CODE ATMOSPHERE (0.0s - 6.5s)
+    // -------------------------------------------------------------------------
+    if (t < 6.5) {
       scene1.style.opacity = '1';
-      const s1Scale = lerp(1.0, 1.04, t / 14.5);
-      scene1.style.transform = `scale(${s1Scale})`;
+      scene1.style.display = 'flex';
 
-      // Phrase 1: The Internet (0.0s - 4.7s)
-      const p1 = document.getElementById('kineticP1');
-      const p1Pill = document.getElementById('p1Pill');
-      const p1Suffix = document.getElementById('p1Suffix');
-      const p1Sub = document.getElementById('p1Sub');
+      // Drift tokens softly across negative space
+      const drift = t * 14;
+      document.getElementById('tok1').style.transform = `translate(${drift * 0.8}px, ${-drift * 0.4}px)`;
+      document.getElementById('tok2').style.transform = `translate(${-drift * 0.6}px, ${drift * 0.3}px)`;
+      document.getElementById('tok3').style.transform = `translate(${drift * 0.5}px, ${drift * 0.6}px)`;
+      document.getElementById('tok4').style.transform = `translate(${-drift * 0.7}px, ${-drift * 0.5}px)`;
+      document.getElementById('tok5').style.transform = `translate(${drift * 0.4}px, ${-drift * 0.3}px)`;
+      document.getElementById('tok6').style.transform = `translate(${-drift * 0.5}px, ${drift * 0.4}px)`;
+      document.getElementById('tok7').style.transform = `translate(${drift * 0.6}px, ${drift * 0.2}px)`;
+      document.getElementById('tok8').style.transform = `translate(${-drift * 0.4}px, ${-drift * 0.4}px)`;
 
-      if (t < 4.7) {
-        let p1Op = 0;
-        if (t < 0.8) p1Op = smoothstep(0, 0.4, t);
-        else if (t < 4.1) p1Op = 1;
-        else p1Op = 1 - smoothstep(4.1, 4.6, t);
-        p1.style.opacity = p1Op;
+      const h1 = document.getElementById('s1Headline1');
+      const h2 = document.getElementById('s1Headline2');
+      const brand = document.getElementById('s1Brand');
 
-        const sp1 = spring(t, 1.0, 1.2, 4.0, 5.0);
-        p1Pill.style.transform = `scale(${lerp(0, 1, sp1)})`;
-        p1Pill.style.width = `${lerp(0, 310, sp1)}px`;
-        p1Pill.style.opacity = smoothstep(1.0, 1.15, t);
-        
-        p1Suffix.style.opacity = smoothstep(1.2, 1.5, t);
-        p1Suffix.style.transform = `translateX(${lerp(30, 0, sp1)}px)`;
+      if (t < 2.5) {
+        h1.style.display = 'block';
+        h2.style.display = 'none';
+        brand.style.display = 'none';
 
-        p1Sub.style.opacity = smoothstep(1.6, 2.0, t);
-        p1Sub.style.transform = `translateY(${lerp(15, 0, easeOutCubic(clamp((t - 1.6) / 0.5, 0, 1)))}px)`;
+        const sp1 = spring(t, 0.1, 0.9, 3.0, 5.0);
+        h1.style.opacity = smoothstep(0.0, 0.4, t);
+        h1.style.transform = `scale(${lerp(0.88, 1, sp1)})`;
+      } else if (t < 4.2) {
+        h1.style.display = 'none';
+        h2.style.display = 'block';
+        brand.style.display = 'none';
 
-        if (t >= 4.1) {
-          const exitT = (t - 4.1) / 0.5;
-          p1.style.transform = `translateY(${lerp(0, -35, easeOutCubic(exitT))}px)`;
-        } else {
-          p1.style.transform = 'translateY(0)';
-        }
+        const sp2 = spring(t, 2.5, 0.8, 3.2, 5.2);
+        h2.style.opacity = smoothstep(2.5, 2.8, t);
+        h2.style.transform = `scale(${lerp(0.9, 1, sp2)})`;
       } else {
-        p1.style.opacity = '0';
+        h1.style.display = 'none';
+        h2.style.display = 'none';
+        brand.style.display = 'flex';
+
+        const spB = spring(t, 4.2, 1.0, 3.5, 5.5);
+        brand.style.opacity = smoothstep(4.2, 4.5, t);
+        brand.style.transform = `scale(${lerp(0.85, 1, spB)})`;
       }
 
-      // Phrase 2: Amazon Reviews (4.7s - 9.4s)
-      const p2 = document.getElementById('kineticP2');
-      const p2Pill = document.getElementById('p2Pill');
-      const p2Suffix = document.getElementById('p2Suffix');
-      const p2Sub = document.getElementById('p2Sub');
-
-      if (t >= 4.7 && t < 9.4) {
-        const localT = t - 4.7;
-        let p2Op = 0;
-        if (localT < 0.4) p2Op = smoothstep(0, 0.4, localT);
-        else if (localT < 4.1) p2Op = 1;
-        else p2Op = 1 - smoothstep(4.1, 4.6, localT);
-        p2.style.opacity = p2Op;
-
-        const sp2 = spring(t, 5.7, 1.2, 4.0, 5.0);
-        p2Pill.style.transform = `scale(${lerp(0, 1, sp2)})`;
-        p2Pill.style.width = `${lerp(0, 300, sp2)}px`;
-        p2Pill.style.opacity = smoothstep(5.7, 5.85, t);
-
-        p2Suffix.style.opacity = smoothstep(5.9, 6.2, t);
-        p2Suffix.style.transform = `translateX(${lerp(30, 0, sp2)}px)`;
-
-        p2Sub.style.opacity = smoothstep(6.3, 6.7, t);
-        p2Sub.style.transform = `translateY(${lerp(15, 0, easeOutCubic(clamp((t - 6.3) / 0.5, 0, 1)))}px)`;
-
-        if (localT >= 4.1) {
-          const exitT = (localT - 4.1) / 0.5;
-          p2.style.transform = `translateY(${lerp(0, -35, easeOutCubic(exitT))}px)`;
-        } else {
-          p2.style.transform = 'translateY(0)';
-        }
+      // Exit transition
+      if (t >= 5.8) {
+        const out = smoothstep(5.8, 6.5, t);
+        scene1.style.opacity = 1 - out;
+        scene1.style.transform = `scale(${lerp(1, 1.08, out)})`;
       } else {
-        p2.style.opacity = '0';
+        scene1.style.transform = 'scale(1)';
       }
-
-      // Phrase 3: The Antidote (9.4s - 14.5s)
-      const p3 = document.getElementById('kineticP3');
-      const p3Pill = document.getElementById('p3Pill');
-      const p3Suffix = document.getElementById('p3Suffix');
-      const p3Sub = document.getElementById('p3Sub');
-
-      if (t >= 9.4 && t < 14.8) {
-        const localT = t - 9.4;
-        let p3Op = 0;
-        if (localT < 0.4) p3Op = smoothstep(0, 0.4, localT);
-        else if (t < 14.0) p3Op = 1;
-        else p3Op = 1 - smoothstep(14.0, 14.6, t);
-        p3.style.opacity = p3Op;
-
-        const sp3 = spring(t, 10.4, 1.2, 4.0, 5.0);
-        p3Pill.style.transform = `scale(${lerp(0, 1, sp3)})`;
-        p3Pill.style.width = `${lerp(0, 330, sp3)}px`;
-        p3Pill.style.opacity = smoothstep(10.4, 10.55, t);
-
-        p3Suffix.style.opacity = smoothstep(10.6, 10.9, t);
-        p3Suffix.style.transform = `translateX(${lerp(30, 0, sp3)}px)`;
-
-        p3Sub.style.opacity = smoothstep(11.0, 11.4, t);
-        p3Sub.style.transform = `translateY(${lerp(15, 0, easeOutCubic(clamp((t - 11.0) / 0.5, 0, 1)))}px)`;
-
-        if (t >= 14.0) {
-          const exitT = (t - 14.0) / 0.6;
-          p3.style.transform = `scale(${lerp(1, 0.94, exitT)}) translateY(${lerp(0, -30, exitT)}px)`;
-        } else {
-          p3.style.transform = 'translateY(0) scale(1)';
-        }
-      } else {
-        p3.style.opacity = '0';
-      }
-
     } else {
       scene1.style.opacity = '0';
+      scene1.style.display = 'none';
     }
 
-    // -----------------------------------------------------------------------
-    // SCENE 2: MACRO ZOOM TYPING & VALIDATION BUBBLES (14.5s - 25.5s)
-    // -----------------------------------------------------------------------
-    if (t >= 14.4 && t < 26.0) {
-      let s2Op = 1;
-      if (t < 15.0) s2Op = smoothstep(14.4, 15.0, t);
-      else if (t > 25.2) s2Op = 1 - smoothstep(25.2, 25.8, t);
-      scene2.style.opacity = s2Op;
+    // -------------------------------------------------------------------------
+    // SCENE 2: FLOATING VIEWPORT HERO & 5-COLUMN MATRIX (6.5s - 14.5s)
+    // -------------------------------------------------------------------------
+    if (t >= 6.4 && t < 14.6) {
+      scene2.style.opacity = '1';
+      scene2.style.display = 'flex';
 
-      const macroStage = document.getElementById('macroStage');
-      const searchCapsule = document.getElementById('searchCapsule');
-      const typewriterText = document.getElementById('typewriterText');
-      const searchCursor = document.getElementById('searchCursor');
-      const productHeroCard = document.getElementById('productHeroCard');
-      const bubble1 = document.getElementById('bubble1');
-      const bubble2 = document.getElementById('bubble2');
-      const bubble3 = document.getElementById('bubble3');
-      const macroStatsPill = document.getElementById('macroStatsPill');
-      const counterStats = document.getElementById('counterStats');
+      const heroCard = document.getElementById('heroCard');
+      const heroImg = document.getElementById('heroMediaImg');
 
-      // Macro Zoom Camera Curve:
-      // Starts zoomed-in (1.35x) during typing, then smoothly dollies back to 1.0x on card reveal
-      let cameraScale = 1.0;
-      if (t < 18.2) {
-        cameraScale = lerp(1.35, 1.30, (t - 14.5) / 3.7);
-      } else {
-        const dollyProg = clamp((t - 18.2) / 1.0, 0, 1);
-        cameraScale = lerp(1.30, 1.0, easeOutCubic(dollyProg));
-      }
-      macroStage.style.transform = `scale(${cameraScale})`;
+      // Entrance dolly-in
+      const entryProg = clamp((t - 6.5) / 1.2, 0, 1);
+      const spCard = spring(t, 6.5, 1.4, 3.0, 4.8);
+      const scale = lerp(0.88, 1.0, spCard);
+      const rotX = lerp(8, 0, spCard);
+      heroCard.style.transform = `perspective(1200px) rotateX(${rotX}deg) scale(${scale})`;
+      heroCard.style.opacity = smoothstep(6.5, 7.0, t);
 
-      // Typing Phase (15.2s - 18.0s)
-      const fullQuery = "Best mechanical keyboard under $100";
-      if (t < 18.4) {
-        searchCapsule.style.display = 'flex';
-        searchCapsule.style.opacity = '1';
-        productHeroCard.style.opacity = '0';
+      // Hero image subtle parallax drift
+      const pDrift = (t - 6.5) * 1.5;
+      heroImg.style.transform = `scale(${1.05 + (t - 6.5) * 0.01}) translateY(${-pDrift}px)`;
 
-        if (t < 15.2) {
-          typewriterText.textContent = "";
-        } else if (t < 17.8) {
-          const charProgress = clamp((t - 15.2) / 2.4, 0, 1);
-          const charsToShow = Math.floor(charProgress * fullQuery.length);
-          typewriterText.textContent = fullQuery.substring(0, charsToShow);
+      // Active column shift across bottom columns
+      const cols = [
+        document.getElementById('col1'),
+        document.getElementById('col2'),
+        document.getElementById('col3'),
+        document.getElementById('col4'),
+        document.getElementById('col5')
+      ];
+
+      const activeIdx = Math.min(4, Math.floor(clamp((t - 8.0) / 1.2, 0, 4.99)));
+      cols.forEach((col, idx) => {
+        if (idx === activeIdx) {
+          col.classList.add('active');
         } else {
-          typewriterText.textContent = fullQuery;
+          col.classList.remove('active');
         }
+      });
 
-        searchCursor.style.opacity = (Math.floor(t * 3.5) % 2 === 0) ? '1' : '0';
-
-        if (t >= 18.0) {
-          const pulse = Math.sin((t - 18.0) * 15) * 0.04;
-          searchCapsule.style.transform = `scale(${1 + pulse})`;
-        } else {
-          searchCapsule.style.transform = 'scale(1)';
-        }
+      // Exit zoom forward
+      if (t >= 13.8) {
+        const out = smoothstep(13.8, 14.5, t);
+        heroCard.style.transform = `perspective(1200px) scale(${lerp(1, 1.2, out)})`;
+        scene2.style.opacity = 1 - out;
       }
-
-      // Card Morph Reveal (18.4s - 25.5s)
-      if (t >= 18.3) {
-        const morphProg = clamp((t - 18.3) / 0.4, 0, 1);
-        searchCapsule.style.opacity = String(1 - morphProg);
-        searchCapsule.style.transform = `scale(${lerp(1, 0.9, morphProg)})`;
-        if (morphProg >= 1) searchCapsule.style.display = 'none';
-
-        const spCard = spring(t, 18.4, 1.0, 3.5, 5.0);
-        productHeroCard.style.opacity = smoothstep(18.3, 18.6, t);
-        productHeroCard.style.transform = `scale(${lerp(0.88, 1, spCard)}) rotateX(${lerp(8, 0, spCard)}deg)`;
-
-        // Social Bubbles
-        const spB1 = spring(t, 20.2, 0.9, 4.0, 5.5);
-        bubble1.style.opacity = smoothstep(20.2, 20.4, t);
-        bubble1.style.transform = `scale(${lerp(0.5, 1, spB1)}) translate(${lerp(-30, 0, spB1)}px, ${lerp(20, 0, spB1)}px)`;
-
-        const spB2 = spring(t, 21.4, 0.9, 4.0, 5.5);
-        bubble2.style.opacity = smoothstep(21.4, 21.6, t);
-        bubble2.style.transform = `scale(${lerp(0.5, 1, spB2)}) translate(${lerp(30, 0, spB2)}px, ${lerp(-20, 0, spB2)}px)`;
-
-        const spB3 = spring(t, 22.5, 0.9, 4.0, 5.5);
-        bubble3.style.opacity = smoothstep(22.5, 22.7, t);
-        bubble3.style.transform = `scale(${lerp(0.5, 1, spB3)}) translate(${lerp(-30, 0, spB3)}px, ${lerp(-15, 0, spB3)}px)`;
-
-        // Bottom Stats Pill
-        const spStat = spring(t, 21.0, 0.9, 4.0, 5.5);
-        macroStatsPill.style.opacity = smoothstep(21.0, 21.3, t);
-        macroStatsPill.style.transform = `translateX(-50%) scale(${lerp(0.7, 1, spStat)}) translateY(${lerp(20, 0, spStat)}px)`;
-
-        if (t >= 21.0) {
-          const countProg = clamp((t - 21.0) / 3.0, 0, 1);
-          const currentCount = Math.floor(lerp(12000, 14850, easeOutCubic(countProg)));
-          counterStats.textContent = `${currentCount.toLocaleString()} engineers guided this month`;
-        }
-      } else {
-        bubble1.style.opacity = '0';
-        bubble2.style.opacity = '0';
-        bubble3.style.opacity = '0';
-        macroStatsPill.style.opacity = '0';
-      }
-
     } else {
       scene2.style.opacity = '0';
+      scene2.style.display = 'none';
     }
 
-    // -----------------------------------------------------------------------
-    // SCENE 3: 2.5D MASSIVE MATRIX PERSPECTIVE GRID (25.5s - 37.0s)
-    // -----------------------------------------------------------------------
-    if (t >= 25.4 && t < 37.4) {
-      let s3Op = 1;
-      if (t < 26.2) s3Op = smoothstep(25.4, 26.2, t);
-      else if (t > 36.6) s3Op = 1 - smoothstep(36.6, 37.3, t);
-      scene3.style.opacity = s3Op;
+    // -------------------------------------------------------------------------
+    // SCENE 3: SNAPPED PILL & LAB FREQUENCY SPECTRUM (14.5s - 21.5s)
+    // -------------------------------------------------------------------------
+    if (t >= 14.4 && t < 21.6) {
+      scene3.style.opacity = '1';
+      scene3.style.display = 'flex';
 
-      const matrixStage = document.getElementById('matrixStage');
-      const matrixHeader = document.getElementById('matrixHeader');
+      const pillStage = document.getElementById('s3PillStage');
+      const pillLeft = document.getElementById('pillLeft');
+      const pillRight = document.getElementById('pillRight');
+      const pillIcon = document.getElementById('pillCenterIcon');
+      const labBoard = document.getElementById('labBoard');
 
-      const s3Progress = clamp((t - 25.5) / 11.5, 0, 1);
+      const blur1 = document.getElementById('pillBlur1');
+      const blur2 = document.getElementById('pillBlur2');
+      const blur3 = document.getElementById('pillBlur3');
 
-      const panY = lerp(-60, -320, easeInOutCubic(s3Progress));
-      const panX = lerp(0, -120, easeInOutCubic(s3Progress));
-      const rotX = lerp(16, 12, s3Progress);
-      const rotZ = lerp(-2.5, -0.5, s3Progress);
-      const scaleGrid = lerp(0.82, 0.95, s3Progress);
+      if (t < 17.0) {
+        // Snapping Pill Animation
+        pillStage.style.display = 'flex';
+        labBoard.style.display = 'none';
 
-      matrixStage.style.transform = `translate(-50%, -50%) translate3d(${panX}px, ${panY}px, 0) rotateX(${rotX}deg) rotateZ(${rotZ}deg) scale(${scaleGrid})`;
+        // Blurring streaks slide across background
+        if (t >= 14.5 && t < 15.6) {
+          const bProg = clamp((t - 14.5) / 1.1, 0, 1);
+          blur1.style.opacity = smoothstep(0, 0.4, bProg) * (1 - smoothstep(0.6, 1.0, bProg));
+          blur1.style.left = `${lerp(-400, 1920, bProg)}px`;
 
-      const spHeader = spring(t, 26.0, 1.0, 3.5, 5.0);
-      matrixHeader.style.opacity = smoothstep(26.0, 26.4, t);
-      matrixHeader.style.transform = `translateX(-50%) translateY(${lerp(-40, 0, spHeader)}px) scale(${lerp(0.9, 1, spHeader)})`;
+          blur2.style.opacity = smoothstep(0, 0.3, bProg) * (1 - smoothstep(0.7, 1.0, bProg));
+          blur2.style.right = `${lerp(-500, 1920, bProg)}px`;
+        } else {
+          blur1.style.opacity = '0';
+          blur2.style.opacity = '0';
+        }
 
+        // Left and Right pills fly in and snap together
+        const spLeft = spring(t, 14.8, 0.8, 4.0, 6.0);
+        const spRight = spring(t, 14.8, 0.8, 4.0, 6.0);
+        pillLeft.style.transform = `translateX(${lerp(-180, 0, spLeft)}px)`;
+        pillRight.style.transform = `translateX(${lerp(180, 0, spRight)}px)`;
+        pillIcon.style.transform = `scale(${lerp(0.2, 1.0, spLeft)})`;
+
+        pillStage.style.opacity = smoothstep(14.7, 15.0, t);
+
+        if (t >= 16.3) {
+          const zoomOut = smoothstep(16.3, 17.0, t);
+          pillStage.style.transform = `scale(${lerp(1, 2.4, zoomOut)})`;
+          pillStage.style.opacity = 1 - zoomOut;
+        } else {
+          pillStage.style.transform = 'scale(1)';
+        }
+      } else {
+        // Acoustic Lab Board in full view
+        pillStage.style.display = 'none';
+        labBoard.style.display = 'flex';
+
+        const spBoard = spring(t, 17.0, 1.0, 3.2, 5.0);
+        labBoard.style.opacity = smoothstep(17.0, 17.3, t);
+        labBoard.style.transform = `scale(${lerp(0.92, 1.0, spBoard)})`;
+
+        // Real-time bouncing frequency bars (synchronized FFT simulation)
+        const fbBars = [
+          { el: document.getElementById('fb1'), base: 35, speed: 8 },
+          { el: document.getElementById('fb2'), base: 55, speed: 12 },
+          { el: document.getElementById('fb3'), base: 88, speed: 15 },
+          { el: document.getElementById('fb4'), base: 96, speed: 18 },
+          { el: document.getElementById('fb5'), base: 72, speed: 14 },
+          { el: document.getElementById('fb6'), base: 48, speed: 10 },
+          { el: document.getElementById('fb7'), base: 32, speed: 9 },
+          { el: document.getElementById('fb8'), base: 18, speed: 7 }
+        ];
+
+        fbBars.forEach(bar => {
+          const osc = Math.sin(t * bar.speed) * 14 + Math.cos(t * bar.speed * 0.7) * 8;
+          bar.el.style.height = `${clamp(bar.base + osc, 15, 100)}%`;
+        });
+
+        // Exit zoom
+        if (t >= 20.8) {
+          const out = smoothstep(20.8, 21.5, t);
+          scene3.style.opacity = 1 - out;
+          scene3.style.transform = `scale(${lerp(1, 1.05, out)})`;
+        }
+      }
     } else {
       scene3.style.opacity = '0';
+      scene3.style.display = 'none';
     }
 
-    // -----------------------------------------------------------------------
-    // SCENE 4: VERTICAL STEPPER PIPELINE & BENCHMARK LAB (37.0s - 48.0s)
-    // -----------------------------------------------------------------------
-    if (t >= 36.8 && t < 48.4) {
-      let s4Op = 1;
-      if (t < 37.4) s4Op = smoothstep(36.8, 37.4, t);
-      else if (t > 47.6) s4Op = 1 - smoothstep(47.6, 48.3, t);
-      scene4.style.opacity = s4Op;
+    // -------------------------------------------------------------------------
+    // SCENE 4: MOBILE REPORT & TERMINAL HARD CUT (21.5s - 27.5s)
+    // -------------------------------------------------------------------------
+    if (t >= 21.4 && t < 27.6) {
+      scene4.style.opacity = '1';
+      scene4.style.display = 'flex';
 
-      const trackFill = document.getElementById('stepperTrackFill');
-      const s1 = document.getElementById('stepNode1').querySelector('.stepper-node-dot');
-      const s2 = document.getElementById('stepNode2').querySelector('.stepper-node-dot');
-      const s3 = document.getElementById('stepNode3').querySelector('.stepper-node-dot');
-      const s4 = document.getElementById('stepNode4').querySelector('.stepper-node-dot');
-      const s5 = document.getElementById('stepNode5').querySelector('.stepper-node-dot');
+      const mobCard = document.getElementById('mobileCard');
+      const rightGal = document.getElementById('s4RightGallery');
+      const termOverlay = document.getElementById('termOverlay');
 
-      const labP1 = document.getElementById('labPhase1');
-      const labP2 = document.getElementById('labPhase2');
-      const labP4 = document.getElementById('labPhase4');
-      const labP5 = document.getElementById('labPhase5');
+      if (t < 24.8) {
+        termOverlay.style.opacity = '0';
+        termOverlay.style.display = 'none';
 
-      const pipeProg = clamp((t - 37.0) / 10.0, 0, 1);
-      trackFill.style.height = `${pipeProg * 100}%`;
+        const spMob = spring(t, 21.5, 0.9, 3.5, 5.0);
+        mobCard.style.transform = `translateY(${lerp(60, 0, spMob)}px) scale(${lerp(0.92, 1, spMob)})`;
+        mobCard.style.opacity = smoothstep(21.5, 21.8, t);
 
-      s1.className = t >= 39.2 ? 'stepper-node-dot done' : (t >= 37.0 ? 'stepper-node-dot active' : 'stepper-node-dot');
-      s2.className = t >= 41.6 ? 'stepper-node-dot done' : (t >= 39.2 ? 'stepper-node-dot active' : 'stepper-node-dot');
-      s3.className = t >= 44.0 ? 'stepper-node-dot done' : (t >= 41.6 ? 'stepper-node-dot active' : 'stepper-node-dot');
-      s4.className = t >= 46.2 ? 'stepper-node-dot done' : (t >= 44.0 ? 'stepper-node-dot active' : 'stepper-node-dot');
-      s5.className = t >= 46.2 ? 'stepper-node-dot active' : 'stepper-node-dot';
+        const spGal = spring(t, 21.7, 0.9, 3.5, 5.0);
+        rightGal.style.transform = `translateX(${lerp(80, 0, spGal)}px)`;
+        rightGal.style.opacity = smoothstep(21.7, 22.0, t);
 
-      if (t < 39.5) {
-        labP1.style.opacity = '1';
-        labP2.style.opacity = '0';
-        labP4.style.opacity = '0';
-        labP5.style.opacity = '0';
+        // Mouse cursor glides to mobile GitHub button
+        if (t >= 22.8 && t < 24.8) {
+          cursor.style.opacity = '1';
+          const curProg = clamp((t - 22.8) / 1.4, 0, 1);
+          const cX = lerp(960, 680, easeOutCubic(curProg));
+          const cY = lerp(600, 210, easeOutCubic(curProg));
+          cursor.style.transform = `translate(${cX}px, ${cY}px)`;
 
-        for (let i = 0; i < waveBars.length; i++) {
-          const waveHeight = Math.sin(t * 12 + i * 0.4) * 35 + 45;
-          waveBars[i].style.height = `${waveHeight}%`;
+          if (t >= 24.2) {
+            cursor.style.transform = `translate(${cX}px, ${cY}px) scale(0.85)`;
+          }
+        } else {
+          cursor.style.opacity = '0';
         }
-      } else if (t < 43.5) {
-        labP1.style.opacity = '0';
-        labP2.style.opacity = '1';
-        labP4.style.opacity = '0';
-        labP5.style.opacity = '0';
 
-        const keyProg = clamp((t - 39.5) / 4.0, 0, 1);
-        const countKeys = Math.floor(lerp(100000, 524800, easeOutCubic(keyProg)));
-        document.getElementById('keystrokeCounter').textContent = countKeys.toLocaleString();
-      } else if (t < 46.0) {
-        labP1.style.opacity = '0';
-        labP2.style.opacity = '0';
-        labP4.style.opacity = '1';
-        labP5.style.opacity = '0';
       } else {
-        labP1.style.opacity = '0';
-        labP2.style.opacity = '0';
-        labP4.style.opacity = '0';
-        labP5.style.opacity = '1';
+        // DYNAMIC HARD CUT TO DARK TERMINAL! (Matches ref2 Frame 24-25)
+        cursor.style.opacity = '0';
+        termOverlay.style.display = 'flex';
+        termOverlay.style.opacity = '1';
 
-        const goldStamp = document.getElementById('goldStamp');
-        const stampProg = spring(t, 46.2, 0.8, 3.5, 6.0);
-        goldStamp.style.transform = `rotate(${lerp(15, -4, stampProg)}deg) scale(${lerp(2.2, 1, stampProg)})`;
+        const termCur = document.getElementById('termCursor');
+        const termHigh = document.getElementById('termHighlight');
+
+        // Terminal blink
+        termCur.style.opacity = (Math.floor(t * 4) % 2 === 0) ? '1' : '0';
+
+        // Selection highlight box animation
+        if (t >= 25.4) {
+          termHigh.style.background = '#2563EB';
+          termHigh.style.color = '#FFFFFF';
+        } else {
+          termHigh.style.background = 'transparent';
+          termHigh.style.color = '#38BDF8';
+        }
+
+        // Camera gentle drift
+        const termZoom = clamp((t - 24.8) / 2.6, 0, 1);
+        termOverlay.style.transform = `scale(${lerp(0.96, 1.04, termZoom)})`;
       }
-
     } else {
       scene4.style.opacity = '0';
+      scene4.style.display = 'none';
     }
 
-    // -----------------------------------------------------------------------
-    // SCENE 5: CATEGORY FLIPPER & 3D FLOATING SEARCH (48.0s - 58.5s)
-    // -----------------------------------------------------------------------
-    if (t >= 47.8 && t < 58.8) {
-      let s5Op = 1;
-      if (t < 48.3) s5Op = smoothstep(47.8, 48.3, t);
-      else if (t > 58.0) s5Op = 1 - smoothstep(58.0, 58.7, t);
-      scene5.style.opacity = s5Op;
+    // -------------------------------------------------------------------------
+    // SCENE 5: AI AGENT WORKSPACE & 3D HARDWARE APPROVAL (27.5s - 35.5s)
+    // -------------------------------------------------------------------------
+    if (t >= 27.4 && t < 35.6) {
+      scene5.style.opacity = '1';
+      scene5.style.display = 'flex';
 
-      const catFlipperStage = document.getElementById('catFlipperStage');
-      const f1 = document.getElementById('flipper1');
-      const f2 = document.getElementById('flipper2');
-      const f3 = document.getElementById('flipper3');
-      const f4 = document.getElementById('flipper4');
+      const aiWindow = document.getElementById('aiStudioWindow');
+      const hw3d = document.getElementById('hardware3d');
+      const chip1 = document.getElementById('hoverChip1');
+      const btnApprove = document.getElementById('btnApprove');
 
-      const elevatedSearchBar = document.getElementById('elevatedSearchBar');
-      const elevatedSearchInput = document.getElementById('elevatedSearchInput');
-      const elevatedCursor = document.getElementById('elevatedCursor');
-      const cat3dGround = document.getElementById('cat3dGround');
-      const trio1 = document.getElementById('trioCard1');
-      const trio2 = document.getElementById('trioCard2');
-      const trio3 = document.getElementById('trioCard3');
+      const spWin = spring(t, 27.5, 1.2, 3.2, 4.8);
+      aiWindow.style.opacity = smoothstep(27.5, 27.8, t);
+      aiWindow.style.transform = `scale(${lerp(0.9, 1.0, spWin)})`;
 
-      if (t < 52.5) {
-        catFlipperStage.style.display = 'flex';
-        elevatedSearchBar.style.opacity = '0';
-        cat3dGround.style.opacity = '0';
+      // 3D Model subtle float
+      const hwOscY = Math.sin((t - 27.5) * 2.2) * 8;
+      const hwRot = Math.cos((t - 27.5) * 1.5) * 2.5;
+      hw3d.style.transform = `translateY(${hwOscY}px) rotateZ(${hwRot}deg)`;
 
-        function handleFlipper(el, startT, endT) {
-          if (t >= startT && t < endT) {
-            el.style.display = 'flex';
-            const spF = spring(t, startT, 0.7, 4.0, 5.5);
-            el.style.transform = `rotateX(${lerp(-90, 0, spF)}deg) scale(${lerp(0.8, 1, spF)})`;
-            el.style.opacity = smoothstep(startT, startT + 0.1, t);
-          } else {
-            el.style.display = 'none';
+      // Cursor moves across 3D keyboard then down to [Approve Setup]
+      if (t >= 29.0 && t < 34.8) {
+        cursor.style.opacity = '1';
+        if (t < 31.5) {
+          // Hovering over keyboard
+          const p = clamp((t - 29.0) / 2.5, 0, 1);
+          const cx = lerp(850, 1050, easeOutCubic(p));
+          const cy = lerp(620, 520, easeOutCubic(p));
+          cursor.style.transform = `translate(${cx}px, ${cy}px)`;
+
+          chip1.style.opacity = smoothstep(29.8, 30.2, t);
+          chip1.style.transform = `translateY(${Math.sin(t * 3) * 4}px)`;
+        } else {
+          // Hovering to Approve button
+          const p = clamp((t - 31.5) / 1.5, 0, 1);
+          const cx = lerp(1050, 240, easeInOutCubic(p));
+          const cy = lerp(520, 530, easeInOutCubic(p));
+          cursor.style.transform = `translate(${cx}px, ${cy}px)`;
+
+          if (t >= 33.2) {
+            cursor.style.transform = `translate(${cx}px, ${cy}px) scale(0.85)`;
+            btnApprove.style.background = '#22C55E';
+            btnApprove.style.color = '#FFFFFF';
+            btnApprove.textContent = '✓ Approved';
           }
         }
-
-        handleFlipper(f1, 48.0, 49.1);
-        handleFlipper(f2, 49.1, 50.2);
-        handleFlipper(f3, 50.2, 51.3);
-        handleFlipper(f4, 51.3, 52.5);
-
       } else {
-        catFlipperStage.style.display = 'none';
-
-        const spBar = spring(t, 52.5, 0.9, 3.5, 5.0);
-        elevatedSearchBar.style.opacity = smoothstep(52.5, 52.8, t);
-        elevatedSearchBar.style.transform = `translateY(${lerp(-40, 0, spBar)}px) scale(${lerp(0.9, 1, spBar)})`;
-
-        const searchDeskQuery = "developer desk setup 2026";
-        if (t < 54.8) {
-          const typeP = clamp((t - 52.8) / 1.8, 0, 1);
-          const chars = Math.floor(typeP * searchDeskQuery.length);
-          elevatedSearchInput.textContent = searchDeskQuery.substring(0, chars);
-          elevatedCursor.style.opacity = (Math.floor(t * 3.5) % 2 === 0) ? '1' : '0';
-        } else {
-          elevatedSearchInput.textContent = searchDeskQuery;
-          elevatedCursor.style.opacity = '0';
-        }
-
-        const groundProg = clamp((t - 53.5) / 4.5, 0, 1);
-        const gRotX = lerp(28, 16, easeOutCubic(groundProg));
-        const gY = lerp(120, 40, easeOutCubic(groundProg));
-        cat3dGround.style.opacity = smoothstep(53.5, 54.0, t);
-        cat3dGround.style.transform = `translate(-50%, -50%) translateY(${gY}px) rotateX(${gRotX}deg) scale(0.96)`;
-
-        const spT1 = spring(t, 54.2, 0.9, 4.0, 5.5);
-        trio1.style.transform = `translateY(${lerp(80, 0, spT1)}px) scale(${lerp(0.9, 1, spT1)})`;
-
-        const spT2 = spring(t, 54.5, 0.9, 4.0, 5.5);
-        trio2.style.transform = `translateY(${lerp(80, 0, spT2)}px) scale(${lerp(0.9, 1, spT2)})`;
-
-        const spT3 = spring(t, 54.8, 0.9, 4.0, 5.5);
-        trio3.style.transform = `translateY(${lerp(80, 0, spT3)}px) scale(${lerp(0.9, 1, spT3)})`;
+        cursor.style.opacity = '0';
       }
 
+      // Exit transition
+      if (t >= 34.8) {
+        const out = smoothstep(34.8, 35.5, t);
+        scene5.style.opacity = 1 - out;
+        scene5.style.transform = `scale(${lerp(1, 1.06, out)})`;
+      }
     } else {
       scene5.style.opacity = '0';
+      scene5.style.display = 'none';
     }
 
-    // -----------------------------------------------------------------------
-    // SCENE 6: PUNCHLINE, GRAND LOGO REVEAL & OUTRO (58.5s - 73.45s)
-    // -----------------------------------------------------------------------
-    if (t >= 58.2) {
+    // -------------------------------------------------------------------------
+    // SCENE 6: THERMAL SCAN & VERIFICATION MATRIX (35.5s - 42.5s)
+    // -------------------------------------------------------------------------
+    if (t >= 35.4 && t < 42.6) {
       scene6.style.opacity = '1';
+      scene6.style.display = 'flex';
 
-      const punchlineBox = document.getElementById('outroPunchline');
-      const brandBox = document.getElementById('outroBrand');
-      const ctaBtn = document.getElementById('brandCtaBtn');
+      const scanLine = document.getElementById('thermalScanLine');
+      const diagCard = document.getElementById('diagCard');
+      const secGrid = document.getElementById('secMatrixGrid');
+      const thermalBtn = document.getElementById('thermalBtn');
 
-      if (t < 63.8) {
-        brandBox.style.display = 'none';
-        punchlineBox.style.display = 'flex';
+      if (t < 39.2) {
+        secGrid.style.opacity = '0';
+        secGrid.style.display = 'none';
 
-        let pOp = 0;
-        if (t < 59.2) pOp = smoothstep(58.5, 59.2, t);
-        else if (t < 63.0) pOp = 1;
-        else pOp = 1 - smoothstep(63.0, 63.6, t);
-        punchlineBox.style.opacity = pOp;
+        // Scan line sweep down
+        const scanP = (t - 35.5) / 2.4;
+        scanLine.style.top = `${(scanP % 1.0) * 100}%`;
 
-        punchlineBox.style.transform = `scale(${lerp(0.94, 1.02, clamp((t - 58.5) / 5.0, 0, 1))})`;
-      } else {
-        punchlineBox.style.display = 'none';
-        brandBox.style.display = 'flex';
-
-        const bOp = smoothstep(63.5, 64.2, t);
-        brandBox.style.opacity = bOp;
-
-        const spBrand = spring(t, 63.5, 1.4, 3.2, 4.5);
-        brandBox.style.transform = `scale(${lerp(0.9, 1, spBrand)}) translateY(${lerp(30, 0, spBrand)}px)`;
-
-        if (t >= 65.0) {
-          const breath = Math.sin((t - 65.0) * 2.5) * 0.02;
-          ctaBtn.style.transform = `scale(${1 + breath})`;
+        // Diagnostic card appears at t=37.2
+        if (t >= 37.2) {
+          diagCard.style.opacity = smoothstep(37.2, 37.6, t);
+          const spDiag = spring(t, 37.2, 0.8, 3.8, 5.2);
+          diagCard.style.transform = `scale(${lerp(0.88, 1, spDiag)}) translateY(${lerp(20, 0, spDiag)}px)`;
+        } else {
+          diagCard.style.opacity = '0';
         }
+
+        // Cursor clicks button
+        if (t >= 36.2 && t < 37.5) {
+          cursor.style.opacity = '1';
+          cursor.style.transform = `translate(960px, 540px) scale(${t >= 36.8 ? 0.85 : 1})`;
+        } else {
+          cursor.style.opacity = '0';
+        }
+
+      } else {
+        // Transition into the Glowing Security Shield Matrix! (Ref2 frame 41)
+        cursor.style.opacity = '0';
+        secGrid.style.display = 'flex';
+
+        const gIn = smoothstep(39.2, 39.7, t);
+        secGrid.style.opacity = gIn;
+
+        const shields = document.querySelectorAll('.matrix-shield');
+        shields.forEach((sh, idx) => {
+          const delay = 39.3 + (idx * 0.04);
+          const spSh = spring(t, delay, 0.6, 4.0, 5.5);
+          sh.style.transform = `scale(${lerp(0, 1, spSh)})`;
+          sh.style.opacity = smoothstep(delay, delay + 0.1, t);
+        });
+
+        const pubBtn = document.getElementById('publishBtn');
+        const spPub = spring(t, 40.5, 0.8, 3.5, 5.0);
+        pubBtn.style.transform = `scale(${lerp(0.85, 1, spPub)})`;
+        pubBtn.style.opacity = smoothstep(40.5, 40.8, t);
       }
 
+      // Exit transition
+      if (t >= 41.8) {
+        const out = smoothstep(41.8, 42.5, t);
+        scene6.style.opacity = 1 - out;
+      }
     } else {
       scene6.style.opacity = '0';
+      scene6.style.display = 'none';
     }
 
+    // -------------------------------------------------------------------------
+    // SCENE 7: MASTER STUDIO DASHBOARD (42.5s - 46.5s)
+    // -------------------------------------------------------------------------
+    if (t >= 42.4 && t < 46.6) {
+      scene7.style.opacity = '1';
+      scene7.style.display = 'flex';
+
+      const dashCard = document.getElementById('studioDashCard');
+      const spDash = spring(t, 42.5, 1.2, 3.0, 4.8);
+      dashCard.style.opacity = smoothstep(42.5, 42.9, t);
+      dashCard.style.transform = `scale(${lerp(0.92, 1.0, spDash)})`;
+
+      // Camera slow cinematic push
+      const push = clamp((t - 42.5) / 4.0, 0, 1);
+      dashCard.style.transform = `scale(${lerp(0.94, 1.02, push)})`;
+
+      if (t >= 45.8) {
+        const out = smoothstep(45.8, 46.5, t);
+        scene7.style.opacity = 1 - out;
+      }
+    } else {
+      scene7.style.opacity = '0';
+      scene7.style.display = 'none';
+    }
+
+    // -------------------------------------------------------------------------
+    // SCENE 8: CLIMACTIC OUTRO & BRAND SIGNATURE (46.5s - 50.13s)
+    // -------------------------------------------------------------------------
+    if (t >= 46.4) {
+      scene8.style.opacity = '1';
+      scene8.style.display = 'flex';
+
+      const punchline = document.getElementById('outroPunchline');
+      const brand = document.getElementById('outroBrand');
+
+      if (t < 48.0) {
+        punchline.style.display = 'block';
+        brand.style.display = 'none';
+
+        const spP = spring(t, 46.5, 0.8, 3.5, 5.0);
+        punchline.style.opacity = smoothstep(46.5, 46.8, t);
+        punchline.style.transform = `scale(${lerp(0.9, 1.0, spP)})`;
+      } else {
+        punchline.style.display = 'none';
+        brand.style.display = 'flex';
+
+        const spB = spring(t, 48.0, 1.2, 3.2, 4.8);
+        brand.style.opacity = smoothstep(48.0, 48.4, t);
+        brand.style.transform = `scale(${lerp(0.88, 1.0, spB)})`;
+      }
+    } else {
+      scene8.style.opacity = '0';
+      scene8.style.display = 'none';
+    }
   };
 
+  // Initialize at frame 0
   window.seekTo(0);
 </script>
 </body>

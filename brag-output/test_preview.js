@@ -99,14 +99,19 @@ async function main() {
     });
 
     const testTimestamps = [
-      { t: 2.2, name: 'scene1_kinetic_expansion.jpg' },
-      { t: 7.0, name: 'scene1_amazon_reviews.jpg' },
-      { t: 17.0, name: 'scene2_macro_typing.jpg' },
-      { t: 22.5, name: 'scene2_card_and_bubbles.jpg' },
-      { t: 30.0, name: 'scene3_matrix_grid.jpg' },
-      { t: 42.0, name: 'scene4_stepper_pipeline.jpg' },
-      { t: 55.5, name: 'scene5_3d_search_trio.jpg' },
-      { t: 68.0, name: 'scene6_grand_outro.jpg' }
+      { t: 2.0, name: 'scene1_kinetic_tokens.jpg' },
+      { t: 5.0, name: 'scene1_brand_reveal.jpg' },
+      { t: 9.5, name: 'scene2_floating_viewport.jpg' },
+      { t: 15.2, name: 'scene3_snapped_pills.jpg' },
+      { t: 18.5, name: 'scene3_acoustic_lab.jpg' },
+      { t: 23.5, name: 'scene4_mobile_report.jpg' },
+      { t: 26.0, name: 'scene4_terminal_command.jpg' },
+      { t: 30.5, name: 'scene5_ai_3d_keyboard.jpg' },
+      { t: 33.5, name: 'scene5_approval_click.jpg' },
+      { t: 38.0, name: 'scene6_diagnostic_card.jpg' },
+      { t: 40.5, name: 'scene6_shield_matrix.jpg' },
+      { t: 44.0, name: 'scene7_master_dashboard.jpg' },
+      { t: 49.0, name: 'scene8_climactic_outro.jpg' }
     ];
 
     for (const item of testTimestamps) {
@@ -114,11 +119,11 @@ async function main() {
         expression: `window.seekTo(${item.t})`
       });
       // Short pause for CSS paint
-      await new Promise(r => setTimeout(r, 100));
+      await new Promise(r => setTimeout(r, 120));
 
       const screenshot = await cdp.send('Page.captureScreenshot', {
         format: 'jpeg',
-        quality: 92
+        quality: 95
       });
 
       const filePath = path.join(previewDir, item.name);

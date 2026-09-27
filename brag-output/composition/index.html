@@ -6,35 +6,81 @@
 <title>iWriteTech Launch Video</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg-light: #F4EFE6;
-    --bg-dark: #0E0D0C;
-    --fg-light: #1C1A17;
-    --fg-dark: #F2EEE6;
-    --gold-light: #866432;
-    --gold-dark: #C9A66B;
-    --card-light: #EAE3D5;
-    --card-dark: #1B1917;
-    --border-light: #E4DDCE;
-    --border-dark: #2C2925;
-    --muted-light: #665f57;
-    --muted-dark: #a69f96;
+    --bg-main: #F8FAFC;
+    --bg-card: rgba(255, 255, 255, 0.94);
+    --border-subtle: rgba(226, 232, 240, 0.9);
+    --border-strong: rgba(203, 213, 225, 0.8);
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --brand-gold: #D97706;
+    --brand-gold-glow: rgba(217, 119, 6, 0.18);
+    --brand-emerald: #059669;
+    --brand-blue: #2563EB;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 12px 24px -4px rgba(15, 23, 42, 0.08), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+    --shadow-lg: 0 24px 48px -12px rgba(15, 23, 42, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+    --shadow-xl: 0 32px 64px -16px rgba(15, 23, 42, 0.16), 0 16px 32px -8px rgba(15, 23, 42, 0.08);
   }
 
   body {
     width: 1920px;
     height: 1080px;
     overflow: hidden;
-    font-family: 'Geist', -apple-system, sans-serif;
-    background: #000;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    background: radial-gradient(120% 90% at 50% 12%, #FFFFFF 0%, #F8FAFC 50%, #EDF2F7 100%);
+    color: var(--text-primary);
     position: relative;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* ==================== SCENE CONTAINER ==================== */
+  /* Subtle background pattern & ambient lighting */
+  .ambient-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(148, 163, 184, 0.14) 1.2px, transparent 1.2px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.75;
+  }
+
+  .ambient-glow-1 {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(217, 119, 6, 0.07) 0%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .ambient-glow-2 {
+    position: absolute;
+    width: 900px;
+    height: 700px;
+    bottom: -200px;
+    right: -100px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(70px);
+    pointer-events: none;
+  }
+
+  /* Master Scenes Container */
+  .scene-viewport {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+  }
+
   .scene {
     position: absolute;
     inset: 0;
@@ -43,969 +89,2202 @@
     justify-content: center;
     opacity: 0;
     pointer-events: none;
+    transform-origin: center center;
   }
 
-  /* ==================== SCENE 1: HOOK (0s - 3s) ==================== */
-  .scene-1 {
-    background: #000;
+  /* =========================================================================
+     SCENE 1: KINETIC TYPOGRAPHY EXPANSION (0.0s - 14.5s)
+     ========================================================================= */
+  .scene-kinetic {
     flex-direction: column;
-    gap: 0;
-    animation: scene1-visibility 20s ease forwards;
-  }
-
-  @keyframes scene1-visibility {
-    0%    { opacity: 1; }
-    14%   { opacity: 1; }
-    15%   { opacity: 0; }
-    100%  { opacity: 0; }
-  }
-
-  .hook-text {
-    font-family: 'Literata', serif;
-    font-size: 64px;
-    font-weight: 500;
-    color: var(--gold-dark);
     text-align: center;
-    max-width: 900px;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: hookFadeIn 20s ease forwards;
+    padding: 0 160px;
   }
 
-  @keyframes hookFadeIn {
-    0%    { opacity: 0; transform: translateY(20px); }
-    3%    { opacity: 1; transform: translateY(0); }
-    10%   { opacity: 1; transform: translateY(0); }
-    14%   { opacity: 0; transform: translateY(-10px); }
-    100%  { opacity: 0; }
-  }
-
-  /* Subtle golden glow behind hook text */
-  .hook-glow {
+  .kinetic-phrase {
     position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,166,107,0.08) 0%, transparent 70%);
-    animation: glowPulse 3s ease-in-out infinite;
-  }
-
-  @keyframes glowPulse {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.1); opacity: 0.8; }
-  }
-
-  /* ==================== SCENE 2: REVEAL (3s - 7s) ==================== */
-  .scene-2 {
-    background: var(--bg-light);
+    inset: 0;
+    display: flex;
     flex-direction: column;
-    gap: 32px;
-    animation: scene2-visibility 20s ease forwards;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
   }
 
-  @keyframes scene2-visibility {
-    0%    { opacity: 0; }
-    14%   { opacity: 0; }
-    15%   { opacity: 1; }
-    34%   { opacity: 1; }
-    35%   { opacity: 0; }
-    100%  { opacity: 0; }
-  }
-
-  .reveal-eyebrow {
+  .kinetic-line {
     display: flex;
     align-items: center;
+    justify-content: center;
+    font-size: 76px;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    color: var(--text-primary);
+  }
+
+  .kinetic-word-prefix {
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  .kinetic-pill-badge {
+    display: inline-flex;
+    align-items: center;
     gap: 12px;
-    opacity: 0;
-    animation: revealEyebrow 20s ease forwards;
-  }
-
-  @keyframes revealEyebrow {
-    0%, 16% { opacity: 0; transform: translateX(-20px); }
-    19%     { opacity: 1; transform: translateX(0); }
-    33%     { opacity: 1; }
-    35%     { opacity: 0; }
-    100%    { opacity: 0; }
-  }
-
-  .reveal-eyebrow .line {
-    width: 32px;
-    height: 1px;
-    background: var(--gold-light);
-  }
-
-  .reveal-eyebrow .label {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--gold-light);
-  }
-
-  .reveal-logo {
-    font-family: 'Literata', serif;
+    padding: 6px 24px;
+    border-radius: 999px;
     font-size: 52px;
     font-weight: 700;
-    color: var(--fg-light);
-    letter-spacing: -0.03em;
-    opacity: 0;
-    animation: revealLogo 20s ease forwards;
-  }
-
-  @keyframes revealLogo {
-    0%, 17% { opacity: 0; transform: scale(0.95); }
-    20%     { opacity: 1; transform: scale(1); }
-    33%     { opacity: 1; }
-    35%     { opacity: 0; }
-    100%    { opacity: 0; }
-  }
-
-  .reveal-logo .i-accent { color: var(--gold-light); }
-
-  .reveal-tagline {
-    font-family: 'Literata', serif;
-    font-size: 56px;
-    font-weight: 500;
-    color: var(--fg-light);
-    text-align: center;
-    max-width: 1000px;
-    line-height: 1.15;
     letter-spacing: -0.02em;
-    opacity: 0;
-    animation: revealTagline 20s ease forwards;
+    background: #FFFFFF;
+    border: 2px solid var(--border-strong);
+    box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.15);
+    margin: 0 14px;
+    vertical-align: middle;
+    overflow: hidden;
+    transform-origin: center center;
   }
 
-  @keyframes revealTagline {
-    0%, 19% { opacity: 0; transform: translateY(20px); }
-    22%     { opacity: 1; transform: translateY(0); }
-    33%     { opacity: 1; }
-    35%     { opacity: 0; }
-    100%    { opacity: 0; }
+  .kinetic-pill-badge.blue {
+    color: #1D4ED8;
+    background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+    border-color: #BFDBFE;
   }
 
-  .reveal-stats {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border-light);
-    opacity: 0;
-    animation: revealStats 20s ease forwards;
+  .kinetic-pill-badge.amber {
+    color: #B45309;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+    border-color: #FDE68A;
   }
 
-  @keyframes revealStats {
-    0%, 22% { opacity: 0; transform: translateY(20px); }
-    25%     { opacity: 1; transform: translateY(0); }
-    33%     { opacity: 1; }
-    35%     { opacity: 0; }
-    100%    { opacity: 0; }
+  .kinetic-pill-badge.emerald {
+    color: #047857;
+    background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+    border-color: #A7F3D0;
   }
 
-  .stat {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    font-size: 14px;
-    color: var(--muted-light);
+  .kinetic-word-suffix {
+    white-space: nowrap;
+    display: inline-block;
   }
 
-  .stat .value {
-    font-family: 'Geist Mono', monospace;
-    font-size: 14px;
+  .kinetic-subline {
+    margin-top: 32px;
+    font-size: 28px;
     font-weight: 500;
-    color: var(--fg-light);
+    color: var(--text-secondary);
+    letter-spacing: -0.015em;
+    max-width: 900px;
+    line-height: 1.4;
   }
 
-  /* ==================== SCENE 3: PRODUCT (7s - 11s) ==================== */
-  .scene-3 {
-    background: var(--bg-light);
-    padding: 80px 120px;
-    gap: 60px;
-    animation: scene3-visibility 20s ease forwards;
+  /* =========================================================================
+     SCENE 2: MACRO ZOOM TYPING & VALIDATION BUBBLES (14.5s - 25.5s)
+     ========================================================================= */
+  .scene-macro {
+    perspective: 1200px;
   }
 
-  @keyframes scene3-visibility {
-    0%    { opacity: 0; }
-    34%   { opacity: 0; }
-    35%   { opacity: 1; }
-    54%   { opacity: 1; }
-    55%   { opacity: 0; }
-    100%  { opacity: 0; }
-  }
-
-  .product-left {
-    flex: 1;
+  .macro-center-stage {
+    position: relative;
+    width: 920px;
     display: flex;
     flex-direction: column;
-    gap: 28px;
-    opacity: 0;
-    animation: productLeft 20s ease forwards;
-  }
-
-  @keyframes productLeft {
-    0%, 36% { opacity: 0; transform: translateX(-40px); }
-    39%     { opacity: 1; transform: translateX(0); }
-    53%     { opacity: 1; }
-    55%     { opacity: 0; }
-    100%    { opacity: 0; }
-  }
-
-  .product-left .section-label {
-    display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    transform-origin: center center;
   }
 
-  .product-left .section-label .line {
-    width: 24px;
-    height: 1px;
-    background: var(--gold-light);
-  }
-
-  .product-left .section-label span:last-child {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: var(--gold-light);
-  }
-
-  .product-left h2 {
-    font-family: 'Literata', serif;
-    font-size: 48px;
-    font-weight: 600;
-    color: var(--fg-light);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    max-width: 500px;
-  }
-
-  .product-left p {
-    font-size: 20px;
-    color: var(--muted-light);
-    line-height: 1.6;
-    max-width: 460px;
-  }
-
-  .categories-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 8px;
-    opacity: 0;
-    animation: categoriesIn 20s ease forwards;
-  }
-
-  @keyframes categoriesIn {
-    0%, 40% { opacity: 0; transform: translateY(12px); }
-    43%     { opacity: 1; transform: translateY(0); }
-    53%     { opacity: 1; }
-    55%     { opacity: 0; }
-    100%    { opacity: 0; }
-  }
-
-  .cat-pill {
-    padding: 8px 20px;
+  /* Floating Search Capsule */
+  .search-capsule {
+    position: absolute;
+    width: 860px;
+    height: 82px;
+    background: #FFFFFF;
     border-radius: 999px;
-    font-size: 13px;
-    font-weight: 500;
-    border: 1px solid var(--border-light);
-    color: var(--fg-light);
-    background: var(--card-light);
+    border: 1.5px solid var(--border-subtle);
+    box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.16), 0 0 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    gap: 20px;
+    transform-origin: center center;
   }
 
-  .cat-pill.active {
-    background: var(--gold-light);
-    color: var(--bg-light);
-    border-color: var(--gold-light);
-  }
-
-  /* Product card on the right */
-  .product-card-wrapper {
-    flex: 0 0 480px;
-    position: relative;
-    padding-right: 16px;
-    padding-bottom: 16px;
-    opacity: 0;
-    animation: productCard 20s ease forwards;
-  }
-
-  @keyframes productCard {
-    0%, 37% { opacity: 0; transform: translateX(60px); }
-    41%     { opacity: 1; transform: translateX(0); }
-    53%     { opacity: 1; }
-    55%     { opacity: 0; }
-    100%    { opacity: 0; }
-  }
-
-  .product-card {
-    background: var(--card-light);
-    border: 1px solid var(--border-light);
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    z-index: 2;
-  }
-
-  .product-card-image {
-    width: calc(100% - 48px);
-    margin: 24px auto 0;
-    aspect-ratio: 4/3;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #d5cec0;
+  .search-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #F1F5F9;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    color: #475569;
   }
 
-  /* CSS-only desk setup illustration */
-  .desk-illustration {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, #c9b896 0%, #b8a67c 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .desk-illustration .monitor {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 55%;
-    height: 45%;
-    background: #1a1a1a;
-    border-radius: 8px;
-    border: 3px solid #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .desk-illustration .monitor .screen {
-    width: 90%;
-    height: 85%;
-    background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
-    border-radius: 4px;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .code-line {
-    height: 3px;
-    border-radius: 2px;
-    opacity: 0.6;
-  }
-  .code-line.l1 { width: 60%; background: #89b4fa; }
-  .code-line.l2 { width: 45%; background: #a6e3a1; margin-left: 12px; }
-  .code-line.l3 { width: 70%; background: #f5c2e7; }
-  .code-line.l4 { width: 35%; background: #fab387; margin-left: 12px; }
-  .code-line.l5 { width: 55%; background: #89b4fa; }
-  .code-line.l6 { width: 40%; background: #cba6f7; margin-left: 12px; }
-
-  .desk-illustration .stand {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 12%;
-    height: 10%;
-    background: #555;
-    border-radius: 0 0 4px 4px;
-  }
-
-  .desk-illustration .base {
-    position: absolute;
-    top: 69%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 22%;
-    height: 3%;
-    background: #555;
-    border-radius: 4px;
-  }
-
-  .desk-illustration .keyboard {
-    position: absolute;
-    bottom: 12%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 35%;
-    height: 10%;
-    background: #2a2a2a;
-    border-radius: 6px;
-    border: 2px solid #3a3a3a;
-  }
-
-  .desk-illustration .plant {
-    position: absolute;
-    bottom: 15%;
-    left: 12%;
-    width: 12%;
-    height: 25%;
-  }
-
-  .plant .pot {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70%;
-    height: 35%;
-    background: #8B6F47;
-    border-radius: 4px 4px 6px 6px;
-  }
-
-  .plant .leaf {
-    position: absolute;
-    bottom: 30%;
-    left: 50%;
-    width: 20px;
-    height: 30px;
-    background: #4a8c5c;
-    border-radius: 50% 50% 50% 0;
-    transform-origin: bottom center;
-  }
-  .plant .leaf:nth-child(2) { transform: translateX(-50%) rotate(-30deg); }
-  .plant .leaf:nth-child(3) { transform: translateX(-50%) rotate(25deg); }
-  .plant .leaf:nth-child(4) { transform: translateX(-50%) rotate(-10deg) translateY(-8px); }
-
-  .desk-illustration .lamp {
-    position: absolute;
-    top: 10%;
-    right: 12%;
-    width: 8%;
-    height: 35%;
-  }
-
-  .lamp .shade {
-    width: 100%;
-    height: 40%;
-    background: var(--gold-dark);
-    border-radius: 50% 50% 0 0;
-    position: relative;
-  }
-
-  .lamp .shade::after {
-    content: '';
-    position: absolute;
-    bottom: -60%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 60%;
-    background: #666;
-  }
-
-  .desk-illustration .desk-surface {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 25%;
-    background: linear-gradient(180deg, #5c4a35 0%, #4a3b2a 100%);
-    border-top: 2px solid #6b5640;
-  }
-
-  .product-card .card-eyebrow {
-    padding: 20px 24px 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .product-card .card-eyebrow .line {
-    width: 24px;
-    height: 1px;
-    background: var(--gold-light);
-  }
-
-  .product-card .card-eyebrow span:last-child {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: var(--gold-light);
-  }
-
-  .product-card .card-footer {
-    padding: 16px 24px 20px;
-  }
-
-  .product-card .card-footer h3 {
-    font-family: 'Literata', serif;
-    font-size: 18px;
+  .search-input-text {
+    font-size: 32px;
     font-weight: 600;
-    color: var(--fg-light);
-    margin-bottom: 4px;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    flex: 1;
+    white-space: nowrap;
   }
 
-  .product-card .card-footer p {
-    font-size: 14px;
-    color: var(--muted-light);
+  .search-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 36px;
+    background: #2563EB;
+    margin-left: 4px;
+    vertical-align: middle;
   }
 
-  .product-card .card-footer .meta {
+  .search-badge-kbd {
+    padding: 6px 14px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    color: #64748B;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  }
+
+  /* Product Card Morph */
+  .product-hero-card {
+    position: absolute;
+    width: 920px;
+    height: 480px;
+    background: #FFFFFF;
+    border-radius: 32px;
+    border: 1.5px solid var(--border-subtle);
+    box-shadow: 0 32px 72px -16px rgba(15, 23, 42, 0.18), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
     display: flex;
-    gap: 16px;
-    margin-top: 12px;
-    font-family: 'Geist Mono', monospace;
-    font-size: 12px;
-    color: var(--muted-light);
+    padding: 36px;
+    gap: 36px;
+    transform-origin: center center;
+    overflow: hidden;
   }
 
-  .product-card-shadow {
+  .card-media-side {
+    width: 380px;
+    height: 100%;
+    border-radius: 20px;
+    background: radial-gradient(100% 100% at 50% 50%, #F8FAFC 0%, #E2E8F0 100%);
+    border: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-media-side img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 24px rgba(15, 23, 42, 0.18));
+    transform: scale(1.05) rotate(-3deg);
+  }
+
+  .card-media-badge {
     position: absolute;
     top: 16px;
     left: 16px;
-    width: 100%;
-    height: 100%;
-    border: 1px solid rgba(228,221,206,0.5);
-    border-radius: 16px;
-    z-index: 1;
-  }
-
-  /* ==================== SCENE 4: EXPERIENCE (11s - 15s) ==================== */
-  .scene-4 {
-    flex-direction: column;
-    gap: 40px;
-    animation: scene4-visibility 20s ease forwards;
-    overflow: hidden;
-  }
-
-  @keyframes scene4-visibility {
-    0%    { opacity: 0; }
-    54%   { opacity: 0; }
-    55%   { opacity: 1; }
-    74%   { opacity: 1; }
-    75%   { opacity: 0; }
-    100%  { opacity: 0; }
-  }
-
-  /* Light/Dark split */
-  .split-container {
-    width: 1920px;
-    height: 1080px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #047857;
+    border: 1px solid #A7F3D0;
     display: flex;
-    position: relative;
-  }
-
-  .split-left {
-    flex: 1;
-    background: var(--bg-light);
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 60px;
-    position: relative;
-    opacity: 0;
-    animation: splitLeft 20s ease forwards;
+    gap: 6px;
   }
 
-  @keyframes splitLeft {
-    0%, 56% { opacity: 0; }
-    58%     { opacity: 1; }
-    73%     { opacity: 1; }
-    75%     { opacity: 0; }
-    100%    { opacity: 0; }
-  }
-
-  .split-right {
+  .card-content-side {
     flex: 1;
-    background: var(--bg-dark);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-category-row {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 60px;
-    position: relative;
-    opacity: 0;
-    animation: splitRight 20s ease forwards;
+    justify-content: space-between;
   }
 
-  @keyframes splitRight {
-    0%, 57% { opacity: 0; }
-    60%     { opacity: 1; }
-    73%     { opacity: 1; }
-    75%     { opacity: 0; }
-    100%    { opacity: 0; }
-  }
-
-  .mode-label {
-    font-size: 11px;
+  .card-category-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
-    margin-bottom: 24px;
+    letter-spacing: 0.08em;
+    color: #D97706;
   }
 
-  .split-left .mode-label { color: var(--gold-light); }
-  .split-right .mode-label { color: var(--gold-dark); }
+  .card-rating-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: #FEF3C7;
+    border-radius: 999px;
+    color: #92400E;
+    font-size: 14px;
+    font-weight: 700;
+  }
 
-  /* Mini article card for split view */
-  .mini-card {
-    width: 380px;
-    border-radius: 16px;
+  .card-product-title {
+    font-family: 'Literata', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-top: 6px;
+  }
+
+  .card-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  .card-price {
+    font-size: 34px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+  }
+
+  .card-price-sub {
+    font-size: 15px;
+    color: #64748B;
+    font-weight: 500;
+  }
+
+  .card-specs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0;
+  }
+
+  .spec-chip {
+    padding: 6px 12px;
+    background: #F1F5F9;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    border: 1px solid #E2E8F0;
+  }
+
+  .card-verdict-box {
+    background: #F8FAFC;
+    border-left: 3px solid #2563EB;
+    padding: 10px 14px;
+    border-radius: 0 10px 10px 0;
+    font-size: 14px;
+    font-style: italic;
+    color: #475569;
+    line-height: 1.4;
+  }
+
+  /* Social Validation Bubbles */
+  .social-bubble {
+    position: absolute;
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-subtle);
+    border-radius: 20px;
+    padding: 16px 22px;
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.16);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 440px;
+    transform-origin: center center;
+  }
+
+  .bubble-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .bubble-avatar.green {
+    background: linear-gradient(135deg, #10B981 0%, #047857 100%);
+  }
+
+  .bubble-avatar.amber {
+    background: linear-gradient(135deg, #F59E0B 0%, #B45309 100%);
+  }
+
+  .bubble-text-wrap {
+    flex: 1;
+  }
+
+  .bubble-author {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .bubble-handle {
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .bubble-quote {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 3px;
+    line-height: 1.35;
+  }
+
+  .bubble-pos-1 {
+    top: -60px;
+    left: -240px;
+  }
+
+  .bubble-pos-2 {
+    bottom: -60px;
+    right: -240px;
+  }
+
+  .bubble-pos-3 {
+    bottom: 40px;
+    left: -280px;
+  }
+
+  .macro-stats-pill {
+    position: absolute;
+    bottom: -110px;
+    background: #0F172A;
+    color: #FFFFFF;
+    padding: 12px 28px;
+    border-radius: 999px;
+    box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .stats-pulse-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #10B981;
+    box-shadow: 0 0 12px #10B981;
+  }
+
+  /* =========================================================================
+     SCENE 3: 2.5D MASSIVE MATRIX PERSPECTIVE GRID (25.5s - 37.0s)
+     ========================================================================= */
+  .scene-matrix {
+    perspective: 1400px;
     overflow: hidden;
   }
 
-  .split-left .mini-card {
-    background: var(--card-light);
-    border: 1px solid var(--border-light);
+  .matrix-stage {
+    position: absolute;
+    width: 2800px;
+    height: 1800px;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 28px;
+    padding: 40px;
   }
 
-  .split-right .mini-card {
-    background: var(--card-dark);
-    border: 1px solid var(--border-dark);
-  }
-
-  .mini-card .mini-header {
-    padding: 20px 24px;
-  }
-
-  .mini-card .mini-header h4 {
-    font-family: 'Literata', serif;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.3;
-  }
-
-  .split-left .mini-card h4 { color: var(--fg-light); }
-  .split-right .mini-card h4 { color: var(--fg-dark); }
-
-  .mini-card .mini-body {
-    padding: 0 24px 24px;
+  .grid-card {
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-subtle);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    height: 340px;
   }
 
-  .mini-card .mini-body .text-line {
-    height: 10px;
-    border-radius: 5px;
+  .grid-card-thumb {
+    width: 100%;
+    height: 200px;
+    background: #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
   }
 
-  .split-left .text-line { background: var(--border-light); }
-  .split-right .text-line { background: var(--border-dark); }
+  .grid-card-thumb img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+    transition: transform 0.3s;
+  }
 
-  .text-line:nth-child(1) { width: 100%; }
-  .text-line:nth-child(2) { width: 90%; }
-  .text-line:nth-child(3) { width: 95%; }
-  .text-line:nth-child(4) { width: 70%; }
-
-  /* Divider line in center */
-  .split-divider {
+  .grid-card-score {
     position: absolute;
-    top: 0;
+    top: 12px;
+    right: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    font-size: 13px;
+    font-weight: 700;
+    color: #047857;
+    border: 1px solid #A7F3D0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+
+  .grid-card-info {
+    padding: 16px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .grid-card-cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: #D97706;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .grid-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.25;
+    margin-top: 4px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .grid-card-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #64748B;
+  }
+
+  .matrix-header-overlay {
+    position: absolute;
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent 5%, var(--gold-dark) 30%, var(--gold-dark) 70%, transparent 95%);
-    opacity: 0;
-    animation: dividerIn 20s ease forwards;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    border: 1.5px solid var(--border-subtle);
+    padding: 20px 48px;
+    border-radius: 999px;
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.12);
+    text-align: center;
     z-index: 10;
   }
 
-  @keyframes dividerIn {
-    0%, 58% { opacity: 0; height: 0; }
-    62%     { opacity: 1; height: 100%; }
-    73%     { opacity: 1; }
-    75%     { opacity: 0; }
-    100%    { opacity: 0; }
-  }
-
-  /* Overlay text */
-  .experience-text {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-    text-align: center;
-    opacity: 0;
-    animation: experienceText 20s ease forwards;
-  }
-
-  @keyframes experienceText {
-    0%, 62% { opacity: 0; transform: translateX(-50%) translateY(20px); }
-    65%     { opacity: 1; transform: translateX(-50%) translateY(0); }
-    73%     { opacity: 1; }
-    75%     { opacity: 0; }
-    100%    { opacity: 0; }
-  }
-
-  .experience-text h3 {
-    font-family: 'Literata', serif;
-    font-size: 40px;
-    font-weight: 500;
-    color: #fff;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
-    letter-spacing: -0.01em;
-  }
-
-  /* ==================== SCENE 5: OUTRO (15s - 20s) ==================== */
-  .scene-5 {
-    background: var(--bg-dark);
-    flex-direction: column;
-    gap: 28px;
-    animation: scene5-visibility 20s ease forwards;
-  }
-
-  @keyframes scene5-visibility {
-    0%    { opacity: 0; }
-    74%   { opacity: 0; }
-    75%   { opacity: 1; }
-    100%  { opacity: 1; }
-  }
-
-  .outro-logo {
-    font-family: 'Literata', serif;
-    font-size: 72px;
-    font-weight: 700;
-    color: var(--fg-dark);
-    letter-spacing: -0.03em;
-    opacity: 0;
-    animation: outroLogo 20s ease forwards;
-  }
-
-  @keyframes outroLogo {
-    0%, 77% { opacity: 0; transform: scale(0.9); }
-    81%     { opacity: 1; transform: scale(1); }
-    100%    { opacity: 1; }
-  }
-
-  .outro-logo .i-accent { color: var(--gold-dark); }
-
-  .outro-url {
-    font-family: 'Geist Mono', monospace;
-    font-size: 20px;
-    color: var(--gold-dark);
-    letter-spacing: 0.05em;
-    opacity: 0;
-    animation: outroUrl 20s ease forwards;
-  }
-
-  @keyframes outroUrl {
-    0%, 82% { opacity: 0; transform: translateY(10px); }
-    86%     { opacity: 1; transform: translateY(0); }
-    100%    { opacity: 1; }
-  }
-
-  .outro-tagline {
-    font-family: 'Literata', serif;
+  .matrix-header-title {
     font-size: 28px;
-    font-weight: 400;
-    color: var(--muted-dark);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    opacity: 0;
-    animation: outroTagline 20s ease forwards;
-    margin-top: 20px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
   }
 
-  @keyframes outroTagline {
-    0%, 87% { opacity: 0; transform: translateY(10px); }
-    91%     { opacity: 1; transform: translateY(0); }
-    100%    { opacity: 1; }
+  .matrix-header-sub {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: 4px;
   }
 
-  /* Subtle golden line decoration */
-  .outro-line {
-    width: 80px;
-    height: 2px;
-    background: var(--gold-dark);
-    opacity: 0;
-    animation: outroLine 20s ease forwards;
-  }
-
-  @keyframes outroLine {
-    0%, 79% { opacity: 0; width: 0; }
-    83%     { opacity: 1; width: 80px; }
-    100%    { opacity: 1; }
-  }
-
-  /* Ambient golden particles for outro */
-  .particle {
+  .matrix-blur-top {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    background: linear-gradient(to bottom, #F8FAFC 20%, rgba(248, 250, 252, 0) 100%);
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .matrix-blur-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 220px;
+    background: linear-gradient(to top, #EDF2F7 30%, rgba(237, 242, 247, 0) 100%);
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* =========================================================================
+     SCENE 4: VERTICAL STEPPER PIPELINE & BENCHMARK LAB (37.0s - 48.0s)
+     ========================================================================= */
+  .scene-pipeline {
+    padding: 0 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+  }
+
+  /* Left Vertical Stepper Rail */
+  .stepper-rail-column {
+    width: 480px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .stepper-track-bg {
+    position: absolute;
+    left: 27px;
+    top: 24px;
+    bottom: 24px;
     width: 4px;
-    height: 4px;
+    background: #E2E8F0;
+    border-radius: 2px;
+  }
+
+  .stepper-track-fill {
+    position: absolute;
+    left: 27px;
+    top: 24px;
+    width: 4px;
+    height: 0%;
+    background: linear-gradient(to bottom, #2563EB, #10B981, #D97706);
+    border-radius: 2px;
+    box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
+  }
+
+  .stepper-node-row {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    z-index: 2;
+  }
+
+  .stepper-node-dot {
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
-    background: var(--gold-dark);
+    background: #FFFFFF;
+    border: 3px solid #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #64748B;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .stepper-node-dot.active {
+    border-color: #2563EB;
+    background: #2563EB;
+    color: #FFFFFF;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+    transform: scale(1.1);
+  }
+
+  .stepper-node-dot.done {
+    border-color: #10B981;
+    background: #10B981;
+    color: #FFFFFF;
+  }
+
+  .stepper-node-info {
+    padding-top: 6px;
+  }
+
+  .stepper-node-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748B;
+  }
+
+  .stepper-node-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-top: 2px;
+    letter-spacing: -0.02em;
+  }
+
+  .stepper-node-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    line-height: 1.35;
+  }
+
+  /* Right Inspection Lab Dashboard */
+  .lab-dashboard-column {
+    flex: 1;
+    height: 620px;
+    background: #FFFFFF;
+    border-radius: 28px;
+    border: 1.5px solid var(--border-subtle);
+    box-shadow: 0 32px 64px -16px rgba(15, 23, 42, 0.14);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lab-phase {
+    position: absolute;
+    inset: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     opacity: 0;
+    pointer-events: none;
   }
 
-  .particle:nth-child(1) { top: 20%; left: 15%; animation: particleFloat 20s ease forwards; animation-delay: 0s; }
-  .particle:nth-child(2) { top: 70%; left: 80%; animation: particleFloat 20s ease forwards; animation-delay: 0.3s; }
-  .particle:nth-child(3) { top: 30%; left: 75%; animation: particleFloat 20s ease forwards; animation-delay: 0.6s; width: 3px; height: 3px; }
-  .particle:nth-child(4) { top: 60%; left: 25%; animation: particleFloat 20s ease forwards; animation-delay: 0.9s; width: 2px; height: 2px; }
-  .particle:nth-child(5) { top: 45%; left: 90%; animation: particleFloat 20s ease forwards; animation-delay: 1.2s; width: 3px; height: 3px; }
-
-  @keyframes particleFloat {
-    0%, 78% { opacity: 0; }
-    82%     { opacity: 0.3; }
-    90%     { opacity: 0.15; transform: translateY(-20px); }
-    100%    { opacity: 0.2; transform: translateY(-30px); }
+  .lab-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 18px;
   }
+
+  .lab-badge {
+    padding: 6px 14px;
+    background: #F1F5F9;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: #2563EB;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lab-live-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #059669;
+  }
+
+  /* Phase 1: Frequency & Polling Rate */
+  .phase-1-center {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: auto 0;
+  }
+
+  .waveform-box {
+    flex: 1;
+    height: 240px;
+    background: #F8FAFC;
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wave-bar {
+    flex: 1;
+    background: linear-gradient(to top, #3B82F6, #60A5FA);
+    border-radius: 4px;
+    height: 40%;
+    transition: height 0.08s ease;
+  }
+
+  .phase-metric-box {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .metric-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 16px 20px;
+  }
+
+  .metric-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748B;
+    text-transform: uppercase;
+  }
+
+  .metric-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 32px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-top: 4px;
+  }
+
+  /* Phase 4: Independence Pledge */
+  .independence-seal-box {
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .seal-emblem {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+    border: 4px solid #F59E0B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    box-shadow: 0 16px 32px rgba(245, 158, 11, 0.25);
+  }
+
+  .seal-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+  }
+
+  .seal-desc {
+    font-size: 18px;
+    color: #475569;
+    max-width: 580px;
+    line-height: 1.5;
+  }
+
+  /* Phase 5: Stamp Verdict */
+  .verdict-stamp-box {
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .gold-stamp {
+    display: inline-block;
+    padding: 18px 48px;
+    border: 5px solid #D97706;
+    border-radius: 20px;
+    color: #D97706;
+    font-size: 46px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transform: rotate(-4deg);
+    box-shadow: 0 20px 40px rgba(217, 119, 6, 0.25);
+    background: rgba(254, 243, 199, 0.4);
+  }
+
+  /* =========================================================================
+     SCENE 5: CATEGORY FLIPPER & 3D FLOATING SEARCH (48.0s - 58.5s)
+     ========================================================================= */
+  .scene-categories {
+    perspective: 1100px;
+    flex-direction: column;
+  }
+
+  .cat-flipper-stage {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flipper-tag-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+  }
+
+  .flipper-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 42px;
+    background: #FFFFFF;
+    border: 2px solid var(--border-strong);
+    border-radius: 999px;
+    font-size: 44px;
+    font-weight: 800;
+    color: var(--text-primary);
+    box-shadow: 0 24px 48px -8px rgba(15, 23, 42, 0.16);
+    transform-origin: center center;
+  }
+
+  /* 3D Ground Field */
+  .cat-3d-ground {
+    position: absolute;
+    width: 1400px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform-origin: center 70%;
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+  }
+
+  .trio-card {
+    width: 400px;
+    height: 480px;
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-subtle);
+    border-radius: 28px;
+    box-shadow: 0 32px 64px -16px rgba(15, 23, 42, 0.18);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .trio-thumb {
+    width: 100%;
+    height: 280px;
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .trio-thumb img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 20px rgba(0,0,0,0.1));
+  }
+
+  .trio-body {
+    padding: 24px 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .trio-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .trio-role {
+    font-size: 15px;
+    color: #64748B;
+    margin-top: 4px;
+  }
+
+  .trio-score-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .elevated-search-bar {
+    position: absolute;
+    top: 140px;
+    width: 760px;
+    height: 74px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    border: 2px solid var(--border-strong);
+    border-radius: 999px;
+    box-shadow: 0 28px 60px -10px rgba(15, 23, 42, 0.22);
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+    gap: 18px;
+    z-index: 20;
+  }
+
+  .elevated-search-text {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-primary);
+    flex: 1;
+  }
+
+  /* =========================================================================
+     SCENE 6: PUNCHLINE, GRAND LOGO REVEAL & OUTRO (58.5s - 73.45s)
+     ========================================================================= */
+  .scene-outro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .outro-punchline-box {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 200px;
+  }
+
+  .punchline-h1 {
+    font-family: 'Literata', serif;
+    font-size: 78px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+    max-width: 1200px;
+  }
+
+  .punchline-sub {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: 28px;
+    max-width: 900px;
+    line-height: 1.4;
+  }
+
+  .outro-brand-lockup {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-logo-emblem {
+    width: 96px;
+    height: 96px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 48px;
+    font-family: 'Literata', serif;
+    font-weight: 700;
+    box-shadow: 0 20px 40px rgba(217, 119, 6, 0.35);
+    margin-bottom: 24px;
+  }
+
+  .brand-wordmark {
+    font-family: 'Literata', serif;
+    font-size: 88px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .brand-wordmark span {
+    color: #D97706;
+  }
+
+  .brand-tagline {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-top: 12px;
+    letter-spacing: -0.015em;
+  }
+
+  .brand-pillars-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .brand-pillar-pill {
+    padding: 10px 22px;
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-subtle);
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #334155;
+    box-shadow: 0 6px 16px -2px rgba(15, 23, 42, 0.06);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-cta-button {
+    margin-top: 48px;
+    padding: 20px 54px;
+    background: #0F172A;
+    color: #FFFFFF;
+    border-radius: 999px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 24px 50px -10px rgba(15, 23, 42, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .cta-arrow {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
 </style>
 </head>
 <body>
 
-  <!-- SCENE 1: Hook -->
-  <div class="scene scene-1">
-    <div class="hook-glow"></div>
-    <div class="hook-text">Still scrolling Amazon for desk tech?</div>
-  </div>
+  <!-- Ambient Backdrop -->
+  <div class="ambient-grid"></div>
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
 
-  <!-- SCENE 2: Reveal -->
-  <div class="scene scene-2">
-    <div class="reveal-eyebrow">
-      <span class="line"></span>
-      <span class="label">Curated Tech</span>
-    </div>
-    <div class="reveal-logo"><span class="i-accent">i</span>WriteTech</div>
-    <div class="reveal-tagline">Tech that looks as good as it performs.</div>
-    <div class="reveal-stats">
-      <div class="stat">
-        <span class="value">100%</span>
-        <span>Hands-On Tested</span>
-      </div>
-      <div class="stat">
-        <span class="value">100%</span>
-        <span>Editorially Independent</span>
-      </div>
-      <div class="stat">
-        <span class="value">11</span>
-        <span>Categories</span>
-      </div>
-    </div>
-  </div>
+  <div class="scene-viewport">
 
-  <!-- SCENE 3: Product -->
-  <div class="scene scene-3">
-    <div class="product-left">
-      <div class="section-label">
-        <span class="line"></span>
-        <span>What We Cover</span>
+    <!-- =====================================================================
+         SCENE 1: KINETIC TYPOGRAPHY EXPANSION (0.0s - 14.5s)
+         ===================================================================== -->
+    <div id="scene1" class="scene scene-kinetic">
+      <!-- Phrase 1: The Internet -->
+      <div id="kineticP1" class="kinetic-phrase">
+        <div class="kinetic-line">
+          <span id="p1Prefix" class="kinetic-word-prefix">the</span>
+          <span id="p1Pill" class="kinetic-pill-badge blue">
+            <span>🌐</span>
+            <span>internet</span>
+          </span>
+          <span id="p1Suffix" class="kinetic-word-suffix">is drowning in SEO garbage.</span>
+        </div>
+        <div id="p1Sub" class="kinetic-subline">Every search result is an ad or affiliate farm in disguise.</div>
       </div>
-      <h2>Every gadget, handpicked and tested.</h2>
-      <p>From mechanical keyboards to minimal desk setups — we curate so you don't have to scroll through thousands of listings.</p>
-      <div class="categories-row">
-        <span class="cat-pill active">Desk Setups</span>
-        <span class="cat-pill">Keyboards</span>
-        <span class="cat-pill">MacBook</span>
-        <span class="cat-pill">Gaming</span>
-        <span class="cat-pill">Smart Home</span>
-        <span class="cat-pill">Productivity</span>
+
+      <!-- Phrase 2: Amazon Reviews -->
+      <div id="kineticP2" class="kinetic-phrase">
+        <div class="kinetic-line">
+          <span id="p2Prefix" class="kinetic-word-prefix">amazon</span>
+          <span id="p2Pill" class="kinetic-pill-badge amber">
+            <span>⭐</span>
+            <span>reviews</span>
+          </span>
+          <span id="p2Suffix" class="kinetic-word-suffix">are 90% fake affiliate junk.</span>
+        </div>
+        <div id="p2Sub" class="kinetic-subline">Bots reviewing bots. 5 stars on paper, broken in two weeks.</div>
+      </div>
+
+      <!-- Phrase 3: The Antidote -->
+      <div id="kineticP3" class="kinetic-phrase">
+        <div class="kinetic-line">
+          <span id="p3Prefix" class="kinetic-word-prefix">the</span>
+          <span id="p3Pill" class="kinetic-pill-badge emerald">
+            <span>✨</span>
+            <span>antidote</span>
+          </span>
+          <span id="p3Suffix" class="kinetic-word-suffix">is honest, obsessively tested tech.</span>
+        </div>
+        <div id="p3Sub" class="kinetic-subline">Self-funded. Tested in real developer workflows. Zero sponsored fluff.</div>
       </div>
     </div>
-    <div class="product-card-wrapper">
-      <div class="product-card">
-        <div class="card-eyebrow">
-          <span class="line"></span>
-          <span>Featured Find</span>
-        </div>
-        <div class="product-card-image">
-          <img src="images/hero-setup.png" alt="Featured Desk Setup" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px;">
-        </div>
-        <div class="card-footer">
-          <h3>The Ultimate Developer Desk Setup for 2026</h3>
-          <p>How to build a clean, productive workspace</p>
-          <div class="meta">
-            <span>5 min read</span>
-            <span>·</span>
-            <span>July 8, 2026</span>
+
+    <!-- =====================================================================
+         SCENE 2: MACRO ZOOM TYPING & VALIDATION BUBBLES (14.5s - 25.5s)
+         ===================================================================== -->
+    <div id="scene2" class="scene scene-macro">
+      <div id="macroStage" class="macro-center-stage">
+        
+        <!-- Search Capsule -->
+        <div id="searchCapsule" class="search-capsule">
+          <div class="search-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           </div>
-        </div>
-      </div>
-      <div class="product-card-shadow"></div>
-    </div>
-  </div>
-
-  <!-- SCENE 4: Experience (Light/Dark Split) -->
-  <div class="scene scene-4">
-    <div class="split-container">
-      <div class="split-left">
-        <div class="mode-label">Light Mode</div>
-        <div class="mini-card">
-          <div style="height: 170px; overflow: hidden; border-radius: 12px 12px 0 0; background: #e0d8ca;">
-            <img src="images/keyboard-hero.png" alt="Keyboard" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <div class="search-input-text">
+            <span id="typewriterText"></span><span id="searchCursor" class="search-cursor"></span>
           </div>
-          <div class="mini-header">
-            <h4>Best Mechanical Keyboards Under $100</h4>
-            <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 12px; color: var(--muted-light);">
-              <span>Keychron C3 Pro</span> · <span>8 min read</span>
+          <div class="search-badge-kbd">ENTER ↵</div>
+        </div>
+
+        <!-- Hero Product Card (Morphed) -->
+        <div id="productHeroCard" class="product-hero-card">
+          <div class="card-media-side">
+            <span class="card-media-badge">✓ LAB VERIFIED</span>
+            <img src="images/keychron.png" alt="Keychron C3 Pro">
+          </div>
+          <div class="card-content-side">
+            <div class="card-category-row">
+              <span class="card-category-tag">KEYBOARDS &bull; EDITORS' CHOICE</span>
+              <span class="card-rating-pill">★ 4.9 / 5.0</span>
+            </div>
+            <div>
+              <h2 class="card-product-title">Keychron C3 Pro</h2>
+              <div class="card-price-row">
+                <span class="card-price">$36.99</span>
+                <span class="card-price-sub">Best Budget Mechanical Board</span>
+              </div>
+            </div>
+            <div class="card-specs-grid">
+              <span class="spec-chip">Red Linear Switches</span>
+              <span class="spec-chip">Gasket Mount</span>
+              <span class="spec-chip">QMK / VIA Programmable</span>
+              <span class="spec-chip">Acoustic Foam</span>
+              <span class="spec-chip">Mac / Windows</span>
+            </div>
+            <div class="card-verdict-box">
+              "The most astonishing sub-$40 typing experience ever tested. Outclasses $150 boards in acoustics."
             </div>
           </div>
-          <div class="mini-body">
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
+        </div>
+
+        <!-- Social Validation Bubbles -->
+        <div id="bubble1" class="social-bubble bubble-pos-1">
+          <div class="bubble-avatar">AC</div>
+          <div class="bubble-text-wrap">
+            <div class="bubble-author">Alex Chen <span class="bubble-handle">@alexchen_dev</span></div>
+            <div class="bubble-quote">"Replaced my $220 custom board with this based on your review. The acoustics are absurdly good."</div>
           </div>
         </div>
-      </div>
-      <div class="split-right">
-        <div class="mode-label">Dark Mode</div>
-        <div class="mini-card">
-          <div style="height: 170px; overflow: hidden; border-radius: 12px 12px 0 0; background: #141210;">
-            <img src="images/premium-keyboard.png" alt="Keyboard Dark" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <div class="mini-header">
-            <h4>Best Mechanical Keyboards Under $100</h4>
-            <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 12px; color: var(--muted-dark);">
-              <span>Keychron C3 Pro</span> · <span>8 min read</span>
-            </div>
-          </div>
-          <div class="mini-body">
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
+
+        <div id="bubble2" class="social-bubble bubble-pos-2">
+          <div class="bubble-avatar green">SJ</div>
+          <div class="bubble-text-wrap">
+            <div class="bubble-author">Sarah Jenkins <span class="bubble-handle">@sarah_ux</span></div>
+            <div class="bubble-quote">"Finally honest reviews without sponsored regurgitation. iWriteTech saved me hours of research."</div>
           </div>
         </div>
-      </div>
-      <div class="split-divider"></div>
-      <div class="experience-text">
-        <h3>Beautiful to read. Beautiful to browse.</h3>
+
+        <div id="bubble3" class="social-bubble bubble-pos-3">
+          <div class="bubble-avatar amber">MV</div>
+          <div class="bubble-text-wrap">
+            <div class="bubble-author">Marcus Vance <span class="bubble-handle">@marcustech</span></div>
+            <div class="bubble-quote">"The switch latency and acoustic damping breakdown was 100% spot-on. Instant bookmark."</div>
+          </div>
+        </div>
+
+        <!-- Stats Pill -->
+        <div id="macroStatsPill" class="macro-stats-pill">
+          <span class="stats-pulse-dot"></span>
+          <span id="counterStats">14,820 engineers guided this month</span>
+        </div>
+
       </div>
     </div>
+
+    <!-- =====================================================================
+         SCENE 3: 2.5D MASSIVE MATRIX PERSPECTIVE GRID (25.5s - 37.0s)
+         ===================================================================== -->
+    <div id="scene3" class="scene scene-matrix">
+      <div class="matrix-blur-top"></div>
+      <div class="matrix-blur-bottom"></div>
+
+      <div id="matrixHeader" class="matrix-header-overlay">
+        <div class="matrix-header-title">150+ OBSESSIVELY TESTED GUIDES</div>
+        <div class="matrix-header-sub">From $35 budget marvels to endgame developer battlestations</div>
+      </div>
+
+      <div id="matrixStage" class="matrix-stage">
+        <!-- 30 Cards dynamically or statically populated with our images -->
+        <!-- Row 1 -->
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.8</span><img src="images/keychron.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">KEYBOARDS</span><div class="grid-card-title">Keychron C3 Pro Mechanical</div><div class="grid-card-price">$36.99</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.9</span><img src="images/light_bar.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">LIGHTING</span><div class="grid-card-title">BenQ ScreenBar Halo Wireless</div><div class="grid-card-price">$179.00</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.7</span><img src="images/walnut_stand.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">STANDS</span><div class="grid-card-title">Grovemade Solid Walnut Desk Shelf</div><div class="grid-card-price">$260.00</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.6</span><img src="images/satechi_hub.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">DOCKS</span><div class="grid-card-title">Satechi Thunderbolt 4 Slim Hub</div><div class="grid-card-price">$189.99</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.5</span><img src="images/belkin_charger.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">POWER</span><div class="grid-card-title">Belkin BoostCharge Pro 3-in-1</div><div class="grid-card-price">$149.95</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.8</span><img src="images/desk_mat.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">ACCESSORIES</span><div class="grid-card-title">Felt & Vegan Leather Desk Pad</div><div class="grid-card-price">$48.00</div></div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.7</span><img src="images/twelve_south.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">LAPTOP STANDS</span><div class="grid-card-title">Twelve South Curve Flex MacBook</div><div class="grid-card-price">$79.99</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.9</span><img src="images/setup_hero.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">SETUPS</span><div class="grid-card-title">The Minimalist Wood & Aluminum Studio</div><div class="grid-card-price">Build Guide</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.6</span><img src="images/keyboard_mech.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">CUSTOM BOARDS</span><div class="grid-card-title">NuPhy Air75 V2 Low Profile</div><div class="grid-card-price">$119.95</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.8</span><img src="images/setup_study.jpg"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">WORKSTATIONS</span><div class="grid-card-title">Dual 4K Monitor Developer Rig</div><div class="grid-card-price">Editorial</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.5</span><img src="images/wireless_charger.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">CHARGING</span><div class="grid-card-title">Anker MagGo Qi2 Magnetic Stand</div><div class="grid-card-price">$99.99</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.7</span><img src="images/desk-hero.jpg"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">FURNITURE</span><div class="grid-card-title">Herman Miller Embody Chair Guide</div><div class="grid-card-price">$1,795.00</div></div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.8</span><img src="images/keyboard_prem.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">KEYBOARDS</span><div class="grid-card-title">Mode Sonnet Custom Aluminum</div><div class="grid-card-price">$349.00</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.5</span><img src="images/satechi_hub.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">CONNECTIVITY</span><div class="grid-card-title">CalDigit TS4 Thunderbolt 4 Station</div><div class="grid-card-price">$399.99</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.9</span><img src="images/light_bar.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">LIGHTING</span><div class="grid-card-title">Xiaomi Computer Monitor Light Bar</div><div class="grid-card-price">$49.99</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.6</span><img src="images/keychron.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">KEYBOARDS</span><div class="grid-card-title">Keychron Q1 Pro Wireless Custom</div><div class="grid-card-price">$199.00</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.8</span><img src="images/gaming_setup.jpg"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">HYBRID SETUPS</span><div class="grid-card-title">Stealth Dark Mode Ultrawide Station</div><div class="grid-card-price">Build Guide</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.7</span><img src="images/walnut_stand.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">ORGANIZERS</span><div class="grid-card-title">Oakywood Dual Monitor Stand Wood</div><div class="grid-card-price">$180.00</div></div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.5</span><img src="images/belkin_charger.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">POWER</span><div class="grid-card-title">Nomad Base One Max MagSafe</div><div class="grid-card-price">$150.00</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.9</span><img src="images/desk-hero.jpg"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">DESKS</span><div class="grid-card-title">Uplift V2 Commercial Standing Desk</div><div class="grid-card-price">$749.00</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.8</span><img src="images/twelve_south.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">ACCESSORIES</span><div class="grid-card-title">Roost V3 Ultra-Portable Laptop Stand</div><div class="grid-card-price">$89.95</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.7</span><img src="images/setup_hero.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">CREATIVE GEAR</span><div class="grid-card-title">Studio Display Minimalist Rig</div><div class="grid-card-price">Curated</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.6</span><img src="images/keyboard_mech.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">SWITCHES</span><div class="grid-card-title">Gateron Oil King Linear Guide</div><div class="grid-card-price">$65.00</div></div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-thumb"><span class="grid-card-score">9.9</span><img src="images/desk_mat.png"></div>
+          <div class="grid-card-info"><span class="grid-card-cat">DESK PADS</span><div class="grid-card-title">Orbitkey Desk Mat with Toolbar</div><div class="grid-card-price">$89.00</div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         SCENE 4: VERTICAL STEPPER PIPELINE & BENCHMARK LAB (37.0s - 48.0s)
+         ===================================================================== -->
+    <div id="scene4" class="scene scene-pipeline">
+      <!-- Left Stepper Rail -->
+      <div class="stepper-rail-column">
+        <div class="stepper-track-bg"></div>
+        <div id="stepperTrackFill" class="stepper-track-fill"></div>
+
+        <div id="stepNode1" class="stepper-node-row">
+          <div class="stepper-node-dot">01</div>
+          <div class="stepper-node-info">
+            <div class="stepper-node-label">DISCOVERY &amp; SELECTION</div>
+            <div class="stepper-node-title">Top 10 Contenders Filtered</div>
+            <div class="stepper-node-desc">Screened from community consensus, not affiliate rankings.</div>
+          </div>
+        </div>
+
+        <div id="stepNode2" class="stepper-node-row">
+          <div class="stepper-node-dot">02</div>
+          <div class="stepper-node-info">
+            <div class="stepper-node-label">LAB STRESS TESTING</div>
+            <div class="stepper-node-title">30 Days of Real Workflows</div>
+            <div class="stepper-node-desc">500,000+ keystrokes of software engineering &amp; writing.</div>
+          </div>
+        </div>
+
+        <div id="stepNode3" class="stepper-node-row">
+          <div class="stepper-node-dot">03</div>
+          <div class="stepper-node-info">
+            <div class="stepper-node-label">ACOUSTICS &amp; TACTILITY</div>
+            <div class="stepper-node-title">Decibel &amp; Switch Profiling</div>
+            <div class="stepper-node-desc">Anechoic chamber recordings and switch spring curves.</div>
+          </div>
+        </div>
+
+        <div id="stepNode4" class="stepper-node-row">
+          <div class="stepper-node-dot">04</div>
+          <div class="stepper-node-info">
+            <div class="stepper-node-label">EDITORIAL INTEGRITY</div>
+            <div class="stepper-node-title">100% Self-Funded &amp; Unbiased</div>
+            <div class="stepper-node-desc">Bought at retail. Zero PR loaners. Zero sponsored verdicts.</div>
+          </div>
+        </div>
+
+        <div id="stepNode5" class="stepper-node-row">
+          <div class="stepper-node-dot">05</div>
+          <div class="stepper-node-info">
+            <div class="stepper-node-label">THE VERDICT</div>
+            <div class="stepper-node-title">Definitive Recommendation</div>
+            <div class="stepper-node-desc">Only the top 1% hardware receives our Editors' Choice seal.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Inspection Dashboard -->
+      <div class="lab-dashboard-column">
+        <!-- Lab Top Bar -->
+        <div class="lab-top-bar">
+          <div class="lab-badge">
+            <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563EB;"></span>
+            <span>iWriteTech Hardware Testing Protocol v4.2</span>
+          </div>
+          <div class="lab-live-status">
+            <span class="stats-pulse-dot"></span>
+            <span>BENCHMARK ACTIVE</span>
+          </div>
+        </div>
+
+        <!-- Phase 1 Content: Waveform & Polling -->
+        <div id="labPhase1" class="lab-phase">
+          <div>
+            <h3 style="font-size:32px;font-weight:800;color:#0F172A;letter-spacing:-0.02em;">Acoustic Spectrum &amp; Switch Response</h3>
+            <p style="font-size:16px;color:#64748B;margin-top:6px;">High-frequency condenser capture during 120 WPM code typing session</p>
+          </div>
+          <div class="phase-1-center">
+            <div class="waveform-box" id="waveformBox">
+              <!-- 24 animated wave bars -->
+            </div>
+            <div class="phase-metric-box">
+              <div class="metric-card">
+                <div class="metric-label">SOUND PROFILE</div>
+                <div class="metric-value" style="color:#047857;">42.4 dB</div>
+                <div style="font-size:12px;color:#64748B;margin-top:4px;">Creamy deep thock, zero ping</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-label">INPUT LATENCY</div>
+                <div class="metric-value" style="color:#2563EB;">1.1 ms</div>
+                <div style="font-size:12px;color:#64748B;margin-top:4px;">1000Hz polling rate verified</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;">
+            <span class="spec-chip">✓ Red Linears Factory Lubed</span>
+            <span class="spec-chip">✓ Steel Plate Resonance Dampened</span>
+            <span class="spec-chip">✓ Screw-in Stabilizers Tuned</span>
+          </div>
+        </div>
+
+        <!-- Phase 2 Content: Endurance Test -->
+        <div id="labPhase2" class="lab-phase">
+          <div>
+            <h3 style="font-size:32px;font-weight:800;color:#0F172A;letter-spacing:-0.02em;">30-Day Heavy Workflow Endurance</h3>
+            <p style="font-size:16px;color:#64748B;margin-top:6px;">Continuous daily production test across macOS, Windows, and Linux</p>
+          </div>
+          <div class="phase-1-center">
+            <div style="flex:1;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:15px;font-weight:700;color:#334155;">Keystrokes Logged</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:800;color:#0F172A;" id="keystrokeCounter">524,800</span>
+              </div>
+              <div style="width:100%;height:10px;background:#E2E8F0;border-radius:5px;overflow:hidden;">
+                <div style="width:100%;height:100%;background:linear-gradient(to right, #2563EB, #10B981);"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+                <div style="background:#FFF;padding:12px;border-radius:8px;border:1px solid #E2E8F0;">
+                  <div style="font-size:12px;color:#64748B;">Keycap Shine Test</div>
+                  <div style="font-size:16px;font-weight:700;color:#047857;margin-top:2px;">Zero Degradation</div>
+                </div>
+                <div style="background:#FFF;padding:12px;border-radius:8px;border:1px solid #E2E8F0;">
+                  <div style="font-size:12px;color:#64748B;">Gasket Flex Recovery</div>
+                  <div style="font-size:16px;font-weight:700;color:#047857;margin-top:2px;">100% Elasticity</div>
+                </div>
+              </div>
+            </div>
+            <div class="phase-metric-box">
+              <div class="metric-card">
+                <div class="metric-label">OVERALL ENDURANCE</div>
+                <div class="metric-value" style="color:#047857;">9.9 / 10</div>
+                <div style="font-size:12px;color:#64748B;margin-top:4px;">Built like a tank</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;">
+            <span class="spec-chip">✓ Zero Chattering</span>
+            <span class="spec-chip">✓ Solid USB-C Retention</span>
+            <span class="spec-chip">✓ No Creaking</span>
+          </div>
+        </div>
+
+        <!-- Phase 4 Content: Editorial Independence -->
+        <div id="labPhase4" class="lab-phase">
+          <div class="independence-seal-box">
+            <div class="seal-emblem">🛡️</div>
+            <h2 class="seal-title">100% Independent Editorial Charter</h2>
+            <p class="seal-desc">Every single piece of gear is purchased with our own funds. We accept zero manufacturer payments, zero review embargos, and zero affiliate kickback bias. Truth in tech journalism.</p>
+            <div style="display:flex;gap:16px;margin-top:8px;">
+              <span class="brand-pillar-pill">✓ SELF-PURCHASED</span>
+              <span class="brand-pillar-pill">✓ ZERO SPONSORED GRADES</span>
+              <span class="brand-pillar-pill">✓ OPEN TESTING DATA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 5 Content: The Stamp Verdict -->
+        <div id="labPhase5" class="lab-phase">
+          <div class="verdict-stamp-box">
+            <div class="gold-stamp" id="goldStamp">★ EDITORS' CHOICE 2026</div>
+            <h2 style="font-size:38px;font-weight:800;color:#0F172A;letter-spacing:-0.02em;">Keychron C3 Pro</h2>
+            <p style="font-size:20px;color:#475569;max-width:600px;line-height:1.4;">"A masterclass in modern hardware value. Demonstrates that extraordinary ergonomics and typing acoustics don't require spending hundreds of dollars."</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         SCENE 5: CATEGORY FLIPPER & 3D PERSPECTIVE SEARCH (48.0s - 58.5s)
+         ===================================================================== -->
+    <div id="scene5" class="scene scene-categories">
+      
+      <!-- Center Category Flipper -->
+      <div id="catFlipperStage" class="cat-flipper-stage">
+        <div class="flipper-tag-row">
+          <div id="flipper1" class="flipper-badge"><span>⌨️</span><span>KEYBOARDS &amp; SWITCHES</span></div>
+          <div id="flipper2" class="flipper-badge"><span>🖥️</span><span>MINIMALIST DESK SETUPS</span></div>
+          <div id="flipper3" class="flipper-badge"><span>💻</span><span>MACBOOK PRO GEAR</span></div>
+          <div id="flipper4" class="flipper-badge"><span>🎧</span><span>AUDIO &amp; FOCUS HARDWARE</span></div>
+        </div>
+      </div>
+
+      <!-- Floating Elevated Search Bar -->
+      <div id="elevatedSearchBar" class="elevated-search-bar">
+        <div class="search-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <div class="elevated-search-text">
+          <span id="elevatedSearchInput"></span><span id="elevatedCursor" class="search-cursor"></span>
+        </div>
+        <div class="search-badge-kbd">CURATED STACK</div>
+      </div>
+
+      <!-- 3D Perspective Ground Plane with Trio Cards -->
+      <div id="cat3dGround" class="cat-3d-ground">
+        
+        <div class="trio-card" id="trioCard1">
+          <div class="trio-thumb"><img src="images/light_bar.png" alt="Light Bar"></div>
+          <div class="trio-body">
+            <div>
+              <span class="card-category-tag">LIGHTING</span>
+              <div class="trio-title">BenQ ScreenBar Halo</div>
+              <div class="trio-role">Zero-Glare Backlight System</div>
+            </div>
+            <div class="trio-score-row">
+              <span class="card-rating-pill">★ 9.9 / 10</span>
+              <span class="card-price" style="font-size:24px;">$179</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="trio-card" id="trioCard2">
+          <div class="trio-thumb"><img src="images/walnut_stand.png" alt="Walnut Stand"></div>
+          <div class="trio-body">
+            <div>
+              <span class="card-category-tag">DESK ERGONOMICS</span>
+              <div class="trio-title">Grovemade Desk Shelf</div>
+              <div class="trio-role">American Walnut &amp; Aluminum</div>
+            </div>
+            <div class="trio-score-row">
+              <span class="card-rating-pill">★ 9.8 / 10</span>
+              <span class="card-price" style="font-size:24px;">$260</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="trio-card" id="trioCard3">
+          <div class="trio-thumb"><img src="images/satechi_hub.png" alt="Thunderbolt Hub"></div>
+          <div class="trio-body">
+            <div>
+              <span class="card-category-tag">CONNECTIVITY</span>
+              <div class="trio-title">Satechi Thunderbolt 4</div>
+              <div class="trio-role">Single-Cable 96W Dock</div>
+            </div>
+            <div class="trio-score-row">
+              <span class="card-rating-pill">★ 9.7 / 10</span>
+              <span class="card-price" style="font-size:24px;">$189</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- =====================================================================
+         SCENE 6: PUNCHLINE, GRAND LOGO REVEAL & OUTRO (58.5s - 73.45s)
+         ===================================================================== -->
+    <div id="scene6" class="scene scene-outro">
+      
+      <!-- Part A: Punchline (58.5s - 63.5s) -->
+      <div id="outroPunchline" class="outro-punchline-box">
+        <h1 class="punchline-h1">Why settle for generic recommendations?</h1>
+        <p class="punchline-sub">Hardware journalism built for developers, writers, and creators who actually obsess over their craft.</p>
+      </div>
+
+      <!-- Part B: Brand Reveal & CTA (63.5s - 73.45s) -->
+      <div id="outroBrand" class="outro-brand-lockup">
+        <div class="brand-logo-emblem">iW</div>
+        <h1 class="brand-wordmark">iWrite<span>Tech</span></h1>
+        <div class="brand-tagline">The Definitive Hardware &amp; Desk Setup Journal</div>
+        
+        <div class="brand-pillars-row">
+          <div class="brand-pillar-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>100% Self-Funded</span>
+          </div>
+          <div class="brand-pillar-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Tested for Weeks</span>
+          </div>
+          <div class="brand-pillar-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Zero Affiliate Fluff</span>
+          </div>
+        </div>
+
+        <div class="brand-cta-button" id="brandCtaBtn">
+          <span>Explore iwritetech.com</span>
+          <span class="cta-arrow">➔</span>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
-  <!-- SCENE 5: Outro -->
-  <div class="scene scene-5">
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="outro-logo"><span class="i-accent">i</span>WriteTech</div>
-    <div class="outro-line"></div>
-    <div class="outro-url">iwritetech.com</div>
-    <div class="outro-tagline">Curated · Tested · Aesthetic</div>
-  </div>
+<script>
+  /* =========================================================================
+     MATHEMATICAL EASING & INTERPOLATION HELPERS
+     ========================================================================= */
+  function clamp(v, min, max) {
+    return Math.max(min, Math.min(max, v));
+  }
 
-  <script>
-    window.isReady = false;
-    document.fonts.ready.then(() => {
-      window.isReady = true;
-    });
+  function lerp(start, end, t) {
+    return start + (end - start) * t;
+  }
 
-    window.seekTo = function(tSec) {
-      const tMs = Math.max(0, Math.min(20000, tSec * 1000));
-      const anims = document.getAnimations();
-      for (let i = 0; i < anims.length; i++) {
-        const a = anims[i];
-        if (a.playState !== 'paused') a.pause();
-        a.currentTime = tMs;
+  function smoothstep(min, max, value) {
+    const x = Math.max(0, Math.min(1, (value - min) / (max - min)));
+    return x * x * (3 - 2 * x);
+  }
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function easeOutExpo(t) {
+    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+  }
+
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  // Spring physics simulation
+  function spring(t, start, duration, freq = 3.5, decay = 5.0) {
+    if (t < start) return 0;
+    const progress = (t - start) / duration;
+    if (progress >= 1) return 1;
+    return 1 - Math.exp(-decay * progress) * Math.cos(freq * progress * Math.PI);
+  }
+
+  // Populate waveform bars for Scene 4
+  const waveformBox = document.getElementById('waveformBox');
+  const waveBarCount = 28;
+  const waveBars = [];
+  for (let i = 0; i < waveBarCount; i++) {
+    const bar = document.createElement('div');
+    bar.className = 'wave-bar';
+    waveformBox.appendChild(bar);
+    waveBars.push(bar);
+  }
+
+  /* =========================================================================
+     DETERMINISTIC TIMELINE SEEKER: window.seekTo(t)
+     Maps [0, 73.45] to DOM styling
+     ========================================================================= */
+  window.seekTo = function(t) {
+    t = Math.max(0, Math.min(73.45, t));
+
+    // Elements
+    const scene1 = document.getElementById('scene1');
+    const scene2 = document.getElementById('scene2');
+    const scene3 = document.getElementById('scene3');
+    const scene4 = document.getElementById('scene4');
+    const scene5 = document.getElementById('scene5');
+    const scene6 = document.getElementById('scene6');
+
+    // -----------------------------------------------------------------------
+    // SCENE 1: KINETIC TYPOGRAPHY (0.0s - 14.5s)
+    // -----------------------------------------------------------------------
+    if (t < 14.8) {
+      scene1.style.opacity = '1';
+      scene1.style.pointerEvents = 'auto';
+
+      // Global subtle scale drift
+      const s1Scale = lerp(1.0, 1.04, t / 14.5);
+      scene1.style.transform = `scale(${s1Scale})`;
+
+      // --- Phrase 1: The Internet (0.0s - 4.7s) ---
+      const p1 = document.getElementById('kineticP1');
+      const p1Pill = document.getElementById('p1Pill');
+      const p1Suffix = document.getElementById('p1Suffix');
+      const p1Sub = document.getElementById('p1Sub');
+
+      if (t < 4.7) {
+        // Opacity
+        let p1Op = 0;
+        if (t < 0.8) p1Op = smoothstep(0, 0.4, t);
+        else if (t < 4.1) p1Op = 1;
+        else p1Op = 1 - smoothstep(4.1, 4.6, t);
+        p1.style.opacity = p1Op;
+
+        // Spring expansion at t = 1.0s
+        const sp1 = spring(t, 1.0, 1.2, 4.0, 5.0);
+        // Pill expands from 0 to full width/scale
+        p1Pill.style.transform = `scale(${lerp(0, 1, sp1)})`;
+        p1Pill.style.width = `${lerp(0, 310, sp1)}px`;
+        p1Pill.style.opacity = smoothstep(1.0, 1.15, t);
+        
+        // Suffix slides out
+        p1Suffix.style.opacity = smoothstep(1.2, 1.5, t);
+        p1Suffix.style.transform = `translateX(${lerp(30, 0, sp1)}px)`;
+
+        // Subline
+        p1Sub.style.opacity = smoothstep(1.6, 2.0, t);
+        p1Sub.style.transform = `translateY(${lerp(15, 0, easeOutCubic(clamp((t - 1.6) / 0.5, 0, 1)))}px)`;
+
+        // Exit translate
+        if (t >= 4.1) {
+          const exitT = (t - 4.1) / 0.5;
+          p1.style.transform = `translateY(${lerp(0, -35, easeOutCubic(exitT))}px)`;
+        } else {
+          p1.style.transform = 'translateY(0)';
+        }
+      } else {
+        p1.style.opacity = '0';
       }
-    };
-  </script>
+
+      // --- Phrase 2: Amazon Reviews (4.7s - 9.4s) ---
+      const p2 = document.getElementById('kineticP2');
+      const p2Pill = document.getElementById('p2Pill');
+      const p2Suffix = document.getElementById('p2Suffix');
+      const p2Sub = document.getElementById('p2Sub');
+
+      if (t >= 4.7 && t < 9.4) {
+        const localT = t - 4.7;
+        let p2Op = 0;
+        if (localT < 0.4) p2Op = smoothstep(0, 0.4, localT);
+        else if (localT < 4.1) p2Op = 1;
+        else p2Op = 1 - smoothstep(4.1, 4.6, localT);
+        p2.style.opacity = p2Op;
+
+        // Spring expansion at localT = 1.0s (t = 5.7s)
+        const sp2 = spring(t, 5.7, 1.2, 4.0, 5.0);
+        p2Pill.style.transform = `scale(${lerp(0, 1, sp2)})`;
+        p2Pill.style.width = `${lerp(0, 300, sp2)}px`;
+        p2Pill.style.opacity = smoothstep(5.7, 5.85, t);
+
+        p2Suffix.style.opacity = smoothstep(5.9, 6.2, t);
+        p2Suffix.style.transform = `translateX(${lerp(30, 0, sp2)}px)`;
+
+        p2Sub.style.opacity = smoothstep(6.3, 6.7, t);
+        p2Sub.style.transform = `translateY(${lerp(15, 0, easeOutCubic(clamp((t - 6.3) / 0.5, 0, 1)))}px)`;
+
+        if (localT >= 4.1) {
+          const exitT = (localT - 4.1) / 0.5;
+          p2.style.transform = `translateY(${lerp(0, -35, easeOutCubic(exitT))}px)`;
+        } else {
+          p2.style.transform = 'translateY(0)';
+        }
+      } else {
+        p2.style.opacity = '0';
+      }
+
+      // --- Phrase 3: The Antidote (9.4s - 14.5s) ---
+      const p3 = document.getElementById('kineticP3');
+      const p3Pill = document.getElementById('p3Pill');
+      const p3Suffix = document.getElementById('p3Suffix');
+      const p3Sub = document.getElementById('p3Sub');
+
+      if (t >= 9.4 && t < 14.8) {
+        const localT = t - 9.4;
+        let p3Op = 0;
+        if (localT < 0.4) p3Op = smoothstep(0, 0.4, localT);
+        else if (t < 14.0) p3Op = 1;
+        else p3Op = 1 - smoothstep(14.0, 14.6, t);
+        p3.style.opacity = p3Op;
+
+        // Spring expansion at t = 10.4s
+        const sp3 = spring(t, 10.4, 1.2, 4.0, 5.0);
+        p3Pill.style.transform = `scale(${lerp(0, 1, sp3)})`;
+        p3Pill.style.width = `${lerp(0, 330, sp3)}px`;
+        p3Pill.style.opacity = smoothstep(10.4, 10.55, t);
+
+        p3Suffix.style.opacity = smoothstep(10.6, 10.9, t);
+        p3Suffix.style.transform = `translateX(${lerp(30, 0, sp3)}px)`;
+
+        p3Sub.style.opacity = smoothstep(11.0, 11.4, t);
+        p3Sub.style.transform = `translateY(${lerp(15, 0, easeOutCubic(clamp((t - 11.0) / 0.5, 0, 1)))}px)`;
+
+        if (t >= 14.0) {
+          const exitT = (t - 14.0) / 0.6;
+          p3.style.transform = `scale(${lerp(1, 0.94, exitT)}) translateY(${lerp(0, -30, exitT)}px)`;
+        } else {
+          p3.style.transform = 'translateY(0) scale(1)';
+        }
+      } else {
+        p3.style.opacity = '0';
+      }
+
+    } else {
+      scene1.style.opacity = '0';
+    }
+
+    // -----------------------------------------------------------------------
+    // SCENE 2: MACRO ZOOM TYPING & VALIDATION BUBBLES (14.5s - 25.5s)
+    // -----------------------------------------------------------------------
+    if (t >= 14.4 && t < 26.0) {
+      let s2Op = 1;
+      if (t < 15.0) s2Op = smoothstep(14.4, 15.0, t);
+      else if (t > 25.2) s2Op = 1 - smoothstep(25.2, 25.8, t);
+      scene2.style.opacity = s2Op;
+
+      const macroStage = document.getElementById('macroStage');
+      const searchCapsule = document.getElementById('searchCapsule');
+      const typewriterText = document.getElementById('typewriterText');
+      const searchCursor = document.getElementById('searchCursor');
+      const productHeroCard = document.getElementById('productHeroCard');
+      const bubble1 = document.getElementById('bubble1');
+      const bubble2 = document.getElementById('bubble2');
+      const bubble3 = document.getElementById('bubble3');
+      const macroStatsPill = document.getElementById('macroStatsPill');
+      const counterStats = document.getElementById('counterStats');
+
+      // Camera dolly / zoom
+      const cameraZ = lerp(0.92, 1.05, clamp((t - 14.5) / 10.5, 0, 1));
+      macroStage.style.transform = `scale(${cameraZ})`;
+
+      // --- Typing Phase (15.2s - 18.0s) ---
+      const fullQuery = "Best mechanical keyboard under $100";
+      if (t < 18.4) {
+        searchCapsule.style.display = 'flex';
+        searchCapsule.style.opacity = '1';
+        productHeroCard.style.opacity = '0';
+        productHeroCard.style.pointerEvents = 'none';
+
+        if (t < 15.2) {
+          typewriterText.textContent = "";
+        } else if (t < 17.8) {
+          const charProgress = clamp((t - 15.2) / 2.4, 0, 1);
+          const charsToShow = Math.floor(charProgress * fullQuery.length);
+          typewriterText.textContent = fullQuery.substring(0, charsToShow);
+        } else {
+          typewriterText.textContent = fullQuery;
+        }
+
+        // Blinking cursor
+        searchCursor.style.opacity = (Math.floor(t * 3.5) % 2 === 0) ? '1' : '0';
+
+        // Submit pulse at t=18.0s
+        if (t >= 18.0) {
+          const pulse = Math.sin((t - 18.0) * 15) * 0.04;
+          searchCapsule.style.transform = `scale(${1 + pulse})`;
+        } else {
+          searchCapsule.style.transform = 'scale(1)';
+        }
+      }
+
+      // --- Card Morph Reveal (18.4s - 25.5s) ---
+      if (t >= 18.3) {
+        // Search capsule smoothly collapses
+        const morphProg = clamp((t - 18.3) / 0.5, 0, 1);
+        searchCapsule.style.opacity = String(1 - morphProg);
+        searchCapsule.style.transform = `scale(${lerp(1, 0.9, morphProg)})`;
+        if (morphProg >= 1) searchCapsule.style.display = 'none';
+
+        // Product Card Springs In
+        const spCard = spring(t, 18.4, 1.0, 3.5, 5.0);
+        productHeroCard.style.opacity = smoothstep(18.3, 18.6, t);
+        productHeroCard.style.transform = `scale(${lerp(0.88, 1, spCard)}) rotateX(${lerp(8, 0, spCard)}deg)`;
+
+        // --- Social Validation Bubbles Staggered Spring Pop ---
+        // Bubble 1 (t = 20.2s)
+        const spB1 = spring(t, 20.2, 0.9, 4.0, 5.5);
+        bubble1.style.opacity = smoothstep(20.2, 20.4, t);
+        bubble1.style.transform = `scale(${lerp(0.5, 1, spB1)}) translate(${lerp(-30, 0, spB1)}px, ${lerp(20, 0, spB1)}px)`;
+
+        // Bubble 2 (t = 21.4s)
+        const spB2 = spring(t, 21.4, 0.9, 4.0, 5.5);
+        bubble2.style.opacity = smoothstep(21.4, 21.6, t);
+        bubble2.style.transform = `scale(${lerp(0.5, 1, spB2)}) translate(${lerp(30, 0, spB2)}px, ${lerp(-20, 0, spB2)}px)`;
+
+        // Bubble 3 (t = 22.5s)
+        const spB3 = spring(t, 22.5, 0.9, 4.0, 5.5);
+        bubble3.style.opacity = smoothstep(22.5, 22.7, t);
+        bubble3.style.transform = `scale(${lerp(0.5, 1, spB3)}) translate(${lerp(-30, 0, spB3)}px, ${lerp(-15, 0, spB3)}px)`;
+
+        // Bottom Stats Pill (t = 21.0s)
+        const spStat = spring(t, 21.0, 0.9, 4.0, 5.5);
+        macroStatsPill.style.opacity = smoothstep(21.0, 21.3, t);
+        macroStatsPill.style.transform = `scale(${lerp(0.7, 1, spStat)}) translateY(${lerp(20, 0, spStat)}px)`;
+
+        // Counter tick
+        if (t >= 21.0) {
+          const countProg = clamp((t - 21.0) / 3.0, 0, 1);
+          const currentCount = Math.floor(lerp(12000, 14850, easeOutCubic(countProg)));
+          counterStats.textContent = `${currentCount.toLocaleString()} engineers guided this month`;
+        }
+      } else {
+        bubble1.style.opacity = '0';
+        bubble2.style.opacity = '0';
+        bubble3.style.opacity = '0';
+        macroStatsPill.style.opacity = '0';
+      }
+
+    } else {
+      scene2.style.opacity = '0';
+    }
+
+    // -----------------------------------------------------------------------
+    // SCENE 3: 2.5D MASSIVE MATRIX PERSPECTIVE GRID (25.5s - 37.0s)
+    // -----------------------------------------------------------------------
+    if (t >= 25.4 && t < 37.4) {
+      let s3Op = 1;
+      if (t < 26.2) s3Op = smoothstep(25.4, 26.2, t);
+      else if (t > 36.6) s3Op = 1 - smoothstep(36.6, 37.3, t);
+      scene3.style.opacity = s3Op;
+
+      const matrixStage = document.getElementById('matrixStage');
+      const matrixHeader = document.getElementById('matrixHeader');
+
+      const s3Progress = clamp((t - 25.5) / 11.5, 0, 1);
+
+      // Camera Dolly & Perspective Pan
+      const panY = lerp(-60, -320, easeInOutCubic(s3Progress));
+      const panX = lerp(0, -120, easeInOutCubic(s3Progress));
+      const rotX = lerp(16, 12, s3Progress);
+      const rotZ = lerp(-2.5, -0.5, s3Progress);
+      const scaleGrid = lerp(0.82, 0.95, s3Progress);
+
+      matrixStage.style.transform = `translate(-50%, -50%) translate3d(${panX}px, ${panY}px, 0) rotateX(${rotX}deg) rotateZ(${rotZ}deg) scale(${scaleGrid})`;
+
+      // Header Banner Entrance
+      const spHeader = spring(t, 26.0, 1.0, 3.5, 5.0);
+      matrixHeader.style.opacity = smoothstep(26.0, 26.4, t);
+      matrixHeader.style.transform = `translateX(-50%) translateY(${lerp(-40, 0, spHeader)}px) scale(${lerp(0.9, 1, spHeader)})`;
+
+    } else {
+      scene3.style.opacity = '0';
+    }
+
+    // -----------------------------------------------------------------------
+    // SCENE 4: VERTICAL STEPPER PIPELINE & BENCHMARK LAB (37.0s - 48.0s)
+    // -----------------------------------------------------------------------
+    if (t >= 36.8 && t < 48.4) {
+      let s4Op = 1;
+      if (t < 37.4) s4Op = smoothstep(36.8, 37.4, t);
+      else if (t > 47.6) s4Op = 1 - smoothstep(47.6, 48.3, t);
+      scene4.style.opacity = s4Op;
+
+      const trackFill = document.getElementById('stepperTrackFill');
+      const s1 = document.getElementById('stepNode1').querySelector('.stepper-node-dot');
+      const s2 = document.getElementById('stepNode2').querySelector('.stepper-node-dot');
+      const s3 = document.getElementById('stepNode3').querySelector('.stepper-node-dot');
+      const s4 = document.getElementById('stepNode4').querySelector('.stepper-node-dot');
+      const s5 = document.getElementById('stepNode5').querySelector('.stepper-node-dot');
+
+      const labP1 = document.getElementById('labPhase1');
+      const labP2 = document.getElementById('labPhase2');
+      const labP4 = document.getElementById('labPhase4');
+      const labP5 = document.getElementById('labPhase5');
+
+      // Timeline mapping for 5 steps (37.0s -> 47.5s)
+      // Step 1: 37.0s - 39.2s
+      // Step 2: 39.2s - 41.6s
+      // Step 3: 41.6s - 44.0s
+      // Step 4: 44.0s - 46.2s
+      // Step 5: 46.2s - 48.0s
+
+      const pipeProg = clamp((t - 37.0) / 10.0, 0, 1);
+      trackFill.style.height = `${pipeProg * 100}%`;
+
+      // Active dots
+      s1.className = t >= 39.2 ? 'stepper-node-dot done' : (t >= 37.0 ? 'stepper-node-dot active' : 'stepper-node-dot');
+      s2.className = t >= 41.6 ? 'stepper-node-dot done' : (t >= 39.2 ? 'stepper-node-dot active' : 'stepper-node-dot');
+      s3.className = t >= 44.0 ? 'stepper-node-dot done' : (t >= 41.6 ? 'stepper-node-dot active' : 'stepper-node-dot');
+      s4.className = t >= 46.2 ? 'stepper-node-dot done' : (t >= 44.0 ? 'stepper-node-dot active' : 'stepper-node-dot');
+      s5.className = t >= 46.2 ? 'stepper-node-dot active' : 'stepper-node-dot';
+
+      // Switch Dashboard Phases
+      if (t < 39.5) {
+        // Phase 1: Waveforms
+        labP1.style.opacity = '1';
+        labP2.style.opacity = '0';
+        labP4.style.opacity = '0';
+        labP5.style.opacity = '0';
+
+        // Waveform jitter animation
+        for (let i = 0; i < waveBars.length; i++) {
+          const waveHeight = Math.sin(t * 12 + i * 0.4) * 35 + 45;
+          waveBars[i].style.height = `${waveHeight}%`;
+        }
+      } else if (t < 43.5) {
+        // Phase 2: Keystroke Endurance
+        labP1.style.opacity = '0';
+        labP2.style.opacity = '1';
+        labP4.style.opacity = '0';
+        labP5.style.opacity = '0';
+
+        const keyProg = clamp((t - 39.5) / 4.0, 0, 1);
+        const countKeys = Math.floor(lerp(100000, 524800, easeOutCubic(keyProg)));
+        document.getElementById('keystrokeCounter').textContent = countKeys.toLocaleString();
+      } else if (t < 46.0) {
+        // Phase 4: Editorial Independence Charter
+        labP1.style.opacity = '0';
+        labP2.style.opacity = '0';
+        labP4.style.opacity = '1';
+        labP5.style.opacity = '0';
+      } else {
+        // Phase 5: Stamp Verdict
+        labP1.style.opacity = '0';
+        labP2.style.opacity = '0';
+        labP4.style.opacity = '0';
+        labP5.style.opacity = '1';
+
+        const goldStamp = document.getElementById('goldStamp');
+        const stampProg = spring(t, 46.2, 0.8, 3.5, 6.0);
+        goldStamp.style.transform = `rotate(${lerp(15, -4, stampProg)}deg) scale(${lerp(2.2, 1, stampProg)})`;
+      }
+
+    } else {
+      scene4.style.opacity = '0';
+    }
+
+    // -----------------------------------------------------------------------
+    // SCENE 5: CATEGORY FLIPPER & 3D FLOATING SEARCH (48.0s - 58.5s)
+    // -----------------------------------------------------------------------
+    if (t >= 47.8 && t < 58.8) {
+      let s5Op = 1;
+      if (t < 48.3) s5Op = smoothstep(47.8, 48.3, t);
+      else if (t > 58.0) s5Op = 1 - smoothstep(58.0, 58.7, t);
+      scene5.style.opacity = s5Op;
+
+      const catFlipperStage = document.getElementById('catFlipperStage');
+      const f1 = document.getElementById('flipper1');
+      const f2 = document.getElementById('flipper2');
+      const f3 = document.getElementById('flipper3');
+      const f4 = document.getElementById('flipper4');
+
+      const elevatedSearchBar = document.getElementById('elevatedSearchBar');
+      const elevatedSearchInput = document.getElementById('elevatedSearchInput');
+      const elevatedCursor = document.getElementById('elevatedCursor');
+      const cat3dGround = document.getElementById('cat3dGround');
+      const trio1 = document.getElementById('trioCard1');
+      const trio2 = document.getElementById('trioCard2');
+      const trio3 = document.getElementById('trioCard3');
+
+      // Category Pill Cycles (48.0s - 52.2s)
+      if (t < 52.5) {
+        catFlipperStage.style.display = 'flex';
+        elevatedSearchBar.style.opacity = '0';
+        cat3dGround.style.opacity = '0';
+
+        function handleFlipper(el, startT, endT) {
+          if (t >= startT && t < endT) {
+            el.style.display = 'flex';
+            const spF = spring(t, startT, 0.7, 4.0, 5.5);
+            el.style.transform = `rotateX(${lerp(-90, 0, spF)}deg) scale(${lerp(0.8, 1, spF)})`;
+            el.style.opacity = smoothstep(startT, startT + 0.1, t);
+          } else {
+            el.style.display = 'none';
+          }
+        }
+
+        handleFlipper(f1, 48.0, 49.1);
+        handleFlipper(f2, 49.1, 50.2);
+        handleFlipper(f3, 50.2, 51.3);
+        handleFlipper(f4, 51.3, 52.5);
+
+      } else {
+        // Transition into 3D Elevated Search & Trio Reveal (52.5s - 58.5s)
+        catFlipperStage.style.display = 'none';
+
+        // Search Bar Entrance
+        const spBar = spring(t, 52.5, 0.9, 3.5, 5.0);
+        elevatedSearchBar.style.opacity = smoothstep(52.5, 52.8, t);
+        elevatedSearchBar.style.transform = `translateY(${lerp(-40, 0, spBar)}px) scale(${lerp(0.9, 1, spBar)})`;
+
+        // Search Typing
+        const searchDeskQuery = "developer desk setup 2026";
+        if (t < 54.8) {
+          const typeP = clamp((t - 52.8) / 1.8, 0, 1);
+          const chars = Math.floor(typeP * searchDeskQuery.length);
+          elevatedSearchInput.textContent = searchDeskQuery.substring(0, chars);
+          elevatedCursor.style.opacity = (Math.floor(t * 3.5) % 2 === 0) ? '1' : '0';
+        } else {
+          elevatedSearchInput.textContent = searchDeskQuery;
+          elevatedCursor.style.opacity = '0';
+        }
+
+        // Ground Plane 3D Tilt
+        const groundProg = clamp((t - 53.5) / 4.5, 0, 1);
+        const gRotX = lerp(28, 16, easeOutCubic(groundProg));
+        const gY = lerp(120, 40, easeOutCubic(groundProg));
+        cat3dGround.style.opacity = smoothstep(53.5, 54.0, t);
+        cat3dGround.style.transform = `translate(-50%, -50%) translateY(${gY}px) rotateX(${gRotX}deg) scale(0.96)`;
+
+        // Staggered Trio Cards Pop
+        const spT1 = spring(t, 54.2, 0.9, 4.0, 5.5);
+        trio1.style.transform = `translateY(${lerp(80, 0, spT1)}px) scale(${lerp(0.9, 1, spT1)})`;
+
+        const spT2 = spring(t, 54.5, 0.9, 4.0, 5.5);
+        trio2.style.transform = `translateY(${lerp(80, 0, spT2)}px) scale(${lerp(0.9, 1, spT2)})`;
+
+        const spT3 = spring(t, 54.8, 0.9, 4.0, 5.5);
+        trio3.style.transform = `translateY(${lerp(80, 0, spT3)}px) scale(${lerp(0.9, 1, spT3)})`;
+      }
+
+    } else {
+      scene5.style.opacity = '0';
+    }
+
+    // -----------------------------------------------------------------------
+    // SCENE 6: PUNCHLINE, GRAND LOGO REVEAL & OUTRO (58.5s - 73.45s)
+    // -----------------------------------------------------------------------
+    if (t >= 58.2) {
+      scene6.style.opacity = '1';
+
+      const punchlineBox = document.getElementById('outroPunchline');
+      const brandBox = document.getElementById('outroBrand');
+      const ctaBtn = document.getElementById('brandCtaBtn');
+
+      // Part A: Punchline (58.5s - 63.5s)
+      if (t < 63.8) {
+        brandBox.style.display = 'none';
+        punchlineBox.style.display = 'flex';
+
+        let pOp = 0;
+        if (t < 59.2) pOp = smoothstep(58.5, 59.2, t);
+        else if (t < 63.0) pOp = 1;
+        else pOp = 1 - smoothstep(63.0, 63.6, t);
+        punchlineBox.style.opacity = pOp;
+
+        const spP = spring(t, 58.5, 1.2, 3.5, 5.0);
+        punchlineBox.style.transform = `scale(${lerp(0.94, 1.02, clamp((t - 58.5) / 5.0, 0, 1))})`;
+      } else {
+        // Part B: Brand Reveal & CTA (63.5s - 73.45s)
+        punchlineBox.style.display = 'none';
+        brandBox.style.display = 'flex';
+
+        const bOp = smoothstep(63.5, 64.2, t);
+        brandBox.style.opacity = bOp;
+
+        const spBrand = spring(t, 63.5, 1.4, 3.2, 4.5);
+        brandBox.style.transform = `scale(${lerp(0.9, 1, spBrand)}) translateY(${lerp(30, 0, spBrand)}px)`;
+
+        // Ambient gentle breathing on CTA button
+        if (t >= 65.0) {
+          const breath = Math.sin((t - 65.0) * 2.5) * 0.02;
+          ctaBtn.style.transform = `scale(${1 + breath})`;
+        }
+      }
+
+    } else {
+      scene6.style.opacity = '0';
+    }
+
+  };
+
+  // Default seek to 0s
+  window.seekTo(0);
+</script>
 </body>
 </html>

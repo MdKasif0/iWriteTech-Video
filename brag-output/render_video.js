@@ -7,16 +7,16 @@ const workspaceDir = path.resolve(__dirname, '..');
 const outputDir = path.resolve(__dirname);
 const compositionDir = path.join(outputDir, 'composition');
 const htmlUrl = 'file://' + path.join(compositionDir, 'index.html');
-const soundtrackPath = path.join(outputDir, 'work', 'soundtrack.wav');
+const soundtrackPath = path.join(outputDir, 'work', 'soundtrack_exact.aac');
 const finalMp4Path = path.join(outputDir, 'brag.mp4');
 const posterJpgPath = path.join(outputDir, 'brag.jpg');
 const posterPngPath = path.join(outputDir, 'brag-poster.png');
 const userDataDir = path.join(outputDir, 'work', 'chrome-render-profile');
 
 const FPS = 30;
-const DURATION_SEC = 20.0;
-const TOTAL_FRAMES = Math.round(DURATION_SEC * FPS); // 600 frames
-const POSTER_FRAME = Math.round(5.0 * FPS); // Frame at t=5.0s (Scene 2 settled reveal)
+const DURATION_SEC = 73.45;
+const TOTAL_FRAMES = Math.round(DURATION_SEC * FPS); // 2204 frames
+const POSTER_FRAME = Math.round(68.0 * FPS); // Frame at t=68.0s (Grand Outro Branding)
 
 async function getWsUrl(port) {
   for (let i = 0; i < 40; i++) {

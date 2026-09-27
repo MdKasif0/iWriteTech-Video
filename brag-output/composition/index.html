@@ -6,38 +6,38 @@
 <title>iWriteTech — Official Launch Film</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Silkscreen&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --cream-bg: #F7F4EE;
-    --cream-card: #FFFFFF;
-    --cream-border: rgba(28, 25, 23, 0.08);
-    --dark-bg: #0C0D0E;
-    --dark-surface: #141619;
-    --dark-card: #1A1D21;
-    --dark-border: rgba(255, 255, 255, 0.09);
-    --text-dark: #121316;
-    --text-muted: #6B7280;
-    --text-light: #F9FAFB;
-    --text-dim: #9CA3AF;
-    --accent-orange: #FF5E36;
-    --accent-gold: #C9A66B;
-    --accent-amber: #F59E0B;
+    --bg-light: #F8F9FA;
+    --bg-subtle: #F1F3F5;
+    --surface-white: #FFFFFF;
+    --border-subtle: rgba(0, 0, 0, 0.07);
+    --border-hairline: rgba(0, 0, 0, 0.05);
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
     --accent-blue: #2563EB;
+    --accent-blue-light: #EFF6FF;
+    --accent-orange: #FF5E36;
+    --accent-orange-light: #FFF7ED;
     --accent-green: #10B981;
-    --accent-lime: #A3E635;
-    --accent-purple: #8B5CF6;
+    --accent-green-light: #ECFDF5;
+    --accent-amber: #F59E0B;
+    --accent-amber-light: #FEF3C7;
+    --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
+    --shadow-elevated: 0 30px 90px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.03);
   }
 
   body {
     width: 1920px;
     height: 1080px;
     overflow: hidden;
-    background-color: var(--cream-bg);
+    background-color: var(--bg-light);
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--text-dark);
+    color: var(--text-primary);
     user-select: none;
     -webkit-font-smoothing: antialiased;
     position: relative;
@@ -49,6 +49,17 @@
     width: 1920px;
     height: 1080px;
     overflow: hidden;
+    background: radial-gradient(circle at 50% 40%, #FFFFFF 0%, #F8F9FA 70%, #F1F3F5 100%);
+  }
+
+  /* Refined Global Dot Grid */
+  .grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.8;
   }
 
   .scene {
@@ -64,1894 +75,1160 @@
     transform-origin: center center;
   }
 
-  /* Universal Mouse Cursor */
-  .cursor-pointer {
+  /* Universal Cursors */
+  .cursor-wrap {
     position: absolute;
-    width: 24px;
-    height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     z-index: 9999;
     pointer-events: none;
     opacity: 0;
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.35));
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.18));
+  }
+
+  .cursor-pill {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #FFFFFF;
+    white-space: nowrap;
   }
 
   /* =========================================================================
-     SCENE 1: CURIOSITY & PROMPT CAPSULE (0.0s – 6.5s)
+     SCENE 1: MACRO HARDWARE & 3D PHONE CHAT REVEAL (0.0s – 7.5s)
      ========================================================================= */
   #scene1 {
-    background-color: var(--cream-bg);
-    flex-direction: column;
     overflow: hidden;
   }
 
-  .scene1-mesh-bg {
+  .scene1-macro-view {
     position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 174, 115, 0.22) 0%, rgba(254, 215, 170, 0.12) 35%, rgba(247, 244, 238, 0) 70%);
-    opacity: 0;
-    transition: opacity 0.8s ease;
-    pointer-events: none;
-  }
-
-  .scene1-dot-grid {
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(28, 25, 23, 0.08) 1.5px, transparent 1.5px);
-    background-size: 32px 32px;
-    opacity: 0.6;
-    pointer-events: none;
-  }
-
-  .scene1-opening-word {
-    font-size: 96px;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    color: var(--text-dark);
+    width: 1920px;
+    height: 1080px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .scene1-macro-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(1.02) contrast(1.02);
+    transform-origin: 30% 40%;
+  }
+
+  /* 3D Phone Mockup */
+  .scene1-phone-container {
     position: absolute;
+    width: 440px;
+    height: 880px;
+    background: #FFFFFF;
+    border-radius: 54px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.12), 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 10px solid #1E293B;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     z-index: 10;
+    transform-origin: center center;
+    transform: translateY(40px) scale(0.9);
+    opacity: 0;
   }
 
-  .scene1-orb {
-    width: 78px;
-    height: 78px;
-    border-radius: 50%;
-    margin: 0 4px;
-    background: radial-gradient(circle at 35% 35%, #FFBE98 0%, #FF6B4A 55%, #E04824 100%);
-    box-shadow: 0 10px 30px rgba(255, 107, 74, 0.4), inset 0 2px 6px rgba(255, 255, 255, 0.6);
-    display: inline-block;
-  }
-
-  .scene1-headline-split {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1400px;
+  .phone-notch-area {
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    opacity: 0;
-    z-index: 12;
-  }
-
-  .scene1-split-left, .scene1-split-right {
-    font-size: 52px;
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    color: var(--text-dark);
-  }
-
-  .scene1-prompt-card {
-    position: absolute;
-    width: 640px;
+    padding: 0 32px;
     background: #FFFFFF;
+  }
+
+  .phone-time {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0F172A;
+  }
+
+  .phone-island {
+    width: 110px;
+    height: 28px;
     border-radius: 20px;
-    padding: 24px 28px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: #000000;
+  }
+
+  .phone-chat-body {
+    flex: 1;
+    padding: 24px 20px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    z-index: 15;
-    opacity: 0;
+    background: #FFFFFF;
   }
 
-  .scene1-prompt-text {
-    font-size: 19px;
-    line-height: 1.5;
-    color: #262626;
-    font-weight: 450;
-    min-height: 60px;
-  }
-
-  .scene1-prompt-cursor {
-    display: inline-block;
-    width: 2px;
-    height: 20px;
-    background: #FF5E36;
-    margin-left: 2px;
-    vertical-align: middle;
-    animation: blink 0.9s infinite;
-  }
-
-  .scene1-prompt-bottom {
+  .chat-contact-bar {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 8px;
-    border-top: 1px solid rgba(0,0,0,0.04);
+    gap: 6px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
   }
 
-  .scene1-prompt-icons {
-    display: flex;
-    gap: 12px;
-    color: #9CA3AF;
-  }
-
-  .scene1-prompt-icon-btn {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #F3F4F6;
-  }
-
-  .scene1-submit-btn {
-    width: 40px;
-    height: 40px;
+  .contact-avatar {
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    background: #111827;
+    background: #0F172A;
     color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.15s ease, background 0.15s ease;
+    font-weight: 800;
+    font-size: 18px;
+  }
+
+  .contact-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F172A;
+  }
+
+  .chat-msg {
+    max-width: 85%;
+    padding: 14px 18px;
+    border-radius: 20px;
+    font-size: 15px;
+    line-height: 1.45;
+    position: relative;
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  .msg-incoming {
+    background: #F1F5F9;
+    color: #1E293B;
+    align-self: flex-start;
+    border-bottom-left-radius: 6px;
+  }
+
+  .msg-outgoing {
+    background: var(--accent-blue);
+    color: #FFFFFF;
+    align-self: flex-end;
+    border-bottom-right-radius: 6px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  }
+
+  .chat-embed-photo {
+    width: 100%;
+    height: 160px;
+    border-radius: 14px;
+    object-fit: cover;
+    margin-top: 10px;
+  }
+
+  /* Parallax Floating Cards Bursting from Phone */
+  .burst-card {
+    position: absolute;
+    border-radius: 20px;
+    background: #FFFFFF;
+    padding: 12px;
+    box-shadow: var(--shadow-elevated);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 15;
+    opacity: 0;
+  }
+
+  .burst-card img {
+    width: 90px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .burst-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .burst-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0F172A;
+  }
+
+  .burst-tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   /* =========================================================================
-     SCENE 2: 3D HARDWARE SPECIMEN & TOPOGRAPHY BLUEPRINT (6.5s – 14.0s)
+     SCENE 2: 3D HARDWARE SPECIMEN VIEWPORT (7.5s – 16.0s)
      ========================================================================= */
   #scene2 {
-    background-color: var(--cream-bg);
     overflow: hidden;
   }
 
-  .scene2-dot-matrix-bg {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    grid-template-columns: repeat(48, 1fr);
-    grid-gap: 12px;
-    padding: 30px;
-    opacity: 0.45;
-    pointer-events: none;
-  }
-
-  .dot-node {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(28, 25, 23, 0.08);
-  }
-
-  .dot-node.warm { background: #FF8A65; box-shadow: 0 0 10px rgba(255, 138, 101, 0.6); }
-  .dot-node.emerald { background: #34D399; box-shadow: 0 0 10px rgba(52, 211, 153, 0.5); }
-  .dot-node.purple { background: #A78BFA; }
-
-  .scene2-app-window {
+  .scene2-app-frame {
     position: relative;
-    width: 1480px;
-    height: 820px;
+    width: 1500px;
+    height: 840px;
     background: #FFFFFF;
-    border-radius: 28px;
-    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 32px;
+    box-shadow: var(--shadow-elevated);
+    border: 1px solid var(--border-subtle);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    z-index: 20;
-    transform: scale(0.92);
   }
 
-  .scene2-window-header {
-    height: 56px;
-    padding: 0 24px;
+  .frame-titlebar {
+    height: 60px;
+    padding: 0 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    background: #FAF9F6;
+    border-bottom: 1px solid var(--border-hairline);
+    background: #FAFAFA;
   }
 
-  .scene2-window-dots {
+  .titlebar-dots {
     display: flex;
     gap: 8px;
   }
 
-  .window-dot {
+  .titlebar-dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
   }
-  .dot-red { background: #FF5F56; }
-  .dot-yellow { background: #FFBD2E; }
-  .dot-green { background: #27C93F; }
 
-  .scene2-window-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 500;
-    color: #4B5563;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .scene2-window-body {
+  .frame-body {
     flex: 1;
     display: flex;
     position: relative;
-    background: #FDFBF7;
+    background: #FFFFFF;
   }
 
-  /* Left Panel */
-  .scene2-left-panel {
-    width: 380px;
-    padding: 36px 32px;
+  /* Left Sidebar Inspector */
+  .frame-left-panel {
+    width: 400px;
+    padding: 40px 36px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 28px;
+    border-right: 1px solid var(--border-hairline);
     background: #FFFFFF;
-    border-right: 1px solid rgba(0,0,0,0.06);
     z-index: 5;
   }
 
-  .scene2-panel-title {
-    font-size: 34px;
+  .frame-hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 38px;
     font-weight: 700;
     letter-spacing: -0.03em;
-    color: #111827;
-    line-height: 1.15;
+    color: #0F172A;
+    line-height: 1.1;
   }
 
-  .scene2-panel-search {
-    background: #F3F4F6;
-    border-radius: 12px;
-    padding: 10px 14px;
-    font-size: 12px;
-    color: #9CA3AF;
-    font-family: 'JetBrains Mono', monospace;
+  .curated-pill-row {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .scene2-category-pills {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .scene2-pill-row {
-    display: flex;
+    flex-wrap: wrap;
     gap: 8px;
   }
 
-  .cat-pill {
+  .curated-pill {
     padding: 8px 14px;
     border-radius: 20px;
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    font-weight: 700;
     text-transform: uppercase;
-    background: #F3F4F6;
-    color: #4B5563;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .cat-pill.active {
-    background: #111827;
-    color: #FFFFFF;
-  }
-  .cat-pill.gold {
-    background: #FEF3C7;
-    color: #B45309;
+    letter-spacing: 0.05em;
+    background: #F1F5F9;
+    color: #475569;
   }
 
-  .scene2-budget-box {
+  .curated-pill.active {
+    background: #0F172A;
+    color: #FFFFFF;
+  }
+
+  .telemetry-row {
     display: flex;
     gap: 16px;
-    padding: 16px;
-    background: #F9FAFB;
-    border-radius: 16px;
-    border: 1px solid rgba(0,0,0,0.05);
+    padding: 18px;
+    background: #F8FAFC;
+    border-radius: 18px;
+    border: 1px solid var(--border-hairline);
   }
 
-  .budget-item {
+  .telemetry-cell {
     flex: 1;
   }
-  .budget-val {
-    font-size: 26px;
-    font-weight: 700;
-    color: #111827;
+
+  .telemetry-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0F172A;
+    font-family: 'JetBrains Mono', monospace;
     letter-spacing: -0.02em;
   }
-  .budget-lbl {
+
+  .telemetry-desc {
     font-size: 11px;
     font-weight: 600;
-    color: #9CA3AF;
-    letter-spacing: 0.05em;
+    color: #64748B;
     text-transform: uppercase;
-    margin-top: 2px;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
   }
 
-  .scene2-panel-btn {
+  .frame-btn-dark {
     margin-top: auto;
-    background: #111827;
+    background: #0F172A;
     color: #FFFFFF;
-    padding: 16px 20px;
-    border-radius: 14px;
-    font-size: 13px;
+    padding: 18px 24px;
+    border-radius: 16px;
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: 0.03em;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
   }
 
-  /* Center/Right 3D Viewport */
-  .scene2-center-viewport {
+  /* Right Viewport with High-Res Setup */
+  .frame-right-viewport {
     flex: 1;
     position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
-  .scene2-viewport-img {
+  .frame-viewport-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    filter: brightness(0.97) contrast(1.02);
   }
 
-  /* Waypoint Pins */
-  .waypoint-pin {
+  /* Floating Waypoint Chips */
+  .waypoint-chip {
     position: absolute;
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
+    gap: 10px;
+    padding: 10px 18px;
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(16px);
+    border-radius: 30px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.09);
     border: 1px solid rgba(255, 255, 255, 0.8);
-    font-size: 12px;
-    font-weight: 600;
-    color: #1F2937;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0F172A;
     z-index: 10;
   }
 
-  .pin-dot {
+  .chip-dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
   }
-  .pin-dot.orange { background: #FF5E36; box-shadow: 0 0 8px rgba(255,94,54,0.6); }
-  .pin-dot.emerald { background: #10B981; box-shadow: 0 0 8px rgba(16,185,129,0.6); }
-  .pin-dot.gold { background: #F59E0B; box-shadow: 0 0 8px rgba(245,158,11,0.6); }
-
-  .scene2-bottom-card {
-    position: absolute;
-    bottom: 28px;
-    right: 32px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(16px);
-    border-radius: 18px;
-    padding: 16px 20px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    z-index: 15;
-  }
-
-  .scene2-card-thumb {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    object-fit: cover;
-  }
 
   /* =========================================================================
-     SCENE 3: ACOUSTIC SPECTROGRAM & MASTER HARDWARE LAB (14.0s – 23.0s)
+     SCENE 3: SWISS EDITORIAL GRID & ARCHITECTURAL DISSECTION (16.0s – 25.0s)
      ========================================================================= */
   #scene3 {
-    background-color: var(--dark-bg);
     overflow: hidden;
   }
 
-  .scene3-bg-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.35;
-    filter: blur(4px) brightness(0.7);
-  }
-
-  .scene3-telemetry-card {
-    position: absolute;
-    width: 680px;
-    background: rgba(255, 255, 255, 0.96);
-    border-radius: 24px;
-    padding: 28px 32px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 20;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
-  }
-
-  .scene3-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .scene3-card-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    font-weight: 700;
-    color: #111827;
-    letter-spacing: 0.05em;
-  }
-
-  .scene3-coords {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: #6B7280;
-  }
-
-  .scene3-graph-svg {
-    width: 100%;
-    height: 140px;
-  }
-
-  .scene3-tabs {
-    display: flex;
-    gap: 8px;
-    padding-top: 12px;
-    border-top: 1px solid rgba(0,0,0,0.06);
-  }
-
-  .scene3-tab-pill {
-    padding: 6px 14px;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 600;
-    color: #6B7280;
-    background: #F3F4F6;
-    letter-spacing: 0.04em;
-  }
-  .scene3-tab-pill.active {
-    background: #FEF08A;
-    color: #854D0E;
-  }
-
-  /* Expanded Master Studio Dashboard */
-  .scene3-master-dashboard {
-    position: absolute;
-    width: 1480px;
-    height: 820px;
-    background: rgba(20, 22, 25, 0.95);
-    backdrop-filter: blur(20px);
-    border-radius: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
+  .scene3-swiss-artboard {
+    position: relative;
+    width: 1540px;
+    height: 860px;
+    background: #FFFFFF;
+    border-radius: 32px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-elevated);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
     overflow: hidden;
-    z-index: 25;
-    opacity: 0;
   }
 
-  .scene3-master-header {
-    height: 70px;
-    padding: 0 36px;
+  /* Left Editorial Typography Section */
+  .scene3-left-editorial {
+    padding: 60px 50px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid var(--border-hairline);
+    position: relative;
   }
 
-  .scene3-master-title {
-    font-size: 30px;
+  .editorial-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
     font-weight: 700;
-    color: #FFFFFF;
-    letter-spacing: -0.02em;
+    color: var(--accent-orange);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .editorial-headline {
+    font-family: 'Literata', serif;
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #0F172A;
+    line-height: 1.05;
+  }
+
+  .editorial-statement {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #475569;
+    max-width: 540px;
+  }
+
+  .editorial-badge-row {
     display: flex;
-    align-items: center;
     gap: 16px;
   }
 
-  .scene3-rating-pill {
-    font-size: 12px;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 12px;
-    background: #F59E0B;
-    color: #111827;
-  }
-
-  .scene3-master-grid {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 24px;
-    padding: 32px 36px;
-  }
-
-  .scene3-hero-view {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    background: #111317;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .scene3-hero-img {
-    width: 100%;
-    height: 70%;
-    object-fit: cover;
-  }
-
-  .scene3-bottom-strip {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 16px;
-    background: rgba(15, 17, 21, 0.95);
-  }
-
-  .strip-spec-item {
-    text-align: center;
-  }
-  .strip-val {
-    font-size: 24px;
-    font-weight: 700;
-    color: #FFFFFF;
-    font-family: 'JetBrains Mono', monospace;
-  }
-  .strip-lbl {
-    font-size: 11px;
-    color: #9CA3AF;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 4px;
-  }
-
-  .scene3-telemetry-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .telemetry-card-dark {
-    background: #181B20;
-    border-radius: 20px;
-    padding: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .dark-card-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    font-weight: 700;
-    color: #9CA3AF;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .gauge-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 110px;
-  }
-
-  .gauge-val-display {
-    position: absolute;
-    text-align: center;
-    top: 50px;
-  }
-
-  .gauge-num {
-    font-size: 38px;
-    font-weight: 800;
-    color: #FFFFFF;
-    line-height: 1;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  .gauge-sub {
-    font-size: 12px;
-    color: #34D399;
-    font-weight: 600;
-    margin-top: 4px;
-  }
-
-  /* =========================================================================
-     SCENE 4: ECOSYSTEM SYNC & DUAL TELEMETRY (23.0s – 30.0s)
-     ========================================================================= */
-  #scene4 {
-    background-color: var(--cream-bg);
-    overflow: hidden;
-  }
-
-  .scene4-capsule {
-    position: absolute;
-    background: #FFFFFF;
-    padding: 16px 24px;
-    border-radius: 36px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    font-size: 20px;
-    font-weight: 500;
-    color: #111827;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    z-index: 30;
-    opacity: 0;
-  }
-
-  .scene4-icon-chip {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: #E0E7FF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-  }
-
-  .scene4-submit-circle {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #111827;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    margin-left: 8px;
-  }
-
-  .scene4-split-view {
-    position: absolute;
-    width: 1480px;
-    height: 820px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    z-index: 25;
-    opacity: 0;
-  }
-
-  .scene4-left-dark {
-    background: #121316;
-    border-radius: 28px;
-    padding: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .scene4-donut-section {
-    display: flex;
-    align-items: center;
-    gap: 36px;
-  }
-
-  .scene4-donut-svg {
-    width: 220px;
-    height: 220px;
-  }
-
-  .scene4-donut-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .donut-val-big {
-    font-size: 44px;
-    font-weight: 800;
-    color: #FFFFFF;
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: -0.03em;
-  }
-
-  .donut-legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: #9CA3AF;
-  }
-  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
-
-  .scene4-right-light {
-    background: #FFFFFF;
-    border-radius: 28px;
-    padding: 36px;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.06);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    overflow: hidden;
-  }
-
-  .scene4-sheet-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .scene4-sheet-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #111827;
+  .verified-badge-light {
+    padding: 12px 20px;
+    border-radius: 14px;
+    background: #F8FAFC;
+    border: 1px solid var(--border-hairline);
     display: flex;
     align-items: center;
     gap: 10px;
-  }
-
-  .scene4-spec-table {
-    width: 100%;
-    border-collapse: collapse;
     font-size: 13px;
+    font-weight: 700;
+    color: #0F172A;
   }
 
-  .scene4-spec-table th {
-    text-align: left;
-    padding: 10px 12px;
-    background: #F9FAFB;
-    color: #6B7280;
-    font-weight: 600;
-    border-bottom: 1px solid #E5E7EB;
+  /* Right Dissection Showcase */
+  .scene3-right-dissection {
+    position: relative;
+    padding: 40px;
+    background: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .scene4-spec-table td {
-    padding: 12px;
-    border-bottom: 1px solid #F3F4F6;
-    color: #1F2937;
-    font-family: 'JetBrains Mono', monospace;
+  .dissection-card {
+    flex: 1;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+    gap: 24px;
   }
 
-  .status-badge {
-    padding: 4px 10px;
-    border-radius: 8px;
+  .dissection-img {
+    width: 140px;
+    height: 100px;
+    border-radius: 14px;
+    object-fit: cover;
+  }
+
+  .dissection-info {
+    flex: 1;
+  }
+
+  .dissection-label {
     font-size: 11px;
+    font-weight: 700;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .dissection-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-top: 2px;
+  }
+
+  .dissection-spec {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent-blue);
     font-weight: 600;
-    background: #ECFDF5;
-    color: #059669;
+    margin-top: 6px;
   }
 
   /* =========================================================================
-     SCENE 5: THE ICONIC "CURATE." EDITORIAL MANIFESTO (30.0s – 43.0s)
+     SCENE 4: COLLABORATIVE HARDWARE LAB & SPECTROGRAM (25.0s – 35.0s)
      ========================================================================= */
-  #scene5 {
-    background-color: var(--cream-bg);
+  #scene4 {
     overflow: hidden;
   }
 
-  .scene5-artboard {
+  .scene4-lab-artboard {
     position: relative;
     width: 1540px;
     height: 860px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 32px;
   }
 
-  /* Giant Editorial Serif Word */
-  .scene5-title-word {
-    position: absolute;
-    left: 40px;
-    top: 180px;
-    font-family: 'Literata', serif;
-    font-size: 160px;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    color: #111827;
-    line-height: 1;
-  }
-
-  /* Avatar with concentric ring */
-  .scene5-avatar-wrap {
-    position: absolute;
-    left: 210px;
-    top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .scene5-avatar-img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #FFFFFF;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  }
-
-  .scene5-avatar-ring {
-    position: absolute;
-    width: 130px;
-    height: 130px;
-  }
-
-  .scene5-avatar-badge {
-    position: absolute;
-    right: -10px;
-    top: 10px;
-    background: #10B981;
-    color: #FFFFFF;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 4px 8px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.4);
-  }
-
-  /* Filter Pills Cluster */
-  .scene5-filters-box {
-    position: absolute;
-    left: 560px;
-    top: 140px;
+  /* Left Config Card */
+  .scene4-card-left {
+    width: 440px;
+    background: #FFFFFF;
+    border-radius: 28px;
+    padding: 36px;
+    box-shadow: var(--shadow-elevated);
+    border: 1px solid var(--border-subtle);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 20px;
   }
 
-  .scene5-filters-header {
-    font-family: 'Literata', serif;
-    font-style: italic;
-    font-size: 18px;
-    color: #374151;
+  .code-block-light {
+    background: #F8FAFC;
+    border-radius: 16px;
+    padding: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #334155;
+    line-height: 1.6;
+    border: 1px solid var(--border-hairline);
+  }
+
+  /* Center Acoustic Curve Card */
+  .scene4-card-center {
+    width: 580px;
+    background: #FFFFFF;
+    border-radius: 28px;
+    padding: 36px;
+    box-shadow: var(--shadow-elevated);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+  }
+
+  .spectrogram-svg {
+    width: 100%;
+    height: 180px;
+  }
+
+  /* Right Spec Sheet */
+  .scene4-card-right {
+    width: 420px;
+    background: #FFFFFF;
+    border-radius: 28px;
+    padding: 36px;
+    box-shadow: var(--shadow-elevated);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .score-box-big {
+    padding: 24px;
+    background: #ECFDF5;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #A7F3D0;
+  }
+
+  .score-num {
+    font-size: 52px;
+    font-weight: 800;
+    color: #065F46;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .score-lbl {
+    font-size: 12px;
+    font-weight: 700;
+    color: #047857;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* =========================================================================
+     SCENE 5: CIRCADIAN TELEMETRY & FLOW STATE WORKSPACE (35.0s – 40.5s)
+     ========================================================================= */
+  #scene5 {
+    overflow: hidden;
+  }
+
+  .scene5-flow-card {
+    position: relative;
+    width: 1140px;
+    background: #FFFFFF;
+    border-radius: 36px;
+    padding: 48px 56px;
+    box-shadow: var(--shadow-elevated);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .scene5-top-row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border-hairline);
   }
 
-  .scene5-pills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    max-width: 420px;
+  .lux-readout {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1;
+    letter-spacing: -0.03em;
   }
 
-  .filter-pill-colored {
-    padding: 10px 16px;
-    border-radius: 14px;
+  .lux-desc {
     font-size: 13px;
     font-weight: 600;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 8px;
+  }
+
+  .stats-trio {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  }
-  .fp-purple { background: #E0E7FF; color: #4338CA; }
-  .fp-lime { background: #ECFCCB; color: #4D7C0F; }
-  .fp-orange { background: #FFEDD5; color: #C2410C; }
-  .fp-white { background: #FFFFFF; color: #1F2937; border: 1px solid rgba(0,0,0,0.06); }
-
-  /* Prompt Card in Scene 5 */
-  .scene5-prompt-pill {
-    position: absolute;
-    left: 380px;
-    top: 360px;
-    background: #FFFFFF;
-    border-radius: 20px;
-    padding: 14px 22px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.07);
-    border: 1px solid rgba(0,0,0,0.05);
-    font-size: 16px;
-    font-weight: 500;
-    color: #1F2937;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+    gap: 40px;
   }
 
-  /* Folder Stack on the left */
-  .scene5-folder-card {
-    position: absolute;
-    left: 40px;
-    top: 380px;
-    width: 280px;
-    height: 180px;
-    background: #FFFFFF;
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 14px 35px rgba(0,0,0,0.06);
-    border: 1px solid rgba(0,0,0,0.06);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+  .trio-item {
+    text-align: right;
   }
 
-  .folder-tab {
-    position: absolute;
-    top: -14px;
-    left: 20px;
-    background: #111827;
-    color: #FFFFFF;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 4px 14px;
-    border-radius: 8px 8px 0 0;
-  }
-
-  .folder-title {
-    font-family: 'Literata', serif;
+  .trio-val {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 28px;
-    font-weight: 600;
-    color: #111827;
-  }
-
-  /* Product Feature Card */
-  .scene5-feature-card {
-    position: absolute;
-    left: 360px;
-    top: 440px;
-    width: 380px;
-    background: #FFFFFF;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.07);
-    border: 1px solid rgba(0,0,0,0.06);
-  }
-
-  .feature-card-img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-  }
-
-  .feature-card-body {
-    padding: 20px;
-  }
-
-  .feature-card-title {
-    font-family: 'Literata', serif;
-    font-size: 20px;
     font-weight: 700;
-    color: #111827;
-    margin-bottom: 6px;
+    color: #0F172A;
   }
 
-  .feature-card-meta {
-    font-size: 12px;
-    color: #6B7280;
-    display: flex;
-    gap: 12px;
-  }
-
-  /* Stats Metric Boxes */
-  .scene5-stats-box {
-    position: absolute;
-    left: 770px;
-    top: 440px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .stat-card-white {
-    width: 220px;
-    padding: 20px;
-    background: #FFFFFF;
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.06);
-  }
-
-  .stat-num-big {
-    font-size: 42px;
-    font-weight: 800;
-    color: #111827;
-    line-height: 1;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-  }
-
-  .stat-lbl-small {
+  .trio-lbl {
     font-size: 11px;
     font-weight: 600;
-    color: #9CA3AF;
+    color: #94A3B8;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-top: 4px;
   }
 
-  /* Mentors/Builders List on Right */
-  .scene5-builders-card {
-    position: absolute;
-    right: 40px;
-    top: 180px;
-    width: 320px;
-    background: #FFFFFF;
-    border-radius: 24px;
-    padding: 24px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-    border: 1px solid rgba(0,0,0,0.06);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .builders-header {
-    font-family: 'Literata', serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: #111827;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .builder-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 0;
-    border-bottom: 1px solid #F3F4F6;
-  }
-
-  .builder-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .builder-info {
-    flex: 1;
-  }
-
-  .builder-name {
-    font-size: 14px;
-    font-weight: 700;
-    color: #111827;
-  }
-
-  .builder-role {
-    font-size: 12px;
-    color: #6B7280;
-  }
-
-  .scene5-green-check {
-    position: absolute;
-    right: 380px;
-    top: 130px;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: #A3E635;
-    color: #166534;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    box-shadow: 0 10px 25px rgba(163, 230, 53, 0.4);
-  }
-
-  /* =========================================================================
-     SCENE 6: ATMOSPHERIC DEEP WORK / MINDFULNESS (43.0s – 51.0s)
-     ========================================================================= */
-  #scene6 {
-    background-color: var(--dark-bg);
-    overflow: hidden;
-  }
-
-  .scene6-cloud-bg {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 60%, rgba(255, 94, 54, 0.15) 0%, rgba(147, 51, 234, 0.08) 40%, rgba(12, 13, 14, 0.95) 75%);
-    pointer-events: none;
-  }
-
-  .scene6-dark-prompt {
-    position: absolute;
-    width: 540px;
-    background: rgba(22, 24, 28, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
-    padding: 18px 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    z-index: 30;
-    opacity: 0;
-  }
-
-  .dark-prompt-text {
-    font-size: 26px;
-    font-weight: 500;
-    color: #FFFFFF;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-  }
-
-  .dark-prompt-cursor {
-    width: 3px;
-    height: 28px;
-    background: #FF5E36;
-    animation: blink 0.8s infinite;
-  }
-
-  .scene6-glass-monitor {
-    position: absolute;
-    width: 1080px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(28px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 32px;
-    padding: 36px 44px;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    z-index: 25;
-    opacity: 0;
-  }
-
-  .scene6-monitor-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .pixel-readout-big {
-    font-family: 'Silkscreen', monospace;
-    font-size: 64px;
-    color: #FFFFFF;
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  .readout-sub {
-    font-size: 13px;
-    font-family: 'JetBrains Mono', monospace;
-    color: #9CA3AF;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-top: 6px;
-  }
-
-  .scene6-telemetry-strip {
-    display: flex;
-    gap: 36px;
-  }
-
-  .telemetry-col {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .t-val {
-    font-family: 'Silkscreen', monospace;
-    font-size: 22px;
-    color: #F3F4F6;
-  }
-
-  .t-lbl {
-    font-size: 11px;
-    color: #9CA3AF;
-    letter-spacing: 0.05em;
-  }
-
-  .scene6-days-grid {
+  .schedule-week-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 16px;
-    padding: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px;
+    background: #F8FAFC;
+    border-radius: 20px;
+    border: 1px solid var(--border-hairline);
   }
 
-  .day-cell {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+  .week-cell {
+    text-align: center;
   }
 
-  .day-name {
-    font-family: 'Silkscreen', monospace;
-    font-size: 14px;
-    color: #E5E7EB;
-  }
-
-  .day-temp {
-    font-family: 'Silkscreen', monospace;
+  .week-day {
     font-size: 12px;
-    color: #9CA3AF;
+    font-weight: 700;
+    color: #64748B;
   }
 
-  .scene6-monitor-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .focus-badge {
+  .week-hours {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 600;
-    color: #34D399;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-top: 4px;
   }
 
   /* =========================================================================
-     SCENE 7: CLIMAX BRAND REVEAL & "BUILD YOUR SANCTUARY." (51.0s – 56.50s)
+     SCENE 6: CLIMAX BRAND REVEAL & PUNCHLINE (40.5s – 46.06s)
      ========================================================================= */
-  #scene7 {
-    background-color: var(--cream-bg);
+  #scene6 {
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
     overflow: hidden;
   }
 
-  .scene7-brand-wrap {
+  .scene6-brand-lockup {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
-    transform: scale(0.95);
+    gap: 20px;
     opacity: 0;
   }
 
-  .scene7-emblem {
-    width: 64px;
-    height: 64px;
-    background: #111317;
-    border-radius: 16px;
+  .scene6-emblem-large {
+    width: 80px;
+    height: 80px;
+    background: #0F172A;
+    border-radius: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
   }
 
-  .emblem-inner {
-    width: 26px;
-    height: 26px;
-    border-radius: 6px;
-    border: 3px solid #FFFFFF;
+  .emblem-square {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 3.5px solid #FFFFFF;
     position: relative;
   }
 
-  .emblem-dot {
+  .emblem-amber-dot {
     position: absolute;
-    bottom: -2px;
-    right: -2px;
-    width: 8px;
-    height: 8px;
+    bottom: -3px;
+    right: -3px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: #FF5E36;
-    box-shadow: 0 0 8px rgba(255, 94, 54, 0.8);
+    box-shadow: 0 0 10px rgba(255, 94, 54, 0.8);
   }
 
-  .scene7-wordmark {
-    font-size: 58px;
+  .scene6-wordmark {
+    font-size: 64px;
     font-weight: 800;
     letter-spacing: -0.04em;
-    color: #111317;
+    color: #0F172A;
     line-height: 1;
   }
 
-  .scene7-subtitle {
-    font-size: 19px;
+  .scene6-tagline {
+    font-size: 20px;
     font-weight: 500;
-    color: #6B7280;
+    color: #64748B;
     letter-spacing: -0.01em;
   }
 
-  /* Iconic Punchline: Build your sanctuary. */
-  .scene7-punchline {
-    font-size: 68px;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: #111317;
-    position: absolute;
-    opacity: 0;
-    text-align: center;
-  }
-
-  .scene7-cta-pill {
-    padding: 12px 28px;
-    border-radius: 30px;
-    background: #111317;
+  .scene6-cta-pill {
+    padding: 14px 32px;
+    border-radius: 40px;
+    background: #0F172A;
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
   }
 
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+  /* Final Punchline */
+  .scene6-punchline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 76px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #0F172A;
+    position: absolute;
+    opacity: 0;
+    text-align: center;
   }
 </style>
 </head>
 <body>
 
 <div id="viewport">
+  <div class="grid-pattern"></div>
 
-  <!-- Universal Cursor -->
-  <svg class="cursor-pointer" id="cursor" viewBox="0 0 24 24" fill="none">
-    <path d="M5.5 3.2L18.5 12.8L12.5 13.9L15.8 20.8L13 22L9.8 15.2L5.5 19.5V3.2Z" fill="#111827" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
-  </svg>
+  <!-- Collaborative Cursors -->
+  <div class="cursor-wrap" id="cursor-marcus">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M5.5 3.2L18.5 12.8L12.5 13.9L15.8 20.8L13 22L9.8 15.2L5.5 19.5V3.2Z" fill="#0F172A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+    <div class="cursor-pill" style="background: #0F172A;">Marcus · Hardware</div>
+  </div>
+
+  <div class="cursor-wrap" id="cursor-elena">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M5.5 3.2L18.5 12.8L12.5 13.9L15.8 20.8L13 22L9.8 15.2L5.5 19.5V3.2Z" fill="#2563EB" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+    <div class="cursor-pill" style="background: #2563EB;">Elena · Ergonomics</div>
+  </div>
 
   <!-- =====================================================================
-       SCENE 1: CURIOSITY & PROMPT CAPSULE (0.0s – 6.5s)
+       SCENE 1: MACRO HARDWARE & 3D PHONE CHAT REVEAL (0.0s – 7.5s)
        ===================================================================== -->
   <div class="scene" id="scene1">
-    <div class="scene1-mesh-bg" id="scene1-mesh"></div>
-    <div class="scene1-dot-grid"></div>
-
-    <!-- Opening word "Your" with living glowing orb -->
-    <div class="scene1-opening-word" id="scene1-word">
-      Y<span class="scene1-orb" id="scene1-orb"></span>ur
+    <div class="scene1-macro-view" id="scene1-macro">
+      <img src="images/keyboard-hero.png" class="scene1-macro-img" alt="Chassis Macro">
     </div>
 
-    <!-- Split headline -->
-    <div class="scene1-headline-split" id="scene1-split">
-      <div class="scene1-split-left">Curating</div>
-      <div class="scene1-split-right">Your Sanctuary</div>
-    </div>
-
-    <!-- Center Floating Prompt Card -->
-    <div class="scene1-prompt-card" id="scene1-prompt">
-      <div class="scene1-prompt-text" id="scene1-typed-text">
-        <span id="prompt-chars"></span><span class="scene1-prompt-cursor" id="prompt-cursor"></span>
+    <!-- 3D Phone Mockup -->
+    <div class="scene1-phone-container" id="scene1-phone">
+      <div class="phone-notch-area">
+        <div class="phone-time">9:41</div>
+        <div class="phone-island"></div>
+        <div style="font-size: 13px; font-weight: 700; color: #0F172A;">5G</div>
       </div>
-      <div class="scene1-prompt-bottom">
-        <div class="scene1-prompt-icons">
-          <div class="scene1-prompt-icon-btn">⚙️</div>
-          <div class="scene1-prompt-icon-btn">＋</div>
+
+      <div class="phone-chat-body">
+        <div class="chat-contact-bar">
+          <div class="contact-avatar">iW</div>
+          <div class="contact-name">iWriteTech Curation Studio</div>
+          <div style="font-size: 12px; color: #10B981; font-weight: 600;">● Active Curation Team</div>
         </div>
-        <div class="scene1-submit-btn" id="scene1-btn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="19" x2="12" y2="5"></line>
-            <polyline points="5 12 12 5 19 12"></polyline>
-          </svg>
+
+        <div class="chat-msg msg-incoming" id="chat-msg1">
+          Need the ultimate minimalist desk setup for 10-hour coding days... but Amazon is 90% affiliate trash 😭
         </div>
+
+        <div class="chat-msg msg-outgoing" id="chat-msg2">
+          Say less. We tested 240+ setups by hand. Let's build your sanctuary ✦
+          <img src="images/desk-hero.jpg" class="chat-embed-photo" alt="Sanctuary Preview">
+        </div>
+      </div>
+    </div>
+
+    <!-- Parallax Burst Cards Around Phone -->
+    <div class="burst-card" id="burst1" style="left: 180px; top: 180px;">
+      <img src="images/keychron.png" alt="Keychron">
+      <div class="burst-card-text">
+        <div class="burst-title">Keychron Q1 Pro</div>
+        <div class="burst-tag">Acoustic Score: 9.8</div>
+      </div>
+    </div>
+
+    <div class="burst-card" id="burst2" style="right: 180px; top: 220px;">
+      <img src="images/walnut_stand.png" alt="Walnut Shelf">
+      <div class="burst-card-text">
+        <div class="burst-title">Solid Walnut Stand</div>
+        <div class="burst-tag">American Hardwood</div>
+      </div>
+    </div>
+
+    <div class="burst-card" id="burst3" style="left: 200px; bottom: 180px;">
+      <img src="images/light_bar.png" alt="ScreenBar">
+      <div class="burst-card-text">
+        <div class="burst-title">ScreenBar Halo</div>
+        <div class="burst-tag">0% Screen Glare</div>
+      </div>
+    </div>
+
+    <div class="burst-card" id="burst4" style="right: 200px; bottom: 200px;">
+      <img src="images/satechi_hub.png" alt="Thunderbolt Dock">
+      <div class="burst-card-text">
+        <div class="burst-title">Thunderbolt 4 Hub</div>
+        <div class="burst-tag">Single Cable Dock</div>
       </div>
     </div>
   </div>
 
   <!-- =====================================================================
-       SCENE 2: 3D HARDWARE SPECIMEN & TOPOGRAPHY (6.5s – 14.0s)
+       SCENE 2: 3D HARDWARE SPECIMEN VIEWPORT (7.5s – 16.0s)
        ===================================================================== -->
   <div class="scene" id="scene2">
-    <div class="scene2-dot-matrix-bg" id="scene2-dots"></div>
-
-    <div class="scene2-app-window" id="scene2-window">
-      <!-- Window Titlebar -->
-      <div class="scene2-window-header">
-        <div class="scene2-window-dots">
-          <div class="window-dot dot-red"></div>
-          <div class="window-dot dot-yellow"></div>
-          <div class="window-dot dot-green"></div>
+    <div class="scene2-app-frame" id="scene2-frame">
+      <div class="frame-titlebar">
+        <div class="titlebar-dots">
+          <div class="titlebar-dot" style="background: #FF5F56;"></div>
+          <div class="titlebar-dot" style="background: #FFBD2E;"></div>
+          <div class="titlebar-dot" style="background: #27C93F;"></div>
         </div>
-        <div class="scene2-window-title">
-          <span>✦ iWriteTech Lab :: Setup Specimen 01 · Studio Oak Edition</span>
+        <div style="font-family: 'JetBrains Mono'; font-size: 13px; font-weight: 600; color: #475569;">
+          ✦ iWriteTech Blueprint :: Setup Specimen 01 · Minimalist Oak Edition
         </div>
-        <div style="font-size: 13px; color: #9CA3AF;">− ＋</div>
+        <div style="font-size: 13px; color: #94A3B8;">100% INDEPENDENT LAB</div>
       </div>
 
-      <!-- Window Body -->
-      <div class="scene2-window-body">
-        <!-- Left Inspector -->
-        <div class="scene2-left-panel">
-          <div class="scene2-panel-title">Plan your<br>Sanctuary</div>
-          <div class="scene2-panel-search">
-            <span>SEARCH BY WORKSPACE OR SWITCH</span>
-            <span>⌕</span>
+      <div class="frame-body">
+        <div class="frame-left-panel">
+          <div class="frame-hero-title">Architect your<br>Sanctuary</div>
+
+          <div class="curated-pill-row">
+            <div class="curated-pill active">★ KEYBOARDS</div>
+            <div class="curated-pill">▲ STUDIO DISPLAYS</div>
+            <div class="curated-pill">• OAK SHELVES</div>
+            <div class="curated-pill">FELT MATS</div>
           </div>
 
-          <div class="scene2-category-pills">
-            <div class="scene2-pill-row">
-              <div class="cat-pill active">★ KEYBOARDS</div>
-              <div class="cat-pill gold">▲ DISPLAYS</div>
+          <div class="telemetry-row">
+            <div class="telemetry-cell">
+              <div class="telemetry-number">$1,850</div>
+              <div class="telemetry-desc">Total Blueprint</div>
             </div>
-            <div class="scene2-pill-row">
-              <div class="cat-pill">• ACOUSTIC MATS</div>
-              <div class="cat-pill">OAK RISERS</div>
-            </div>
-          </div>
-
-          <div class="scene2-budget-box">
-            <div class="budget-item">
-              <div class="budget-val">$1,850</div>
-              <div class="budget-lbl">Total Budget</div>
-            </div>
-            <div class="budget-item">
-              <div class="budget-val">48 HRS</div>
-              <div class="budget-lbl">Curation Cycle</div>
+            <div class="telemetry-cell">
+              <div class="telemetry-number">42.8 dB</div>
+              <div class="telemetry-desc">Deep Thock</div>
             </div>
           </div>
 
-          <div class="scene2-panel-btn">
-            <span>EXPLORE BLUEPRINT</span>
+          <div class="frame-btn-dark">
+            <span>EXPLORE FULL BLUEPRINT</span>
             <span>➔</span>
           </div>
         </div>
 
-        <!-- Center/Right 3D Specimen Viewport -->
-        <div class="scene2-center-viewport">
-          <img src="images/desk-hero.jpg" class="scene2-viewport-img" alt="Desk Sanctuary">
+        <div class="frame-right-viewport">
+          <img src="images/hero-setup.png" class="frame-viewport-photo" alt="Curated Workspace">
 
-          <!-- Waypoint Pins -->
-          <div class="waypoint-pin" style="top: 38%; left: 32%;">
-            <div class="pin-dot orange"></div>
-            <span>Tactile 62g Switches</span>
+          <!-- Waypoint Chips -->
+          <div class="waypoint-chip" style="top: 35%; left: 25%;">
+            <div class="chip-dot" style="background: #2563EB;"></div>
+            <span>Mode Sonnet 75% Custom</span>
           </div>
 
-          <div class="waypoint-pin" style="top: 56%; left: 54%;">
-            <div class="pin-dot emerald"></div>
-            <span>Gasket Brass Plate</span>
+          <div class="waypoint-chip" style="top: 20%; right: 28%;">
+            <div class="chip-dot" style="background: #10B981;"></div>
+            <span>Apple Studio Display 5K</span>
           </div>
 
-          <div class="waypoint-pin" style="top: 22%; left: 68%;">
-            <div class="pin-dot gold"></div>
-            <span>Solid Walnut Shelf</span>
-          </div>
-
-          <!-- Bottom Card -->
-          <div class="scene2-bottom-card">
-            <img src="images/keyboard-hero.png" class="scene2-card-thumb" alt="Mode Sonnet">
-            <div>
-              <div style="font-size: 11px; font-weight: 700; color: #F59E0B; text-transform: uppercase;">Featured Specimen</div>
-              <div style="font-size: 15px; font-weight: 700; color: #111827;">Mode Sonnet 75%</div>
-              <div style="font-size: 12px; color: #6B7280;">Sound Profile: Deep Thock</div>
-            </div>
+          <div class="waypoint-chip" style="bottom: 30%; left: 45%;">
+            <div class="chip-dot" style="background: #F59E0B;"></div>
+            <span>100% Merino Wool Felt</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- =====================================================================
-       SCENE 3: ACOUSTIC SPECTROGRAM & MASTER LAB (14.0s – 23.0s)
-       ===================================================================== -->
+  <!-- =========================================================================
+     SCENE 3: SWISS EDITORIAL GRID & DISSECTION (16.0s – 25.0s)
+     ========================================================================= -->
   <div class="scene" id="scene3">
-    <img src="images/keyboard_prem.png" class="scene3-bg-img" alt="Hardware Lab">
-
-    <!-- Telemetry Altitude-Style Card -->
-    <div class="scene3-telemetry-card" id="scene3-telemetry">
-      <div class="scene3-card-header">
-        <div class="scene3-card-title">:: ACOUSTIC FREQUENCY (THOCK INDEX)</div>
-        <div class="scene3-coords">ISO 3744 LAB · 42.8 dB SPL</div>
-      </div>
-
-      <!-- Frequency Line Graph -->
-      <svg class="scene3-graph-svg" viewBox="0 0 600 140" fill="none">
-        <path d="M 10 120 Q 80 110 140 60 T 260 85 T 380 40 T 480 90 T 580 100" stroke="#111827" stroke-width="3.5" fill="none"/>
-        <circle cx="140" cy="60" r="5" fill="#FF5E36"/>
-        <circle cx="260" cy="85" r="5" fill="#3B82F6"/>
-        <circle cx="380" cy="40" r="6" fill="#10B981"/>
-        <circle cx="480" cy="90" r="5" fill="#F59E0B"/>
-        <!-- Dotted baseline -->
-        <line x1="10" y1="130" x2="580" y2="130" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="4 4"/>
-      </svg>
-
-      <div class="scene3-tabs">
-        <div class="scene3-tab-pill">* PROFILE</div>
-        <div class="scene3-tab-pill active">▲ ACOUSTICS</div>
-        <div class="scene3-tab-pill">• TACTILITY</div>
-        <div class="scene3-tab-pill">✔ LAB CERTIFIED</div>
-      </div>
-    </div>
-
-    <!-- Master Expanded Dashboard -->
-    <div class="scene3-master-dashboard" id="scene3-master">
-      <div class="scene3-master-header">
-        <div class="scene3-master-title">
-          <span>Mode Sonnet Hardware Evaluation</span>
-          <span class="scene3-rating-pill">★ 4.9 (240 REVIEWS)</span>
-        </div>
-        <div style="font-family: 'JetBrains Mono'; font-size: 13px; color: #9CA3AF;">
-          LAB REPORT PUBLIC · 100% UNBIASED
-        </div>
-      </div>
-
-      <div class="scene3-master-grid">
-        <div class="scene3-hero-view">
-          <img src="images/keyboard_mech.png" class="scene3-hero-img" alt="Keyboard Evaluation">
-          <div class="scene3-bottom-strip">
-            <div class="strip-spec-item">
-              <div class="strip-val">62g</div>
-              <div class="strip-lbl">Bottom Out</div>
-            </div>
-            <div class="strip-spec-item">
-              <div class="strip-val">1.2ms</div>
-              <div class="strip-lbl">Debounce Latency</div>
-            </div>
-            <div class="strip-spec-item">
-              <div class="strip-val">500k</div>
-              <div class="strip-lbl">Keystroke Life</div>
-            </div>
-            <div class="strip-spec-item">
-              <div class="strip-val">0%</div>
-              <div class="strip-lbl">Case Resonance</div>
-            </div>
+    <div class="scene3-swiss-artboard" id="scene3-artboard">
+      <div class="scene3-left-editorial">
+        <div>
+          <div class="editorial-tag">:: EDITORIAL INVESTIGATION 2026</div>
+          <div class="editorial-headline" style="margin-top: 16px;">
+            The Anatomy of Pure Focus.
+          </div>
+          <div class="editorial-statement" style="margin-top: 24px;">
+            We dismantled 45 premium mechanical keyboards down to the switch leaf, poron gasket, and CNC chassis resonance.
           </div>
         </div>
 
-        <div class="scene3-telemetry-sidebar">
-          <div class="telemetry-card-dark">
-            <div class="dark-card-title">:: SOUND PRESSURE LEVEL</div>
-            <div class="gauge-container">
-              <svg width="180" height="100" viewBox="0 0 180 100">
-                <path d="M 20 90 A 70 70 0 0 1 160 90" fill="none" stroke="#2D3748" stroke-width="12" stroke-linecap="round"/>
-                <path d="M 20 90 A 70 70 0 0 1 125 35" fill="none" stroke="#10B981" stroke-width="12" stroke-linecap="round"/>
-              </svg>
-              <div class="gauge-val-display">
-                <div class="gauge-num">42.8</div>
-                <div class="gauge-sub">dB (Deep Thock)</div>
-              </div>
-            </div>
+        <div class="editorial-badge-row">
+          <div class="verified-badge-light">
+            <span style="color: #10B981;">✔</span>
+            <span>100% Hands-On Tested</span>
           </div>
+          <div class="verified-badge-light">
+            <span style="color: #2563EB;">★</span>
+            <span>Zero Sponsored Bias</span>
+          </div>
+        </div>
+      </div>
 
-          <div class="telemetry-card-dark">
-            <div class="dark-card-title">:: BUILD INTEGRITY</div>
-            <div style="font-size: 14px; color: #E5E7EB; line-height: 1.6;">
-              Solid CNC 6063 Aluminum chassis with internal silicone dampeners. Zero hollow ping under high-speed typing test.
-            </div>
+      <div class="scene3-right-dissection">
+        <div class="dissection-card">
+          <img src="images/keyboard_mech.png" class="dissection-img" alt="Switch Specimen">
+          <div class="dissection-info">
+            <div class="dissection-label">SWITCH SPECIFICATION</div>
+            <div class="dissection-name">Holy Panda X 62g</div>
+            <div class="dissection-spec">Acoustic Curve: 42.4 dB · Low Pitch Resonance</div>
+          </div>
+        </div>
+
+        <div class="dissection-card">
+          <img src="images/walnut_stand.png" class="dissection-img" alt="Wood Riser">
+          <div class="dissection-info">
+            <div class="dissection-label">SURFACE ELEVATION</div>
+            <div class="dissection-name">American Walnut Shelf</div>
+            <div class="dissection-spec">Load Rating: 45kg · Zero Sag Deflection</div>
+          </div>
+        </div>
+
+        <div class="dissection-card">
+          <img src="images/light_bar.png" class="dissection-img" alt="ScreenBar">
+          <div class="dissection-info">
+            <div class="dissection-label">CIRCADIAN LIGHTING</div>
+            <div class="dissection-name">BenQ ScreenBar Halo</div>
+            <div class="dissection-spec">Asymmetric Optics · 0% Screen Glare</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- =====================================================================
-       SCENE 4: ECOSYSTEM SYNC & DUAL TELEMETRY (23.0s – 30.0s)
-       ===================================================================== -->
+  <!-- =========================================================================
+     SCENE 4: COLLABORATIVE HARDWARE LAB & SPECTROGRAM (25.0s – 35.0s)
+     ========================================================================= -->
   <div class="scene" id="scene4">
-    <!-- Center Minimal Capsule -->
-    <div class="scene4-capsule" id="scene4-capsule">
-      <span>Please sync desk profile with</span>
-      <div class="scene4-icon-chip">🖥️</div>
-      <span style="font-weight: 700;">Studio Display</span>
-      <div class="scene4-submit-circle">↑</div>
-    </div>
-
-    <!-- Split Screen Dashboard -->
-    <div class="scene4-split-view" id="scene4-split">
-      <!-- Left Dark Telemetry -->
-      <div class="scene4-left-dark">
-        <div>
-          <div style="font-family: 'JetBrains Mono'; font-size: 13px; color: #9CA3AF; letter-spacing: 0.05em; text-transform: uppercase;">
-            :: ECOSYSTEM POWER & CABLES
-          </div>
-          <div style="font-size: 30px; font-weight: 700; color: #FFFFFF; margin-top: 8px;">
-            Single-Cable Studio Docking
-          </div>
+    <div class="scene4-lab-artboard" id="scene4-artboard">
+      <!-- Left Config Card -->
+      <div class="scene4-card-left">
+        <div style="font-size: 18px; font-weight: 700; color: #0F172A;">Lab Configuration</div>
+        <div class="code-block-light">
+          // Setup Specimen #01<br>
+          preset: "minimal-dev"<br>
+          switch: "Tactile 62g"<br>
+          acoustic_dampening: true<br>
+          target_sound: "deep_thock"<br>
+          cable_mode: "thunderbolt_4"
         </div>
-
-        <div class="scene4-donut-section">
-          <svg class="scene4-donut-svg" viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#1E232A" stroke-width="26"/>
-            <!-- 96W PD -->
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#3B82F6" stroke-width="26" stroke-dasharray="240 440" stroke-dashoffset="0"/>
-            <!-- 10Gbps -->
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#10B981" stroke-width="26" stroke-dasharray="110 440" stroke-dashoffset="-250"/>
-            <!-- 4K60 -->
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#F59E0B" stroke-width="26" stroke-dasharray="70 440" stroke-dashoffset="-370"/>
-          </svg>
-          <div class="scene4-donut-stats">
-            <div class="donut-val-big">100W PD</div>
-            <div class="donut-legend-item"><div class="legend-dot" style="background: #3B82F6;"></div>Thunderbolt 4 Host</div>
-            <div class="donut-legend-item"><div class="legend-dot" style="background: #10B981;"></div>Dual 4K Pro Displays</div>
-            <div class="donut-legend-item"><div class="legend-dot" style="background: #F59E0B;"></div>Zero Latency Audio</div>
-          </div>
-        </div>
-
-        <div style="padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 13px; color: #9CA3AF;">
-          Optimized for Apple Silicon M-Series & Developer Multi-Monitor Workflows.
+        <div style="font-size: 13px; color: #64748B;">
+          Real-time collaborative telemetry synchronized across hardware test benches.
         </div>
       </div>
 
-      <!-- Right Light Spec Sheet -->
-      <div class="scene4-right-light">
-        <div class="scene4-sheet-header">
-          <div class="scene4-sheet-title">
-            <span style="font-size: 22px;">📊</span>
-            <span>Desk Hardware Benchmark 2026</span>
+      <!-- Center Spectrogram Card -->
+      <div class="scene4-card-center">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-family: 'JetBrains Mono'; font-size: 13px; font-weight: 700; color: #0F172A;">
+            :: REAL-TIME FFT ACOUSTIC SPECTRUM
           </div>
-          <span class="status-badge">100% VERIFIED</span>
+          <div style="font-size: 12px; font-weight: 700; color: #10B981;">LIVE SIGNAL</div>
         </div>
 
-        <table class="scene4-spec-table">
-          <thead>
-            <tr>
-              <th>COMPONENT</th>
-              <th>SPECIFICATION</th>
-              <th>TEST RESULT</th>
-              <th>RATING</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Display Bar</td>
-              <td>BenQ ScreenBar Halo</td>
-              <td>0% Glare on OLED</td>
-              <td>★ 9.8</td>
-            </tr>
-            <tr>
-              <td>Solid Riser</td>
-              <td>Grovemade American Walnut</td>
-              <td>Zero Sag / 45kg load</td>
-              <td>★ 9.9</td>
-            </tr>
-            <tr>
-              <td>Desk Mat</td>
-              <td>100% Merino Wool Felt</td>
-              <td>-4.2 dB Acoustic Damp</td>
-              <td>★ 9.7</td>
-            </tr>
-            <tr>
-              <td>Docking Hub</td>
-              <td>Satechi Thunderbolt 4</td>
-              <td>40 Gbps Bandwidth</td>
-              <td>★ 9.6</td>
-            </tr>
-            <tr>
-              <td>Wireless Qi2</td>
-              <td>Belkin 15W Magnetic Stand</td>
-              <td>38°C Low Thermal</td>
-              <td>★ 9.5</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
-          <div style="font-size: 12px; color: #6B7280;">iWriteTech Lab Report #882-DK</div>
-          <div style="font-weight: 700; font-size: 14px; color: #111827;">OVERALL SCORE: 9.8 / 10</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- =====================================================================
-       SCENE 5: THE ICONIC "CURATE." EDITORIAL MANIFESTO (30.0s – 43.0s)
-       ===================================================================== -->
-  <div class="scene" id="scene5">
-    <div class="scene5-artboard" id="scene5-artboard">
-      <!-- Big Editorial Word -->
-      <div class="scene5-title-word">Curate.</div>
-
-      <!-- User Avatar with Concentric Focus Ring -->
-      <div class="scene5-avatar-wrap">
-        <img src="images/setup_study.jpg" class="scene5-avatar-img" alt="Focus">
-        <svg class="scene5-avatar-ring" viewBox="0 0 130 130">
-          <circle cx="65" cy="65" r="60" fill="none" stroke="#E5E7EB" stroke-width="4"/>
-          <circle cx="65" cy="65" r="60" fill="none" stroke="#10B981" stroke-width="4" stroke-dasharray="320 380" stroke-linecap="round"/>
+        <svg class="spectrogram-svg" viewBox="0 0 500 160">
+          <path id="live-curve" d="M 10 130 Q 70 120 130 50 T 250 80 T 360 30 T 480 90" fill="none" stroke="#2563EB" stroke-width="4"/>
+          <circle cx="130" cy="50" r="6" fill="#2563EB"/>
+          <circle cx="250" cy="80" r="6" fill="#10B981"/>
+          <circle id="drag-point" cx="360" cy="30" r="8" fill="#FF5E36"/>
+          <!-- Grid lines -->
+          <line x1="10" y1="140" x2="480" y2="140" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <line x1="10" y1="70" x2="480" y2="70" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4 4"/>
         </svg>
-        <div class="scene5-avatar-badge">94% Focused</div>
-      </div>
 
-      <!-- Filter Pills Cluster -->
-      <div class="scene5-filters-box">
-        <div class="scene5-filters-header">
-          <span>Preferences</span>
-          <span style="font-size: 12px; font-style: normal; color: #9CA3AF;">CLEAR ALL</span>
-        </div>
-        <div class="scene5-pills-grid">
-          <div class="filter-pill-colored fp-purple">65% Keyboards ＋</div>
-          <div class="filter-pill-colored fp-lime">Walnut Riser ✕</div>
-          <div class="filter-pill-colored fp-orange">ScreenBar Halo ＋</div>
-          <div class="filter-pill-colored fp-white">Acoustic Mat ✕</div>
-          <div class="filter-pill-colored fp-white">4K Studio OLED ＋</div>
+        <div style="display: flex; justify-content: space-between; font-size: 12px; color: #64748B; font-family: 'JetBrains Mono';">
+          <span>100 Hz</span>
+          <span>1.2 kHz (Fundamental)</span>
+          <span>8.0 kHz</span>
         </div>
       </div>
 
-      <!-- Prompt Pill in Scene 5 -->
-      <div class="scene5-prompt-pill">
-        <span>Change the design to a warmer, more human aesthetic</span>
-        <div style="width: 28px; height: 28px; border-radius: 50%; background: #111827; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 13px;">↑</div>
-      </div>
+      <!-- Right Score Sheet -->
+      <div class="scene4-card-right">
+        <div class="score-box-big">
+          <div class="score-num">9.8</div>
+          <div class="score-lbl">Acoustic Score</div>
+        </div>
 
-      <!-- Folder Stack -->
-      <div class="scene5-folder-card">
-        <div class="folder-tab">CATALOGUE</div>
-        <div class="folder-title">Desk Tech &<br>Acoustics</div>
-      </div>
-
-      <!-- Feature Card -->
-      <div class="scene5-feature-card">
-        <img src="images/gaming_setup.jpg" class="feature-card-img" alt="Setup Sanctuary">
-        <div class="feature-card-body">
-          <div class="feature-card-title">The Art of the Silent Keystroke</div>
-          <div class="feature-card-meta">
-            <span>EDITORIAL</span>
-            <span>•</span>
-            <span>4.9 RATING</span>
-            <span>•</span>
-            <span>12,480 READS</span>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; justify-content: space-between; font-size: 13px;">
+            <span style="color: #64748B;">Keystroke Life:</span>
+            <span style="font-weight: 700; color: #0F172A;">500,000 Verified</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 13px;">
+            <span style="color: #64748B;">Debounce Latency:</span>
+            <span style="font-weight: 700; color: #0F172A;">1.2 ms</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 13px;">
+            <span style="color: #64748B;">Case Ping:</span>
+            <span style="font-weight: 700; color: #10B981;">0.0% (Zero Hollow)</span>
           </div>
         </div>
       </div>
-
-      <!-- Metric Stats -->
-      <div class="scene5-stats-box">
-        <div class="stat-card-white">
-          <div class="stat-num-big">240+</div>
-          <div class="stat-lbl-small">Obsessively Tested Gear</div>
-        </div>
-        <div class="stat-card-white">
-          <div class="stat-num-big" style="color: #10B981;">100%</div>
-          <div class="stat-lbl-small">Editorially Independent</div>
-        </div>
-      </div>
-
-      <!-- Builders/Curators Card on Right -->
-      <div class="scene5-builders-card">
-        <div class="builders-header">
-          <span>Verified Builders</span>
-          <span style="font-size: 12px; color: #10B981;">ONLINE</span>
-        </div>
-        <div class="builder-row">
-          <img src="images/keychron.png" class="builder-avatar" alt="Builder">
-          <div class="builder-info">
-            <div class="builder-name">Marcus Vance</div>
-            <div class="builder-role">Hardware Acoustic Lead</div>
-          </div>
-        </div>
-        <div class="builder-row">
-          <img src="images/desk_mat.png" class="builder-avatar" alt="Builder">
-          <div class="builder-info">
-            <div class="builder-name">Elena Rostova</div>
-            <div class="builder-role">Ergonomic Architect</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Green Check Badge -->
-      <div class="scene5-green-check">✔</div>
     </div>
   </div>
 
-  <!-- =====================================================================
-       SCENE 6: ATMOSPHERIC DEEP WORK / MINDFULNESS (43.0s – 51.0s)
-       ===================================================================== -->
-  <div class="scene" id="scene6">
-    <div class="scene6-cloud-bg"></div>
-
-    <!-- Dark Prompt Bar -->
-    <div class="scene6-dark-prompt" id="scene6-prompt">
-      <div class="dark-prompt-text">flow state workspace</div>
-      <div class="dark-prompt-cursor"></div>
-    </div>
-
-    <!-- Atmospheric Glass Monitor -->
-    <div class="scene6-glass-monitor" id="scene6-monitor">
-      <div class="scene6-monitor-top">
+  <!-- =========================================================================
+     SCENE 5: CIRCADIAN TELEMETRY & FLOW STATE (35.0s – 40.5s)
+     ========================================================================= */
+  <div class="scene" id="scene5">
+    <div class="scene5-flow-card" id="scene5-card">
+      <div class="scene5-top-row">
         <div>
-          <div class="pixel-readout-big">450 LUX</div>
-          <div class="readout-sub">OPTIMAL CIRCADIAN WORKSPACE LIGHTING</div>
+          <div class="lux-readout">450 LUX</div>
+          <div class="lux-desc">Optimal Circadian Workspace Lighting</div>
         </div>
-        <div class="scene6-telemetry-strip">
-          <div class="telemetry-col">
-            <div class="t-val">21.5°C</div>
-            <div class="t-lbl">ROOM TEMP</div>
+        <div class="stats-trio">
+          <div class="trio-item">
+            <div class="trio-val">21.5°C</div>
+            <div class="trio-lbl">Room Temp</div>
           </div>
-          <div class="telemetry-col">
-            <div class="t-val">38 dB</div>
-            <div class="t-lbl">AMBIENT NOISE</div>
+          <div class="trio-item">
+            <div class="trio-val">38 dB</div>
+            <div class="trio-lbl">Ambient Noise</div>
           </div>
-          <div class="telemetry-col">
-            <div class="t-val">100%</div>
-            <div class="t-lbl">DEEP FOCUS</div>
+          <div class="trio-item">
+            <div class="trio-val" style="color: #10B981;">100%</div>
+            <div class="trio-lbl">Deep Focus</div>
           </div>
         </div>
       </div>
 
-      <div class="scene6-days-grid">
-        <div class="day-cell">
-          <div class="day-name">MON</div>
-          <div class="day-temp">4.5 HR</div>
+      <div class="schedule-week-grid">
+        <div class="week-cell">
+          <div class="week-day">MON</div>
+          <div class="week-hours">5.2 HR</div>
         </div>
-        <div class="day-cell">
-          <div class="day-name">TUE</div>
-          <div class="day-temp">5.2 HR</div>
+        <div class="week-cell">
+          <div class="week-day">TUE</div>
+          <div class="week-hours">6.0 HR</div>
         </div>
-        <div class="day-cell">
-          <div class="day-name">WED</div>
-          <div class="day-temp">6.0 HR</div>
+        <div class="week-cell">
+          <div class="week-day">WED</div>
+          <div class="week-hours">6.5 HR</div>
         </div>
-        <div class="day-cell">
-          <div class="day-name">THU</div>
-          <div class="day-temp">5.8 HR</div>
+        <div class="week-cell">
+          <div class="week-day">THU</div>
+          <div class="week-hours">5.8 HR</div>
         </div>
-        <div class="day-cell">
-          <div class="day-name">FRI</div>
-          <div class="day-temp">4.8 HR</div>
+        <div class="week-cell">
+          <div class="week-day">FRI</div>
+          <div class="week-hours">4.5 HR</div>
         </div>
-        <div class="day-cell">
-          <div class="day-name">SAT</div>
-          <div class="day-temp">3.0 HR</div>
+        <div class="week-cell">
+          <div class="week-day">SAT</div>
+          <div class="week-hours">3.0 HR</div>
         </div>
       </div>
 
-      <div class="scene6-monitor-bottom">
-        <div class="focus-badge">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: #10B981; font-size: 14px;">
           <span>●</span>
-          <span>FOCUS SESSION ACTIVE · ZERO DISTRACTIONS</span>
+          <span>SANCTUARY FOCUS SESSION ACTIVE · ZERO DISTRACTIONS</span>
         </div>
-        <div style="font-family: 'Silkscreen'; font-size: 14px; color: #9CA3AF;">
-          SANCTUARY MODE ENABLED
+        <div style="font-family: 'JetBrains Mono'; font-size: 13px; color: #64748B;">
+          VERIFIED BLUEPRINT #882
         </div>
       </div>
     </div>
   </div>
 
-  <!-- =====================================================================
-       SCENE 7: CLIMAX BRAND REVEAL & "BUILD YOUR SANCTUARY." (51.0s – 56.50s)
-       ===================================================================== -->
-  <div class="scene" id="scene7">
-    <div class="scene7-brand-wrap" id="scene7-brand">
-      <div class="scene7-emblem">
-        <div class="emblem-inner">
-          <div class="emblem-dot"></div>
+  <!-- =========================================================================
+     SCENE 6: CLIMAX BRAND REVEAL & PUNCHLINE (40.5s – 46.06s)
+     ========================================================================= -->
+  <div class="scene" id="scene6">
+    <div class="scene6-brand-lockup" id="scene6-brand">
+      <div class="scene6-emblem-large">
+        <div class="emblem-square">
+          <div class="emblem-amber-dot"></div>
         </div>
       </div>
-      <div class="scene7-wordmark">iWriteTech</div>
-      <div class="scene7-subtitle">The Definitive Standard for Desk Tech & Workspaces.</div>
-      <div class="scene7-cta-pill">explore iwritetech.com ➔</div>
+      <div class="scene6-wordmark">iWriteTech</div>
+      <div class="scene6-tagline">The Definitive Standard for Desk Tech & Workspaces.</div>
+      <div class="scene6-cta-pill">explore iwritetech.com ➔</div>
     </div>
 
     <!-- Final Punchline -->
-    <div class="scene7-punchline" id="scene7-punchline">
+    <div class="scene6-punchline" id="scene6-punchline">
       Build your sanctuary.
     </div>
   </div>
@@ -1959,19 +1236,6 @@
 </div>
 
 <script>
-  // Dynamic Dot Matrix Generator for Scene 2
-  const dotsContainer = document.getElementById('scene2-dots');
-  if (dotsContainer) {
-    for (let i = 0; i < 48 * 24; i++) {
-      const d = document.createElement('div');
-      d.className = 'dot-node';
-      if (Math.random() < 0.05) d.classList.add('warm');
-      else if (Math.random() < 0.03) d.classList.add('emerald');
-      else if (Math.random() < 0.02) d.classList.add('purple');
-      dotsContainer.appendChild(d);
-    }
-  }
-
   // Helper Easing Functions
   function easeOutCubic(x) { return 1 - Math.pow(1 - x, 3); }
   function easeInOutCubic(x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
@@ -1982,281 +1246,252 @@
   }
   function clamp(val, min, max) { return Math.min(Math.max(val, min), max); }
 
-  const textToType = "The ultimate developer setup for deep work and mechanical sound";
-
-  // Master Deterministic Timeline for 56.50 seconds
+  // Master Deterministic Timeline for 46.06 seconds
   window.seekTo = function(t) {
-    const cursor = document.getElementById('cursor');
-
-    // SCENE ELEMENTS
     const s1 = document.getElementById('scene1');
     const s2 = document.getElementById('scene2');
     const s3 = document.getElementById('scene3');
     const s4 = document.getElementById('scene4');
     const s5 = document.getElementById('scene5');
     const s6 = document.getElementById('scene6');
-    const s7 = document.getElementById('scene7');
+
+    const curMarcus = document.getElementById('cursor-marcus');
+    const curElena = document.getElementById('cursor-elena');
 
     // -------------------------------------------------------------
-    // SCENE 1: Curiosity & The Prompt Capsule (0.0s – 6.5s)
+    // SCENE 1: MACRO HARDWARE & 3D PHONE CHAT REVEAL (0.0s – 7.5s)
     // -------------------------------------------------------------
-    if (t < 6.8) {
+    if (t < 7.6) {
       s1.style.opacity = '1';
       s2.style.opacity = '0';
       s3.style.opacity = '0';
       s4.style.opacity = '0';
       s5.style.opacity = '0';
       s6.style.opacity = '0';
-      s7.style.opacity = '0';
+      curMarcus.style.opacity = '0';
+      curElena.style.opacity = '0';
 
-      const s1Orb = document.getElementById('scene1-orb');
-      const s1Word = document.getElementById('scene1-word');
-      const s1Mesh = document.getElementById('scene1-mesh');
-      const s1Split = document.getElementById('scene1-split');
-      const s1Prompt = document.getElementById('scene1-prompt');
-      const promptChars = document.getElementById('prompt-chars');
-      const s1Btn = document.getElementById('scene1-btn');
+      const macroImg = document.querySelector('.scene1-macro-img');
+      const phone = document.getElementById('scene1-phone');
+      const msg1 = document.getElementById('chat-msg1');
+      const msg2 = document.getElementById('chat-msg2');
+      const b1 = document.getElementById('burst1');
+      const b2 = document.getElementById('burst2');
+      const b3 = document.getElementById('burst3');
+      const b4 = document.getElementById('burst4');
 
       if (t < 2.0) {
-        // "Your" with pulsing orb
-        s1Word.style.opacity = String(clamp(t / 0.5, 0, 1));
-        const pulse = 1 + Math.sin(t * 5) * 0.08;
-        s1Orb.style.transform = `scale(${pulse})`;
-        s1Mesh.style.opacity = String(clamp((t - 0.8) / 1.0, 0, 0.4));
-        s1Split.style.opacity = '0';
-        s1Prompt.style.opacity = '0';
-        cursor.style.opacity = '0';
-      } else if (t < 6.5) {
-        // Orb expands, text splits into Curating Your Sanctuary + Prompt Card
-        const splitProgress = clamp((t - 2.0) / 0.8, 0, 1);
-        const easeSplit = easeOutCubic(splitProgress);
+        // Macro close-up camera pan
+        const zoom = 1.3 - (t / 2.0) * 0.15;
+        macroImg.style.transform = `scale(${zoom}) translate(${-t * 20}px, ${t * 10}px)`;
+        phone.style.opacity = '0';
+        b1.style.opacity = '0';
+        b2.style.opacity = '0';
+        b3.style.opacity = '0';
+        b4.style.opacity = '0';
+      } else {
+        // Phone mockup rises into center with 3D rotation
+        const phoneProgress = clamp((t - 2.0) / 0.8, 0, 1);
+        const ePhone = easeOutBack(phoneProgress);
 
-        s1Word.style.opacity = String(1 - easeSplit);
-        s1Word.style.transform = `scale(${1 + easeSplit * 0.3})`;
+        macroImg.style.opacity = String(1 - phoneProgress * 0.9);
 
-        s1Mesh.style.opacity = '1';
-        s1Split.style.opacity = String(easeSplit);
+        phone.style.opacity = String(phoneProgress);
+        phone.style.transform = `translateY(${(1 - ePhone) * 80}px) scale(${0.88 + ePhone * 0.12}) rotateY(${(1 - ePhone) * 12}deg)`;
 
-        const leftText = document.querySelector('.scene1-split-left');
-        const rightText = document.querySelector('.scene1-split-right');
-        leftText.style.transform = `translateX(${-(1 - easeSplit) * 80}px)`;
-        rightText.style.transform = `translateX(${(1 - easeSplit) * 80}px)`;
+        // Message 1 pop-in at t=2.6s
+        if (t >= 2.6) {
+          const m1Prog = clamp((t - 2.6) / 0.4, 0, 1);
+          const eM1 = easeOutBack(m1Prog);
+          msg1.style.opacity = String(m1Prog);
+          msg1.style.transform = `translateY(${(1 - eM1) * 15}px)`;
+        }
 
-        s1Prompt.style.opacity = String(easeSplit);
-        s1Prompt.style.transform = `translateY(${(1 - easeSplit) * 40}px) scale(${0.9 + easeSplit * 0.1})`;
+        // Message 2 pop-in at t=3.6s
+        if (t >= 3.6) {
+          const m2Prog = clamp((t - 3.6) / 0.4, 0, 1);
+          const eM2 = easeOutBack(m2Prog);
+          msg2.style.opacity = String(m2Prog);
+          msg2.style.transform = `translateY(${(1 - eM2) * 15}px)`;
+        }
 
-        // Typing effect
-        const typeProgress = clamp((t - 2.5) / 2.2, 0, 1);
-        const charCount = Math.floor(typeProgress * textToType.length);
-        promptChars.textContent = textToType.substring(0, charCount);
+        // Burst cards pop out at t=4.8s
+        if (t >= 4.8) {
+          const burstProg = clamp((t - 4.8) / 0.7, 0, 1);
+          const eBurst = easeOutBack(burstProg);
 
-        // Cursor movement to submit button at t=4.8s
-        if (t >= 4.6 && t < 6.2) {
-          cursor.style.opacity = '1';
-          const cursorProgress = clamp((t - 4.6) / 0.8, 0, 1);
-          const eCursor = easeOutCubic(cursorProgress);
-          const curX = 960 + eCursor * 290;
-          const curY = 540 + eCursor * 40;
-          cursor.style.transform = `translate(${curX}px, ${curY}px)`;
+          b1.style.opacity = String(burstProg);
+          b1.style.transform = `translate(${-(1 - eBurst) * 60}px, ${-(1 - eBurst) * 40}px) scale(${eBurst})`;
 
-          if (t >= 5.4 && t < 5.8) {
-            s1Btn.style.transform = 'scale(0.88)';
-            s1Btn.style.background = '#FF5E36';
-          } else {
-            s1Btn.style.transform = 'scale(1)';
-            s1Btn.style.background = '#111827';
-          }
-        } else {
-          cursor.style.opacity = '0';
+          b2.style.opacity = String(burstProg);
+          b2.style.transform = `translate(${(1 - eBurst) * 60}px, ${-(1 - eBurst) * 40}px) scale(${eBurst})`;
+
+          b3.style.opacity = String(burstProg);
+          b3.style.transform = `translate(${-(1 - eBurst) * 60}px, ${(1 - eBurst) * 40}px) scale(${eBurst})`;
+
+          b4.style.opacity = String(burstProg);
+          b4.style.transform = `translate(${(1 - eBurst) * 60}px, ${(1 - eBurst) * 40}px) scale(${eBurst})`;
         }
       }
 
       // Exit transition
-      if (t >= 6.0) {
-        const exitProgress = (t - 6.0) / 0.5;
+      if (t >= 7.0) {
+        const exitProgress = (t - 7.0) / 0.5;
         s1.style.opacity = String(1 - exitProgress);
-        s1.style.transform = `scale(${1 + exitProgress * 0.08})`;
+        s1.style.transform = `scale(${1 + exitProgress * 0.12})`;
       } else {
         s1.style.transform = 'scale(1)';
       }
     }
 
     // -------------------------------------------------------------
-    // SCENE 2: 3D Hardware Specimen & Topography (6.5s – 14.0s)
+    // SCENE 2: 3D HARDWARE SPECIMEN VIEWPORT (7.5s – 16.0s)
     // -------------------------------------------------------------
-    else if (t >= 6.5 && t < 14.2) {
+    else if (t >= 7.5 && t < 16.2) {
       s1.style.opacity = '0';
       s2.style.opacity = '1';
       s3.style.opacity = '0';
       s4.style.opacity = '0';
       s5.style.opacity = '0';
       s6.style.opacity = '0';
-      s7.style.opacity = '0';
-      cursor.style.opacity = '0';
+      curMarcus.style.opacity = '0';
+      curElena.style.opacity = '0';
 
-      const windowEl = document.getElementById('scene2-window');
-      const enterProgress = clamp((t - 6.5) / 1.0, 0, 1);
-      const easeWindow = easeOutCubic(enterProgress);
+      const frame = document.getElementById('scene2-frame');
+      const enterProg = clamp((t - 7.5) / 0.8, 0, 1);
+      const eFrame = easeOutCubic(enterProg);
 
-      const scale = 0.88 + easeWindow * 0.12;
-      const moveY = (1 - easeWindow) * 50;
-      windowEl.style.transform = `translateY(${moveY}px) scale(${scale})`;
-      windowEl.style.opacity = String(easeWindow);
+      frame.style.opacity = String(eFrame);
+      frame.style.transform = `translateY(${(1 - eFrame) * 40}px) scale(${0.92 + eFrame * 0.08})`;
 
-      // Parallax drift in viewport
-      const drift = (t - 6.5) * 1.5;
-      const img = document.querySelector('.scene2-viewport-img');
-      if (img) img.style.transform = `scale(${1.02 + drift * 0.005}) translateY(${-drift * 1.2}px)`;
+      // Gentle camera parallax
+      const floatTime = t - 7.5;
+      const vpImg = document.querySelector('.frame-viewport-photo');
+      if (vpImg) vpImg.style.transform = `scale(${1.02 + floatTime * 0.004}) translateY(${-floatTime * 1.5}px)`;
 
-      // Exit transition to Scene 3
-      if (t >= 13.5) {
-        const exitProgress = (t - 13.5) / 0.7;
+      // Exit transition
+      if (t >= 15.3) {
+        const exitProgress = (t - 15.3) / 0.7;
         s2.style.opacity = String(1 - exitProgress);
-        s2.style.transform = `scale(${1 + exitProgress * 0.15})`;
+        s2.style.transform = `scale(${1 + exitProgress * 0.1})`;
       } else {
         s2.style.transform = 'scale(1)';
       }
     }
 
     // -------------------------------------------------------------
-    // SCENE 3: Acoustic Spectrogram & Master Hardware Lab (14.0s – 23.0s)
+    // SCENE 3: SWISS EDITORIAL GRID & DISSECTION (16.0s – 25.0s)
     // -------------------------------------------------------------
-    else if (t >= 14.0 && t < 23.2) {
+    else if (t >= 16.0 && t < 25.2) {
       s1.style.opacity = '0';
       s2.style.opacity = '0';
       s3.style.opacity = '1';
       s4.style.opacity = '0';
       s5.style.opacity = '0';
       s6.style.opacity = '0';
-      s7.style.opacity = '0';
-      cursor.style.opacity = '0';
+      curMarcus.style.opacity = '0';
+      curElena.style.opacity = '0';
 
-      const telemetryCard = document.getElementById('scene3-telemetry');
-      const masterDash = document.getElementById('scene3-master');
+      const artboard = document.getElementById('scene3-artboard');
+      const enterProg = clamp((t - 16.0) / 0.8, 0, 1);
+      const eArt = easeOutCubic(enterProg);
 
-      if (t < 17.5) {
-        // Floating Telemetry Spectrogram Card
-        masterDash.style.opacity = '0';
-        telemetryCard.style.opacity = '1';
+      artboard.style.opacity = String(eArt);
+      artboard.style.transform = `scale(${0.92 + eArt * 0.08})`;
 
-        const enterProgress = clamp((t - 14.0) / 0.8, 0, 1);
-        const easeCard = easeOutBack(enterProgress);
-        telemetryCard.style.transform = `scale(${0.9 + easeCard * 0.1}) translateY(${(1 - easeCard) * 30}px)`;
-
-        // Animated curve wave
-        const graphPath = document.querySelector('.scene3-graph-svg path');
-        if (graphPath) {
-          const wobble = Math.sin((t - 14.0) * 8) * 8;
-          graphPath.setAttribute('d', `M 10 120 Q 80 ${110 + wobble} 140 ${60 - wobble} T 260 ${85 + wobble} T 380 ${40 - wobble} T 480 ${90 + wobble} T 580 100`);
-        }
-      } else {
-        // Expansion into Master Hardware Studio
-        const expandProgress = clamp((t - 17.5) / 0.8, 0, 1);
-        const easeExpand = easeOutCubic(expandProgress);
-
-        telemetryCard.style.opacity = String(1 - easeExpand);
-        telemetryCard.style.transform = `scale(${1 + easeExpand * 0.2})`;
-
-        masterDash.style.opacity = String(easeExpand);
-        masterDash.style.transform = `scale(${0.92 + easeExpand * 0.08})`;
-      }
+      // Staggered dissection cards
+      const dCards = document.querySelectorAll('.dissection-card');
+      dCards.forEach((c, idx) => {
+        const cProg = clamp((t - (16.5 + idx * 0.25)) / 0.5, 0, 1);
+        const eC = easeOutCubic(cProg);
+        c.style.transform = `translateX(${(1 - eC) * 30}px)`;
+        c.style.opacity = String(cProg);
+      });
 
       // Exit transition
-      if (t >= 22.4) {
-        const exitProgress = (t - 22.4) / 0.6;
+      if (t >= 24.3) {
+        const exitProgress = (t - 24.3) / 0.7;
         s3.style.opacity = String(1 - exitProgress);
-        s3.style.transform = `scale(${1 - exitProgress * 0.06})`;
+        s3.style.transform = `scale(${1 - exitProgress * 0.08})`;
       } else {
         s3.style.transform = 'scale(1)';
       }
     }
 
     // -------------------------------------------------------------
-    // SCENE 4: Ecosystem Sync & Dual Telemetry (23.0s – 30.0s)
+    // SCENE 4: COLLABORATIVE HARDWARE LAB & SPECTROGRAM (25.0s – 35.0s)
     // -------------------------------------------------------------
-    else if (t >= 23.0 && t < 30.2) {
+    else if (t >= 25.0 && t < 35.2) {
       s1.style.opacity = '0';
       s2.style.opacity = '0';
       s3.style.opacity = '0';
       s4.style.opacity = '1';
       s5.style.opacity = '0';
       s6.style.opacity = '0';
-      s7.style.opacity = '0';
 
-      const capsule = document.getElementById('scene4-capsule');
-      const splitView = document.getElementById('scene4-split');
+      const lab = document.getElementById('scene4-lab-artboard');
+      const enterProg = clamp((t - 25.0) / 0.8, 0, 1);
+      const eLab = easeOutCubic(enterProg);
 
-      if (t < 25.5) {
-        // Minimal Floating Sync Capsule
-        splitView.style.opacity = '0';
-        const capProgress = clamp((t - 23.0) / 0.6, 0, 1);
-        const eCap = easeOutBack(capProgress);
-        capsule.style.opacity = String(capProgress);
-        capsule.style.transform = `scale(${0.9 + eCap * 0.1}) translateY(${(1 - eCap) * 20}px)`;
+      lab.style.opacity = String(eLab);
+      lab.style.transform = `scale(${0.94 + eLab * 0.06})`;
 
-        // Cursor clicks capsule button
-        if (t >= 24.2 && t < 25.5) {
-          cursor.style.opacity = '1';
-          const curProgress = clamp((t - 24.2) / 0.6, 0, 1);
-          const eCur = easeOutCubic(curProgress);
-          cursor.style.transform = `translate(${1120 + eCur * 40}px, ${540}px)`;
-        }
-      } else {
-        // Morph to Split Screen Viewport
-        cursor.style.opacity = '0';
-        capsule.style.opacity = '0';
+      // Collaborative cursors
+      curMarcus.style.opacity = '1';
+      curElena.style.opacity = '1';
 
-        const splitProgress = clamp((t - 25.5) / 0.8, 0, 1);
-        const eSplit = easeOutCubic(splitProgress);
-        splitView.style.opacity = String(eSplit);
-        splitView.style.transform = `scale(${0.92 + eSplit * 0.08})`;
+      const mProg = clamp((t - 25.5) / 1.5, 0, 1);
+      const eM = easeOutCubic(mProg);
+      curMarcus.style.transform = `translate(${480 + eM * 40}px, ${380 + Math.sin(t * 4) * 10}px)`;
+
+      // Elena drags the frequency curve point
+      const eProg = clamp((t - 26.0) / 2.0, 0, 1);
+      const eE = easeInOutCubic(eProg);
+      const dragY = 460 + Math.sin(eProg * Math.PI) * 40;
+      curElena.style.transform = `translate(${1120}px, ${dragY}px)`;
+
+      // Dynamic curve wave
+      const liveCurve = document.getElementById('live-curve');
+      const dragPoint = document.getElementById('drag-point');
+      if (liveCurve) {
+        const wave = Math.sin((t - 25.0) * 6) * 12;
+        liveCurve.setAttribute('d', `M 10 130 Q 70 120 130 50 T 250 80 T 360 ${30 + wave} T 480 90`);
+        dragPoint.setAttribute('cy', `${30 + wave}`);
       }
 
       // Exit transition
-      if (t >= 29.4) {
-        const exitProgress = (t - 29.4) / 0.6;
+      if (t >= 34.3) {
+        const exitProgress = (t - 34.3) / 0.7;
         s4.style.opacity = String(1 - exitProgress);
-        s4.style.transform = `scale(${1 + exitProgress * 0.08})`;
+        s4.style.transform = `scale(${1 + exitProgress * 0.1})`;
       } else {
         s4.style.transform = 'scale(1)';
       }
     }
 
     // -------------------------------------------------------------
-    // SCENE 5: The Iconic "Curate." Editorial Manifesto (30.0s – 43.0s)
+    // SCENE 5: CIRCADIAN TELEMETRY & FLOW STATE (35.0s – 40.5s)
     // -------------------------------------------------------------
-    else if (t >= 30.0 && t < 43.2) {
+    else if (t >= 35.0 && t < 40.8) {
       s1.style.opacity = '0';
       s2.style.opacity = '0';
       s3.style.opacity = '0';
       s4.style.opacity = '0';
       s5.style.opacity = '1';
       s6.style.opacity = '0';
-      s7.style.opacity = '0';
-      cursor.style.opacity = '0';
+      curMarcus.style.opacity = '0';
+      curElena.style.opacity = '0';
 
-      const artboard = document.getElementById('scene5-artboard');
-      const enterProgress = clamp((t - 30.0) / 0.8, 0, 1);
-      const eArt = easeOutCubic(enterProgress);
+      const card = document.getElementById('scene5-card');
+      const enterProg = clamp((t - 35.0) / 0.8, 0, 1);
+      const eCard = easeOutBack(enterProg);
 
-      artboard.style.opacity = String(eArt);
-      artboard.style.transform = `scale(${0.94 + eArt * 0.06})`;
+      card.style.opacity = String(enterProg);
+      card.style.transform = `scale(${0.92 + eCard * 0.08})`;
 
-      // Micro Parallax floating of cards
-      const floatTime = t - 30.0;
-      const promptPill = document.querySelector('.scene5-prompt-pill');
-      const featCard = document.querySelector('.scene5-feature-card');
-      const folderCard = document.querySelector('.scene5-folder-card');
-      const statsBox = document.querySelector('.scene5-stats-box');
-
-      if (promptPill) promptPill.style.transform = `translateY(${Math.sin(floatTime * 2.2) * 5}px)`;
-      if (featCard) featCard.style.transform = `translateY(${Math.cos(floatTime * 2.0) * 4}px)`;
-      if (folderCard) folderCard.style.transform = `translateY(${Math.sin(floatTime * 1.8) * 3}px)`;
-      if (statsBox) statsBox.style.transform = `translateY(${Math.cos(floatTime * 2.5) * 4}px)`;
-
-      // Exit transition to Scene 6
-      if (t >= 42.4) {
-        const exitProgress = (t - 42.4) / 0.7;
+      // Exit transition
+      if (t >= 39.8) {
+        const exitProgress = (t - 39.8) / 0.7;
         s5.style.opacity = String(1 - exitProgress);
         s5.style.transform = `scale(${1 - exitProgress * 0.08})`;
       } else {
@@ -2265,77 +1500,35 @@
     }
 
     // -------------------------------------------------------------
-    // SCENE 6: Atmospheric Deep Work / Mindfulness (43.0s – 51.0s)
+    // SCENE 6: CLIMAX BRAND REVEAL & PUNCHLINE (40.5s – 46.06s)
     // -------------------------------------------------------------
-    else if (t >= 43.0 && t < 51.2) {
+    else if (t >= 40.5) {
       s1.style.opacity = '0';
       s2.style.opacity = '0';
       s3.style.opacity = '0';
       s4.style.opacity = '0';
       s5.style.opacity = '0';
       s6.style.opacity = '1';
-      s7.style.opacity = '0';
-      cursor.style.opacity = '0';
+      curMarcus.style.opacity = '0';
+      curElena.style.opacity = '0';
 
-      const darkPrompt = document.getElementById('scene6-prompt');
-      const glassMonitor = document.getElementById('scene6-monitor');
+      const brand = document.getElementById('scene6-brand');
+      const punchline = document.getElementById('scene6-punchline');
 
-      if (t < 46.2) {
-        // Dark sleek prompt typing "flow state workspace"
-        glassMonitor.style.opacity = '0';
-        const pProgress = clamp((t - 43.0) / 0.6, 0, 1);
-        const eP = easeOutBack(pProgress);
-        darkPrompt.style.opacity = String(pProgress);
-        darkPrompt.style.transform = `scale(${0.9 + eP * 0.1}) translateY(${(1 - eP) * 20}px)`;
-      } else {
-        // Floats up into Atmospheric Glass Monitor
-        darkPrompt.style.opacity = '0';
-        const mProgress = clamp((t - 46.2) / 0.8, 0, 1);
-        const eM = easeOutCubic(mProgress);
-        glassMonitor.style.opacity = String(eM);
-        glassMonitor.style.transform = `scale(${0.92 + eM * 0.08}) translateY(${(1 - eM) * 30}px)`;
-      }
-
-      // Exit transition to Scene 7
-      if (t >= 50.4) {
-        const exitProgress = (t - 50.4) / 0.7;
-        s6.style.opacity = String(1 - exitProgress);
-        s6.style.transform = `scale(${1 + exitProgress * 0.1})`;
-      } else {
-        s6.style.transform = 'scale(1)';
-      }
-    }
-
-    // -------------------------------------------------------------
-    // SCENE 7: Climax Brand Reveal & "Build your sanctuary." (51.0s – 56.50s)
-    // -------------------------------------------------------------
-    else if (t >= 51.0) {
-      s1.style.opacity = '0';
-      s2.style.opacity = '0';
-      s3.style.opacity = '0';
-      s4.style.opacity = '0';
-      s5.style.opacity = '0';
-      s6.style.opacity = '0';
-      s7.style.opacity = '1';
-      cursor.style.opacity = '0';
-
-      const brandWrap = document.getElementById('scene7-brand');
-      const punchline = document.getElementById('scene7-punchline');
-
-      if (t < 53.6) {
-        // Brand Monogram & Wordmark Reveal
+      if (t < 43.6) {
+        // Brand Emblem & Wordmark reveal
         punchline.style.opacity = '0';
-        const bProgress = clamp((t - 51.0) / 0.7, 0, 1);
-        const eB = easeOutBack(bProgress);
-        brandWrap.style.opacity = String(bProgress);
-        brandWrap.style.transform = `scale(${0.92 + eB * 0.08})`;
+        const bProg = clamp((t - 40.5) / 0.7, 0, 1);
+        const eB = easeOutBack(bProg);
+        brand.style.opacity = String(bProg);
+        brand.style.transform = `scale(${0.9 + eB * 0.1})`;
       } else {
-        // Climax Punchline: "Build your sanctuary."
-        const fadeBrand = clamp((t - 53.6) / 0.5, 0, 1);
-        brandWrap.style.opacity = String(1 - fadeBrand);
+        // Final Punchline: "Build your sanctuary."
+        const fadeBrand = clamp((t - 43.6) / 0.4, 0, 1);
+        brand.style.opacity = String(1 - fadeBrand);
 
-        const pProgress = clamp((t - 53.8) / 0.8, 0, 1);
-        const ePunch = easeOutCubic(pProgress);
+        const pProg = clamp((t - 43.8) / 0.7, 0, 1);
+        const ePunch = easeOutCubic(pProg);
         punchline.style.opacity = String(ePunch);
         punchline.style.transform = `scale(${0.92 + ePunch * 0.08})`;
       }

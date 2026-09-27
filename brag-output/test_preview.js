@@ -99,19 +99,15 @@ async function main() {
     });
 
     const testTimestamps = [
-      { t: 1.0, name: 'scene1_orb.jpg' },
-      { t: 3.5, name: 'scene1_prompt_typing.jpg' },
-      { t: 5.6, name: 'scene1_button_click.jpg' },
-      { t: 9.5, name: 'scene2_hardware_specimen.jpg' },
-      { t: 15.5, name: 'scene3_acoustic_spectrogram.jpg' },
-      { t: 19.5, name: 'scene3_master_lab.jpg' },
-      { t: 24.5, name: 'scene4_sync_capsule.jpg' },
-      { t: 27.5, name: 'scene4_split_telemetry.jpg' },
-      { t: 35.0, name: 'scene5_curate_manifesto.jpg' },
-      { t: 45.0, name: 'scene6_dark_prompt.jpg' },
-      { t: 48.5, name: 'scene6_atmospheric_monitor.jpg' },
-      { t: 52.5, name: 'scene7_brand_reveal.jpg' },
-      { t: 55.0, name: 'scene7_punchline.jpg' }
+      { t: 1.0, name: 'scene1_macro_chassis.jpg' },
+      { t: 3.0, name: 'scene1_phone_chat.jpg' },
+      { t: 5.5, name: 'scene1_card_burst.jpg' },
+      { t: 10.0, name: 'scene2_hardware_viewport.jpg' },
+      { t: 18.0, name: 'scene3_swiss_editorial.jpg' },
+      { t: 28.0, name: 'scene4_collaborative_lab.jpg' },
+      { t: 37.0, name: 'scene5_circadian_telemetry.jpg' },
+      { t: 42.0, name: 'scene6_brand_lockup.jpg' },
+      { t: 45.0, name: 'scene6_punchline.jpg' }
     ];
 
     for (const item of testTimestamps) {

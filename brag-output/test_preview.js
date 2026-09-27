@@ -99,19 +99,19 @@ async function main() {
     });
 
     const testTimestamps = [
-      { t: 2.0, name: 'scene1_kinetic_tokens.jpg' },
-      { t: 5.0, name: 'scene1_brand_reveal.jpg' },
-      { t: 9.5, name: 'scene2_floating_viewport.jpg' },
-      { t: 15.2, name: 'scene3_snapped_pills.jpg' },
-      { t: 18.5, name: 'scene3_acoustic_lab.jpg' },
-      { t: 23.5, name: 'scene4_mobile_report.jpg' },
-      { t: 26.0, name: 'scene4_terminal_command.jpg' },
-      { t: 30.5, name: 'scene5_ai_3d_keyboard.jpg' },
-      { t: 33.5, name: 'scene5_approval_click.jpg' },
-      { t: 38.0, name: 'scene6_diagnostic_card.jpg' },
-      { t: 40.5, name: 'scene6_shield_matrix.jpg' },
-      { t: 44.0, name: 'scene7_master_dashboard.jpg' },
-      { t: 49.0, name: 'scene8_climactic_outro.jpg' }
+      { t: 1.0, name: 'scene1_orb.jpg' },
+      { t: 3.5, name: 'scene1_prompt_typing.jpg' },
+      { t: 5.6, name: 'scene1_button_click.jpg' },
+      { t: 9.5, name: 'scene2_hardware_specimen.jpg' },
+      { t: 15.5, name: 'scene3_acoustic_spectrogram.jpg' },
+      { t: 19.5, name: 'scene3_master_lab.jpg' },
+      { t: 24.5, name: 'scene4_sync_capsule.jpg' },
+      { t: 27.5, name: 'scene4_split_telemetry.jpg' },
+      { t: 35.0, name: 'scene5_curate_manifesto.jpg' },
+      { t: 45.0, name: 'scene6_dark_prompt.jpg' },
+      { t: 48.5, name: 'scene6_atmospheric_monitor.jpg' },
+      { t: 52.5, name: 'scene7_brand_reveal.jpg' },
+      { t: 55.0, name: 'scene7_punchline.jpg' }
     ];
 
     for (const item of testTimestamps) {

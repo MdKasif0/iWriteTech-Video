@@ -3,31 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1920, height=1080">
-<title>iWriteTech Launch Film</title>
+<title>iWriteTech — Official Launch Film</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Silkscreen&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --cream-bg: #F4EFE6;
-    --cream-card: #FAF7F2;
+    --cream-bg: #F7F4EE;
+    --cream-card: #FFFFFF;
     --cream-border: rgba(28, 25, 23, 0.08);
-    --dark-bg: #0B0E14;
-    --dark-surface: #121721;
-    --dark-card: #18202E;
-    --dark-border: rgba(255, 255, 255, 0.08);
-    --text-dark: #1C1917;
-    --text-muted: #78716C;
-    --text-light: #F8FAFC;
-    --text-dim: #94A3B8;
-    --accent-orange: #FF5722;
-    --accent-orange-glow: rgba(255, 87, 34, 0.25);
-    --accent-cyan: #38BDF8;
+    --dark-bg: #0C0D0E;
+    --dark-surface: #141619;
+    --dark-card: #1A1D21;
+    --dark-border: rgba(255, 255, 255, 0.09);
+    --text-dark: #121316;
+    --text-muted: #6B7280;
+    --text-light: #F9FAFB;
+    --text-dim: #9CA3AF;
+    --accent-orange: #FF5E36;
+    --accent-gold: #C9A66B;
+    --accent-amber: #F59E0B;
     --accent-blue: #2563EB;
     --accent-green: #10B981;
-    --accent-purple: #A855F7;
+    --accent-lime: #A3E635;
+    --accent-purple: #8B5CF6;
   }
 
   body {
@@ -42,7 +43,6 @@
     position: relative;
   }
 
-  /* Universal Viewport Container */
   #viewport {
     position: absolute;
     inset: 0;
@@ -64,7 +64,7 @@
     transform-origin: center center;
   }
 
-  /* Universal mouse cursor */
+  /* Universal Mouse Cursor */
   .cursor-pointer {
     position: absolute;
     width: 24px;
@@ -72,2693 +72,2277 @@
     z-index: 9999;
     pointer-events: none;
     opacity: 0;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.35));
   }
 
   /* =========================================================================
-     SCENE 1: WARM GALLERY & KINETIC CODE ATMOSPHERE (0.0s - 6.5s)
+     SCENE 1: CURIOSITY & PROMPT CAPSULE (0.0s – 6.5s)
      ========================================================================= */
   #scene1 {
     background-color: var(--cream-bg);
+    flex-direction: column;
+    overflow: hidden;
   }
 
-  .code-token {
+  .scene1-mesh-bg {
     position: absolute;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    color: rgba(28, 25, 23, 0.45);
-    white-space: nowrap;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 174, 115, 0.22) 0%, rgba(254, 215, 170, 0.12) 35%, rgba(247, 244, 238, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.8s ease;
     pointer-events: none;
   }
 
-  .token-orange { color: #EA580C; font-weight: 600; }
-  .token-blue { color: #0284C7; font-weight: 600; }
-  .token-green { color: #059669; }
-  .token-pink {
-    display: inline-block;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #FB7185;
-    margin-right: 6px;
-    vertical-align: middle;
-  }
-  .token-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #1C1917;
-    margin: 0 4px;
-    vertical-align: middle;
-  }
-  .token-ring {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(28,25,23,0.4);
-    margin: 0 4px;
-    vertical-align: middle;
+  .scene1-dot-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(28, 25, 23, 0.08) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+    opacity: 0.6;
+    pointer-events: none;
   }
 
-  .s1-center-wrap {
+  .scene1-opening-word {
+    font-size: 96px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--text-dark);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: absolute;
     z-index: 10;
   }
 
-  .s1-headline {
-    font-size: 58px;
-    font-weight: 700;
-    letter-spacing: -0.035em;
-    color: #1C1917;
-    text-align: center;
-    line-height: 1.15;
-    position: absolute;
-  }
-
-  .s1-tag-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: #44403C;
-    background: rgba(28, 25, 23, 0.05);
-    border: 1px solid rgba(28, 25, 23, 0.08);
-    padding: 6px 14px;
-    border-radius: 999px;
-    margin-bottom: 20px;
-  }
-
-  .s1-brand-reveal {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .s1-brand-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: #1C1917;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 25px -5px rgba(28,25,23,0.25);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .s1-brand-icon svg {
-    width: 24px;
-    height: 24px;
-    fill: #F4EFE6;
-  }
-
-  .s1-brand-icon::after {
-    content: '';
-    position: absolute;
-    bottom: 4px;
-    right: 4px;
-    width: 6px;
-    height: 6px;
+  .scene1-orb {
+    width: 78px;
+    height: 78px;
     border-radius: 50%;
-    background: var(--accent-orange);
-    box-shadow: 0 0 8px var(--accent-orange);
+    margin: 0 4px;
+    background: radial-gradient(circle at 35% 35%, #FFBE98 0%, #FF6B4A 55%, #E04824 100%);
+    box-shadow: 0 10px 30px rgba(255, 107, 74, 0.4), inset 0 2px 6px rgba(255, 255, 255, 0.6);
+    display: inline-block;
   }
 
-  .s1-brand-title {
-    font-size: 48px;
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    color: #1C1917;
-  }
-
-  /* =========================================================================
-     SCENE 2: FLOATING VIEWPORT HERO & 5-COLUMN MATRIX (6.5s - 14.5s)
-     ========================================================================= */
-  #scene2 {
-    background-color: var(--cream-bg);
-  }
-
-  .hero-viewport-card {
-    width: 1480px;
-    height: 840px;
-    border-radius: 28px;
-    background: #0E131F;
-    border: 1.5px solid rgba(28, 25, 23, 0.12);
-    box-shadow: 0 40px 100px -20px rgba(28, 25, 23, 0.32), 0 20px 40px -15px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-
-  .viewport-topbar {
-    height: 52px;
-    background: rgba(14, 19, 31, 0.95);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  .scene1-headline-split {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 24px;
-    z-index: 20;
+    opacity: 0;
+    z-index: 12;
   }
 
-  .topbar-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .topbar-dots {
-    display: flex;
-    gap: 7px;
-  }
-
-  .topbar-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.18);
-  }
-
-  .topbar-brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: #E2E8F0;
-  }
-
-  .topbar-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-size: 12px;
-    font-weight: 500;
-    color: #94A3B8;
-  }
-
-  .topbar-nav span.active {
-    color: #F8FAFC;
-    font-weight: 600;
-  }
-
-  .topbar-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .topbar-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 600;
-    color: #38BDF8;
-    background: rgba(56, 189, 248, 0.12);
-    border: 1px solid rgba(56, 189, 248, 0.25);
-    padding: 3px 10px;
-    border-radius: 6px;
-  }
-
-  .viewport-hero-media {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .viewport-hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-    filter: brightness(0.88) contrast(1.05);
-    transform-origin: center center;
-  }
-
-  .viewport-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(14, 19, 31, 0.15) 0%, rgba(14, 19, 31, 0.75) 85%, #0E131F 100%);
-  }
-
-  .viewport-banner-text {
-    position: absolute;
-    left: 48px;
-    bottom: 24px;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .banner-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent-orange);
-    color: #FFFFFF;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 4px 12px;
-    border-radius: 999px;
-    width: fit-content;
-  }
-
-  .banner-title {
+  .scene1-split-left, .scene1-split-right {
     font-size: 52px;
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    color: #FFFFFF;
-    line-height: 1.05;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  }
-
-  .viewport-columns-bar {
-    height: 240px;
-    background: #0B0E17;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    position: relative;
-    z-index: 15;
-  }
-
-  .col-item {
-    border-right: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 20px 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    background: rgba(18, 23, 34, 0.4);
-    transition: background 0.2s ease;
-  }
-
-  .col-item:last-child {
-    border-right: none;
-  }
-
-  .col-item.active {
-    background: rgba(30, 41, 59, 0.6);
-  }
-
-  .col-item.active::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--accent-orange);
-  }
-
-  .col-header {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .col-title {
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #F8FAFC;
-  }
-
-  .col-desc {
-    font-size: 12px;
-    color: #94A3B8;
-    line-height: 1.35;
-  }
-
-  .col-media-thumb {
-    width: 100%;
-    height: 100px;
-    border-radius: 12px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  .col-media-thumb img {
-    max-width: 90%;
-    max-height: 85%;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
-  }
-
-  /* =========================================================================
-     SCENE 3: SNAPPED PILL & LAB FREQUENCY SPECTRUM (14.5s - 21.5s)
-     ========================================================================= */
-  #scene3 {
-    background-color: var(--cream-bg);
-  }
-
-  .s3-pill-stage {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0px;
-    z-index: 30;
-  }
-
-  .snapped-pill-btn {
-    height: 64px;
-    padding: 0 32px;
-    border-radius: 999px;
-    background: #FAF7F2;
-    border: 2px solid #1C1917;
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #1C1917;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 12px 30px -5px rgba(28,25,23,0.12);
-    white-space: nowrap;
-  }
-
-  .snapped-pill-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #1C1917;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 -8px;
-    z-index: 2;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-  }
-
-  .snapped-pill-icon svg {
-    width: 22px;
-    height: 22px;
-    fill: #F4EFE6;
-  }
-
-  /* Motion Blur Pill Streaks */
-  .motion-pill-bar {
-    position: absolute;
-    height: 54px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, rgba(255,87,34,0.85) 0%, rgba(244,114,182,0.85) 50%, rgba(251,191,36,0.85) 100%);
-    filter: blur(14px);
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  /* The Precision Acoustic Lab Board */
-  .lab-acoustic-board {
-    position: absolute;
-    width: 1560px;
-    height: 860px;
-    background: #0F141F;
-    border: 1.5px solid rgba(255, 255, 255, 0.09);
-    border-radius: 28px;
-    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.5);
-    padding: 36px 44px;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    z-index: 10;
-  }
-
-  .lab-board-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 20px;
-  }
-
-  .lab-title-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .lab-main-title {
-    font-size: 28px;
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: -0.03em;
-    color: #F8FAFC;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    color: var(--text-dark);
   }
 
-  .lab-subtitle {
-    font-size: 13px;
-    color: #94A3B8;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  .lab-top-metrics {
-    display: flex;
-    gap: 24px;
-  }
-
-  .lab-metric-chip {
-    padding: 10px 18px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .lab-metric-chip .label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #64748B;
-  }
-
-  .lab-metric-chip .value {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--accent-cyan);
-  }
-
-  .lab-board-content {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 32px;
-    flex: 1;
-  }
-
-  .acoustic-spectrum-card {
-    background: rgba(18, 23, 34, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+  .scene1-prompt-card {
+    position: absolute;
+    width: 640px;
+    background: #FFFFFF;
     border-radius: 20px;
-    padding: 24px;
+    padding: 24px 28px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
     gap: 16px;
-  }
-
-  .spectrum-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .spectrum-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: #E2E8F0;
-  }
-
-  .frequency-bars-container {
-    flex: 1;
-    display: flex;
-    align-items: flex-end;
-    gap: 8px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .freq-bar-col {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    height: 100%;
-    justify-content: flex-end;
-  }
-
-  .freq-bar-fill {
-    width: 100%;
-    border-radius: 4px 4px 0 0;
-    background: linear-gradient(180deg, var(--accent-orange) 0%, rgba(255, 87, 34, 0.25) 100%);
-  }
-
-  .freq-bar-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: #64748B;
-  }
-
-  .sound-test-cards-col {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .sound-profile-card {
-    padding: 18px 22px;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .sound-profile-card.highlight {
-    background: rgba(255, 87, 34, 0.07);
-    border-color: rgba(255, 87, 34, 0.35);
-  }
-
-  .sp-card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .sp-card-name {
-    font-size: 16px;
-    font-weight: 700;
-    color: #F8FAFC;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .sp-card-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 6px;
-    background: rgba(16, 185, 129, 0.15);
-    color: #10B981;
-  }
-
-  .sp-card-tags {
-    display: flex;
-    gap: 8px;
-  }
-
-  .sp-tag {
-    font-size: 11px;
-    font-family: 'JetBrains Mono', monospace;
-    color: #94A3B8;
-    background: rgba(255, 255, 255, 0.04);
-    padding: 3px 8px;
-    border-radius: 4px;
-  }
-
-  /* =========================================================================
-     SCENE 4: MOBILE REPORT & TERMINAL HARD CUT (21.5s - 27.5s)
-     ========================================================================= */
-  #scene4 {
-    background-color: var(--cream-bg);
-  }
-
-  .mobile-report-card {
-    width: 480px;
-    height: 820px;
-    background: #0E131F;
-    border-radius: 40px;
-    border: 3px solid #1C1917;
-    box-shadow: 0 40px 100px -20px rgba(28,25,23,0.35);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 240px;
-  }
-
-  .mobile-top-media {
-    height: 380px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .mobile-top-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .mobile-top-media::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 40%, #0E131F 100%);
-  }
-
-  .mobile-appbar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-  }
-
-  .mobile-pill-brand {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    font-weight: 700;
-    color: #FFFFFF;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(8px);
-    padding: 6px 14px;
-    border-radius: 999px;
-  }
-
-  .mobile-github-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  }
-
-  .mobile-github-btn svg {
-    width: 22px;
-    height: 22px;
-    fill: #1C1917;
-  }
-
-  .mobile-content {
-    flex: 1;
-    padding: 24px 28px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .mobile-score-box {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .mobile-score-title {
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: #FFFFFF;
-  }
-
-  .mobile-score-desc {
-    font-size: 13px;
-    color: #94A3B8;
-  }
-
-  .mobile-spec-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    font-size: 13px;
-  }
-
-  .mobile-spec-row .k { color: #64748B; }
-  .mobile-spec-row .v { color: #E2E8F0; font-family: 'JetBrains Mono', monospace; font-weight: 600; }
-
-  .mobile-action-btn {
-    width: 100%;
-    height: 52px;
-    border-radius: 16px;
-    background: var(--accent-orange);
-    color: #FFFFFF;
-    font-size: 15px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  /* Right Side Studio Showcase in Scene 4 */
-  .s4-right-gallery {
-    position: absolute;
-    right: 200px;
-    width: 820px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .s4-feature-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--accent-orange);
-    background: rgba(255, 87, 34, 0.08);
-    border: 1px solid rgba(255, 87, 34, 0.2);
-    padding: 6px 14px;
-    border-radius: 8px;
-    width: fit-content;
-  }
-
-  .s4-main-headline {
-    font-size: 54px;
-    font-weight: 800;
-    letter-spacing: -0.035em;
-    line-height: 1.1;
-    color: #1C1917;
-  }
-
-  .s4-card-preview {
-    width: 100%;
-    height: 380px;
-    border-radius: 24px;
-    overflow: hidden;
-    border: 1.5px solid rgba(28,25,23,0.1);
-    box-shadow: 0 20px 50px -10px rgba(0,0,0,0.15);
-    position: relative;
-  }
-
-  .s4-card-preview img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* TERMINAL HARD-CUT OVERLAY (Scene 4 Transition) */
-  .terminal-hardcut-overlay {
-    position: absolute;
-    inset: 0;
-    background: #090D14;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
+    z-index: 15;
     opacity: 0;
   }
 
-  .terminal-watermark {
-    position: absolute;
-    top: 40px;
-    left: 60px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 15px;
-    font-weight: 700;
-    color: #64748B;
+  .scene1-prompt-text {
+    font-size: 19px;
+    line-height: 1.5;
+    color: #262626;
+    font-weight: 450;
+    min-height: 60px;
   }
 
-  .terminal-command-container {
-    display: inline-flex;
-    align-items: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 64px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 24px 44px;
-    border-radius: 16px;
-    background: rgba(18, 23, 34, 0.8);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-  }
-
-  .term-arrow { color: #22C55E; margin-right: 24px; }
-  .term-cmd { color: #FFFFFF; margin-right: 18px; }
-  .term-arg { color: #F97316; margin-right: 18px; }
-  .term-highlight {
-    background: #2563EB;
-    color: #FFFFFF;
-    padding: 0 12px;
-    border-radius: 6px;
-    margin-right: 14px;
-  }
-  .term-cursor {
-    width: 6px;
-    height: 72px;
-    background: #FFFFFF;
+  .scene1-prompt-cursor {
     display: inline-block;
+    width: 2px;
+    height: 20px;
+    background: #FF5E36;
+    margin-left: 2px;
     vertical-align: middle;
+    animation: blink 0.9s infinite;
   }
 
-  /* =========================================================================
-     SCENE 5: AI AGENT WORKSPACE & 3D HARDWARE APPROVAL (27.5s - 35.5s)
-     ========================================================================= */
-  #scene5 {
-    background-color: var(--cream-bg);
-  }
-
-  .ai-studio-window {
-    width: 1720px;
-    height: 940px;
-    background: #0D111A;
-    border-radius: 28px;
-    border: 1.5px solid rgba(28, 25, 23, 0.15);
-    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.45);
-    display: grid;
-    grid-template-columns: 460px 1fr 380px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  /* Left AI Chat Panel */
-  .ai-chat-panel {
-    background: #111622;
-    border-right: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 28px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    position: relative;
-  }
-
-  .ai-chat-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .ai-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, var(--accent-orange), #EC4899);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .ai-avatar svg { width: 20px; height: 20px; fill: #FFFFFF; }
-
-  .ai-user-prompt-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 16px 18px;
-    font-size: 14px;
-    line-height: 1.45;
-    color: #E2E8F0;
-  }
-
-  .ai-thought-pill {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: #94A3B8;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .ai-plan-text {
-    font-size: 13.5px;
-    color: #CBD5E1;
-    line-height: 1.45;
-  }
-
-  .ai-approval-modal {
-    background: #18202E;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 18px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  }
-
-  .approval-header {
-    font-size: 14px;
-    font-weight: 700;
-    color: #FFFFFF;
+  .scene1-prompt-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0,0,0,0.04);
   }
 
-  .approval-pkg-list {
+  .scene1-prompt-icons {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--accent-orange);
+    gap: 12px;
+    color: #9CA3AF;
   }
 
-  .approval-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 4px;
-  }
-
-  .btn-approve {
-    flex: 1;
-    height: 38px;
-    border-radius: 8px;
-    background: #FFFFFF;
-    color: #0F172A;
-    font-weight: 700;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(255,255,255,0.2);
-  }
-
-  .btn-reject {
-    height: 38px;
-    padding: 0 16px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.08);
-    color: #94A3B8;
-    font-weight: 600;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .ai-input-bottom {
-    margin-top: auto;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    padding: 14px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 13px;
-    color: #64748B;
-  }
-
-  .ai-send-btn {
+  .scene1-prompt-icon-btn {
     width: 28px;
     height: 28px;
     border-radius: 8px;
-    background: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #F3F4F6;
   }
 
-  .ai-send-btn svg { width: 14px; height: 14px; fill: #000000; }
+  .scene1-submit-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #111827;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
 
-  /* Center 3D Hardware Viewport */
-  .ai-center-stage {
+  /* =========================================================================
+     SCENE 2: 3D HARDWARE SPECIMEN & TOPOGRAPHY BLUEPRINT (6.5s – 14.0s)
+     ========================================================================= */
+  #scene2 {
+    background-color: var(--cream-bg);
+    overflow: hidden;
+  }
+
+  .scene2-dot-matrix-bg {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(48, 1fr);
+    grid-gap: 12px;
+    padding: 30px;
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .dot-node {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(28, 25, 23, 0.08);
+  }
+
+  .dot-node.warm { background: #FF8A65; box-shadow: 0 0 10px rgba(255, 138, 101, 0.6); }
+  .dot-node.emerald { background: #34D399; box-shadow: 0 0 10px rgba(52, 211, 153, 0.5); }
+  .dot-node.purple { background: #A78BFA; }
+
+  .scene2-app-window {
+    position: relative;
+    width: 1480px;
+    height: 820px;
+    background: #FFFFFF;
+    border-radius: 28px;
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 20;
+    transform: scale(0.92);
+  }
+
+  .scene2-window-header {
+    height: 56px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    background: #FAF9F6;
+  }
+
+  .scene2-window-dots {
+    display: flex;
+    gap: 8px;
+  }
+
+  .window-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .dot-red { background: #FF5F56; }
+  .dot-yellow { background: #FFBD2E; }
+  .dot-green { background: #27C93F; }
+
+  .scene2-window-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: #4B5563;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .scene2-window-body {
+    flex: 1;
+    display: flex;
+    position: relative;
+    background: #FDFBF7;
+  }
+
+  /* Left Panel */
+  .scene2-left-panel {
+    width: 380px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: #FFFFFF;
+    border-right: 1px solid rgba(0,0,0,0.06);
+    z-index: 5;
+  }
+
+  .scene2-panel-title {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #111827;
+    line-height: 1.15;
+  }
+
+  .scene2-panel-search {
+    background: #F3F4F6;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #9CA3AF;
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .scene2-category-pills {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .scene2-pill-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .cat-pill {
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: #F3F4F6;
+    color: #4B5563;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cat-pill.active {
+    background: #111827;
+    color: #FFFFFF;
+  }
+  .cat-pill.gold {
+    background: #FEF3C7;
+    color: #B45309;
+  }
+
+  .scene2-budget-box {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: #F9FAFB;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .budget-item {
+    flex: 1;
+  }
+  .budget-val {
+    font-size: 26px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.02em;
+  }
+  .budget-lbl {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9CA3AF;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .scene2-panel-btn {
+    margin-top: auto;
+    background: #111827;
+    color: #FFFFFF;
+    padding: 16px 20px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+
+  /* Center/Right 3D Viewport */
+  .scene2-center-viewport {
+    flex: 1;
     position: relative;
     overflow: hidden;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at center, rgba(30, 41, 59, 0.5) 0%, #0D111A 70%);
   }
 
-  .center-stage-header {
+  .scene2-viewport-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.97) contrast(1.02);
+  }
+
+  /* Waypoint Pins */
+  .waypoint-pin {
     position: absolute;
-    top: 28px;
-    left: 36px;
     display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .stage-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent-orange);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  .stage-title {
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: #F8FAFC;
-  }
-
-  .hardware-3d-model {
-    width: 680px;
-    border-radius: 20px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-    transform-origin: center center;
-  }
-
-  .interactive-hover-chip {
-    position: absolute;
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid var(--accent-cyan);
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(12px);
-    border-radius: 12px;
-    padding: 10px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
-    pointer-events: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    font-weight: 600;
+    color: #1F2937;
     z-index: 10;
   }
 
-  .chip-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--accent-cyan);
-    text-transform: uppercase;
+  .pin-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .pin-dot.orange { background: #FF5E36; box-shadow: 0 0 8px rgba(255,94,54,0.6); }
+  .pin-dot.emerald { background: #10B981; box-shadow: 0 0 8px rgba(16,185,129,0.6); }
+  .pin-dot.gold { background: #F59E0B; box-shadow: 0 0 8px rgba(245,158,11,0.6); }
+
+  .scene2-bottom-card {
+    position: absolute;
+    bottom: 28px;
+    right: 32px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    border-radius: 18px;
+    padding: 16px 20px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 15;
   }
 
-  .chip-val {
+  .scene2-card-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  /* =========================================================================
+     SCENE 3: ACOUSTIC SPECTROGRAM & MASTER HARDWARE LAB (14.0s – 23.0s)
+     ========================================================================= */
+  #scene3 {
+    background-color: var(--dark-bg);
+    overflow: hidden;
+  }
+
+  .scene3-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    filter: blur(4px) brightness(0.7);
+  }
+
+  .scene3-telemetry-card {
+    position: absolute;
+    width: 680px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 24px;
+    padding: 28px 32px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 20;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+  }
+
+  .scene3-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .scene3-card-title {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 14px;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #111827;
+    letter-spacing: 0.05em;
   }
 
-  /* Right Specs & Configuration Panel */
-  .ai-right-panel {
-    background: #111622;
-    border-left: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 28px 24px;
+  .scene3-coords {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #6B7280;
+  }
+
+  .scene3-graph-svg {
+    width: 100%;
+    height: 140px;
+  }
+
+  .scene3-tabs {
+    display: flex;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .scene3-tab-pill {
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6B7280;
+    background: #F3F4F6;
+    letter-spacing: 0.04em;
+  }
+  .scene3-tab-pill.active {
+    background: #FEF08A;
+    color: #854D0E;
+  }
+
+  /* Expanded Master Studio Dashboard */
+  .scene3-master-dashboard {
+    position: absolute;
+    width: 1480px;
+    height: 820px;
+    background: rgba(20, 22, 25, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 25;
+    opacity: 0;
+  }
+
+  .scene3-master-header {
+    height: 70px;
+    padding: 0 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .scene3-master-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .scene3-rating-pill {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 12px;
+    background: #F59E0B;
+    color: #111827;
+  }
+
+  .scene3-master-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    padding: 32px 36px;
+  }
+
+  .scene3-hero-view {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #111317;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scene3-hero-img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+  }
+
+  .scene3-bottom-strip {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 16px;
+    background: rgba(15, 17, 21, 0.95);
+  }
+
+  .strip-spec-item {
+    text-align: center;
+  }
+  .strip-val {
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .strip-lbl {
+    font-size: 11px;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  .scene3-telemetry-sidebar {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
 
-  .right-panel-title {
-    font-size: 16px;
-    font-weight: 700;
-    color: #E2E8F0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    padding-bottom: 14px;
-  }
-
-  .spec-progress-block {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .spec-prog-header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: #94A3B8;
-  }
-
-  .spec-prog-bar {
-    width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.07);
-    border-radius: 999px;
-    overflow: hidden;
-  }
-
-  .spec-prog-fill {
-    height: 100%;
-    border-radius: 999px;
-    background: var(--accent-orange);
-  }
-
-  .specs-cta-btn {
-    margin-top: auto;
-    height: 48px;
-    background: #0284C7;
-    border-radius: 12px;
-    color: #FFFFFF;
-    font-size: 14px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.35);
-  }
-
-  /* =========================================================================
-     SCENE 6: THERMAL SCAN & VERIFICATION MATRIX (35.5s - 42.5s)
-     ========================================================================= */
-  #scene6 {
-    background-color: var(--cream-bg);
-  }
-
-  .thermal-container {
-    width: 1620px;
-    height: 900px;
-    border-radius: 32px;
-    overflow: hidden;
-    position: relative;
-    border: 2px solid rgba(28,25,23,0.1);
-    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .thermal-bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: saturate(1.8) contrast(1.1);
-  }
-
-  .thermal-spectral-overlay {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 60% 40%, rgba(255, 87, 34, 0.5) 0%, rgba(244, 63, 94, 0.3) 30%, rgba(56, 189, 248, 0.35) 70%, rgba(15, 23, 42, 0.6) 100%);
-    mix-blend-mode: color;
-    pointer-events: none;
-  }
-
-  .thermal-scan-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, transparent, #FFFFFF, transparent);
-    box-shadow: 0 0 20px #FFFFFF, 0 0 40px var(--accent-cyan);
-    pointer-events: none;
-  }
-
-  .thermal-center-btn {
-    position: absolute;
-    background: #1C1917;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    padding: 16px 36px;
-    border-radius: 14px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .thermal-center-btn svg { width: 22px; height: 22px; fill: var(--accent-orange); }
-
-  /* Diagnostic Verification Popover */
-  .diagnostic-card {
-    position: absolute;
-    background: #FFFFFF;
-    border-radius: 20px;
-    padding: 28px 36px;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.25);
-    border: 1px solid rgba(0,0,0,0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    z-index: 30;
-    width: 580px;
-  }
-
-  .diag-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .diag-title {
-    font-size: 22px;
-    font-weight: 800;
-    color: #0F172A;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .diag-pill {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 700;
-    background: #F1F5F9;
-    color: #475569;
-    padding: 4px 10px;
-    border-radius: 6px;
-  }
-
-  .diag-msg {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    color: #10B981;
-    font-weight: 600;
-  }
-
-  .diag-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    margin-top: 8px;
-  }
-
-  .diag-btn {
-    height: 42px;
-    padding: 0 24px;
-    border-radius: 10px;
-    background: #1C1917;
-    color: #FFFFFF;
-    font-size: 14px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Matrix of Glowing Green Shields (Scene 6 Part B) */
-  .security-matrix-grid {
-    position: absolute;
-    inset: 0;
-    background: #090D14;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    z-index: 40;
-    opacity: 0;
-  }
-
-  .matrix-canvas-wrapper {
-    display: grid;
-    grid-template-columns: repeat(7, 64px);
-    grid-template-rows: repeat(4, 64px);
-    gap: 28px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .matrix-cell {
-    width: 64px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  .matrix-shield {
-    width: 32px;
-    height: 32px;
-    fill: none;
-    stroke: #84CC16;
-    stroke-width: 2.2;
-    filter: drop-shadow(0 0 10px rgba(132, 204, 22, 0.4));
-  }
-
-  .matrix-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-  }
-
-  .publish-pill-btn {
-    background: #1C1917;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #FFFFFF;
-    font-size: 18px;
-    font-weight: 700;
-    padding: 14px 36px;
-    border-radius: 999px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  }
-
-  /* =========================================================================
-     SCENE 7: MASTER STUDIO DASHBOARD (42.5s - 46.5s)
-     ========================================================================= */
-  #scene7 {
-    background-color: var(--cream-bg);
-  }
-
-  .studio-dashboard-card {
-    width: 1680px;
-    height: 900px;
-    background: #0B0E14;
-    border: 1.5px solid rgba(28,25,23,0.12);
-    border-radius: 28px;
-    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.5);
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    overflow: hidden;
-  }
-
-  .dash-sidebar {
-    background: #080A0F;
-    border-right: 1px solid rgba(255, 255, 255, 0.06);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 24px 0;
-    gap: 28px;
-  }
-
-  .dash-side-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #64748B;
-  }
-
-  .dash-side-icon.active {
-    background: rgba(255, 87, 34, 0.15);
-    color: var(--accent-orange);
-  }
-
-  .dash-main-area {
-    padding: 32px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    overflow: hidden;
-  }
-
-  .dash-hero-banner {
-    height: 200px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    position: relative;
-    overflow: hidden;
-    padding: 36px 44px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .dash-hero-title {
-    font-size: 38px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: #FFFFFF;
-    margin-bottom: 8px;
-  }
-
-  .dash-hero-sub {
-    font-size: 14px;
-    color: #94A3B8;
-  }
-
-  .dash-three-grid {
-    display: grid;
-    grid-template-columns: 360px 1fr 380px;
-    gap: 24px;
-    flex: 1;
-  }
-
-  .dash-telemetry-box {
-    background: #111622;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+  .telemetry-card-dark {
+    background: #181B20;
     border-radius: 20px;
     padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .stat-block {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    padding-bottom: 12px;
-  }
-
-  .stat-val {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 36px;
-    font-weight: 800;
-    color: #FFFFFF;
-  }
-
-  .stat-label {
-    font-size: 12px;
-    color: #64748B;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  .dash-gear-feed {
-    background: #111622;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 20px;
-    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
     display: flex;
     flex-direction: column;
     gap: 14px;
   }
 
-  .gear-feed-item {
+  .dark-card-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .gauge-container {
     display: flex;
     align-items: center;
-    gap: 16px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 14px;
-    padding: 12px 16px;
+    justify-content: center;
+    position: relative;
+    height: 110px;
   }
 
-  .gear-thumb {
-    width: 60px;
-    height: 48px;
-    border-radius: 8px;
-    object-fit: cover;
+  .gauge-val-display {
+    position: absolute;
+    text-align: center;
+    top: 50px;
   }
 
-  .gear-info {
-    flex: 1;
+  .gauge-num {
+    font-size: 38px;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .gauge-sub {
+    font-size: 12px;
+    color: #34D399;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* =========================================================================
+     SCENE 4: ECOSYSTEM SYNC & DUAL TELEMETRY (23.0s – 30.0s)
+     ========================================================================= */
+  #scene4 {
+    background-color: var(--cream-bg);
+    overflow: hidden;
+  }
+
+  .scene4-capsule {
+    position: absolute;
+    background: #FFFFFF;
+    padding: 16px 24px;
+    border-radius: 36px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    font-size: 20px;
+    font-weight: 500;
+    color: #111827;
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    align-items: center;
+    gap: 12px;
+    z-index: 30;
+    opacity: 0;
   }
 
-  .gear-name { font-size: 14px; font-weight: 700; color: #FFFFFF; }
-  .gear-rating { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent-orange); }
+  .scene4-icon-chip {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #E0E7FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
 
-  .dash-quote-card {
-    background: #111622;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 20px;
-    padding: 24px;
+  .scene4-submit-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #111827;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-left: 8px;
+  }
+
+  .scene4-split-view {
+    position: absolute;
+    width: 1480px;
+    height: 820px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    z-index: 25;
+    opacity: 0;
+  }
+
+  .scene4-left-dark {
+    background: #121316;
+    border-radius: 28px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  .editorial-quote {
-    font-family: 'Literata', serif;
-    font-size: 19px;
-    font-style: italic;
-    line-height: 1.5;
-    color: #E2E8F0;
+  .scene4-donut-section {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .scene4-donut-svg {
+    width: 220px;
+    height: 220px;
+  }
+
+  .scene4-donut-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .donut-val-big {
+    font-size: 44px;
+    font-weight: 800;
+    color: #FFFFFF;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.03em;
+  }
+
+  .donut-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #9CA3AF;
+  }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  .scene4-right-light {
+    background: #FFFFFF;
+    border-radius: 28px;
+    padding: 36px;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+  }
+
+  .scene4-sheet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .scene4-sheet-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .scene4-spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .scene4-spec-table th {
+    text-align: left;
+    padding: 10px 12px;
+    background: #F9FAFB;
+    color: #6B7280;
+    font-weight: 600;
+    border-bottom: 1px solid #E5E7EB;
+  }
+
+  .scene4-spec-table td {
+    padding: 12px;
+    border-bottom: 1px solid #F3F4F6;
+    color: #1F2937;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .status-badge {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #ECFDF5;
+    color: #059669;
   }
 
   /* =========================================================================
-     SCENE 8: CLIMACTIC OUTRO & BRAND SIGNATURE (46.5s - 50.13s)
+     SCENE 5: THE ICONIC "CURATE." EDITORIAL MANIFESTO (30.0s – 43.0s)
      ========================================================================= */
-  #scene8 {
+  #scene5 {
     background-color: var(--cream-bg);
+    overflow: hidden;
   }
 
-  .outro-punchline {
+  .scene5-artboard {
+    position: relative;
+    width: 1540px;
+    height: 860px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Giant Editorial Serif Word */
+  .scene5-title-word {
     position: absolute;
-    font-size: 72px;
-    font-weight: 800;
+    left: 40px;
+    top: 180px;
+    font-family: 'Literata', serif;
+    font-size: 160px;
+    font-weight: 700;
     letter-spacing: -0.04em;
-    color: #1C1917;
-    text-align: center;
-    line-height: 1.1;
+    color: #111827;
+    line-height: 1;
   }
 
-  .outro-brand-block {
+  /* Avatar with concentric ring */
+  .scene5-avatar-wrap {
     position: absolute;
+    left: 210px;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scene5-avatar-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .scene5-avatar-ring {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+  }
+
+  .scene5-avatar-badge {
+    position: absolute;
+    right: -10px;
+    top: 10px;
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.4);
+  }
+
+  /* Filter Pills Cluster */
+  .scene5-filters-box {
+    position: absolute;
+    left: 560px;
+    top: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .scene5-filters-header {
+    font-family: 'Literata', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: #374151;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .scene5-pills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 420px;
+  }
+
+  .filter-pill-colored {
+    padding: 10px 16px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  }
+  .fp-purple { background: #E0E7FF; color: #4338CA; }
+  .fp-lime { background: #ECFCCB; color: #4D7C0F; }
+  .fp-orange { background: #FFEDD5; color: #C2410C; }
+  .fp-white { background: #FFFFFF; color: #1F2937; border: 1px solid rgba(0,0,0,0.06); }
+
+  /* Prompt Card in Scene 5 */
+  .scene5-prompt-pill {
+    position: absolute;
+    left: 380px;
+    top: 360px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 14px 22px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+    border: 1px solid rgba(0,0,0,0.05);
+    font-size: 16px;
+    font-weight: 500;
+    color: #1F2937;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  /* Folder Stack on the left */
+  .scene5-folder-card {
+    position: absolute;
+    left: 40px;
+    top: 380px;
+    width: 280px;
+    height: 180px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .folder-tab {
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    background: #111827;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .folder-title {
+    font-family: 'Literata', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* Product Feature Card */
+  .scene5-feature-card {
+    position: absolute;
+    left: 360px;
+    top: 440px;
+    width: 380px;
+    background: #FFFFFF;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .feature-card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .feature-card-body {
+    padding: 20px;
+  }
+
+  .feature-card-title {
+    font-family: 'Literata', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6px;
+  }
+
+  .feature-card-meta {
+    font-size: 12px;
+    color: #6B7280;
+    display: flex;
+    gap: 12px;
+  }
+
+  /* Stats Metric Boxes */
+  .scene5-stats-box {
+    position: absolute;
+    left: 770px;
+    top: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stat-card-white {
+    width: 220px;
+    padding: 20px;
+    background: #FFFFFF;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .stat-num-big {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111827;
+    line-height: 1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .stat-lbl-small {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  /* Mentors/Builders List on Right */
+  .scene5-builders-card {
+    position: absolute;
+    right: 40px;
+    top: 180px;
+    width: 320px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .builders-header {
+    font-family: 'Literata', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .builder-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #F3F4F6;
+  }
+
+  .builder-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .builder-info {
+    flex: 1;
+  }
+
+  .builder-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .builder-role {
+    font-size: 12px;
+    color: #6B7280;
+  }
+
+  .scene5-green-check {
+    position: absolute;
+    right: 380px;
+    top: 130px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #A3E635;
+    color: #166534;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 10px 25px rgba(163, 230, 53, 0.4);
+  }
+
+  /* =========================================================================
+     SCENE 6: ATMOSPHERIC DEEP WORK / MINDFULNESS (43.0s – 51.0s)
+     ========================================================================= */
+  #scene6 {
+    background-color: var(--dark-bg);
+    overflow: hidden;
+  }
+
+  .scene6-cloud-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 60%, rgba(255, 94, 54, 0.15) 0%, rgba(147, 51, 234, 0.08) 40%, rgba(12, 13, 14, 0.95) 75%);
+    pointer-events: none;
+  }
+
+  .scene6-dark-prompt {
+    position: absolute;
+    width: 540px;
+    background: rgba(22, 24, 28, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    z-index: 30;
+    opacity: 0;
+  }
+
+  .dark-prompt-text {
+    font-size: 26px;
+    font-weight: 500;
+    color: #FFFFFF;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .dark-prompt-cursor {
+    width: 3px;
+    height: 28px;
+    background: #FF5E36;
+    animation: blink 0.8s infinite;
+  }
+
+  .scene6-glass-monitor {
+    position: absolute;
+    width: 1080px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(28px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 32px;
+    padding: 36px 44px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    z-index: 25;
+    opacity: 0;
+  }
+
+  .scene6-monitor-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .pixel-readout-big {
+    font-family: 'Silkscreen', monospace;
+    font-size: 64px;
+    color: #FFFFFF;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .readout-sub {
+    font-size: 13px;
+    font-family: 'JetBrains Mono', monospace;
+    color: #9CA3AF;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  .scene6-telemetry-strip {
+    display: flex;
+    gap: 36px;
+  }
+
+  .telemetry-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .t-val {
+    font-family: 'Silkscreen', monospace;
+    font-size: 22px;
+    color: #F3F4F6;
+  }
+
+  .t-lbl {
+    font-size: 11px;
+    color: #9CA3AF;
+    letter-spacing: 0.05em;
+  }
+
+  .scene6-days-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .day-cell {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 24px;
+    gap: 8px;
   }
 
-  .outro-lockup {
+  .day-name {
+    font-family: 'Silkscreen', monospace;
+    font-size: 14px;
+    color: #E5E7EB;
+  }
+
+  .day-temp {
+    font-family: 'Silkscreen', monospace;
+    font-size: 12px;
+    color: #9CA3AF;
+  }
+
+  .scene6-monitor-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .focus-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: #34D399;
     display: flex;
     align-items: center;
+    gap: 8px;
+  }
+
+  /* =========================================================================
+     SCENE 7: CLIMAX BRAND REVEAL & "BUILD YOUR SANCTUARY." (51.0s – 56.50s)
+     ========================================================================= */
+  #scene7 {
+    background-color: var(--cream-bg);
+    flex-direction: column;
     gap: 20px;
+    overflow: hidden;
   }
 
-  .outro-icon {
-    width: 68px;
-    height: 68px;
-    border-radius: 20px;
-    background: #1C1917;
+  .scene7-brand-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  .scene7-emblem {
+    width: 64px;
+    height: 64px;
+    background: #111317;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 16px 36px -6px rgba(28,25,23,0.3);
+    position: relative;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+
+  .emblem-inner {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    border: 3px solid #FFFFFF;
     position: relative;
   }
 
-  .outro-icon svg {
-    width: 38px;
-    height: 38px;
-    fill: #F4EFE6;
-  }
-
-  .outro-icon::after {
-    content: '';
+  .emblem-dot {
     position: absolute;
-    bottom: 6px;
-    right: 6px;
-    width: 9px;
-    height: 9px;
+    bottom: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: var(--accent-orange);
-    box-shadow: 0 0 10px var(--accent-orange);
+    background: #FF5E36;
+    box-shadow: 0 0 8px rgba(255, 94, 54, 0.8);
   }
 
-  .outro-name {
-    font-size: 76px;
+  .scene7-wordmark {
+    font-size: 58px;
     font-weight: 800;
-    letter-spacing: -0.045em;
-    color: #1C1917;
+    letter-spacing: -0.04em;
+    color: #111317;
+    line-height: 1;
   }
 
-  .outro-tagline {
-    font-size: 20px;
+  .scene7-subtitle {
+    font-size: 19px;
     font-weight: 500;
-    color: #78716C;
+    color: #6B7280;
     letter-spacing: -0.01em;
   }
 
-  .outro-cta-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 32px;
-    border-radius: 999px;
-    background: #1C1917;
-    color: #FFFFFF;
-    font-size: 16px;
+  /* Iconic Punchline: Build your sanctuary. */
+  .scene7-punchline {
+    font-size: 68px;
     font-weight: 700;
-    letter-spacing: -0.01em;
-    box-shadow: 0 12px 28px -4px rgba(28,25,23,0.25);
-    margin-top: 8px;
+    letter-spacing: -0.03em;
+    color: #111317;
+    position: absolute;
+    opacity: 0;
+    text-align: center;
   }
 
-  .outro-cta-pill svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-    transition: transform 0.2s ease;
+  .scene7-cta-pill {
+    padding: 12px 28px;
+    border-radius: 30px;
+    background: #111317;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   }
 
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
 </style>
 </head>
 <body>
 
 <div id="viewport">
 
-  <!-- =======================================================================
-       SCENE 1: WARM GALLERY & KINETIC CODE ATMOSPHERE (0.0s - 6.5s)
-       ======================================================================= -->
-  <section id="scene1" class="scene">
-    <!-- Floating tokens scattered in negative space (reinterpreting ref2 frame 2) -->
-    <div id="tok1" class="code-token token-orange" style="top: 140px; left: 240px;">const stack = await curate();</div>
-    <div id="tok2" class="code-token" style="top: 180px; right: 220px;"><span class="token-ring"></span> client_id="iwritetech-lab"</div>
-    <div id="tok3" class="code-token" style="top: 320px; left: 160px;"><span class="token-pink"></span> lumens: 420;</div>
-    <div id="tok4" class="code-token token-blue" style="top: 310px; right: 360px;">switch: "Tactile 62g"</div>
-    <div id="tok5" class="code-token" style="top: 680px; left: 260px;">(gear, bench) =&gt; { <span class="token-dot"></span><span class="token-dot"></span></div>
-    <div id="tok6" class="code-token token-green" style="top: 720px; right: 320px;">thock.profile();</div>
-    <div id="tok7" class="code-token" style="top: 780px; left: 480px;"><span class="token-ring"></span> decibels: 48.2 dBA</div>
-    <div id="tok8" class="code-token" style="top: 840px; right: 240px;">&gt; git push origin production</div>
+  <!-- Universal Cursor -->
+  <svg class="cursor-pointer" id="cursor" viewBox="0 0 24 24" fill="none">
+    <path d="M5.5 3.2L18.5 12.8L12.5 13.9L15.8 20.8L13 22L9.8 15.2L5.5 19.5V3.2Z" fill="#111827" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  </svg>
 
-    <div class="s1-center-wrap">
-      <div id="s1Headline1" class="s1-headline">
-        <div class="s1-tag-badge">&lt; DESK INTELLIGENCE &gt;</div>
-        <div>engineered for focus</div>
-      </div>
-      <div id="s1Headline2" class="s1-headline" style="opacity: 0;">
-        <div class="s1-tag-badge">&lt; HARDWARE LAB &gt;</div>
-        <div>built to last</div>
-      </div>
-      <div id="s1Brand" class="s1-brand-reveal" style="opacity: 0;">
-        <div class="s1-brand-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm3 3h2v2H7V8zm4 0h2v2h-2V8zm4 0h2v2h-2V8zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h10v2H7v-2z"/></svg>
-        </div>
-        <div class="s1-brand-title">iWriteTech</div>
-      </div>
+  <!-- =====================================================================
+       SCENE 1: CURIOSITY & PROMPT CAPSULE (0.0s – 6.5s)
+       ===================================================================== -->
+  <div class="scene" id="scene1">
+    <div class="scene1-mesh-bg" id="scene1-mesh"></div>
+    <div class="scene1-dot-grid"></div>
+
+    <!-- Opening word "Your" with living glowing orb -->
+    <div class="scene1-opening-word" id="scene1-word">
+      Y<span class="scene1-orb" id="scene1-orb"></span>ur
     </div>
-  </section>
 
-  <!-- =======================================================================
-       SCENE 2: FLOATING VIEWPORT HERO & 5-COLUMN MATRIX (6.5s - 14.5s)
-       ======================================================================= -->
-  <section id="scene2" class="scene">
-    <div id="heroCard" class="hero-viewport-card">
-      <div class="viewport-topbar">
-        <div class="topbar-left">
-          <div class="topbar-dots">
-            <div class="topbar-dot"></div>
-            <div class="topbar-dot"></div>
-            <div class="topbar-dot"></div>
-          </div>
-          <div class="topbar-brand">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#E2E8F0"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm3 3h2v2H7V8zm4 0h2v2h-2V8zm4 0h2v2h-2V8zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h10v2H7v-2z"/></svg>
-            iWriteTech Studio
-          </div>
-        </div>
-        <div class="topbar-nav">
-          <span class="active">Desk Setups</span>
-          <span>Mechanical Keyboards</span>
-          <span>Displays &amp; Docks</span>
-          <span>Lab Benchmarks</span>
-        </div>
-        <div class="topbar-actions">
-          <div class="topbar-badge">v2.4 ACTIVE</div>
-        </div>
+    <!-- Split headline -->
+    <div class="scene1-headline-split" id="scene1-split">
+      <div class="scene1-split-left">Curating</div>
+      <div class="scene1-split-right">Your Sanctuary</div>
+    </div>
+
+    <!-- Center Floating Prompt Card -->
+    <div class="scene1-prompt-card" id="scene1-prompt">
+      <div class="scene1-prompt-text" id="scene1-typed-text">
+        <span id="prompt-chars"></span><span class="scene1-prompt-cursor" id="prompt-cursor"></span>
       </div>
-
-      <div class="viewport-hero-media">
-        <img id="heroMediaImg" class="viewport-hero-img" src="images/hero-setup.png" alt="Hero Workspace">
-        <div class="viewport-hero-overlay"></div>
-        <div class="viewport-banner-text">
-          <div class="banner-pill">Curated Architecture</div>
-          <div class="banner-title">Craft your ultimate sanctuary ✦</div>
+      <div class="scene1-prompt-bottom">
+        <div class="scene1-prompt-icons">
+          <div class="scene1-prompt-icon-btn">⚙️</div>
+          <div class="scene1-prompt-icon-btn">＋</div>
         </div>
-      </div>
-
-      <div class="viewport-columns-bar">
-        <div id="col1" class="col-item active">
-          <div class="col-header">
-            <div class="col-title">Custom Keyboards</div>
-            <div class="col-desc">Acoustic dampening &amp; switches</div>
-          </div>
-          <div class="col-media-thumb">
-            <img src="images/keychron.png" alt="Keychron">
-          </div>
-        </div>
-
-        <div id="col2" class="col-item">
-          <div class="col-header">
-            <div class="col-title">Studio Displays</div>
-            <div class="col-desc">Color accuracy &amp; 144Hz</div>
-          </div>
-          <div class="col-media-thumb">
-            <img src="images/light_bar.png" alt="Light Bar">
-          </div>
-        </div>
-
-        <div id="col3" class="col-item">
-          <div class="col-header">
-            <div class="col-title">Desk Mat &amp; Oak</div>
-            <div class="col-desc">Felt textures &amp; walnut rise</div>
-          </div>
-          <div class="col-media-thumb">
-            <img src="images/walnut_stand.png" alt="Walnut Stand">
-          </div>
-        </div>
-
-        <div id="col4" class="col-item">
-          <div class="col-header">
-            <div class="col-title">Thunderbolt Docks</div>
-            <div class="col-desc">Single-cable 100W PD hubs</div>
-          </div>
-          <div class="col-media-thumb">
-            <img src="images/satechi_hub.png" alt="Hub">
-          </div>
-        </div>
-
-        <div id="col5" class="col-item">
-          <div class="col-header">
-            <div class="col-title">Smart Lighting</div>
-            <div class="col-desc">Asymmetric monitor lightbars</div>
-          </div>
-          <div class="col-media-thumb">
-            <img src="images/belkin_charger.png" alt="Charger">
-          </div>
+        <div class="scene1-submit-btn" id="scene1-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- =======================================================================
-       SCENE 3: SNAPPED PILL & LAB FREQUENCY SPECTRUM (14.5s - 21.5s)
-       ======================================================================= -->
-  <section id="scene3" class="scene">
-    <!-- Motion blur streaks across canvas -->
-    <div id="pillBlur1" class="motion-pill-bar" style="top: 380px; width: 380px;"></div>
-    <div id="pillBlur2" class="motion-pill-bar" style="top: 480px; width: 480px;"></div>
-    <div id="pillBlur3" class="motion-pill-bar" style="top: 580px; width: 320px;"></div>
+  <!-- =====================================================================
+       SCENE 2: 3D HARDWARE SPECIMEN & TOPOGRAPHY (6.5s – 14.0s)
+       ===================================================================== -->
+  <div class="scene" id="scene2">
+    <div class="scene2-dot-matrix-bg" id="scene2-dots"></div>
 
-    <div id="s3PillStage" class="s3-pill-stage">
-      <div id="pillLeft" class="snapped-pill-btn">Hardware Lab</div>
-      <div id="pillCenterIcon" class="snapped-pill-icon">
-        <svg viewBox="0 0 24 24"><path d="M11 2v9H7l6 11v-9h4l-6-11z"/></svg>
+    <div class="scene2-app-window" id="scene2-window">
+      <!-- Window Titlebar -->
+      <div class="scene2-window-header">
+        <div class="scene2-window-dots">
+          <div class="window-dot dot-red"></div>
+          <div class="window-dot dot-yellow"></div>
+          <div class="window-dot dot-green"></div>
+        </div>
+        <div class="scene2-window-title">
+          <span>✦ iWriteTech Lab :: Setup Specimen 01 · Studio Oak Edition</span>
+        </div>
+        <div style="font-size: 13px; color: #9CA3AF;">− ＋</div>
       </div>
-      <div id="pillRight" class="snapped-pill-btn">Sound Spectrum</div>
+
+      <!-- Window Body -->
+      <div class="scene2-window-body">
+        <!-- Left Inspector -->
+        <div class="scene2-left-panel">
+          <div class="scene2-panel-title">Plan your<br>Sanctuary</div>
+          <div class="scene2-panel-search">
+            <span>SEARCH BY WORKSPACE OR SWITCH</span>
+            <span>⌕</span>
+          </div>
+
+          <div class="scene2-category-pills">
+            <div class="scene2-pill-row">
+              <div class="cat-pill active">★ KEYBOARDS</div>
+              <div class="cat-pill gold">▲ DISPLAYS</div>
+            </div>
+            <div class="scene2-pill-row">
+              <div class="cat-pill">• ACOUSTIC MATS</div>
+              <div class="cat-pill">OAK RISERS</div>
+            </div>
+          </div>
+
+          <div class="scene2-budget-box">
+            <div class="budget-item">
+              <div class="budget-val">$1,850</div>
+              <div class="budget-lbl">Total Budget</div>
+            </div>
+            <div class="budget-item">
+              <div class="budget-val">48 HRS</div>
+              <div class="budget-lbl">Curation Cycle</div>
+            </div>
+          </div>
+
+          <div class="scene2-panel-btn">
+            <span>EXPLORE BLUEPRINT</span>
+            <span>➔</span>
+          </div>
+        </div>
+
+        <!-- Center/Right 3D Specimen Viewport -->
+        <div class="scene2-center-viewport">
+          <img src="images/desk-hero.jpg" class="scene2-viewport-img" alt="Desk Sanctuary">
+
+          <!-- Waypoint Pins -->
+          <div class="waypoint-pin" style="top: 38%; left: 32%;">
+            <div class="pin-dot orange"></div>
+            <span>Tactile 62g Switches</span>
+          </div>
+
+          <div class="waypoint-pin" style="top: 56%; left: 54%;">
+            <div class="pin-dot emerald"></div>
+            <span>Gasket Brass Plate</span>
+          </div>
+
+          <div class="waypoint-pin" style="top: 22%; left: 68%;">
+            <div class="pin-dot gold"></div>
+            <span>Solid Walnut Shelf</span>
+          </div>
+
+          <!-- Bottom Card -->
+          <div class="scene2-bottom-card">
+            <img src="images/keyboard-hero.png" class="scene2-card-thumb" alt="Mode Sonnet">
+            <div>
+              <div style="font-size: 11px; font-weight: 700; color: #F59E0B; text-transform: uppercase;">Featured Specimen</div>
+              <div style="font-size: 15px; font-weight: 700; color: #111827;">Mode Sonnet 75%</div>
+              <div style="font-size: 12px; color: #6B7280;">Sound Profile: Deep Thock</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 3: ACOUSTIC SPECTROGRAM & MASTER LAB (14.0s – 23.0s)
+       ===================================================================== -->
+  <div class="scene" id="scene3">
+    <img src="images/keyboard_prem.png" class="scene3-bg-img" alt="Hardware Lab">
+
+    <!-- Telemetry Altitude-Style Card -->
+    <div class="scene3-telemetry-card" id="scene3-telemetry">
+      <div class="scene3-card-header">
+        <div class="scene3-card-title">:: ACOUSTIC FREQUENCY (THOCK INDEX)</div>
+        <div class="scene3-coords">ISO 3744 LAB · 42.8 dB SPL</div>
+      </div>
+
+      <!-- Frequency Line Graph -->
+      <svg class="scene3-graph-svg" viewBox="0 0 600 140" fill="none">
+        <path d="M 10 120 Q 80 110 140 60 T 260 85 T 380 40 T 480 90 T 580 100" stroke="#111827" stroke-width="3.5" fill="none"/>
+        <circle cx="140" cy="60" r="5" fill="#FF5E36"/>
+        <circle cx="260" cy="85" r="5" fill="#3B82F6"/>
+        <circle cx="380" cy="40" r="6" fill="#10B981"/>
+        <circle cx="480" cy="90" r="5" fill="#F59E0B"/>
+        <!-- Dotted baseline -->
+        <line x1="10" y1="130" x2="580" y2="130" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="4 4"/>
+      </svg>
+
+      <div class="scene3-tabs">
+        <div class="scene3-tab-pill">* PROFILE</div>
+        <div class="scene3-tab-pill active">▲ ACOUSTICS</div>
+        <div class="scene3-tab-pill">• TACTILITY</div>
+        <div class="scene3-tab-pill">✔ LAB CERTIFIED</div>
+      </div>
     </div>
 
-    <div id="labBoard" class="lab-acoustic-board" style="opacity: 0;">
-      <div class="lab-board-top">
-        <div class="lab-title-wrap">
-          <div class="lab-main-title">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#38BDF8"><path d="M12 3v18M8 6v12M4 9v6M16 6v12M20 9v6" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/></svg>
-            Acoustic Frequency Spectrum
-          </div>
-          <div class="lab-subtitle">ISO-7779 CERTIFIED ANECHOIC CHAMBER BENCHMARK · 96kHz / 24-BIT</div>
+    <!-- Master Expanded Dashboard -->
+    <div class="scene3-master-dashboard" id="scene3-master">
+      <div class="scene3-master-header">
+        <div class="scene3-master-title">
+          <span>Mode Sonnet Hardware Evaluation</span>
+          <span class="scene3-rating-pill">★ 4.9 (240 REVIEWS)</span>
         </div>
-        <div class="lab-top-metrics">
-          <div class="lab-metric-chip">
-            <span class="label">Peak Frequency</span>
-            <span class="value">420 Hz (Thock)</span>
-          </div>
-          <div class="lab-metric-chip">
-            <span class="label">Sound Pressure</span>
-            <span class="value">48.2 dBA</span>
-          </div>
-          <div class="lab-metric-chip">
-            <span class="label">Clack Suppression</span>
-            <span class="value">-18.4 dB</span>
-          </div>
+        <div style="font-family: 'JetBrains Mono'; font-size: 13px; color: #9CA3AF;">
+          LAB REPORT PUBLIC · 100% UNBIASED
         </div>
       </div>
 
-      <div class="lab-board-content">
-        <div class="acoustic-spectrum-card">
-          <div class="spectrum-header">
-            <span class="spectrum-title">Real-Time Fast Fourier Transform (FFT)</span>
-            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent-cyan);">ACTIVE MIC PING</span>
-          </div>
-          <div class="frequency-bars-container">
-            <div class="freq-bar-col"><div id="fb1" class="freq-bar-fill" style="height:35%;"></div><span class="freq-bar-label">63Hz</span></div>
-            <div class="freq-bar-col"><div id="fb2" class="freq-bar-fill" style="height:55%;"></div><span class="freq-bar-label">125Hz</span></div>
-            <div class="freq-bar-col"><div id="fb3" class="freq-bar-fill" style="height:88%;"></div><span class="freq-bar-label">250Hz</span></div>
-            <div class="freq-bar-col"><div id="fb4" class="freq-bar-fill" style="height:96%;"></div><span class="freq-bar-label">500Hz</span></div>
-            <div class="freq-bar-col"><div id="fb5" class="freq-bar-fill" style="height:72%;"></div><span class="freq-bar-label">1kHz</span></div>
-            <div class="freq-bar-col"><div id="fb6" class="freq-bar-fill" style="height:48%;"></div><span class="freq-bar-label">2kHz</span></div>
-            <div class="freq-bar-col"><div id="fb7" class="freq-bar-fill" style="height:32%;"></div><span class="freq-bar-label">4kHz</span></div>
-            <div class="freq-bar-col"><div id="fb8" class="freq-bar-fill" style="height:18%;"></div><span class="freq-bar-label">8kHz</span></div>
+      <div class="scene3-master-grid">
+        <div class="scene3-hero-view">
+          <img src="images/keyboard_mech.png" class="scene3-hero-img" alt="Keyboard Evaluation">
+          <div class="scene3-bottom-strip">
+            <div class="strip-spec-item">
+              <div class="strip-val">62g</div>
+              <div class="strip-lbl">Bottom Out</div>
+            </div>
+            <div class="strip-spec-item">
+              <div class="strip-val">1.2ms</div>
+              <div class="strip-lbl">Debounce Latency</div>
+            </div>
+            <div class="strip-spec-item">
+              <div class="strip-val">500k</div>
+              <div class="strip-lbl">Keystroke Life</div>
+            </div>
+            <div class="strip-spec-item">
+              <div class="strip-val">0%</div>
+              <div class="strip-lbl">Case Resonance</div>
+            </div>
           </div>
         </div>
 
-        <div class="sound-test-cards-col">
-          <div class="sound-profile-card highlight">
-            <div class="sp-card-header">
-              <div class="sp-card-name">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF5722"><circle cx="12" cy="12" r="10"/></svg>
-                Keychron Q1 Pro (Double Gasket)
+        <div class="scene3-telemetry-sidebar">
+          <div class="telemetry-card-dark">
+            <div class="dark-card-title">:: SOUND PRESSURE LEVEL</div>
+            <div class="gauge-container">
+              <svg width="180" height="100" viewBox="0 0 180 100">
+                <path d="M 20 90 A 70 70 0 0 1 160 90" fill="none" stroke="#2D3748" stroke-width="12" stroke-linecap="round"/>
+                <path d="M 20 90 A 70 70 0 0 1 125 35" fill="none" stroke="#10B981" stroke-width="12" stroke-linecap="round"/>
+              </svg>
+              <div class="gauge-val-display">
+                <div class="gauge-num">42.8</div>
+                <div class="gauge-sub">dB (Deep Thock)</div>
               </div>
-              <div class="sp-card-badge">98.4 RATING</div>
-            </div>
-            <div class="sp-card-tags">
-              <span class="sp-tag">Banana Tactile</span>
-              <span class="sp-tag">FR4 Plate</span>
-              <span class="sp-tag">Poron Foam</span>
             </div>
           </div>
 
-          <div class="sound-profile-card">
-            <div class="sp-card-header">
-              <div class="sp-card-name">Mode Sonnet</div>
-              <div class="sp-card-badge" style="color:#38BDF8; background:rgba(56,189,248,0.15);">96.8 RATING</div>
-            </div>
-            <div class="sp-card-tags">
-              <span class="sp-tag">Copper Weight</span>
-              <span class="sp-tag">Top Mount</span>
-            </div>
-          </div>
-
-          <div class="sound-profile-card">
-            <div class="sp-card-header">
-              <div class="sp-card-name">NuPhy Air75 V2</div>
-              <div class="sp-card-badge" style="color:#A855F7; background:rgba(168,85,247,0.15);">94.2 RATING</div>
-            </div>
-            <div class="sp-card-tags">
-              <span class="sp-tag">Cowberry Linear</span>
-              <span class="sp-tag">Low Profile</span>
+          <div class="telemetry-card-dark">
+            <div class="dark-card-title">:: BUILD INTEGRITY</div>
+            <div style="font-size: 14px; color: #E5E7EB; line-height: 1.6;">
+              Solid CNC 6063 Aluminum chassis with internal silicone dampeners. Zero hollow ping under high-speed typing test.
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- =======================================================================
-       SCENE 4: MOBILE REPORT & TERMINAL HARD CUT (21.5s - 27.5s)
-       ======================================================================= -->
-  <section id="scene4" class="scene">
-    <div id="mobileCard" class="mobile-report-card">
-      <div class="mobile-top-media">
-        <img src="images/desk-hero.jpg" alt="Desk Setup">
-        <div class="mobile-appbar">
-          <div class="mobile-pill-brand">✦ iWriteTech</div>
-          <div id="s4GithubBtn" class="mobile-github-btn">
-            <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-          </div>
-        </div>
-      </div>
+  <!-- =====================================================================
+       SCENE 4: ECOSYSTEM SYNC & DUAL TELEMETRY (23.0s – 30.0s)
+       ===================================================================== -->
+  <div class="scene" id="scene4">
+    <!-- Center Minimal Capsule -->
+    <div class="scene4-capsule" id="scene4-capsule">
+      <span>Please sync desk profile with</span>
+      <div class="scene4-icon-chip">🖥️</div>
+      <span style="font-weight: 700;">Studio Display</span>
+      <div class="scene4-submit-circle">↑</div>
+    </div>
 
-      <div class="mobile-content">
-        <div class="mobile-score-box">
-          <div class="mobile-score-title">Benchmark Complete</div>
-          <div class="mobile-score-desc">Overall Ergonomics &amp; Acoustic Score: 98.4%</div>
-        </div>
-
+    <!-- Split Screen Dashboard -->
+    <div class="scene4-split-view" id="scene4-split">
+      <!-- Left Dark Telemetry -->
+      <div class="scene4-left-dark">
         <div>
-          <div class="mobile-spec-row">
-            <span class="k">Footprint Width</span>
-            <span class="v">120 cm</span>
+          <div style="font-family: 'JetBrains Mono'; font-size: 13px; color: #9CA3AF; letter-spacing: 0.05em; text-transform: uppercase;">
+            :: ECOSYSTEM POWER & CABLES
           </div>
-          <div class="mobile-spec-row">
-            <span class="k">Lumens / Lux</span>
-            <span class="v">450 Lux (5000K)</span>
-          </div>
-          <div class="mobile-spec-row">
-            <span class="k">Acoustic Damping</span>
-            <span class="v">-14.2 dBA</span>
+          <div style="font-size: 30px; font-weight: 700; color: #FFFFFF; margin-top: 8px;">
+            Single-Cable Studio Docking
           </div>
         </div>
 
-        <div class="mobile-action-btn">
-          View Complete Spec Sheet ➔
+        <div class="scene4-donut-section">
+          <svg class="scene4-donut-svg" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#1E232A" stroke-width="26"/>
+            <!-- 96W PD -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#3B82F6" stroke-width="26" stroke-dasharray="240 440" stroke-dashoffset="0"/>
+            <!-- 10Gbps -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#10B981" stroke-width="26" stroke-dasharray="110 440" stroke-dashoffset="-250"/>
+            <!-- 4K60 -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#F59E0B" stroke-width="26" stroke-dasharray="70 440" stroke-dashoffset="-370"/>
+          </svg>
+          <div class="scene4-donut-stats">
+            <div class="donut-val-big">100W PD</div>
+            <div class="donut-legend-item"><div class="legend-dot" style="background: #3B82F6;"></div>Thunderbolt 4 Host</div>
+            <div class="donut-legend-item"><div class="legend-dot" style="background: #10B981;"></div>Dual 4K Pro Displays</div>
+            <div class="donut-legend-item"><div class="legend-dot" style="background: #F59E0B;"></div>Zero Latency Audio</div>
+          </div>
+        </div>
+
+        <div style="padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 13px; color: #9CA3AF;">
+          Optimized for Apple Silicon M-Series & Developer Multi-Monitor Workflows.
+        </div>
+      </div>
+
+      <!-- Right Light Spec Sheet -->
+      <div class="scene4-right-light">
+        <div class="scene4-sheet-header">
+          <div class="scene4-sheet-title">
+            <span style="font-size: 22px;">📊</span>
+            <span>Desk Hardware Benchmark 2026</span>
+          </div>
+          <span class="status-badge">100% VERIFIED</span>
+        </div>
+
+        <table class="scene4-spec-table">
+          <thead>
+            <tr>
+              <th>COMPONENT</th>
+              <th>SPECIFICATION</th>
+              <th>TEST RESULT</th>
+              <th>RATING</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Display Bar</td>
+              <td>BenQ ScreenBar Halo</td>
+              <td>0% Glare on OLED</td>
+              <td>★ 9.8</td>
+            </tr>
+            <tr>
+              <td>Solid Riser</td>
+              <td>Grovemade American Walnut</td>
+              <td>Zero Sag / 45kg load</td>
+              <td>★ 9.9</td>
+            </tr>
+            <tr>
+              <td>Desk Mat</td>
+              <td>100% Merino Wool Felt</td>
+              <td>-4.2 dB Acoustic Damp</td>
+              <td>★ 9.7</td>
+            </tr>
+            <tr>
+              <td>Docking Hub</td>
+              <td>Satechi Thunderbolt 4</td>
+              <td>40 Gbps Bandwidth</td>
+              <td>★ 9.6</td>
+            </tr>
+            <tr>
+              <td>Wireless Qi2</td>
+              <td>Belkin 15W Magnetic Stand</td>
+              <td>38°C Low Thermal</td>
+              <td>★ 9.5</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-size: 12px; color: #6B7280;">iWriteTech Lab Report #882-DK</div>
+          <div style="font-weight: 700; font-size: 14px; color: #111827;">OVERALL SCORE: 9.8 / 10</div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div id="s4RightGallery" class="s4-right-gallery">
-      <div class="s4-feature-badge">LAB VERIFIED ARCHITECTURE</div>
-      <div class="s4-main-headline">Engineered for absolute daily clarity.</div>
-      <div class="s4-card-preview">
-        <img src="images/gaming_setup.jpg" alt="Setup Preview">
+  <!-- =====================================================================
+       SCENE 5: THE ICONIC "CURATE." EDITORIAL MANIFESTO (30.0s – 43.0s)
+       ===================================================================== -->
+  <div class="scene" id="scene5">
+    <div class="scene5-artboard" id="scene5-artboard">
+      <!-- Big Editorial Word -->
+      <div class="scene5-title-word">Curate.</div>
+
+      <!-- User Avatar with Concentric Focus Ring -->
+      <div class="scene5-avatar-wrap">
+        <img src="images/setup_study.jpg" class="scene5-avatar-img" alt="Focus">
+        <svg class="scene5-avatar-ring" viewBox="0 0 130 130">
+          <circle cx="65" cy="65" r="60" fill="none" stroke="#E5E7EB" stroke-width="4"/>
+          <circle cx="65" cy="65" r="60" fill="none" stroke="#10B981" stroke-width="4" stroke-dasharray="320 380" stroke-linecap="round"/>
+        </svg>
+        <div class="scene5-avatar-badge">94% Focused</div>
       </div>
+
+      <!-- Filter Pills Cluster -->
+      <div class="scene5-filters-box">
+        <div class="scene5-filters-header">
+          <span>Preferences</span>
+          <span style="font-size: 12px; font-style: normal; color: #9CA3AF;">CLEAR ALL</span>
+        </div>
+        <div class="scene5-pills-grid">
+          <div class="filter-pill-colored fp-purple">65% Keyboards ＋</div>
+          <div class="filter-pill-colored fp-lime">Walnut Riser ✕</div>
+          <div class="filter-pill-colored fp-orange">ScreenBar Halo ＋</div>
+          <div class="filter-pill-colored fp-white">Acoustic Mat ✕</div>
+          <div class="filter-pill-colored fp-white">4K Studio OLED ＋</div>
+        </div>
+      </div>
+
+      <!-- Prompt Pill in Scene 5 -->
+      <div class="scene5-prompt-pill">
+        <span>Change the design to a warmer, more human aesthetic</span>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #111827; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 13px;">↑</div>
+      </div>
+
+      <!-- Folder Stack -->
+      <div class="scene5-folder-card">
+        <div class="folder-tab">CATALOGUE</div>
+        <div class="folder-title">Desk Tech &<br>Acoustics</div>
+      </div>
+
+      <!-- Feature Card -->
+      <div class="scene5-feature-card">
+        <img src="images/gaming_setup.jpg" class="feature-card-img" alt="Setup Sanctuary">
+        <div class="feature-card-body">
+          <div class="feature-card-title">The Art of the Silent Keystroke</div>
+          <div class="feature-card-meta">
+            <span>EDITORIAL</span>
+            <span>•</span>
+            <span>4.9 RATING</span>
+            <span>•</span>
+            <span>12,480 READS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric Stats -->
+      <div class="scene5-stats-box">
+        <div class="stat-card-white">
+          <div class="stat-num-big">240+</div>
+          <div class="stat-lbl-small">Obsessively Tested Gear</div>
+        </div>
+        <div class="stat-card-white">
+          <div class="stat-num-big" style="color: #10B981;">100%</div>
+          <div class="stat-lbl-small">Editorially Independent</div>
+        </div>
+      </div>
+
+      <!-- Builders/Curators Card on Right -->
+      <div class="scene5-builders-card">
+        <div class="builders-header">
+          <span>Verified Builders</span>
+          <span style="font-size: 12px; color: #10B981;">ONLINE</span>
+        </div>
+        <div class="builder-row">
+          <img src="images/keychron.png" class="builder-avatar" alt="Builder">
+          <div class="builder-info">
+            <div class="builder-name">Marcus Vance</div>
+            <div class="builder-role">Hardware Acoustic Lead</div>
+          </div>
+        </div>
+        <div class="builder-row">
+          <img src="images/desk_mat.png" class="builder-avatar" alt="Builder">
+          <div class="builder-info">
+            <div class="builder-name">Elena Rostova</div>
+            <div class="builder-role">Ergonomic Architect</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Green Check Badge -->
+      <div class="scene5-green-check">✔</div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 6: ATMOSPHERIC DEEP WORK / MINDFULNESS (43.0s – 51.0s)
+       ===================================================================== -->
+  <div class="scene" id="scene6">
+    <div class="scene6-cloud-bg"></div>
+
+    <!-- Dark Prompt Bar -->
+    <div class="scene6-dark-prompt" id="scene6-prompt">
+      <div class="dark-prompt-text">flow state workspace</div>
+      <div class="dark-prompt-cursor"></div>
     </div>
 
-    <!-- TERMINAL HARD-CUT OVERLAY -->
-    <div id="termOverlay" class="terminal-hardcut-overlay">
-      <div class="terminal-watermark">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#64748B"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm3 3h2v2H7V8zm4 0h2v2h-2V8zm4 0h2v2h-2V8zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h10v2H7v-2z"/></svg>
-        iWriteTech Developer CLI
-      </div>
-      <div class="terminal-command-container">
-        <span class="term-arrow">➔</span>
-        <span class="term-cmd">iwritetech</span>
-        <span class="term-arg">setup</span>
-        <span id="termHighlight" class="term-highlight">--preset minimal-dev</span>
-        <span id="termCursor" class="term-cursor"></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- =======================================================================
-       SCENE 5: AI AGENT WORKSPACE & 3D HARDWARE APPROVAL (27.5s - 35.5s)
-       ======================================================================= -->
-  <section id="scene5" class="scene">
-    <div id="aiStudioWindow" class="ai-studio-window">
-      <!-- Left: AI Chat Stream -->
-      <div class="ai-chat-panel">
-        <div class="ai-chat-header">
-          <div class="ai-avatar">
-            <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2zM7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18 2.5 2.5 0 0 0 10 15.5 2.5 2.5 0 0 0 7.5 13zm9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5z"/></svg>
-          </div>
-          <div>
-            <div style="font-size:14px; font-weight:700; color:#FFFFFF;">iWriteTech Agent</div>
-            <div style="font-size:11px; color:#64748B;">Automated Curation Engine</div>
-          </div>
+    <!-- Atmospheric Glass Monitor -->
+    <div class="scene6-glass-monitor" id="scene6-monitor">
+      <div class="scene6-monitor-top">
+        <div>
+          <div class="pixel-readout-big">450 LUX</div>
+          <div class="readout-sub">OPTIMAL CIRCADIAN WORKSPACE LIGHTING</div>
         </div>
-
-        <div class="ai-user-prompt-card">
-          "Pair an acoustic-damped 75% mechanical keyboard with a curved ultrawide for a 120cm desk"
-        </div>
-
-        <div class="ai-thought-pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#94A3B8"><circle cx="12" cy="12" r="10"/></svg>
-          Thought for 1.4s ❯
-        </div>
-
-        <div class="ai-plan-text">
-          I'll install verified lab sound test profiles and compute desk clearance:
-        </div>
-
-        <div class="ai-approval-modal">
-          <div class="approval-header">
-            <span>Approval Required</span>
-            <span style="font-size:11px; color:#10B981; font-family:'JetBrains Mono';">MATCH 99.4%</span>
+        <div class="scene6-telemetry-strip">
+          <div class="telemetry-col">
+            <div class="t-val">21.5°C</div>
+            <div class="t-lbl">ROOM TEMP</div>
           </div>
-          <div class="approval-pkg-list">
-            <span>@iwritetech/keychron-q1-pro</span>
-            <span>@iwritetech/screenbar-halo</span>
+          <div class="telemetry-col">
+            <div class="t-val">38 dB</div>
+            <div class="t-lbl">AMBIENT NOISE</div>
           </div>
-          <div class="approval-actions">
-            <div id="btnApprove" class="btn-approve">Approve Setup</div>
-            <div class="btn-reject">Reject</div>
-          </div>
-        </div>
-
-        <div class="ai-input-bottom">
-          <span>What would you like to refine?</span>
-          <div class="ai-send-btn">
-            <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+          <div class="telemetry-col">
+            <div class="t-val">100%</div>
+            <div class="t-lbl">DEEP FOCUS</div>
           </div>
         </div>
       </div>
 
-      <!-- Center: 3D Hardware Stage -->
-      <div class="ai-center-stage">
-        <div class="center-stage-header">
-          <div class="stage-badge">Lab Verified Hardware</div>
-          <div class="stage-title">Keychron Q1 Pro · Tactile Edition</div>
+      <div class="scene6-days-grid">
+        <div class="day-cell">
+          <div class="day-name">MON</div>
+          <div class="day-temp">4.5 HR</div>
         </div>
-
-        <img id="hardware3d" class="hardware-3d-model" src="images/keyboard-hero.png" alt="Keyboard 3D">
-
-        <div id="hoverChip1" class="interactive-hover-chip" style="top: 320px; left: 420px;">
-          <span class="chip-tag">Actuation Force</span>
-          <span class="chip-val">45cN Tactile (Banana)</span>
+        <div class="day-cell">
+          <div class="day-name">TUE</div>
+          <div class="day-temp">5.2 HR</div>
         </div>
-      </div>
-
-      <!-- Right Specs & Configuration Panel -->
-      <div class="ai-right-panel">
-        <div class="right-panel-title">Component Specifications</div>
-
-        <div class="spec-progress-block">
-          <div class="spec-prog-header">
-            <span>Acoustic Thock Index</span>
-            <span style="color:#FF5722; font-weight:700;">9.8 / 10</span>
-          </div>
-          <div class="spec-prog-bar"><div class="spec-prog-fill" style="width: 98%;"></div></div>
+        <div class="day-cell">
+          <div class="day-name">WED</div>
+          <div class="day-temp">6.0 HR</div>
         </div>
-
-        <div class="spec-progress-block">
-          <div class="spec-prog-header">
-            <span>Desk Footprint</span>
-            <span style="color:#38BDF8; font-weight:700;">32.5 cm</span>
-          </div>
-          <div class="spec-prog-bar"><div class="spec-prog-fill" style="width: 45%; background:#38BDF8;"></div></div>
+        <div class="day-cell">
+          <div class="day-name">THU</div>
+          <div class="day-temp">5.8 HR</div>
         </div>
-
-        <div class="spec-progress-block">
-          <div class="spec-prog-header">
-            <span>Wireless Polling Rate</span>
-            <span style="color:#10B981; font-weight:700;">1000 Hz</span>
-          </div>
-          <div class="spec-prog-bar"><div class="spec-prog-fill" style="width: 95%; background:#10B981;"></div></div>
+        <div class="day-cell">
+          <div class="day-name">FRI</div>
+          <div class="day-temp">4.8 HR</div>
         </div>
-
-        <div class="specs-cta-btn">
-          Export Build Config ➔
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =======================================================================
-       SCENE 6: THERMAL SCAN & VERIFICATION MATRIX (35.5s - 42.5s)
-       ======================================================================= -->
-  <section id="scene6" class="scene">
-    <div id="thermalContainer" class="thermal-container">
-      <img class="thermal-bg-image" src="images/gaming_setup.jpg" alt="Thermal View">
-      <div class="thermal-spectral-overlay"></div>
-      <div id="thermalScanLine" class="thermal-scan-line"></div>
-
-      <div id="thermalBtn" class="thermal-center-btn">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-        Start Security &amp; Lab Check
-      </div>
-
-      <div id="diagCard" class="diagnostic-card" style="opacity: 0;">
-        <div class="diag-top">
-          <div class="diag-title">LabReport <span class="diag-pill">PUBLIC</span></div>
-          <span style="font-family:'JetBrains Mono'; font-size:12px; color:#10B981;">100% UNBIASED</span>
-        </div>
-        <div class="diag-msg">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#10B981"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Zero sponsored gear. 100% self-purchased lab testing.
-        </div>
-        <div class="diag-actions">
-          <div class="diag-btn">Apply Fixes</div>
-          <div class="diag-btn" style="background:var(--accent-orange);">Publish Review</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Security Shields Matrix Overlay (Reinterpreting ref2 frame 41) -->
-    <div id="secMatrixGrid" class="security-matrix-grid">
-      <div class="matrix-canvas-wrapper">
-        <!-- 28 grid cells with shields and dots -->
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><div class="matrix-dot"></div></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><div class="matrix-dot"></div></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-
-        <div class="matrix-cell"><div class="matrix-dot"></div></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><div class="matrix-dot"></div></div>
-
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><div class="matrix-dot"></div></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-
-        <div class="matrix-cell"><div class="matrix-dot"></div></div>
-        <div class="matrix-cell"><div class="matrix-dot"></div></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><div class="matrix-dot"></div></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><svg class="matrix-shield" viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg></div>
-        <div class="matrix-cell"><div class="matrix-dot"></div></div>
-      </div>
-      <div id="publishBtn" class="publish-pill-btn">Deploy Review ➔</div>
-    </div>
-  </section>
-
-  <!-- =======================================================================
-       SCENE 7: MASTER STUDIO DASHBOARD (42.5s - 46.5s)
-       ======================================================================= -->
-  <section id="scene7" class="scene">
-    <div id="studioDashCard" class="studio-dashboard-card">
-      <div class="dash-sidebar">
-        <div class="dash-side-icon active">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
-        </div>
-        <div class="dash-side-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5h-2v-2h2zm0-4h-2V7h2z"/></svg>
-        </div>
-        <div class="dash-side-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        <div class="day-cell">
+          <div class="day-name">SAT</div>
+          <div class="day-temp">3.0 HR</div>
         </div>
       </div>
 
-      <div class="dash-main-area">
-        <div class="dash-hero-banner">
-          <div class="dash-hero-title">Studio Sanctuary 01 · Minimalist Engineering</div>
-          <div class="dash-hero-sub">Complete ergonomic review · Acoustically isolated · Natural walnut palette</div>
+      <div class="scene6-monitor-bottom">
+        <div class="focus-badge">
+          <span>●</span>
+          <span>FOCUS SESSION ACTIVE · ZERO DISTRACTIONS</span>
         </div>
-
-        <div class="dash-three-grid">
-          <div class="dash-telemetry-box">
-            <div class="stat-block">
-              <span class="stat-val">1,420+</span>
-              <span class="stat-label">Verified Lab Tests</span>
-            </div>
-            <div class="stat-block">
-              <span class="stat-val">0%</span>
-              <span class="stat-label">Sponsored Bias</span>
-            </div>
-            <div class="stat-block" style="border:none;">
-              <span class="stat-val" style="color:var(--accent-orange);">48.2k</span>
-              <span class="stat-label">Active Builders</span>
-            </div>
-          </div>
-
-          <div class="dash-gear-feed">
-            <div class="gear-feed-item">
-              <img class="gear-thumb" src="images/keychron.png" alt="Keychron">
-              <div class="gear-info">
-                <span class="gear-name">Keychron Q1 Pro (Double Gasket)</span>
-                <span class="gear-rating">★ 9.8 / 10 · EDITOR CHOICE</span>
-              </div>
-            </div>
-
-            <div class="gear-feed-item">
-              <img class="gear-thumb" src="images/light_bar.png" alt="Light Bar">
-              <div class="gear-info">
-                <span class="gear-name">BenQ ScreenBar Halo</span>
-                <span class="gear-rating">★ 9.6 / 10 · ZERO GLARE</span>
-              </div>
-            </div>
-
-            <div class="gear-feed-item">
-              <img class="gear-thumb" src="images/satechi_hub.png" alt="Satechi Hub">
-              <div class="gear-info">
-                <span class="gear-name">Satechi Thunderbolt 4 Multiport</span>
-                <span class="gear-rating">★ 9.5 / 10 · 40Gbps</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="dash-quote-card">
-            <div class="editorial-quote">
-              “The most rigorously tested workspace reviews on the internet. Built for developers who care about every millimeter.”
-            </div>
-            <div style="font-size:12px; font-weight:700; color:#94A3B8;">
-              — iWriteTech Editorial Board
-            </div>
-          </div>
+        <div style="font-family: 'Silkscreen'; font-size: 14px; color: #9CA3AF;">
+          SANCTUARY MODE ENABLED
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- =======================================================================
-       SCENE 8: CLIMACTIC OUTRO & BRAND SIGNATURE (46.5s - 50.13s)
-       ======================================================================= -->
-  <section id="scene8" class="scene">
-    <div id="outroPunchline" class="outro-punchline">
+  <!-- =====================================================================
+       SCENE 7: CLIMAX BRAND REVEAL & "BUILD YOUR SANCTUARY." (51.0s – 56.50s)
+       ===================================================================== -->
+  <div class="scene" id="scene7">
+    <div class="scene7-brand-wrap" id="scene7-brand">
+      <div class="scene7-emblem">
+        <div class="emblem-inner">
+          <div class="emblem-dot"></div>
+        </div>
+      </div>
+      <div class="scene7-wordmark">iWriteTech</div>
+      <div class="scene7-subtitle">The Definitive Standard for Desk Tech & Workspaces.</div>
+      <div class="scene7-cta-pill">explore iwritetech.com ➔</div>
+    </div>
+
+    <!-- Final Punchline -->
+    <div class="scene7-punchline" id="scene7-punchline">
       Build your sanctuary.
     </div>
-
-    <div id="outroBrand" class="outro-brand-block" style="opacity: 0;">
-      <div class="outro-lockup">
-        <div class="outro-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm3 3h2v2H7V8zm4 0h2v2h-2V8zm4 0h2v2h-2V8zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h10v2H7v-2z"/></svg>
-        </div>
-        <div class="outro-name">iWriteTech</div>
-      </div>
-      <div class="outro-tagline">The Definitive Standard for Desk Tech &amp; Workspaces.</div>
-      <div id="outroCtaBtn" class="outro-cta-pill">
-        explore iwritetech.com
-        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- UNIVERSAL MOUSE CURSOR -->
-  <div id="globalCursor" class="cursor-pointer">
-    <svg width="24" height="24" viewBox="0 0 24 24">
-      <path d="M3 3l7 18 3-7 7-3L3 3z" fill="#000000" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/>
-    </svg>
   </div>
 
 </div>
 
 <script>
-  // Math & Animation Helper Library
-  function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
-  function lerp(a, b, t) { return a + (b - a) * t; }
-  function smoothstep(min, max, val) {
-    const x = Math.max(0, Math.min(1, (val - min) / (max - min)));
-    return x * x * (3 - 2 * x);
+  // Dynamic Dot Matrix Generator for Scene 2
+  const dotsContainer = document.getElementById('scene2-dots');
+  if (dotsContainer) {
+    for (let i = 0; i < 48 * 24; i++) {
+      const d = document.createElement('div');
+      d.className = 'dot-node';
+      if (Math.random() < 0.05) d.classList.add('warm');
+      else if (Math.random() < 0.03) d.classList.add('emerald');
+      else if (Math.random() < 0.02) d.classList.add('purple');
+      dotsContainer.appendChild(d);
+    }
   }
+
+  // Helper Easing Functions
   function easeOutCubic(x) { return 1 - Math.pow(1 - x, 3); }
-  function easeInOutCubic(x) {
-    return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
-  }
+  function easeInOutCubic(x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
   function easeOutBack(x) {
     const c1 = 1.70158;
     const c3 = c1 + 1;
     return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
   }
-  function spring(t, t0, duration, stiffness, damping) {
-    if (t < t0) return 0;
-    const p = clamp((t - t0) / duration, 0, 1);
-    const decay = Math.exp(-damping * p);
-    const osc = Math.cos(stiffness * p * Math.PI);
-    return 1 - decay * osc;
-  }
+  function clamp(val, min, max) { return Math.min(Math.max(val, min), max); }
 
-  // DOM Elements
-  const scene1 = document.getElementById('scene1');
-  const scene2 = document.getElementById('scene2');
-  const scene3 = document.getElementById('scene3');
-  const scene4 = document.getElementById('scene4');
-  const scene5 = document.getElementById('scene5');
-  const scene6 = document.getElementById('scene6');
-  const scene7 = document.getElementById('scene7');
-  const scene8 = document.getElementById('scene8');
-  const cursor = document.getElementById('globalCursor');
+  const textToType = "The ultimate developer setup for deep work and mechanical sound";
 
-  // Master Deterministic Timeline Seek
+  // Master Deterministic Timeline for 56.50 seconds
   window.seekTo = function(t) {
-    // -------------------------------------------------------------------------
-    // SCENE 1: WARM GALLERY & KINETIC CODE ATMOSPHERE (0.0s - 6.5s)
-    // -------------------------------------------------------------------------
-    if (t < 6.5) {
-      scene1.style.opacity = '1';
-      scene1.style.display = 'flex';
+    const cursor = document.getElementById('cursor');
 
-      // Drift tokens softly across negative space
-      const drift = t * 12;
-      document.getElementById('tok1').style.transform = `translate(${drift * 0.7}px, ${-drift * 0.3}px)`;
-      document.getElementById('tok2').style.transform = `translate(${-drift * 0.5}px, ${drift * 0.2}px)`;
-      document.getElementById('tok3').style.transform = `translate(${drift * 0.4}px, ${drift * 0.5}px)`;
-      document.getElementById('tok4').style.transform = `translate(${-drift * 0.6}px, ${-drift * 0.4}px)`;
-      document.getElementById('tok5').style.transform = `translate(${drift * 0.3}px, ${-drift * 0.2}px)`;
-      document.getElementById('tok6').style.transform = `translate(${-drift * 0.4}px, ${drift * 0.3}px)`;
-      document.getElementById('tok7').style.transform = `translate(${drift * 0.5}px, ${drift * 0.2}px)`;
-      document.getElementById('tok8').style.transform = `translate(${-drift * 0.3}px, ${-drift * 0.3}px)`;
+    // SCENE ELEMENTS
+    const s1 = document.getElementById('scene1');
+    const s2 = document.getElementById('scene2');
+    const s3 = document.getElementById('scene3');
+    const s4 = document.getElementById('scene4');
+    const s5 = document.getElementById('scene5');
+    const s6 = document.getElementById('scene6');
+    const s7 = document.getElementById('scene7');
 
-      const h1 = document.getElementById('s1Headline1');
-      const h2 = document.getElementById('s1Headline2');
-      const brand = document.getElementById('s1Brand');
+    // -------------------------------------------------------------
+    // SCENE 1: Curiosity & The Prompt Capsule (0.0s – 6.5s)
+    // -------------------------------------------------------------
+    if (t < 6.8) {
+      s1.style.opacity = '1';
+      s2.style.opacity = '0';
+      s3.style.opacity = '0';
+      s4.style.opacity = '0';
+      s5.style.opacity = '0';
+      s6.style.opacity = '0';
+      s7.style.opacity = '0';
 
-      if (t < 2.5) {
-        h1.style.display = 'block';
-        h2.style.display = 'none';
-        brand.style.display = 'none';
+      const s1Orb = document.getElementById('scene1-orb');
+      const s1Word = document.getElementById('scene1-word');
+      const s1Mesh = document.getElementById('scene1-mesh');
+      const s1Split = document.getElementById('scene1-split');
+      const s1Prompt = document.getElementById('scene1-prompt');
+      const promptChars = document.getElementById('prompt-chars');
+      const s1Btn = document.getElementById('scene1-btn');
 
-        const sp1 = spring(t, 0.1, 0.9, 3.0, 5.0);
-        h1.style.opacity = smoothstep(0.0, 0.4, t);
-        h1.style.transform = `scale(${lerp(0.88, 1, sp1)})`;
-      } else if (t < 4.2) {
-        h1.style.display = 'none';
-        h2.style.display = 'block';
-        brand.style.display = 'none';
+      if (t < 2.0) {
+        // "Your" with pulsing orb
+        s1Word.style.opacity = String(clamp(t / 0.5, 0, 1));
+        const pulse = 1 + Math.sin(t * 5) * 0.08;
+        s1Orb.style.transform = `scale(${pulse})`;
+        s1Mesh.style.opacity = String(clamp((t - 0.8) / 1.0, 0, 0.4));
+        s1Split.style.opacity = '0';
+        s1Prompt.style.opacity = '0';
+        cursor.style.opacity = '0';
+      } else if (t < 6.5) {
+        // Orb expands, text splits into Curating Your Sanctuary + Prompt Card
+        const splitProgress = clamp((t - 2.0) / 0.8, 0, 1);
+        const easeSplit = easeOutCubic(splitProgress);
 
-        const sp2 = spring(t, 2.5, 0.8, 3.2, 5.2);
-        h2.style.opacity = smoothstep(2.5, 2.8, t);
-        h2.style.transform = `scale(${lerp(0.9, 1, sp2)})`;
-      } else {
-        h1.style.display = 'none';
-        h2.style.display = 'none';
-        brand.style.display = 'flex';
+        s1Word.style.opacity = String(1 - easeSplit);
+        s1Word.style.transform = `scale(${1 + easeSplit * 0.3})`;
 
-        const spB = spring(t, 4.2, 1.0, 3.5, 5.5);
-        brand.style.opacity = smoothstep(4.2, 4.5, t);
-        brand.style.transform = `scale(${lerp(0.85, 1, spB)})`;
-      }
+        s1Mesh.style.opacity = '1';
+        s1Split.style.opacity = String(easeSplit);
 
-      // Exit transition
-      if (t >= 5.8) {
-        const out = smoothstep(5.8, 6.5, t);
-        scene1.style.opacity = 1 - out;
-        scene1.style.transform = `scale(${lerp(1, 1.08, out)})`;
-      } else {
-        scene1.style.transform = 'scale(1)';
-      }
-    } else {
-      scene1.style.opacity = '0';
-      scene1.style.display = 'none';
-    }
+        const leftText = document.querySelector('.scene1-split-left');
+        const rightText = document.querySelector('.scene1-split-right');
+        leftText.style.transform = `translateX(${-(1 - easeSplit) * 80}px)`;
+        rightText.style.transform = `translateX(${(1 - easeSplit) * 80}px)`;
 
-    // -------------------------------------------------------------------------
-    // SCENE 2: FLOATING VIEWPORT HERO & 5-COLUMN MATRIX (6.5s - 14.5s)
-    // -------------------------------------------------------------------------
-    if (t >= 6.4 && t < 14.6) {
-      scene2.style.opacity = '1';
-      scene2.style.display = 'flex';
+        s1Prompt.style.opacity = String(easeSplit);
+        s1Prompt.style.transform = `translateY(${(1 - easeSplit) * 40}px) scale(${0.9 + easeSplit * 0.1})`;
 
-      const heroCard = document.getElementById('heroCard');
-      const heroImg = document.getElementById('heroMediaImg');
+        // Typing effect
+        const typeProgress = clamp((t - 2.5) / 2.2, 0, 1);
+        const charCount = Math.floor(typeProgress * textToType.length);
+        promptChars.textContent = textToType.substring(0, charCount);
 
-      // Entrance dolly-in
-      const spCard = spring(t, 6.5, 1.4, 3.0, 4.8);
-      const scale = lerp(0.88, 1.0, spCard);
-      const rotX = lerp(8, 0, spCard);
-      heroCard.style.transform = `perspective(1200px) rotateX(${rotX}deg) scale(${scale})`;
-      heroCard.style.opacity = smoothstep(6.5, 7.0, t);
-
-      // Hero image subtle parallax drift
-      const pDrift = (t - 6.5) * 1.5;
-      heroImg.style.transform = `scale(${1.05 + (t - 6.5) * 0.01}) translateY(${-pDrift}px)`;
-
-      // Active column shift across bottom columns
-      const cols = [
-        document.getElementById('col1'),
-        document.getElementById('col2'),
-        document.getElementById('col3'),
-        document.getElementById('col4'),
-        document.getElementById('col5')
-      ];
-
-      const activeIdx = Math.min(4, Math.floor(clamp((t - 8.0) / 1.2, 0, 4.99)));
-      cols.forEach((col, idx) => {
-        if (idx === activeIdx) {
-          col.classList.add('active');
-        } else {
-          col.classList.remove('active');
-        }
-      });
-
-      // Exit zoom forward
-      if (t >= 13.8) {
-        const out = smoothstep(13.8, 14.5, t);
-        heroCard.style.transform = `perspective(1200px) scale(${lerp(1, 1.2, out)})`;
-        scene2.style.opacity = 1 - out;
-      }
-    } else {
-      scene2.style.opacity = '0';
-      scene2.style.display = 'none';
-    }
-
-    // -------------------------------------------------------------------------
-    // SCENE 3: SNAPPED PILL & LAB FREQUENCY SPECTRUM (14.5s - 21.5s)
-    // -------------------------------------------------------------------------
-    if (t >= 14.4 && t < 21.6) {
-      scene3.style.opacity = '1';
-      scene3.style.display = 'flex';
-
-      const pillStage = document.getElementById('s3PillStage');
-      const pillLeft = document.getElementById('pillLeft');
-      const pillRight = document.getElementById('pillRight');
-      const pillIcon = document.getElementById('pillCenterIcon');
-      const labBoard = document.getElementById('labBoard');
-
-      const blur1 = document.getElementById('pillBlur1');
-      const blur2 = document.getElementById('pillBlur2');
-
-      if (t < 17.0) {
-        // Snapping Pill Animation
-        pillStage.style.display = 'flex';
-        labBoard.style.display = 'none';
-
-        // Blurring streaks slide across background
-        if (t >= 14.5 && t < 15.6) {
-          const bProg = clamp((t - 14.5) / 1.1, 0, 1);
-          blur1.style.opacity = smoothstep(0, 0.4, bProg) * (1 - smoothstep(0.6, 1.0, bProg));
-          blur1.style.left = `${lerp(-400, 1920, bProg)}px`;
-
-          blur2.style.opacity = smoothstep(0, 0.3, bProg) * (1 - smoothstep(0.7, 1.0, bProg));
-          blur2.style.right = `${lerp(-500, 1920, bProg)}px`;
-        } else {
-          blur1.style.opacity = '0';
-          blur2.style.opacity = '0';
-        }
-
-        // Left and Right pills fly in and snap together
-        const spLeft = spring(t, 14.8, 0.8, 4.0, 6.0);
-        pillLeft.style.transform = `translateX(${lerp(-180, 0, spLeft)}px)`;
-        pillRight.style.transform = `translateX(${lerp(180, 0, spLeft)}px)`;
-        pillIcon.style.transform = `scale(${lerp(0.2, 1.0, spLeft)})`;
-
-        pillStage.style.opacity = smoothstep(14.7, 15.0, t);
-
-        if (t >= 16.3) {
-          const zoomOut = smoothstep(16.3, 17.0, t);
-          pillStage.style.transform = `scale(${lerp(1, 2.4, zoomOut)})`;
-          pillStage.style.opacity = 1 - zoomOut;
-        } else {
-          pillStage.style.transform = 'scale(1)';
-        }
-      } else {
-        // Acoustic Lab Board in full view
-        pillStage.style.display = 'none';
-        labBoard.style.display = 'flex';
-
-        const spBoard = spring(t, 17.0, 1.0, 3.2, 5.0);
-        labBoard.style.opacity = smoothstep(17.0, 17.3, t);
-        labBoard.style.transform = `scale(${lerp(0.92, 1.0, spBoard)})`;
-
-        // Real-time bouncing frequency bars (synchronized FFT simulation)
-        const fbBars = [
-          { el: document.getElementById('fb1'), base: 35, speed: 8 },
-          { el: document.getElementById('fb2'), base: 55, speed: 12 },
-          { el: document.getElementById('fb3'), base: 88, speed: 15 },
-          { el: document.getElementById('fb4'), base: 96, speed: 18 },
-          { el: document.getElementById('fb5'), base: 72, speed: 14 },
-          { el: document.getElementById('fb6'), base: 48, speed: 10 },
-          { el: document.getElementById('fb7'), base: 32, speed: 9 },
-          { el: document.getElementById('fb8'), base: 18, speed: 7 }
-        ];
-
-        fbBars.forEach(bar => {
-          const osc = Math.sin(t * bar.speed) * 14 + Math.cos(t * bar.speed * 0.7) * 8;
-          bar.el.style.height = `${clamp(bar.base + osc, 15, 100)}%`;
-        });
-
-        // Exit zoom
-        if (t >= 20.8) {
-          const out = smoothstep(20.8, 21.5, t);
-          scene3.style.opacity = 1 - out;
-          scene3.style.transform = `scale(${lerp(1, 1.05, out)})`;
-        }
-      }
-    } else {
-      scene3.style.opacity = '0';
-      scene3.style.display = 'none';
-    }
-
-    // -------------------------------------------------------------------------
-    // SCENE 4: MOBILE REPORT & TERMINAL HARD CUT (21.5s - 27.5s)
-    // -------------------------------------------------------------------------
-    if (t >= 21.4 && t < 27.6) {
-      scene4.style.opacity = '1';
-      scene4.style.display = 'flex';
-
-      const mobCard = document.getElementById('mobileCard');
-      const rightGal = document.getElementById('s4RightGallery');
-      const termOverlay = document.getElementById('termOverlay');
-
-      if (t < 24.8) {
-        termOverlay.style.opacity = '0';
-        termOverlay.style.display = 'none';
-
-        const spMob = spring(t, 21.5, 0.9, 3.5, 5.0);
-        mobCard.style.transform = `translateY(${lerp(60, 0, spMob)}px) scale(${lerp(0.92, 1, spMob)})`;
-        mobCard.style.opacity = smoothstep(21.5, 21.8, t);
-
-        const spGal = spring(t, 21.7, 0.9, 3.5, 5.0);
-        rightGal.style.transform = `translateX(${lerp(80, 0, spGal)}px)`;
-        rightGal.style.opacity = smoothstep(21.7, 22.0, t);
-
-        // Mouse cursor glides to mobile GitHub button
-        if (t >= 22.8 && t < 24.8) {
+        // Cursor movement to submit button at t=4.8s
+        if (t >= 4.6 && t < 6.2) {
           cursor.style.opacity = '1';
-          const curProg = clamp((t - 22.8) / 1.4, 0, 1);
-          const cX = lerp(960, 680, easeOutCubic(curProg));
-          const cY = lerp(600, 210, easeOutCubic(curProg));
-          cursor.style.transform = `translate(${cX}px, ${cY}px)`;
+          const cursorProgress = clamp((t - 4.6) / 0.8, 0, 1);
+          const eCursor = easeOutCubic(cursorProgress);
+          const curX = 960 + eCursor * 290;
+          const curY = 540 + eCursor * 40;
+          cursor.style.transform = `translate(${curX}px, ${curY}px)`;
 
-          if (t >= 24.2) {
-            cursor.style.transform = `translate(${cX}px, ${cY}px) scale(0.85)`;
+          if (t >= 5.4 && t < 5.8) {
+            s1Btn.style.transform = 'scale(0.88)';
+            s1Btn.style.background = '#FF5E36';
+          } else {
+            s1Btn.style.transform = 'scale(1)';
+            s1Btn.style.background = '#111827';
           }
         } else {
           cursor.style.opacity = '0';
         }
-
-      } else {
-        // DYNAMIC HARD CUT TO DARK TERMINAL! (Matches ref2 Frame 24-25)
-        cursor.style.opacity = '0';
-        termOverlay.style.display = 'flex';
-        termOverlay.style.opacity = '1';
-
-        const termCur = document.getElementById('termCursor');
-        const termHigh = document.getElementById('termHighlight');
-
-        // Terminal blink
-        termCur.style.opacity = (Math.floor(t * 4) % 2 === 0) ? '1' : '0';
-
-        // Selection highlight box animation
-        if (t >= 25.4) {
-          termHigh.style.background = '#2563EB';
-          termHigh.style.color = '#FFFFFF';
-        } else {
-          termHigh.style.background = 'transparent';
-          termHigh.style.color = '#38BDF8';
-        }
-
-        // Camera gentle drift
-        const termZoom = clamp((t - 24.8) / 2.6, 0, 1);
-        termOverlay.style.transform = `scale(${lerp(0.96, 1.04, termZoom)})`;
-      }
-    } else {
-      scene4.style.opacity = '0';
-      scene4.style.display = 'none';
-    }
-
-    // -------------------------------------------------------------------------
-    // SCENE 5: AI AGENT WORKSPACE & 3D HARDWARE APPROVAL (27.5s - 35.5s)
-    // -------------------------------------------------------------------------
-    if (t >= 27.4 && t < 35.6) {
-      scene5.style.opacity = '1';
-      scene5.style.display = 'flex';
-
-      const aiWindow = document.getElementById('aiStudioWindow');
-      const hw3d = document.getElementById('hardware3d');
-      const chip1 = document.getElementById('hoverChip1');
-      const btnApprove = document.getElementById('btnApprove');
-
-      const spWin = spring(t, 27.5, 1.2, 3.2, 4.8);
-      aiWindow.style.opacity = smoothstep(27.5, 27.8, t);
-      aiWindow.style.transform = `scale(${lerp(0.9, 1.0, spWin)})`;
-
-      // 3D Model subtle float
-      const hwOscY = Math.sin((t - 27.5) * 2.2) * 8;
-      const hwRot = Math.cos((t - 27.5) * 1.5) * 2.5;
-      hw3d.style.transform = `translateY(${hwOscY}px) rotateZ(${hwRot}deg)`;
-
-      // Cursor moves across 3D keyboard then down to [Approve Setup]
-      if (t >= 29.0 && t < 34.8) {
-        cursor.style.opacity = '1';
-        if (t < 31.5) {
-          // Hovering over keyboard
-          const p = clamp((t - 29.0) / 2.5, 0, 1);
-          const cx = lerp(850, 1050, easeOutCubic(p));
-          const cy = lerp(620, 520, easeOutCubic(p));
-          cursor.style.transform = `translate(${cx}px, ${cy}px)`;
-
-          chip1.style.opacity = smoothstep(29.8, 30.2, t);
-          chip1.style.transform = `translateY(${Math.sin(t * 3) * 4}px)`;
-        } else {
-          // Hovering to Approve button
-          const p = clamp((t - 31.5) / 1.5, 0, 1);
-          const cx = lerp(1050, 240, easeInOutCubic(p));
-          const cy = lerp(520, 530, easeInOutCubic(p));
-          cursor.style.transform = `translate(${cx}px, ${cy}px)`;
-
-          if (t >= 33.2) {
-            cursor.style.transform = `translate(${cx}px, ${cy}px) scale(0.85)`;
-            btnApprove.style.background = '#22C55E';
-            btnApprove.style.color = '#FFFFFF';
-            btnApprove.textContent = '✓ Approved';
-          }
-        }
-      } else {
-        cursor.style.opacity = '0';
       }
 
       // Exit transition
-      if (t >= 34.8) {
-        const out = smoothstep(34.8, 35.5, t);
-        scene5.style.opacity = 1 - out;
-        scene5.style.transform = `scale(${lerp(1, 1.06, out)})`;
+      if (t >= 6.0) {
+        const exitProgress = (t - 6.0) / 0.5;
+        s1.style.opacity = String(1 - exitProgress);
+        s1.style.transform = `scale(${1 + exitProgress * 0.08})`;
+      } else {
+        s1.style.transform = 'scale(1)';
       }
-    } else {
-      scene5.style.opacity = '0';
-      scene5.style.display = 'none';
     }
 
-    // -------------------------------------------------------------------------
-    // SCENE 6: THERMAL SCAN & VERIFICATION MATRIX (35.5s - 42.5s)
-    // -------------------------------------------------------------------------
-    if (t >= 35.4 && t < 42.6) {
-      scene6.style.opacity = '1';
-      scene6.style.display = 'flex';
+    // -------------------------------------------------------------
+    // SCENE 2: 3D Hardware Specimen & Topography (6.5s – 14.0s)
+    // -------------------------------------------------------------
+    else if (t >= 6.5 && t < 14.2) {
+      s1.style.opacity = '0';
+      s2.style.opacity = '1';
+      s3.style.opacity = '0';
+      s4.style.opacity = '0';
+      s5.style.opacity = '0';
+      s6.style.opacity = '0';
+      s7.style.opacity = '0';
+      cursor.style.opacity = '0';
 
-      const scanLine = document.getElementById('thermalScanLine');
-      const diagCard = document.getElementById('diagCard');
-      const secGrid = document.getElementById('secMatrixGrid');
-      const pubBtn = document.getElementById('publishBtn');
+      const windowEl = document.getElementById('scene2-window');
+      const enterProgress = clamp((t - 6.5) / 1.0, 0, 1);
+      const easeWindow = easeOutCubic(enterProgress);
 
-      if (t < 39.2) {
-        secGrid.style.opacity = '0';
-        secGrid.style.display = 'none';
+      const scale = 0.88 + easeWindow * 0.12;
+      const moveY = (1 - easeWindow) * 50;
+      windowEl.style.transform = `translateY(${moveY}px) scale(${scale})`;
+      windowEl.style.opacity = String(easeWindow);
 
-        // Scan line sweep down
-        const scanP = (t - 35.5) / 2.4;
-        scanLine.style.top = `${(scanP % 1.0) * 100}%`;
+      // Parallax drift in viewport
+      const drift = (t - 6.5) * 1.5;
+      const img = document.querySelector('.scene2-viewport-img');
+      if (img) img.style.transform = `scale(${1.02 + drift * 0.005}) translateY(${-drift * 1.2}px)`;
 
-        // Diagnostic card appears at t=37.2
-        if (t >= 37.2) {
-          diagCard.style.opacity = smoothstep(37.2, 37.6, t);
-          const spDiag = spring(t, 37.2, 0.8, 3.8, 5.2);
-          diagCard.style.transform = `scale(${lerp(0.88, 1, spDiag)}) translateY(${lerp(20, 0, spDiag)}px)`;
-        } else {
-          diagCard.style.opacity = '0';
+      // Exit transition to Scene 3
+      if (t >= 13.5) {
+        const exitProgress = (t - 13.5) / 0.7;
+        s2.style.opacity = String(1 - exitProgress);
+        s2.style.transform = `scale(${1 + exitProgress * 0.15})`;
+      } else {
+        s2.style.transform = 'scale(1)';
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 3: Acoustic Spectrogram & Master Hardware Lab (14.0s – 23.0s)
+    // -------------------------------------------------------------
+    else if (t >= 14.0 && t < 23.2) {
+      s1.style.opacity = '0';
+      s2.style.opacity = '0';
+      s3.style.opacity = '1';
+      s4.style.opacity = '0';
+      s5.style.opacity = '0';
+      s6.style.opacity = '0';
+      s7.style.opacity = '0';
+      cursor.style.opacity = '0';
+
+      const telemetryCard = document.getElementById('scene3-telemetry');
+      const masterDash = document.getElementById('scene3-master');
+
+      if (t < 17.5) {
+        // Floating Telemetry Spectrogram Card
+        masterDash.style.opacity = '0';
+        telemetryCard.style.opacity = '1';
+
+        const enterProgress = clamp((t - 14.0) / 0.8, 0, 1);
+        const easeCard = easeOutBack(enterProgress);
+        telemetryCard.style.transform = `scale(${0.9 + easeCard * 0.1}) translateY(${(1 - easeCard) * 30}px)`;
+
+        // Animated curve wave
+        const graphPath = document.querySelector('.scene3-graph-svg path');
+        if (graphPath) {
+          const wobble = Math.sin((t - 14.0) * 8) * 8;
+          graphPath.setAttribute('d', `M 10 120 Q 80 ${110 + wobble} 140 ${60 - wobble} T 260 ${85 + wobble} T 380 ${40 - wobble} T 480 ${90 + wobble} T 580 100`);
         }
+      } else {
+        // Expansion into Master Hardware Studio
+        const expandProgress = clamp((t - 17.5) / 0.8, 0, 1);
+        const easeExpand = easeOutCubic(expandProgress);
 
-        // Cursor clicks button
-        if (t >= 36.2 && t < 37.5) {
+        telemetryCard.style.opacity = String(1 - easeExpand);
+        telemetryCard.style.transform = `scale(${1 + easeExpand * 0.2})`;
+
+        masterDash.style.opacity = String(easeExpand);
+        masterDash.style.transform = `scale(${0.92 + easeExpand * 0.08})`;
+      }
+
+      // Exit transition
+      if (t >= 22.4) {
+        const exitProgress = (t - 22.4) / 0.6;
+        s3.style.opacity = String(1 - exitProgress);
+        s3.style.transform = `scale(${1 - exitProgress * 0.06})`;
+      } else {
+        s3.style.transform = 'scale(1)';
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 4: Ecosystem Sync & Dual Telemetry (23.0s – 30.0s)
+    // -------------------------------------------------------------
+    else if (t >= 23.0 && t < 30.2) {
+      s1.style.opacity = '0';
+      s2.style.opacity = '0';
+      s3.style.opacity = '0';
+      s4.style.opacity = '1';
+      s5.style.opacity = '0';
+      s6.style.opacity = '0';
+      s7.style.opacity = '0';
+
+      const capsule = document.getElementById('scene4-capsule');
+      const splitView = document.getElementById('scene4-split');
+
+      if (t < 25.5) {
+        // Minimal Floating Sync Capsule
+        splitView.style.opacity = '0';
+        const capProgress = clamp((t - 23.0) / 0.6, 0, 1);
+        const eCap = easeOutBack(capProgress);
+        capsule.style.opacity = String(capProgress);
+        capsule.style.transform = `scale(${0.9 + eCap * 0.1}) translateY(${(1 - eCap) * 20}px)`;
+
+        // Cursor clicks capsule button
+        if (t >= 24.2 && t < 25.5) {
           cursor.style.opacity = '1';
-          cursor.style.transform = `translate(960px, 540px) scale(${t >= 36.8 ? 0.85 : 1})`;
-        } else {
-          cursor.style.opacity = '0';
+          const curProgress = clamp((t - 24.2) / 0.6, 0, 1);
+          const eCur = easeOutCubic(curProgress);
+          cursor.style.transform = `translate(${1120 + eCur * 40}px, ${540}px)`;
         }
-
       } else {
-        // Transition into the Glowing Security Shield Matrix! (Ref2 frame 41)
+        // Morph to Split Screen Viewport
         cursor.style.opacity = '0';
-        secGrid.style.display = 'flex';
+        capsule.style.opacity = '0';
 
-        const gIn = smoothstep(39.2, 39.7, t);
-        secGrid.style.opacity = gIn;
-
-        const shields = document.querySelectorAll('.matrix-shield');
-        shields.forEach((sh, idx) => {
-          const delay = 39.3 + (idx * 0.04);
-          const spSh = spring(t, delay, 0.6, 4.0, 5.5);
-          sh.style.transform = `scale(${lerp(0, 1, spSh)})`;
-          sh.style.opacity = smoothstep(delay, delay + 0.1, t);
-        });
-
-        const spPub = spring(t, 40.2, 0.8, 3.5, 5.0);
-        pubBtn.style.transform = `scale(${lerp(0.85, 1, spPub)})`;
-        pubBtn.style.opacity = smoothstep(40.2, 40.6, t);
+        const splitProgress = clamp((t - 25.5) / 0.8, 0, 1);
+        const eSplit = easeOutCubic(splitProgress);
+        splitView.style.opacity = String(eSplit);
+        splitView.style.transform = `scale(${0.92 + eSplit * 0.08})`;
       }
 
       // Exit transition
-      if (t >= 41.8) {
-        const out = smoothstep(41.8, 42.5, t);
-        scene6.style.opacity = 1 - out;
-      }
-    } else {
-      scene6.style.opacity = '0';
-      scene6.style.display = 'none';
-    }
-
-    // -------------------------------------------------------------------------
-    // SCENE 7: MASTER STUDIO DASHBOARD (42.5s - 46.5s)
-    // -------------------------------------------------------------------------
-    if (t >= 42.4 && t < 46.6) {
-      scene7.style.opacity = '1';
-      scene7.style.display = 'flex';
-
-      const dashCard = document.getElementById('studioDashCard');
-      const spDash = spring(t, 42.5, 1.2, 3.0, 4.8);
-      dashCard.style.opacity = smoothstep(42.5, 42.9, t);
-      dashCard.style.transform = `scale(${lerp(0.92, 1.0, spDash)})`;
-
-      // Camera slow cinematic push
-      const push = clamp((t - 42.5) / 4.0, 0, 1);
-      dashCard.style.transform = `scale(${lerp(0.94, 1.02, push)})`;
-
-      if (t >= 45.8) {
-        const out = smoothstep(45.8, 46.5, t);
-        scene7.style.opacity = 1 - out;
-      }
-    } else {
-      scene7.style.opacity = '0';
-      scene7.style.display = 'none';
-    }
-
-    // -------------------------------------------------------------------------
-    // SCENE 8: CLIMACTIC OUTRO & BRAND SIGNATURE (46.5s - 50.13s)
-    // -------------------------------------------------------------------------
-    if (t >= 46.4) {
-      scene8.style.opacity = '1';
-      scene8.style.display = 'flex';
-
-      const punchline = document.getElementById('outroPunchline');
-      const brand = document.getElementById('outroBrand');
-      const ctaBtn = document.getElementById('outroCtaBtn');
-
-      if (t < 48.0) {
-        punchline.style.display = 'block';
-        brand.style.display = 'none';
-
-        const spP = spring(t, 46.5, 0.8, 3.5, 5.0);
-        punchline.style.opacity = smoothstep(46.5, 46.8, t);
-        punchline.style.transform = `scale(${lerp(0.9, 1.0, spP)})`;
+      if (t >= 29.4) {
+        const exitProgress = (t - 29.4) / 0.6;
+        s4.style.opacity = String(1 - exitProgress);
+        s4.style.transform = `scale(${1 + exitProgress * 0.08})`;
       } else {
-        punchline.style.display = 'none';
-        brand.style.display = 'flex';
-
-        const spB = spring(t, 48.0, 1.2, 3.2, 4.8);
-        brand.style.opacity = smoothstep(48.0, 48.4, t);
-        brand.style.transform = `scale(${lerp(0.88, 1.0, spB)})`;
-
-        if (t >= 48.8) {
-          const breathe = Math.sin((t - 48.8) * 3) * 0.02;
-          ctaBtn.style.transform = `scale(${1 + breathe})`;
-        }
+        s4.style.transform = 'scale(1)';
       }
-    } else {
-      scene8.style.opacity = '0';
-      scene8.style.display = 'none';
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 5: The Iconic "Curate." Editorial Manifesto (30.0s – 43.0s)
+    // -------------------------------------------------------------
+    else if (t >= 30.0 && t < 43.2) {
+      s1.style.opacity = '0';
+      s2.style.opacity = '0';
+      s3.style.opacity = '0';
+      s4.style.opacity = '0';
+      s5.style.opacity = '1';
+      s6.style.opacity = '0';
+      s7.style.opacity = '0';
+      cursor.style.opacity = '0';
+
+      const artboard = document.getElementById('scene5-artboard');
+      const enterProgress = clamp((t - 30.0) / 0.8, 0, 1);
+      const eArt = easeOutCubic(enterProgress);
+
+      artboard.style.opacity = String(eArt);
+      artboard.style.transform = `scale(${0.94 + eArt * 0.06})`;
+
+      // Micro Parallax floating of cards
+      const floatTime = t - 30.0;
+      const promptPill = document.querySelector('.scene5-prompt-pill');
+      const featCard = document.querySelector('.scene5-feature-card');
+      const folderCard = document.querySelector('.scene5-folder-card');
+      const statsBox = document.querySelector('.scene5-stats-box');
+
+      if (promptPill) promptPill.style.transform = `translateY(${Math.sin(floatTime * 2.2) * 5}px)`;
+      if (featCard) featCard.style.transform = `translateY(${Math.cos(floatTime * 2.0) * 4}px)`;
+      if (folderCard) folderCard.style.transform = `translateY(${Math.sin(floatTime * 1.8) * 3}px)`;
+      if (statsBox) statsBox.style.transform = `translateY(${Math.cos(floatTime * 2.5) * 4}px)`;
+
+      // Exit transition to Scene 6
+      if (t >= 42.4) {
+        const exitProgress = (t - 42.4) / 0.7;
+        s5.style.opacity = String(1 - exitProgress);
+        s5.style.transform = `scale(${1 - exitProgress * 0.08})`;
+      } else {
+        s5.style.transform = 'scale(1)';
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 6: Atmospheric Deep Work / Mindfulness (43.0s – 51.0s)
+    // -------------------------------------------------------------
+    else if (t >= 43.0 && t < 51.2) {
+      s1.style.opacity = '0';
+      s2.style.opacity = '0';
+      s3.style.opacity = '0';
+      s4.style.opacity = '0';
+      s5.style.opacity = '0';
+      s6.style.opacity = '1';
+      s7.style.opacity = '0';
+      cursor.style.opacity = '0';
+
+      const darkPrompt = document.getElementById('scene6-prompt');
+      const glassMonitor = document.getElementById('scene6-monitor');
+
+      if (t < 46.2) {
+        // Dark sleek prompt typing "flow state workspace"
+        glassMonitor.style.opacity = '0';
+        const pProgress = clamp((t - 43.0) / 0.6, 0, 1);
+        const eP = easeOutBack(pProgress);
+        darkPrompt.style.opacity = String(pProgress);
+        darkPrompt.style.transform = `scale(${0.9 + eP * 0.1}) translateY(${(1 - eP) * 20}px)`;
+      } else {
+        // Floats up into Atmospheric Glass Monitor
+        darkPrompt.style.opacity = '0';
+        const mProgress = clamp((t - 46.2) / 0.8, 0, 1);
+        const eM = easeOutCubic(mProgress);
+        glassMonitor.style.opacity = String(eM);
+        glassMonitor.style.transform = `scale(${0.92 + eM * 0.08}) translateY(${(1 - eM) * 30}px)`;
+      }
+
+      // Exit transition to Scene 7
+      if (t >= 50.4) {
+        const exitProgress = (t - 50.4) / 0.7;
+        s6.style.opacity = String(1 - exitProgress);
+        s6.style.transform = `scale(${1 + exitProgress * 0.1})`;
+      } else {
+        s6.style.transform = 'scale(1)';
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 7: Climax Brand Reveal & "Build your sanctuary." (51.0s – 56.50s)
+    // -------------------------------------------------------------
+    else if (t >= 51.0) {
+      s1.style.opacity = '0';
+      s2.style.opacity = '0';
+      s3.style.opacity = '0';
+      s4.style.opacity = '0';
+      s5.style.opacity = '0';
+      s6.style.opacity = '0';
+      s7.style.opacity = '1';
+      cursor.style.opacity = '0';
+
+      const brandWrap = document.getElementById('scene7-brand');
+      const punchline = document.getElementById('scene7-punchline');
+
+      if (t < 53.6) {
+        // Brand Monogram & Wordmark Reveal
+        punchline.style.opacity = '0';
+        const bProgress = clamp((t - 51.0) / 0.7, 0, 1);
+        const eB = easeOutBack(bProgress);
+        brandWrap.style.opacity = String(bProgress);
+        brandWrap.style.transform = `scale(${0.92 + eB * 0.08})`;
+      } else {
+        // Climax Punchline: "Build your sanctuary."
+        const fadeBrand = clamp((t - 53.6) / 0.5, 0, 1);
+        brandWrap.style.opacity = String(1 - fadeBrand);
+
+        const pProgress = clamp((t - 53.8) / 0.8, 0, 1);
+        const ePunch = easeOutCubic(pProgress);
+        punchline.style.opacity = String(ePunch);
+        punchline.style.transform = `scale(${0.92 + ePunch * 0.08})`;
+      }
     }
   };
 
-  // Initialize at frame 0
+  // Initial preview at t=0
   window.seekTo(0);
 </script>
 </body>

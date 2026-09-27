@@ -1149,7 +1149,7 @@
 
   <!-- =========================================================================
      SCENE 5: CIRCADIAN TELEMETRY & FLOW STATE (35.0s – 40.5s)
-     ========================================================================= */
+     ========================================================================= -->
   <div class="scene" id="scene5">
     <div class="scene5-flow-card" id="scene5-card">
       <div class="scene5-top-row">
@@ -1283,6 +1283,8 @@
       if (t < 2.0) {
         // Macro close-up camera pan
         const zoom = 1.3 - (t / 2.0) * 0.15;
+        macroImg.style.display = 'block';
+        macroImg.style.opacity = '1';
         macroImg.style.transform = `scale(${zoom}) translate(${-t * 20}px, ${t * 10}px)`;
         phone.style.opacity = '0';
         b1.style.opacity = '0';
@@ -1294,7 +1296,13 @@
         const phoneProgress = clamp((t - 2.0) / 0.8, 0, 1);
         const ePhone = easeOutBack(phoneProgress);
 
-        macroImg.style.opacity = String(1 - phoneProgress * 0.9);
+        const macroOp = Math.max(0, 1 - phoneProgress * 1.4);
+        macroImg.style.opacity = String(macroOp);
+        if (macroOp <= 0.01) {
+          macroImg.style.display = 'none';
+        } else {
+          macroImg.style.display = 'block';
+        }
 
         phone.style.opacity = String(phoneProgress);
         phone.style.transform = `translateY(${(1 - ePhone) * 80}px) scale(${0.88 + ePhone * 0.12}) rotateY(${(1 - ePhone) * 12}deg)`;

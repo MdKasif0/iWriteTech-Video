@@ -2,12 +2,12 @@
 
 # 🎬 iWriteTech — Official Launch Video
 
-**A 20-second cinematic launch video for [iWriteTech](https://iwritetech.com), engineered using the [`latent-spaces/brag`](https://github.com/latent-spaces/brag) motion graphics framework.**
+**A 73.45-second high-end motion design launch video for [iWriteTech](https://iwritetech.com), precisely engineered to match modern product launch standards using the [`latent-spaces/brag`](https://github.com/latent-spaces/brag) deterministic rendering architecture.**
 
 [![Resolution](https://img.shields.io/badge/Resolution-1920%C3%971080%20(1080p)-gold?style=for-the-badge&logo=youtube&logoColor=white)](brag-output/brag.mp4)
-[![Framerate](https://img.shields.io/badge/Framerate-30%20FPS-black?style=for-the-badge)](brag-output/brag.mp4)
-[![Duration](https://img.shields.io/badge/Duration-20.0s-4a3b2a?style=for-the-badge)](brag-output/brag.mp4)
-[![Audio](https://img.shields.io/badge/Audio-48kHz%20Stereo%20AAC-866432?style=for-the-badge)](brag-output/work/soundtrack.wav)
+[![Framerate](https://img.shields.io/badge/Framerate-30%20FPS%20(2204%20Frames)-black?style=for-the-badge)](brag-output/brag.mp4)
+[![Duration](https://img.shields.io/badge/Duration-73.45s-4a3b2a?style=for-the-badge)](brag-output/brag.mp4)
+[![Audio](https://img.shields.io/badge/Audio-48kHz%20Stereo%20AAC%20(114%20BPM)-866432?style=for-the-badge)](brag-output/work/soundtrack_exact.aac)
 [![Methodology](https://img.shields.io/badge/Methodology-/brag%20by%20Latent%20Spaces-2C2925?style=for-the-badge)](https://github.com/latent-spaces/brag)
 
 <br/>
@@ -24,151 +24,104 @@
 
 ## 📖 Overview
 
-**[iWriteTech](https://iwritetech.com)** is an independent editorial publication dedicated to aesthetic, minimal desk tech — keyboards, clean workspace accessories, and developer setups.
+**[iWriteTech](https://iwritetech.com)** is an independent tech & desk setup publication dedicated to obsessively tested hardware, mechanical keyboards, minimal desk gear, and developer workspaces.
 
-This repository houses the complete production suite for its official launch video:
-- **Zero-filler storytelling:** Crafted strictly according to `/brag` creative laws (15–25s duration, hook in first 2 seconds, no generic SaaS jargon).
-- **Authentic editorial visual identity:** Utilizes the real warm cream (`#F4EFE6`) and obsidian (`#0E0D0C`) palettes, serif typography (`Literata`), and authentic high-resolution photography.
-- **Dedicated audio synthesis engine:** Built-in Python sound design engine that produces a 48kHz stereo master track synced down to the millisecond with visual cues.
-- **Headless Chrome rendering pipeline:** Captures deterministic 1080p frames at 30 FPS through Chrome DevTools Protocol (CDP) piped directly into FFmpeg.
+This production repository contains the full automated pipeline that generated its official launch video:
+- **Kinetic Motion Design:** Analyzed and built against top-tier tech launch videos, featuring kinetic typography expansions with spring physics, macro camera zooms, dynamic card morphs, 2.5D perspective matrix grids, and vertical progress telemetry.
+- **Deterministic 30 FPS Rendering:** Headless Chrome renders every millisecond deterministically through Chrome DevTools Protocol (`window.seekTo(t)`), streaming in-memory JPEG frames directly into FFmpeg with zero frame drops.
+- **Full HD Visual Assets:** 17 authentic high-resolution editorial product photographs (Keychron keyboards, BenQ ScreenBar, Grovemade walnut shelves, Satechi Thunderbolt 4 hubs, Belkin wireless chargers, etc.).
+- **Studio Soundtrack Sync:** 73.45-second 48kHz stereo master audio track at 114 BPM with visual hits synchronized down to individual beats.
 
 ---
 
-## ⏱️ Storyboard & Beat Breakdown
+## ⏱️ Storyboard & Scene Breakdown (73.45s)
 
-The video follows the 5-beat launch narrative structure designed in [`brag-output/brag-plan.md`](brag-output/brag-plan.md):
+The video is structured across 6 continuous cinematic scenes:
 
 ```
-Hook (0-3s) ──▶ Reveal (3-7s) ──▶ The Product (7-11s) ──▶ The Experience (11-15s) ──▶ The Outro (15-20s)
+Kinetic Expansion (0-14.5s) ──▶ Macro Zoom & Bubbles (14.5-25.5s) ──▶ 2.5D Perspective Matrix (25.5-37s)
+                             ──▶ Stepper & Lab Benchmarks (37-48s) ──▶ 3D Search & Trio (48-58.5s) ──▶ Grand Outro (58.5-73.45s)
 ```
 
-| Timestamp | Beat | Visual Choreography | Audio & Sound Design |
+| Timestamp | Scene | Visual Mechanics & Choreography | Audio & Rhythmic Beats |
 |---|---|---|---|
-| **0.0s – 3.0s** | **The Hook** | Pitch-black void (`#000000`) with a breathing golden radial glow. Golden serif typography eases in: <br/>*“Still scrolling Amazon for desk tech?”* | Deep D minor 9th warm ambient synthesizer pad fades in with analog filter sweep. |
-| **3.0s – 7.0s** | **The Reveal** | Cut to warm cream canvas (`#F4EFE6`). The `iWriteTech` signature mark and tagline appear: <br/>*“Tech that looks as good as it performs.”*<br/>Slide-up stats: `100% Hands-On Tested · 100% Editorially Independent · 11 Categories`. | Panning stereo whoosh resolving into bright F major 7th chord. Tactile mechanical switch click on badge settlement. |
-| **7.0s – 11.0s** | **The Product** | Editorial feature section: *“Every gadget, handpicked and tested.”* Category pills (`Desk Setups`, `Keyboards`, `MacBook`, `Gaming`) slide in with an authentic editorial setup card. | Rhythmic chord shift to Bb major 9th with soft spatial motion accents. |
-| **11.0s – 15.0s** | **The Experience** | Split-screen morph showcasing Light Mode vs. Dark Mode reading experiences. Gold laser divider animates downward. Floating headline: <br/>*“Beautiful to read. Beautiful to browse.”* | Smooth modulation to G minor 7th; tactile theme toggle pop effect. |
-| **15.0s – 20.0s** | **The Outro** | Deep obsidian canvas (`#0E0D0C`) with floating gold particles. Golden `iWriteTech` emblem pulses with divider line, primary domain `iwritetech.com`, and final signoff: <br/>*“Curated · Tested · Aesthetic.”* | D suspended chord resolving to D major with smooth reverb decay fading out at 20.0s. |
+| **0.0s – 14.5s** | **Scene 1: Kinetic Typography Expansion** | Studio canvas (`#F8FAFC`). Condensed words expand with spring physics to reveal inline pills: <br/>• `the [🌐 internet] is drowning in SEO garbage.`<br/>• `amazon [⭐ reviews] are 90% fake affiliate junk.`<br/>• `the [✨ antidote] is honest, obsessively tested tech.` | 114 BPM electronic rhythm kicks in with bass drops matching every spring expansion. |
+| **14.5s – 25.5s** | **Scene 2: Macro Zoom, Typing & Social Validation** | Macro camera zoom into floating search capsule. Character-by-character typing: `+ Best mechanical keyboard under $100`. Enter key hits and capsule morphs into a 3D glass product card (**Keychron C3 Pro** - $36.99). Staggered reader testimonial bubbles pop in with live counter: `✓ 14,820 engineers guided this month`. | Typing click cadence, soft pulse impact on submit, and popping bubble accents. |
+| **25.5s – 37.0s** | **Scene 3: 2.5D Massive Perspective Grid** | Camera dollies backward into deep 3D perspective (`perspective: 1400px`, `rotateX(14deg)`). A sweeping 5×6 matrix of 30+ product review cards drifts across the screen with filmic depth of field and floating header: `OVER 150+ OBSESSIVELY TESTED GUIDES`. | Heavy bass drop and spatial synth sweep as the camera pulls back to reveal the grid. |
+| **37.0s – 48.0s** | **Scene 4: Vertical Stepper Pipeline & Lab Benchmarks** | Two-column laboratory inspection view. Left rail features a 5-step glowing vertical pipeline (`Search` → `Lab Stress Test` → `Acoustics & Tactility` → `Editorial Integrity` → `The Verdict`). Right dashboard displays live waveforms (42.4 dB thock), 524,800 keystroke endurance telemetry, and finishes with a gold holographic stamp: `★ EDITORS' CHOICE 2026`. | Progressive arpeggiator climbing in intensity, resolving with stamp impact sound. |
+| **48.0s – 58.5s** | **Scene 5: Category Flipper & 3D Elevated Search** | Snappy category pill flipper (`⌨️ Keyboards` → `🖥️ Desk Setups` → `💻 MacBook Gear` → `🎧 Audio`). Camera tilts to ground plane; floating elevated search bar types `Q developer desk setup 2026`, followed by 3 companion cards popping in (ScreenBar, Walnut Shelf, Thunderbolt 4). | Rapid syncopated beat shifts and smooth 3D spatial pan. |
+| **58.5s – 73.45s** | **Scene 6: The Punchline & Grand Brand Outro** | Punchline: *“Why settle for generic recommendations? Hardware journalism built for developers, writers, and creators.”* Eases into official brand lockup: glowing `iW` emblem, `iWriteTech` wordmark, 3 pillar badges, and floating CTA: `Explore iwritetech.com ➔`. | Climactic chord resolution with subtle ambient breathing until final cutoff at 73.45s. |
 
 ---
 
-## 🎨 Visual Identity & Design System
+## 🎨 Visual System & Tokens
 
-The video's visual design mirrors the production frontend of **iWriteTech**:
+The composition follows modern design standards (Apple / Linear / Vercel):
 
-```
-Background (Light)  #F4EFE6  ████████  Warm Cream
-Background (Dark)   #0E0D0C  ████████  Obsidian Black
-Accent Gold (Dark)  #C9A66B  ████████  Champagne Gold
-Accent Gold (Light) #866432  ████████  Deep Bronze Gold
-Border / Card       #E4DDCE  ████████  Muted Sand
-```
-
-- **Headings:** [Literata](https://fonts.google.com/specimen/Literata) (Editorial Serif, 500/600/700 weight)
-- **Body:** [Geist Sans](https://vercel.com/font) (Clean modern sans-serif)
-- **Metrics & Meta:** [Geist Mono](https://vercel.com/font) (Tabular developer monospace)
-- **Photography:** Authentic desk setup and mechanical keyboard review assets bundled under [`brag-output/composition/images/`](brag-output/composition/images/).
+- **Typography:**
+  - Headings: [Literata](https://fonts.google.com/specimen/Literata) (Editorial Serif, 700/800 weight)
+  - Interface: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) (Modern Geometric Sans)
+  - Telemetry & Specs: [JetBrains Mono](https://www.jetbrains.com/lp/mono/) (Developer Monospace)
+- **Palette:**
+  - Studio Canvas: `#FFFFFF` to `#F8FAFC` subtle radial gradient with fine 32px dot matrix.
+  - Charcoal Typography: `#0F172A` (Primary) and `#475569` (Secondary).
+  - Accent Tones: `#D97706` (Amber/Gold), `#059669` (Emerald Green), `#2563EB` (Electric Blue).
+  - Shadows: Layered physical studio drop shadows with soft ambient falloff.
 
 ---
 
-## 🔊 Sound Design & Audio Architecture
+## ⚙️ Automated Rendering Architecture
 
-The soundtrack is procedurally synthesized using `NumPy` and `SciPy` (`brag-output/work/generate_soundtrack.py`), ensuring zero external royalty entanglements:
-
-- **Multi-Oscillator Pads:** Detuned sawtooth and sine wave clusters filtered through 4th-order lowpass Butterworth filters (cutoff: 1200 Hz).
-- **Sub-Bass Foundation:** Sine sub-oscillators tracking root notes (49 Hz to 87 Hz) with soft envelope shaping.
-- **Cinematic Transitions:** Procedural bandpass-filtered noise sweeps (200 Hz – 1800 Hz) with dynamic stereo panning.
-- **Tactile UI SFX:** Modeled mechanical keyboard switch clicks (1400 Hz & 2800 Hz transient bursts with exponential decay).
-- **Mastering:** Peak normalized to -1.5 dB headroom with soft-knee limiting.
-
----
-
-## ⚙️ Automated Rendering Engine
-
-The video rendering pipeline bypasses browser recording frame drops by stepping through time deterministically:
+The rendering engine avoids browser recording jitter and dropped frames by driving time deterministically via Chrome DevTools Protocol (CDP):
 
 ```mermaid
 graph LR
-    HTML[composition/index.html] -->|Loads in| Chrome[Headless Chrome CDP]
+    HTML[composition/index.html] -->|CDP Session| Chrome[Headless Google Chrome]
     Script[render_video.js] -->|window.seekTo t | Chrome
     Chrome -->|JPEG Frames @ 30 FPS| Pipe[stdin pipe]
-    Audio[soundtrack.wav] --> FFmpeg[FFmpeg Encoder]
+    Audio[soundtrack_exact.aac] --> FFmpeg[FFmpeg Encoder]
     Pipe --> FFmpeg
-    FFmpeg -->|H.264 / AAC| MP4[brag-output/brag.mp4]
-    FFmpeg -->|t=5.0s Frame| Poster[brag-output/brag.jpg]
+    FFmpeg -->|H.264 / AAC 1080p| MP4[brag-output/brag.mp4]
+    FFmpeg -->|t=68.0s Poster Frame| Poster[brag-output/brag.jpg]
 ```
 
-### Key Technical Advantages
-1. **Deterministic Timing:** Every frame is rendered after verifying `document.fonts.ready` and advancing CSS animations via Web Animations API (`document.getAnimations()`).
-2. **Zero-Disk Streaming:** Captured JPEG frames are streamed straight from memory into FFmpeg's `image2pipe` demuxer, eliminating intermediate disk writes.
-3. **Optimized Compression:** Encoded with `libx264` (CRF 18, medium preset, yuv420p) and `aac` (192 kbps), yielding a high-fidelity 1080p video at just **1.5 MB**.
+### Reproducing the Render Locally
 
----
+```bash
+# 1. Install dependencies
+npm install
 
-## 📦 Deliverables & File Manifest
+# 2. Capture preview keyframes for inspection
+node brag-output/test_preview.js
 
-| File | Type | Resolution / Spec | Description |
-|---|---|---|---|
-| **[`brag-output/brag.mp4`](brag-output/brag.mp4)** | Video | 1920×1080, 30fps, 1.5 MB | Official final launch video file |
-| **[`brag-output/brag.jpg`](brag-output/brag.jpg)** | Image | 1920×1080 JPEG | Settled thumbnail / poster frame |
-| **[`brag-output/brag-poster.png`](brag-output/brag-poster.png)** | Image | 1920×1080 PNG | Uncompressed lossless poster frame |
-| **[`brag-output/brag-plan.md`](brag-output/brag-plan.md)** | Document | Markdown | Storyboard, creative rationale & tone definition |
-| **[`brag-output/share-copy.txt`](brag-output/share-copy.txt)** | Text | Plaintext | Ready-to-publish social launch copy |
-| **[`brag-output/render_video.js`](brag-output/render_video.js)** | Script | Node.js | Automated CDP + FFmpeg rendering engine |
-| **[`brag-output/composition/`](brag-output/composition/)** | Source | HTML5, CSS3, Images | Complete web motion graphics source code |
-| **[`brag-output/work/generate_soundtrack.py`](brag-output/work/generate_soundtrack.py)** | Script | Python 3 | Procedural audio synthesis script |
-| **[`brag-output/work/soundtrack.wav`](brag-output/work/soundtrack.wav)** | Audio | 48kHz, 16-bit Stereo PCM | Master uncompressed soundtrack |
-
----
-
-## ✍️ Social Share Copy
-
-Ready to post on Twitter / X, LinkedIn, or Product Hunt:
-
-```text
-We built a home for desk tech that doesn't look like every other blog. iWriteTech curates, tests, and reviews aesthetic gadgets — keyboards, setups, MacBook accessories — so you get the good stuff without the Amazon doomscroll.
-
-iwritetech.com
+# 3. Render full 73.45s Full HD MP4 video (2204 frames)
+node brag-output/render_video.js
 ```
 
 ---
 
-## 🚀 How to Reproduce & Render Locally
+## 📁 Repository Structure
 
-### Prerequisites
-
-Ensure the following tools are installed:
-- [Google Chrome](https://www.google.com/chrome/)
-- [Node.js](https://nodejs.org/) (v18 or higher)
-- [FFmpeg](https://ffmpeg.org/) (with `libx264` and `aac` enabled)
-- [Python 3](https://www.python.org/) with `numpy` and `scipy`:
-  ```bash
-  pip install numpy scipy
-  ```
-
-### Build Steps
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/MdKasif0/iWriteTech-Video.git
-   cd iWriteTech-Video
-   ```
-
-2. **Generate the audio soundtrack:**
-   ```bash
-   python3 brag-output/work/generate_soundtrack.py
-   ```
-
-3. **Render the 1080p MP4 launch video:**
-   ```bash
-   node brag-output/render_video.js
-   ```
-
-The script will launch headless Chrome, seek each frame, pipe image data directly into FFmpeg, and export `brag-output/brag.mp4` and `brag-output/brag.jpg` in ~25–30 seconds.
+```
+.
+├── brag-output/
+│   ├── brag.mp4                  # Rendered 1080p 30fps Full HD launch video (16.4 MB)
+│   ├── brag.jpg                  # High-resolution poster frame at t=68.0s
+│   ├── brag-plan.md              # Creative launch video plan and beat sheet
+│   ├── share-copy.txt            # Ready-to-publish social copy for Twitter / LinkedIn
+│   ├── render_video.js           # Headless Chrome CDP deterministic renderer
+│   ├── test_preview.js           # Instant multi-scene frame preview generator
+│   ├── composition/
+│   │   ├── index.html            # 6-scene responsive web composition
+│   │   └── images/               # 17 high-res editorial product photos
+│   └── work/
+│       ├── soundtrack_exact.aac  # Master 73.45s 48kHz stereo soundtrack
+│       └── test_previews/        # Sample keyframe captures across all scenes
+└── README.md                     # Documentation and technical guide
+```
 
 ---
 
-## 📜 Credits & Acknowledgments
-
-- **Creative Framework:** Inspired by the **[`latent-spaces/brag`](https://github.com/latent-spaces/brag)** launch video methodology by [Latent Spaces](https://github.com/latent-spaces).
-- **Target Publication:** [iWriteTech](https://iwritetech.com) — *Curated. Tested. Aesthetic.*
+<div align="center">
+  <b>Built for <a href="https://iwritetech.com">iWriteTech</a> • Engineered with the <a href="https://github.com/latent-spaces/brag">brag</a> framework</b>
+</div>

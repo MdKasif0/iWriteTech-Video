@@ -7,16 +7,16 @@ const workspaceDir = path.resolve(__dirname, '..');
 const outputDir = path.resolve(__dirname);
 const compositionDir = path.join(outputDir, 'composition');
 const htmlUrl = 'file://' + path.join(compositionDir, 'index.html');
-const soundtrackPath = path.join(outputDir, 'work', 'soundtrack_ref2.m4a');
+const soundtrackPath = path.join(outputDir, 'work', 'soundtrack_ref3.m4a');
 const finalMp4Path = path.join(outputDir, 'brag.mp4');
 const posterJpgPath = path.join(outputDir, 'brag.jpg');
 const posterPngPath = path.join(outputDir, 'brag-poster.png');
 const userDataDir = path.join(outputDir, 'work', 'chrome-render-profile');
 
 const FPS = 30;
-const DURATION_SEC = 50.13;
-const TOTAL_FRAMES = Math.round(DURATION_SEC * FPS); // 1504 frames
-const POSTER_FRAME = Math.round(48.5 * FPS); // Frame at t=48.5s (Brand Logo & Sanctuary Punchline)
+const DURATION_SEC = 56.50;
+const TOTAL_FRAMES = Math.round(DURATION_SEC * FPS); // 1695 frames
+const POSTER_FRAME = Math.round(52.5 * FPS); // Frame at t=52.5s (Brand Logo & Wordmark)
 
 async function getWsUrl(port) {
   for (let i = 0; i < 40; i++) {

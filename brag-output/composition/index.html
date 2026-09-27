@@ -91,7 +91,6 @@
     color: rgba(28, 25, 23, 0.45);
     white-space: nowrap;
     pointer-events: none;
-    transition: transform 0.1s linear;
   }
 
   .token-orange { color: #EA580C; font-weight: 600; }
@@ -620,7 +619,6 @@
     width: 100%;
     border-radius: 4px 4px 0 0;
     background: linear-gradient(180deg, var(--accent-orange) 0%, rgba(255, 87, 34, 0.25) 100%);
-    transition: height 0.05s linear;
   }
 
   .freq-bar-label {
@@ -1128,7 +1126,8 @@
 
   .hardware-3d-model {
     width: 680px;
-    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
     transform-origin: center center;
   }
 
@@ -1360,8 +1359,10 @@
     inset: 0;
     background: #090D14;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 40px;
     z-index: 40;
     opacity: 0;
   }
@@ -1401,15 +1402,13 @@
   }
 
   .publish-pill-btn {
-    position: absolute;
-    bottom: 120px;
     background: #1C1917;
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: #FFFFFF;
     font-size: 18px;
     font-weight: 700;
-    padding: 12px 32px;
-    border-radius: 12px;
+    padding: 14px 36px;
+    border-radius: 999px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
 
@@ -1695,9 +1694,9 @@
   <section id="scene1" class="scene">
     <!-- Floating tokens scattered in negative space (reinterpreting ref2 frame 2) -->
     <div id="tok1" class="code-token token-orange" style="top: 140px; left: 240px;">const stack = await curate();</div>
-    <div id="tok2" class="code-token" style="top: 220px; right: 280px;"><span class="token-ring"></span> client_id="iwritetech-lab"</div>
+    <div id="tok2" class="code-token" style="top: 180px; right: 220px;"><span class="token-ring"></span> client_id="iwritetech-lab"</div>
     <div id="tok3" class="code-token" style="top: 320px; left: 160px;"><span class="token-pink"></span> lumens: 420;</div>
-    <div id="tok4" class="code-token token-blue" style="top: 280px; right: 460px;">switch: "Tactile 62g"</div>
+    <div id="tok4" class="code-token token-blue" style="top: 310px; right: 360px;">switch: "Tactile 62g"</div>
     <div id="tok5" class="code-token" style="top: 680px; left: 260px;">(gear, bench) =&gt; { <span class="token-dot"></span><span class="token-dot"></span></div>
     <div id="tok6" class="code-token token-green" style="top: 720px; right: 320px;">thock.profile();</div>
     <div id="tok7" class="code-token" style="top: 780px; left: 480px;"><span class="token-ring"></span> decibels: 48.2 dBA</div>
@@ -2247,7 +2246,7 @@
         <div class="outro-name">iWriteTech</div>
       </div>
       <div class="outro-tagline">The Definitive Standard for Desk Tech &amp; Workspaces.</div>
-      <div class="outro-cta-pill">
+      <div id="outroCtaBtn" class="outro-cta-pill">
         explore iwritetech.com
         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </div>
@@ -2309,15 +2308,15 @@
       scene1.style.display = 'flex';
 
       // Drift tokens softly across negative space
-      const drift = t * 14;
-      document.getElementById('tok1').style.transform = `translate(${drift * 0.8}px, ${-drift * 0.4}px)`;
-      document.getElementById('tok2').style.transform = `translate(${-drift * 0.6}px, ${drift * 0.3}px)`;
-      document.getElementById('tok3').style.transform = `translate(${drift * 0.5}px, ${drift * 0.6}px)`;
-      document.getElementById('tok4').style.transform = `translate(${-drift * 0.7}px, ${-drift * 0.5}px)`;
-      document.getElementById('tok5').style.transform = `translate(${drift * 0.4}px, ${-drift * 0.3}px)`;
-      document.getElementById('tok6').style.transform = `translate(${-drift * 0.5}px, ${drift * 0.4}px)`;
-      document.getElementById('tok7').style.transform = `translate(${drift * 0.6}px, ${drift * 0.2}px)`;
-      document.getElementById('tok8').style.transform = `translate(${-drift * 0.4}px, ${-drift * 0.4}px)`;
+      const drift = t * 12;
+      document.getElementById('tok1').style.transform = `translate(${drift * 0.7}px, ${-drift * 0.3}px)`;
+      document.getElementById('tok2').style.transform = `translate(${-drift * 0.5}px, ${drift * 0.2}px)`;
+      document.getElementById('tok3').style.transform = `translate(${drift * 0.4}px, ${drift * 0.5}px)`;
+      document.getElementById('tok4').style.transform = `translate(${-drift * 0.6}px, ${-drift * 0.4}px)`;
+      document.getElementById('tok5').style.transform = `translate(${drift * 0.3}px, ${-drift * 0.2}px)`;
+      document.getElementById('tok6').style.transform = `translate(${-drift * 0.4}px, ${drift * 0.3}px)`;
+      document.getElementById('tok7').style.transform = `translate(${drift * 0.5}px, ${drift * 0.2}px)`;
+      document.getElementById('tok8').style.transform = `translate(${-drift * 0.3}px, ${-drift * 0.3}px)`;
 
       const h1 = document.getElementById('s1Headline1');
       const h2 = document.getElementById('s1Headline2');
@@ -2373,7 +2372,6 @@
       const heroImg = document.getElementById('heroMediaImg');
 
       // Entrance dolly-in
-      const entryProg = clamp((t - 6.5) / 1.2, 0, 1);
       const spCard = spring(t, 6.5, 1.4, 3.0, 4.8);
       const scale = lerp(0.88, 1.0, spCard);
       const rotX = lerp(8, 0, spCard);
@@ -2428,7 +2426,6 @@
 
       const blur1 = document.getElementById('pillBlur1');
       const blur2 = document.getElementById('pillBlur2');
-      const blur3 = document.getElementById('pillBlur3');
 
       if (t < 17.0) {
         // Snapping Pill Animation
@@ -2450,9 +2447,8 @@
 
         // Left and Right pills fly in and snap together
         const spLeft = spring(t, 14.8, 0.8, 4.0, 6.0);
-        const spRight = spring(t, 14.8, 0.8, 4.0, 6.0);
         pillLeft.style.transform = `translateX(${lerp(-180, 0, spLeft)}px)`;
-        pillRight.style.transform = `translateX(${lerp(180, 0, spRight)}px)`;
+        pillRight.style.transform = `translateX(${lerp(180, 0, spLeft)}px)`;
         pillIcon.style.transform = `scale(${lerp(0.2, 1.0, spLeft)})`;
 
         pillStage.style.opacity = smoothstep(14.7, 15.0, t);
@@ -2642,7 +2638,7 @@
       const scanLine = document.getElementById('thermalScanLine');
       const diagCard = document.getElementById('diagCard');
       const secGrid = document.getElementById('secMatrixGrid');
-      const thermalBtn = document.getElementById('thermalBtn');
+      const pubBtn = document.getElementById('publishBtn');
 
       if (t < 39.2) {
         secGrid.style.opacity = '0';
@@ -2685,10 +2681,9 @@
           sh.style.opacity = smoothstep(delay, delay + 0.1, t);
         });
 
-        const pubBtn = document.getElementById('publishBtn');
-        const spPub = spring(t, 40.5, 0.8, 3.5, 5.0);
+        const spPub = spring(t, 40.2, 0.8, 3.5, 5.0);
         pubBtn.style.transform = `scale(${lerp(0.85, 1, spPub)})`;
-        pubBtn.style.opacity = smoothstep(40.5, 40.8, t);
+        pubBtn.style.opacity = smoothstep(40.2, 40.6, t);
       }
 
       // Exit transition
@@ -2735,6 +2730,7 @@
 
       const punchline = document.getElementById('outroPunchline');
       const brand = document.getElementById('outroBrand');
+      const ctaBtn = document.getElementById('outroCtaBtn');
 
       if (t < 48.0) {
         punchline.style.display = 'block';
@@ -2750,6 +2746,11 @@
         const spB = spring(t, 48.0, 1.2, 3.2, 4.8);
         brand.style.opacity = smoothstep(48.0, 48.4, t);
         brand.style.transform = `scale(${lerp(0.88, 1.0, spB)})`;
+
+        if (t >= 48.8) {
+          const breathe = Math.sin((t - 48.8) * 3) * 0.02;
+          ctaBtn.style.transform = `scale(${1 + breathe})`;
+        }
       }
     } else {
       scene8.style.opacity = '0';

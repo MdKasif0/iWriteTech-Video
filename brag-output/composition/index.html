@@ -2,41 +2,41 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1920, height=1080">
-<title>iWriteTech — Official Launch Film</title>
+<meta name="viewport" content="width=1920, height=1080, initial-scale=1.0">
+<title>iWriteTech — Official Launch Film (Code-Rendered Edition)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
 
+<style>
   :root {
-    --bg-light: #F8F9FA;
-    --bg-subtle: #F1F3F5;
-    --surface-white: #FFFFFF;
-    --border-subtle: rgba(0, 0, 0, 0.07);
-    --border-hairline: rgba(0, 0, 0, 0.05);
-    --text-primary: #0F172A;
-    --text-secondary: #475569;
-    --text-muted: #94A3B8;
-    --accent-blue: #2563EB;
-    --accent-blue-light: #EFF6FF;
-    --accent-orange: #FF5E36;
-    --accent-orange-light: #FFF7ED;
-    --accent-green: #10B981;
-    --accent-green-light: #ECFDF5;
-    --accent-amber: #F59E0B;
-    --accent-amber-light: #FEF3C7;
-    --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
-    --shadow-elevated: 0 30px 90px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.03);
+    --bg-dark: #07080A;
+    --bg-card: #0F1217;
+    --bg-card-border: rgba(255, 255, 255, 0.08);
+    --amber-primary: #FF5E36;
+    --amber-glow: #FFA048;
+    --amber-dim: rgba(255, 94, 54, 0.2);
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --emerald-lab: #10B981;
+    --blue-accent: #2563EB;
+    --paper-bg: #F5F1E8;
+    --paper-ink: #1E293B;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
   body {
     width: 1920px;
     height: 1080px;
     overflow: hidden;
-    background-color: var(--bg-light);
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
     color: var(--text-primary);
     user-select: none;
     -webkit-font-smoothing: antialiased;
@@ -49,19 +49,31 @@
     width: 1920px;
     height: 1080px;
     overflow: hidden;
-    background: radial-gradient(circle at 50% 40%, #FFFFFF 0%, #F8F9FA 70%, #F1F3F5 100%);
+    background: radial-gradient(ellipse at 50% 50%, #11141B 0%, #07080A 100%);
   }
 
-  /* Refined Global Dot Grid */
+  /* Global Technical Space Grid */
   .grid-pattern {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1.5px, transparent 1.5px);
-    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
     pointer-events: none;
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
+  /* Vignette & CRT Scanline Emulation */
+  .vignette-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 40%, rgba(7, 8, 10, 0.85) 100%);
+    pointer-events: none;
+    z-index: 900;
+  }
+
+  /* Universal Scene Container */
   .scene {
     position: absolute;
     inset: 0;
@@ -75,7 +87,7 @@
     transform-origin: center center;
   }
 
-  /* Universal Cursors */
+  /* Interactive Mouse Cursor */
   .cursor-wrap {
     position: absolute;
     display: flex;
@@ -84,779 +96,1117 @@
     z-index: 9999;
     pointer-events: none;
     opacity: 0;
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.18));
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.5));
   }
 
   .cursor-pill {
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 8px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: #FFFFFF;
     white-space: nowrap;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Global Spark & Embers */
+  .spark-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 
+      0 0 10px 4px #FF7A45,
+      0 0 25px 8px #FF5E36,
+      0 0 50px 15px rgba(255, 94, 54, 0.5);
+    z-index: 100;
   }
 
   /* =========================================================================
-     SCENE 1: MACRO HARDWARE & 3D PHONE CHAT REVEAL (0.0s – 7.5s)
+     SCENE 1: SPARK OF SANCTUARY & WIREFRAME (0.0s – 10.0s)
      ========================================================================= */
   #scene1 {
-    overflow: hidden;
-  }
-
-  .scene1-macro-view {
-    position: absolute;
-    width: 1920px;
-    height: 1080px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .scene1-macro-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(1.02) contrast(1.02);
-    transform-origin: 30% 40%;
-  }
-
-  /* 3D Phone Mockup */
-  .scene1-phone-container {
     position: absolute;
-    width: 440px;
-    height: 880px;
-    background: #FFFFFF;
-    border-radius: 54px;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.12), 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 10px solid #1E293B;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    z-index: 10;
-    transform-origin: center center;
-    transform: translateY(40px) scale(0.9);
-    opacity: 0;
+    inset: 0;
   }
 
-  .phone-notch-area {
-    height: 48px;
+  .scene1-layout {
+    width: 1600px;
+    height: 860px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 32px;
-    background: #FFFFFF;
+    position: relative;
   }
 
-  .phone-time {
+  .scene1-code-panel {
+    width: 480px;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 14px;
-    font-weight: 700;
-    color: #0F172A;
+    line-height: 1.8;
+    color: #475569;
+    background: rgba(15, 18, 23, 0.6);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 16px;
+    padding: 28px;
+    backdrop-filter: blur(10px);
   }
 
-  .phone-island {
-    width: 110px;
-    height: 28px;
-    border-radius: 20px;
-    background: #000000;
+  .scene1-code-panel .code-active {
+    color: var(--amber-glow);
   }
 
-  .phone-chat-body {
-    flex: 1;
-    padding: 24px 20px;
+  .scene1-center-stage {
+    position: relative;
+    width: 900px;
+    height: 700px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    background: #FFFFFF;
-  }
-
-  .chat-contact-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-  }
-
-  .contact-avatar {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: #0F172A;
-    color: #FFFFFF;
-    display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 800;
-    font-size: 18px;
   }
 
-  .contact-name {
-    font-size: 15px;
-    font-weight: 700;
-    color: #0F172A;
-  }
-
-  .chat-msg {
-    max-width: 85%;
-    padding: 14px 18px;
-    border-radius: 20px;
-    font-size: 15px;
-    line-height: 1.45;
-    position: relative;
-    opacity: 0;
-    transform: translateY(15px);
-  }
-
-  .msg-incoming {
-    background: #F1F5F9;
-    color: #1E293B;
-    align-self: flex-start;
-    border-bottom-left-radius: 6px;
-  }
-
-  .msg-outgoing {
-    background: var(--accent-blue);
-    color: #FFFFFF;
-    align-self: flex-end;
-    border-bottom-right-radius: 6px;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-  }
-
-  .chat-embed-photo {
-    width: 100%;
-    height: 160px;
-    border-radius: 14px;
-    object-fit: cover;
-    margin-top: 10px;
-  }
-
-  /* Parallax Floating Cards Bursting from Phone */
-  .burst-card {
+  .scene1-wireframe-svg {
     position: absolute;
-    border-radius: 20px;
-    background: #FFFFFF;
-    padding: 12px;
-    box-shadow: var(--shadow-elevated);
-    border: 1px solid var(--border-subtle);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    z-index: 15;
-    opacity: 0;
+    width: 800px;
+    height: 500px;
   }
 
-  .burst-card img {
-    width: 90px;
-    height: 70px;
-    border-radius: 12px;
-    object-fit: cover;
-  }
-
-  .burst-card-text {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .burst-title {
-    font-size: 14px;
+  .scene1-lyric-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 42px;
     font-weight: 700;
-    color: #0F172A;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 10;
   }
 
-  .burst-tag {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--accent-blue);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .scene1-lyric-sanctuary {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 160px;
+    font-weight: 900;
+    color: var(--amber-primary);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-shadow: 0 0 60px rgba(255, 94, 54, 0.4);
+    position: relative;
+    z-index: 10;
   }
 
   /* =========================================================================
-     SCENE 2: 3D HARDWARE SPECIMEN VIEWPORT (7.5s – 16.0s)
+     SCENE 2: ACOUSTIC GRADIENT DESCENT VORTEX (10.0s – 22.0s)
      ========================================================================= */
   #scene2 {
-    overflow: hidden;
+    perspective: 1200px;
   }
 
-  .scene2-app-frame {
+  .scene2-stage {
     position: relative;
-    width: 1500px;
-    height: 840px;
-    background: #FFFFFF;
-    border-radius: 32px;
-    box-shadow: var(--shadow-elevated);
-    border: 1px solid var(--border-subtle);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  .frame-titlebar {
-    height: 60px;
-    padding: 0 28px;
+    width: 1400px;
+    height: 800px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--border-hairline);
-    background: #FAFAFA;
+    justify-content: center;
+    transform: rotateX(24deg) rotateZ(-6deg);
   }
 
-  .titlebar-dots {
-    display: flex;
-    gap: 8px;
-  }
-
-  .titlebar-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-
-  .frame-body {
-    flex: 1;
-    display: flex;
-    position: relative;
-    background: #FFFFFF;
-  }
-
-  /* Left Sidebar Inspector */
-  .frame-left-panel {
-    width: 400px;
-    padding: 40px 36px;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    border-right: 1px solid var(--border-hairline);
-    background: #FFFFFF;
-    z-index: 5;
-  }
-
-  .frame-hero-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 38px;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: #0F172A;
-    line-height: 1.1;
-  }
-
-  .curated-pill-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .curated-pill {
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    background: #F1F5F9;
-    color: #475569;
-  }
-
-  .curated-pill.active {
-    background: #0F172A;
-    color: #FFFFFF;
-  }
-
-  .telemetry-row {
-    display: flex;
-    gap: 16px;
-    padding: 18px;
-    background: #F8FAFC;
-    border-radius: 18px;
-    border: 1px solid var(--border-hairline);
-  }
-
-  .telemetry-cell {
-    flex: 1;
-  }
-
-  .telemetry-number {
-    font-size: 28px;
-    font-weight: 800;
-    color: #0F172A;
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: -0.02em;
-  }
-
-  .telemetry-desc {
-    font-size: 11px;
-    font-weight: 600;
-    color: #64748B;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 4px;
-  }
-
-  .frame-btn-dark {
-    margin-top: auto;
-    background: #0F172A;
-    color: #FFFFFF;
-    padding: 18px 24px;
-    border-radius: 16px;
-    font-size: 14px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
-  }
-
-  /* Right Viewport with High-Res Setup */
-  .frame-right-viewport {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .frame-viewport-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Floating Waypoint Chips */
-  .waypoint-chip {
+  .scene2-vortex-svg {
     position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 18px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(16px);
-    border-radius: 30px;
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.09);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    font-size: 13px;
-    font-weight: 700;
-    color: #0F172A;
-    z-index: 10;
+    width: 1200px;
+    height: 800px;
   }
 
-  .chip-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
-
-  /* =========================================================================
-     SCENE 3: SWISS EDITORIAL GRID & ARCHITECTURAL DISSECTION (16.0s – 25.0s)
-     ========================================================================= */
-  #scene3 {
-    overflow: hidden;
-  }
-
-  .scene3-swiss-artboard {
-    position: relative;
-    width: 1540px;
-    height: 860px;
-    background: #FFFFFF;
-    border-radius: 32px;
-    border: 1px solid var(--border-subtle);
-    box-shadow: var(--shadow-elevated);
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    overflow: hidden;
-  }
-
-  /* Left Editorial Typography Section */
-  .scene3-left-editorial {
-    padding: 60px 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-right: 1px solid var(--border-hairline);
-    position: relative;
-  }
-
-  .editorial-tag {
+  .scene2-hud-tag {
+    position: absolute;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--accent-orange);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .editorial-headline {
-    font-family: 'Literata', serif;
-    font-size: 64px;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: #0F172A;
-    line-height: 1.05;
-  }
-
-  .editorial-statement {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #475569;
-    max-width: 540px;
-  }
-
-  .editorial-badge-row {
-    display: flex;
-    gap: 16px;
-  }
-
-  .verified-badge-light {
-    padding: 12px 20px;
-    border-radius: 14px;
-    background: #F8FAFC;
-    border: 1px solid var(--border-hairline);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #0F172A;
-  }
-
-  /* Right Dissection Showcase */
-  .scene3-right-dissection {
-    position: relative;
-    padding: 40px;
-    background: #FAFAFA;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .dissection-card {
-    flex: 1;
-    background: #FFFFFF;
-    border-radius: 20px;
-    border: 1px solid var(--border-subtle);
-    box-shadow: var(--shadow-soft);
-    display: flex;
-    align-items: center;
-    padding: 20px 24px;
-    gap: 24px;
-  }
-
-  .dissection-img {
-    width: 140px;
-    height: 100px;
-    border-radius: 14px;
-    object-fit: cover;
-  }
-
-  .dissection-info {
-    flex: 1;
-  }
-
-  .dissection-label {
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 12px;
     color: #94A3B8;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    background: rgba(15, 23, 42, 0.8);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
   }
 
-  .dissection-name {
-    font-size: 20px;
-    font-weight: 700;
-    color: #0F172A;
-    margin-top: 2px;
+  .scene2-center-label {
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
   }
 
-  .dissection-spec {
+  .scene2-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 0.05em;
+  }
+
+  .scene2-badge {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    color: var(--accent-blue);
-    font-weight: 600;
+    font-size: 14px;
+    color: var(--amber-primary);
+    font-weight: 700;
     margin-top: 6px;
   }
 
   /* =========================================================================
-     SCENE 4: COLLABORATIVE HARDWARE LAB & SPECTROGRAM (25.0s – 35.0s)
+     SCENE 3: RADIAL LIGHT BLOOM & DENDRITIC TREE (22.0s – 28.0s)
      ========================================================================= */
-  #scene4 {
-    overflow: hidden;
+  #scene3 {
+    position: absolute;
+    inset: 0;
   }
 
-  .scene4-lab-artboard {
-    position: relative;
-    width: 1540px;
-    height: 860px;
+  .scene3-bloom {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    background: radial-gradient(circle at center, #FF7A45 0%, #FF5E36 30%, transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  .scene3-layout {
+    width: 1500px;
+    height: 800px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 32px;
-  }
-
-  /* Left Config Card */
-  .scene4-card-left {
-    width: 440px;
-    background: #FFFFFF;
-    border-radius: 28px;
-    padding: 36px;
-    box-shadow: var(--shadow-elevated);
-    border: 1px solid var(--border-subtle);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .code-block-light {
-    background: #F8FAFC;
-    border-radius: 16px;
-    padding: 18px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    color: #334155;
-    line-height: 1.6;
-    border: 1px solid var(--border-hairline);
-  }
-
-  /* Center Acoustic Curve Card */
-  .scene4-card-center {
-    width: 580px;
-    background: #FFFFFF;
-    border-radius: 28px;
-    padding: 36px;
-    box-shadow: var(--shadow-elevated);
-    border: 1px solid var(--border-subtle);
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    position: relative;
-  }
-
-  .spectrogram-svg {
-    width: 100%;
-    height: 180px;
-  }
-
-  /* Right Spec Sheet */
-  .scene4-card-right {
-    width: 420px;
-    background: #FFFFFF;
-    border-radius: 28px;
-    padding: 36px;
-    box-shadow: var(--shadow-elevated);
-    border: 1px solid var(--border-subtle);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .score-box-big {
-    padding: 24px;
-    background: #ECFDF5;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #A7F3D0;
-  }
-
-  .score-num {
-    font-size: 52px;
-    font-weight: 800;
-    color: #065F46;
-    font-family: 'Space Grotesk', sans-serif;
-  }
-
-  .score-lbl {
-    font-size: 12px;
-    font-weight: 700;
-    color: #047857;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  /* =========================================================================
-     SCENE 5: CIRCADIAN TELEMETRY & FLOW STATE WORKSPACE (35.0s – 40.5s)
-     ========================================================================= */
-  #scene5 {
-    overflow: hidden;
-  }
-
-  .scene5-flow-card {
-    position: relative;
-    width: 1140px;
-    background: #FFFFFF;
-    border-radius: 36px;
-    padding: 48px 56px;
-    box-shadow: var(--shadow-elevated);
-    border: 1px solid var(--border-subtle);
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .scene5-top-row {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-bottom: 28px;
-    border-bottom: 1px solid var(--border-hairline);
   }
 
-  .lux-readout {
+  .scene3-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .scene3-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .scene3-headline {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 72px;
-    font-weight: 700;
-    color: #0F172A;
+    font-size: 88px;
+    font-weight: 900;
+    color: #FFFFFF;
     line-height: 1;
     letter-spacing: -0.03em;
   }
 
-  .lux-desc {
-    font-size: 13px;
-    font-weight: 600;
-    color: #64748B;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-top: 8px;
+  .scene3-headline span {
+    color: var(--amber-primary);
   }
 
-  .stats-trio {
-    display: flex;
-    gap: 40px;
+  .scene3-tree-container {
+    position: relative;
+    width: 750px;
+    height: 650px;
   }
 
-  .trio-item {
+  .scene3-tree-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .scene3-counter-card {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: rgba(15, 18, 23, 0.85);
+    border: 1px solid var(--bg-card-border);
+    padding: 16px 24px;
+    border-radius: 14px;
     text-align: right;
   }
 
-  .trio-val {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 28px;
-    font-weight: 700;
-    color: #0F172A;
+  .scene3-counter-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--amber-glow);
+    line-height: 1;
   }
 
-  .trio-lbl {
+  .scene3-counter-lbl {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    font-weight: 600;
-    color: #94A3B8;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 4px;
-  }
-
-  .schedule-week-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 16px;
-    padding: 24px;
-    background: #F8FAFC;
-    border-radius: 20px;
-    border: 1px solid var(--border-hairline);
-  }
-
-  .week-cell {
-    text-align: center;
-  }
-
-  .week-day {
-    font-size: 12px;
-    font-weight: 700;
     color: #64748B;
-  }
-
-  .week-hours {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 16px;
-    font-weight: 700;
-    color: #0F172A;
-    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 6px;
   }
 
   /* =========================================================================
-     SCENE 6: CLIMAX BRAND REVEAL & PUNCHLINE (40.5s – 46.06s)
+     SCENE 4: AFFILIATE NOISE VS CURATION MASK (28.0s – 40.0s)
      ========================================================================= */
-  #scene6 {
-    flex-direction: column;
-    gap: 24px;
-    overflow: hidden;
+  #scene4 {
+    position: absolute;
+    inset: 0;
   }
 
-  .scene6-brand-lockup {
+  .scene4-container {
+    position: relative;
+    width: 1400px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scene4-mesh-svg {
+    position: absolute;
+    width: 800px;
+    height: 600px;
+  }
+
+  .scene4-curation-mask {
+    position: absolute;
+    right: 320px;
+    top: 140px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    opacity: 0;
+    justify-content: center;
+    z-index: 20;
+    color: #0F172A;
+    text-align: center;
+    padding: 20px;
   }
 
-  .scene6-emblem-large {
-    width: 80px;
+  .mask-smiley {
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .mask-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #475569;
+  }
+
+  .scene4-title-wrap {
+    position: absolute;
+    left: 280px;
+    bottom: 220px;
+    z-index: 30;
+  }
+
+  .scene4-noise-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 96px;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+  }
+
+  .scene4-noise-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: var(--amber-primary);
+    letter-spacing: -0.02em;
+    background: repeating-linear-gradient(45deg, #FF5E36, #FF5E36 4px, #FFA048 4px, #FFA048 8px);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* =========================================================================
+     SCENE 5: SPACETIME GRID & GRAVITATIONAL CORE (40.0s – 50.0s)
+     ========================================================================= */
+  #scene5 {
+    position: absolute;
+    inset: 0;
+  }
+
+  .scene5-grid-svg {
+    position: absolute;
+    width: 1600px;
+    height: 900px;
+  }
+
+  .scene5-core {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #000000 60%, #1E120A 100%);
+    box-shadow: 
+      0 0 0 4px rgba(255, 94, 54, 0.4),
+      0 0 40px 10px rgba(255, 94, 54, 0.6),
+      0 0 100px 30px rgba(255, 122, 69, 0.3);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scene5-orbit-text {
+    position: absolute;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    transform-origin: center center;
+    z-index: 25;
+  }
+
+  /* =========================================================================
+     SCENE 6: 3D LASER PATH & MECHANICAL SWITCH (50.0s – 60.0s)
+     ========================================================================= */
+  #scene6 {
+    position: absolute;
+    inset: 0;
+  }
+
+  .scene6-stage {
+    position: relative;
+    width: 1400px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scene6-switch-svg {
+    position: absolute;
+    width: 900px;
+    height: 600px;
+  }
+
+  .scene6-particle-text {
+    position: absolute;
+    bottom: 160px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 48px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 20px var(--amber-glow);
+  }
+
+  /* =========================================================================
+     SCENE 7: ACOUSTIC DAMPENING CHAMBER (60.0s – 70.0s)
+     ========================================================================= */
+  #scene7 {
+    position: absolute;
+    inset: 0;
+  }
+
+  .scene7-stage {
+    position: relative;
+    width: 1400px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scene7-voronoi-svg {
+    position: absolute;
+    width: 1200px;
+    height: 700px;
+    opacity: 0.75;
+  }
+
+  .scene7-eye-capsule {
+    position: relative;
+    width: 600px;
+    height: 280px;
+    border-radius: 140px;
+    background: radial-gradient(circle at center, #1E293B 0%, #0F172A 70%, #020617 100%);
+    border: 2px solid var(--amber-primary);
+    box-shadow: 0 0 80px rgba(255, 94, 54, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  .scene7-waveform {
+    width: 480px;
+    height: 120px;
+  }
+
+  .scene7-title {
+    position: absolute;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    z-index: 15;
+    text-shadow: 0 0 15px rgba(0,0,0,0.9);
+  }
+
+  .scene7-title span {
+    color: var(--amber-primary);
+  }
+
+  /* =========================================================================
+     SCENE 8: FORM 01-B OFFICIAL CERTIFICATION SHEET (70.0s – 82.0s)
+     ========================================================================= */
+  #scene8 {
+    position: absolute;
+    inset: 0;
+  }
+
+  .form-sheet {
+    width: 1140px;
+    background: var(--paper-bg);
+    border-radius: 20px;
+    padding: 48px 64px;
+    color: var(--paper-ink);
+    font-family: 'Courier Prime', monospace;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.7);
+    border: 1px solid #D6D0C4;
+    position: relative;
+    transform-origin: center center;
+  }
+
+  .form-binder-holes {
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .binder-hole {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #07080A;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6);
+  }
+
+  .form-header-bar {
+    background: #111827;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+  }
+
+  .form-title-big {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+
+  .form-sub-right {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #9CA3AF;
+  }
+
+  .form-row {
+    margin-bottom: 24px;
+    line-height: 1.6;
+    font-size: 18px;
+  }
+
+  .form-label {
+    font-weight: 700;
+    font-size: 14px;
+    color: #4B5563;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .form-fill-line {
+    font-size: 24px;
+    font-weight: 700;
+    border-bottom: 1.5px solid #94A3B8;
+    padding-bottom: 4px;
+    color: #0F172A;
+  }
+
+  /* Red Rubber Stamp */
+  .rubber-stamp {
+    position: absolute;
+    right: 80px;
+    bottom: 50px;
+    border: 5px solid #DC2626;
+    border-radius: 12px;
+    padding: 14px 28px;
+    color: #DC2626;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transform: rotate(-10deg) scale(1);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+    opacity: 0;
+    mask-image: radial-gradient(circle, black 70%, transparent 100%);
+  }
+
+  .rubber-stamp-sub {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-top: 4px;
+    text-align: center;
+  }
+
+  /* =========================================================================
+     SCENE 9: REVIEW SCHEDULE GANTT LASER TIMELINE (82.0s – 94.0s)
+     ========================================================================= */
+  #scene9 {
+    position: absolute;
+    inset: 0;
+  }
+
+  .scene9-container {
+    width: 1440px;
+    height: 700px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .scene9-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: #94A3B8;
+    letter-spacing: 0.1em;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 14px;
+  }
+
+  .scene9-lyrics {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    margin-bottom: 60px;
+  }
+
+  .scene9-lyrics span {
+    color: var(--amber-primary);
+  }
+
+  .gantt-track {
+    position: relative;
+    width: 100%;
     height: 80px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+
+  .milestone-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .milestone-diamond {
+    width: 32px;
+    height: 32px;
+    transform: rotate(45deg);
+    border: 2px solid #64748B;
     background: #0F172A;
-    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .milestone-diamond.passed {
+    border-color: var(--amber-primary);
+    background: var(--amber-dim);
+  }
+
+  .milestone-check {
+    transform: rotate(-45deg);
+    color: var(--amber-glow);
+    font-weight: 900;
+    font-size: 14px;
+  }
+
+  .milestone-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: #CBD5E1;
+    letter-spacing: 0.05em;
+  }
+
+  .gantt-laser-scrubber {
+    position: absolute;
+    top: -40px;
+    bottom: -40px;
+    width: 2px;
+    background: #FF5E36;
+    box-shadow: 0 0 16px 2px #FF5E36;
+    z-index: 20;
+    left: 100px;
+  }
+
+  /* =========================================================================
+     SCENE 10: 3D CHROME ARTISAN SPECIMEN (94.0s – 100.0s)
+     ========================================================================= */
+  #scene10 {
+    position: absolute;
+    inset: 0;
+  }
+
+  .scene10-title {
+    position: absolute;
+    top: 120px;
+    left: 200px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #94A3B8;
+  }
+
+  .scene10-title span {
+    color: var(--amber-primary);
+  }
+
+  .scene10-chrome-object {
+    position: relative;
+    width: 600px;
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* =========================================================================
+     SCENE 11: THE BURNING FUSE ALONG 3D CABLE (100.0s – 110.0s)
+     ========================================================================= */
+  #scene11 {
+    position: absolute;
+    inset: 0;
+  }
+
+  .scene11-fuse-svg {
+    position: absolute;
+    width: 1600px;
+    height: 700px;
+  }
+
+  .scene11-kinetic-text {
+    position: absolute;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+  }
+
+  .scene11-kinetic-text .highlight {
+    color: var(--amber-primary);
+    text-shadow: 0 0 20px rgba(255, 94, 54, 0.8);
+  }
+
+  /* =========================================================================
+     SCENE 12: 3D EXPLODED ARCHITECTURE STACK (110.0s – 120.0s)
+     ========================================================================= */
+  #scene12 {
+    position: absolute;
+    inset: 0;
+    perspective: 1400px;
+  }
+
+  .scene12-stage {
+    position: relative;
+    width: 1400px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateX(28deg) rotateZ(-12deg);
+  }
+
+  .exploded-stack {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .stack-layer {
+    width: 580px;
+    height: 64px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1.5px solid var(--bg-card-border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: #E2E8F0;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transform-origin: center center;
+  }
+
+  .stack-layer .layer-tag {
+    color: var(--amber-glow);
+  }
+
+  .scene12-huge-title {
+    position: absolute;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 130px;
+    font-weight: 900;
+    color: var(--amber-primary);
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    transform: rotateX(-12deg) rotateY(18deg);
+    z-index: 40;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+  }
+
+  /* =========================================================================
+     SCENE 13: CIRCADIAN HORIZON & TELEMETRY (120.0s – 130.0s)
+     ========================================================================= */
+  #scene13 {
+    position: absolute;
+    inset: 0;
+  }
+
+  .scene13-stage {
+    width: 1400px;
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .scene13-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .scene13-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 96px;
+    font-weight: 900;
+    color: var(--amber-primary);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+  }
+
+  .scene13-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+  }
+
+  .scene13-telemetry-box {
+    background: rgba(15, 18, 23, 0.7);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 16px;
+    padding: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: #94A3B8;
+    line-height: 1.8;
+  }
+
+  .scene13-telemetry-box .val-highlight {
+    font-size: 36px;
+    font-weight: 800;
+    color: #FFFFFF;
+    display: block;
+    margin-top: 4px;
+  }
+
+  .scene13-horizon-gauge {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .horizon-line {
+    position: absolute;
+    width: 500px;
+    height: 2px;
+    background: var(--amber-primary);
+    box-shadow: 0 0 12px var(--amber-primary);
+    transform: rotate(6.4deg);
+  }
+
+  /* =========================================================================
+     SCENE 14: VOLUMETRIC STUDIO DISPLAY IN DARKROOM (130.0s – 140.0s)
+     ========================================================================= */
+  #scene14 {
+    position: absolute;
+    inset: 0;
+  }
+
+  .scene14-stage {
+    position: relative;
+    width: 1400px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scene14-question {
+    font-family: 'Courier Prime', monospace;
+    font-size: 36px;
+    font-style: italic;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  }
+
+  .scene14-question span {
+    color: var(--amber-primary);
+  }
+
+  .volumetric-cone {
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, transparent 90%);
+    clip-path: polygon(45% 0%, 55% 0%, 90% 100%, 10% 100%);
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .studio-display-glow-mock {
+    width: 640px;
+    height: 380px;
+    background: #000000;
+    border-radius: 18px;
+    border: 8px solid #1E293B;
+    box-shadow: 
+      0 0 60px 10px rgba(255, 255, 255, 0.15),
+      0 20px 60px rgba(0, 0, 0, 0.9);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  .display-inner-content {
+    text-align: center;
+  }
+
+  .display-redacted-badge {
+    background: rgba(220, 38, 38, 0.15);
+    border: 2px solid #EF4444;
+    color: #EF4444;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+  }
+
+  /* =========================================================================
+     SCENE 15: CLIMAX SCORE COUNTDOWN (140.0s – 150.0s)
+     ========================================================================= */
+  #scene15 {
+    position: absolute;
+    inset: 0;
+  }
+
+  .scene15-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .scene15-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--amber-primary);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .scene15-counter {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 240px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    text-shadow: 0 0 80px rgba(255, 255, 255, 0.4);
+  }
+
+  .scene15-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: #64748B;
+    letter-spacing: 0.1em;
+  }
+
+  /* =========================================================================
+     SCENE 16: CLIMAX BRAND EMBLEM & BUTTON CLICK (150.0s – 156.76s)
+     ========================================================================= */
+  #scene16 {
+    position: absolute;
+    inset: 0;
+  }
+
+  .scene16-brand-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    transform-origin: center center;
+  }
+
+  .brand-squircle-large {
+    width: 96px;
+    height: 96px;
+    border-radius: 26px;
+    background: #0F172A;
+    border: 2px solid rgba(255, 255, 255, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
   }
 
-  .emblem-square {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    border: 3.5px solid #FFFFFF;
+  .squircle-inner-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 4px solid #FFFFFF;
     position: relative;
   }
 
-  .emblem-amber-dot {
+  .squircle-amber-dot {
     position: absolute;
-    bottom: -3px;
-    right: -3px;
-    width: 10px;
-    height: 10px;
+    bottom: -4px;
+    right: -4px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: #FF5E36;
-    box-shadow: 0 0 10px rgba(255, 94, 54, 0.8);
+    box-shadow: 0 0 16px 4px #FF5E36;
   }
 
-  .scene6-wordmark {
-    font-size: 64px;
+  .brand-wordmark-huge {
+    font-family: 'Outfit', sans-serif;
+    font-size: 84px;
     font-weight: 800;
+    color: #FFFFFF;
     letter-spacing: -0.04em;
-    color: #0F172A;
     line-height: 1;
   }
 
-  .scene6-tagline {
-    font-size: 20px;
+  .brand-tagline-sub {
+    font-size: 22px;
     font-weight: 500;
-    color: #64748B;
+    color: #94A3B8;
     letter-spacing: -0.01em;
   }
 
-  .scene6-cta-pill {
-    padding: 14px 32px;
+  /* Interactive Button Pill */
+  .interactive-cta-btn {
+    margin-top: 16px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
     border-radius: 40px;
-    background: #0F172A;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 700;
+    padding: 16px 36px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+    gap: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
   }
 
-  /* Final Punchline */
-  .scene6-punchline {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 76px;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+  .interactive-cta-btn.clicked {
+    background: #FFFFFF;
     color: #0F172A;
-    position: absolute;
-    opacity: 0;
-    text-align: center;
+    border-color: #FFFFFF;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.7);
+  }
+
+  .btn-verified-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #64748B;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 6px;
   }
 </style>
 </head>
@@ -864,379 +1214,469 @@
 
 <div id="viewport">
   <div class="grid-pattern"></div>
+  <div class="vignette-overlay"></div>
 
-  <!-- Collaborative Cursors -->
-  <div class="cursor-wrap" id="cursor-marcus">
+  <!-- Dynamic Global Cursors -->
+  <div class="cursor-wrap" id="cursor-main">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <path d="M5.5 3.2L18.5 12.8L12.5 13.9L15.8 20.8L13 22L9.8 15.2L5.5 19.5V3.2Z" fill="#0F172A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M5.5 3.2L18.5 12.8L12.5 13.9L15.8 20.8L13 22L9.8 15.2L5.5 19.5V3.2Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"/>
     </svg>
-    <div class="cursor-pill" style="background: #0F172A;">Marcus · Hardware</div>
-  </div>
-
-  <div class="cursor-wrap" id="cursor-elena">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <path d="M5.5 3.2L18.5 12.8L12.5 13.9L15.8 20.8L13 22L9.8 15.2L5.5 19.5V3.2Z" fill="#2563EB" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
-    </svg>
-    <div class="cursor-pill" style="background: #2563EB;">Elena · Ergonomics</div>
+    <div class="cursor-pill" style="background: var(--amber-primary);">iWriteTech · Verified</div>
   </div>
 
   <!-- =====================================================================
-       SCENE 1: MACRO HARDWARE & 3D PHONE CHAT REVEAL (0.0s – 7.5s)
+       SCENE 1: SPARK OF SANCTUARY & WIREFRAME (0.0s – 10.0s)
        ===================================================================== -->
   <div class="scene" id="scene1">
-    <div class="scene1-macro-view" id="scene1-macro">
-      <img src="images/keyboard-hero.png" class="scene1-macro-img" alt="Chassis Macro">
-    </div>
-
-    <!-- 3D Phone Mockup -->
-    <div class="scene1-phone-container" id="scene1-phone">
-      <div class="phone-notch-area">
-        <div class="phone-time">9:41</div>
-        <div class="phone-island"></div>
-        <div style="font-size: 13px; font-weight: 700; color: #0F172A;">5G</div>
+    <div class="scene1-layout">
+      <div class="scene1-code-panel">
+        <div>// iWriteTech Specification Lab</div>
+        <div>specimen: <span class="code-active">"Custom 65% CNC"</span></div>
+        <div>switch_actuation: <span class="code-active">62g Tactile</span></div>
+        <div>acoustic_chassis: <span class="code-active">6063 Aluminum</span></div>
+        <div>dampening_layer: <span class="code-active">Poron Gasket + FR4</span></div>
+        <div>resonance_target: <span class="code-active">42.8 dB (Thock)</span></div>
+        <div style="margin-top: 14px; color: #64748B;">// Initializing geometry verification...</div>
       </div>
 
-      <div class="phone-chat-body">
-        <div class="chat-contact-bar">
-          <div class="contact-avatar">iW</div>
-          <div class="contact-name">iWriteTech Curation Studio</div>
-          <div style="font-size: 12px; color: #10B981; font-weight: 600;">● Active Curation Team</div>
-        </div>
+      <div class="scene1-center-stage">
+        <svg class="scene1-wireframe-svg" viewBox="0 0 800 500" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5">
+          <!-- Wireframe keyboard perspective lines -->
+          <polygon points="120,380 680,380 760,200 200,200" stroke="#FF5E36" stroke-width="2"/>
+          <polygon points="120,380 120,430 680,430 680,380" stroke="rgba(255,255,255,0.3)"/>
+          <polygon points="680,430 760,250 760,200 680,380" stroke="rgba(255,255,255,0.2)"/>
+          <!-- Grid keycap wireframe lines -->
+          <line x1="200" y1="230" x2="745" y2="230" stroke="rgba(255,255,255,0.12)"/>
+          <line x1="180" y1="265" x2="730" y2="265" stroke="rgba(255,255,255,0.12)"/>
+          <line x1="160" y1="300" x2="715" y2="300" stroke="rgba(255,255,255,0.12)"/>
+          <line x1="140" y1="340" x2="700" y2="340" stroke="rgba(255,255,255,0.12)"/>
+          <!-- Spark emitter path -->
+          <path id="spark-guide" d="M 200 360 Q 300 260 480 320 T 700 220" stroke="rgba(255,94,54,0.3)" stroke-dasharray="4 4"/>
+        </svg>
 
-        <div class="chat-msg msg-incoming" id="chat-msg1">
-          Need the ultimate minimalist desk setup for 10-hour coding days... but Amazon is 90% affiliate trash 😭
-        </div>
+        <div class="spark-point" id="scene1-spark"></div>
 
-        <div class="chat-msg msg-outgoing" id="chat-msg2">
-          Say less. We tested 240+ setups by hand. Let's build your sanctuary ✦
-          <img src="images/desk-hero.jpg" class="chat-embed-photo" alt="Sanctuary Preview">
-        </div>
-      </div>
-    </div>
-
-    <!-- Parallax Burst Cards Around Phone -->
-    <div class="burst-card" id="burst1" style="left: 180px; top: 180px;">
-      <img src="images/keychron.png" alt="Keychron">
-      <div class="burst-card-text">
-        <div class="burst-title">Keychron Q1 Pro</div>
-        <div class="burst-tag">Acoustic Score: 9.8</div>
-      </div>
-    </div>
-
-    <div class="burst-card" id="burst2" style="right: 180px; top: 220px;">
-      <img src="images/walnut_stand.png" alt="Walnut Shelf">
-      <div class="burst-card-text">
-        <div class="burst-title">Solid Walnut Stand</div>
-        <div class="burst-tag">American Hardwood</div>
-      </div>
-    </div>
-
-    <div class="burst-card" id="burst3" style="left: 200px; bottom: 180px;">
-      <img src="images/light_bar.png" alt="ScreenBar">
-      <div class="burst-card-text">
-        <div class="burst-title">ScreenBar Halo</div>
-        <div class="burst-tag">0% Screen Glare</div>
-      </div>
-    </div>
-
-    <div class="burst-card" id="burst4" style="right: 200px; bottom: 200px;">
-      <img src="images/satechi_hub.png" alt="Thunderbolt Dock">
-      <div class="burst-card-text">
-        <div class="burst-title">Thunderbolt 4 Hub</div>
-        <div class="burst-tag">Single Cable Dock</div>
+        <div class="scene1-lyric-title" id="s1-lyric1">I see sparks of</div>
+        <div class="scene1-lyric-sanctuary" id="s1-lyric2">SANCTUARY</div>
       </div>
     </div>
   </div>
 
   <!-- =====================================================================
-       SCENE 2: 3D HARDWARE SPECIMEN VIEWPORT (7.5s – 16.0s)
+       SCENE 2: ACOUSTIC GRADIENT DESCENT VORTEX (10.0s – 22.0s)
        ===================================================================== -->
   <div class="scene" id="scene2">
-    <div class="scene2-app-frame" id="scene2-frame">
-      <div class="frame-titlebar">
-        <div class="titlebar-dots">
-          <div class="titlebar-dot" style="background: #FF5F56;"></div>
-          <div class="titlebar-dot" style="background: #FFBD2E;"></div>
-          <div class="titlebar-dot" style="background: #27C93F;"></div>
-        </div>
-        <div style="font-family: 'JetBrains Mono'; font-size: 13px; font-weight: 600; color: #475569;">
-          ✦ iWriteTech Blueprint :: Setup Specimen 01 · Minimalist Oak Edition
-        </div>
-        <div style="font-size: 13px; color: #94A3B8;">100% INDEPENDENT LAB</div>
-      </div>
+    <div class="scene2-stage">
+      <svg class="scene2-vortex-svg" viewBox="0 0 1200 800" fill="none">
+        <!-- Concentric contour ellipses descending into vortex -->
+        <ellipse cx="600" cy="400" rx="550" ry="340" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
+        <ellipse cx="600" cy="400" rx="460" ry="280" stroke="rgba(255,255,255,0.09)" stroke-width="1.5"/>
+        <ellipse cx="600" cy="400" rx="380" ry="230" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+        <ellipse cx="600" cy="400" rx="300" ry="180" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+        <ellipse cx="600" cy="400" rx="220" ry="130" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+        <ellipse cx="600" cy="400" rx="150" ry="85" stroke="rgba(255,94,54,0.4)" stroke-width="2"/>
+        <ellipse cx="600" cy="400" rx="80" ry="45" stroke="#FF5E36" stroke-width="2.5"/>
+        <!-- Descending optimization spiral -->
+        <path id="vortex-trajectory" d="M 120 400 Q 300 200 480 340 T 560 380 T 600 400" stroke="#FF7A45" stroke-width="3" fill="none"/>
+      </svg>
 
-      <div class="frame-body">
-        <div class="frame-left-panel">
-          <div class="frame-hero-title">Architect your<br>Sanctuary</div>
+      <div class="spark-point" id="scene2-spark"></div>
 
-          <div class="curated-pill-row">
-            <div class="curated-pill active">★ KEYBOARDS</div>
-            <div class="curated-pill">▲ STUDIO DISPLAYS</div>
-            <div class="curated-pill">• OAK SHELVES</div>
-            <div class="curated-pill">FELT MATS</div>
-          </div>
+      <div class="scene2-hud-tag" style="left: 180px; top: 220px;">1e-6 RESONANCE · MINIMAL DEFLECTION</div>
+      <div class="scene2-hud-tag" style="right: 200px; top: 280px;">ISO 3744 ANECHOIC LAB</div>
+      <div class="scene2-hud-tag" style="left: 280px; bottom: 180px;">ACOUSTIC DAMPENING: PORON</div>
 
-          <div class="telemetry-row">
-            <div class="telemetry-cell">
-              <div class="telemetry-number">$1,850</div>
-              <div class="telemetry-desc">Total Blueprint</div>
-            </div>
-            <div class="telemetry-cell">
-              <div class="telemetry-number">42.8 dB</div>
-              <div class="telemetry-desc">Deep Thock</div>
-            </div>
-          </div>
-
-          <div class="frame-btn-dark">
-            <span>EXPLORE FULL BLUEPRINT</span>
-            <span>➔</span>
-          </div>
-        </div>
-
-        <div class="frame-right-viewport">
-          <img src="images/hero-setup.png" class="frame-viewport-photo" alt="Curated Workspace">
-
-          <!-- Waypoint Chips -->
-          <div class="waypoint-chip" style="top: 35%; left: 25%;">
-            <div class="chip-dot" style="background: #2563EB;"></div>
-            <span>Mode Sonnet 75% Custom</span>
-          </div>
-
-          <div class="waypoint-chip" style="top: 20%; right: 28%;">
-            <div class="chip-dot" style="background: #10B981;"></div>
-            <span>Apple Studio Display 5K</span>
-          </div>
-
-          <div class="waypoint-chip" style="bottom: 30%; left: 45%;">
-            <div class="chip-dot" style="background: #F59E0B;"></div>
-            <span>100% Merino Wool Felt</span>
-          </div>
-        </div>
+      <div class="scene2-center-label">
+        <div class="scene2-title">THOCK EQUILIBRIUM</div>
+        <div class="scene2-badge">42.8 dB SPL · ZERO HOLLOW</div>
       </div>
     </div>
   </div>
 
-  <!-- =========================================================================
-     SCENE 3: SWISS EDITORIAL GRID & DISSECTION (16.0s – 25.0s)
-     ========================================================================= -->
+  <!-- =====================================================================
+       SCENE 3: RADIAL LIGHT BLOOM & DENDRITIC TREE (22.0s – 28.0s)
+       ===================================================================== -->
   <div class="scene" id="scene3">
-    <div class="scene3-swiss-artboard" id="scene3-artboard">
-      <div class="scene3-left-editorial">
-        <div>
-          <div class="editorial-tag">:: EDITORIAL INVESTIGATION 2026</div>
-          <div class="editorial-headline" style="margin-top: 16px;">
-            The Anatomy of Pure Focus.
-          </div>
-          <div class="editorial-statement" style="margin-top: 24px;">
-            We dismantled 45 premium mechanical keyboards down to the switch leaf, poron gasket, and CNC chassis resonance.
-          </div>
-        </div>
-
-        <div class="editorial-badge-row">
-          <div class="verified-badge-light">
-            <span style="color: #10B981;">✔</span>
-            <span>100% Hands-On Tested</span>
-          </div>
-          <div class="verified-badge-light">
-            <span style="color: #2563EB;">★</span>
-            <span>Zero Sponsored Bias</span>
-          </div>
-        </div>
+    <div class="scene3-bloom" id="scene3-bloom"></div>
+    <div class="scene3-layout">
+      <div class="scene3-text-col">
+        <div class="scene3-sub">CURATION EVOLUTION</div>
+        <div class="scene3-headline">'CAUSE THE<br><span>HARDWARE</span><br>GROWS</div>
       </div>
 
-      <div class="scene3-right-dissection">
-        <div class="dissection-card">
-          <img src="images/keyboard_mech.png" class="dissection-img" alt="Switch Specimen">
-          <div class="dissection-info">
-            <div class="dissection-label">SWITCH SPECIFICATION</div>
-            <div class="dissection-name">Holy Panda X 62g</div>
-            <div class="dissection-spec">Acoustic Curve: 42.4 dB · Low Pitch Resonance</div>
-          </div>
-        </div>
-
-        <div class="dissection-card">
-          <img src="images/walnut_stand.png" class="dissection-img" alt="Wood Riser">
-          <div class="dissection-info">
-            <div class="dissection-label">SURFACE ELEVATION</div>
-            <div class="dissection-name">American Walnut Shelf</div>
-            <div class="dissection-spec">Load Rating: 45kg · Zero Sag Deflection</div>
-          </div>
-        </div>
-
-        <div class="dissection-card">
-          <img src="images/light_bar.png" class="dissection-img" alt="ScreenBar">
-          <div class="dissection-info">
-            <div class="dissection-label">CIRCADIAN LIGHTING</div>
-            <div class="dissection-name">BenQ ScreenBar Halo</div>
-            <div class="dissection-spec">Asymmetric Optics · 0% Screen Glare</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================================================
-     SCENE 4: COLLABORATIVE HARDWARE LAB & SPECTROGRAM (25.0s – 35.0s)
-     ========================================================================= -->
-  <div class="scene" id="scene4">
-    <div class="scene4-lab-artboard" id="scene4-artboard">
-      <!-- Left Config Card -->
-      <div class="scene4-card-left">
-        <div style="font-size: 18px; font-weight: 700; color: #0F172A;">Lab Configuration</div>
-        <div class="code-block-light">
-          // Setup Specimen #01<br>
-          preset: "minimal-dev"<br>
-          switch: "Tactile 62g"<br>
-          acoustic_dampening: true<br>
-          target_sound: "deep_thock"<br>
-          cable_mode: "thunderbolt_4"
-        </div>
-        <div style="font-size: 13px; color: #64748B;">
-          Real-time collaborative telemetry synchronized across hardware test benches.
-        </div>
-      </div>
-
-      <!-- Center Spectrogram Card -->
-      <div class="scene4-card-center">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <div style="font-family: 'JetBrains Mono'; font-size: 13px; font-weight: 700; color: #0F172A;">
-            :: REAL-TIME FFT ACOUSTIC SPECTRUM
-          </div>
-          <div style="font-size: 12px; font-weight: 700; color: #10B981;">LIVE SIGNAL</div>
-        </div>
-
-        <svg class="spectrogram-svg" viewBox="0 0 500 160">
-          <path id="live-curve" d="M 10 130 Q 70 120 130 50 T 250 80 T 360 30 T 480 90" fill="none" stroke="#2563EB" stroke-width="4"/>
-          <circle cx="130" cy="50" r="6" fill="#2563EB"/>
-          <circle cx="250" cy="80" r="6" fill="#10B981"/>
-          <circle id="drag-point" cx="360" cy="30" r="8" fill="#FF5E36"/>
-          <!-- Grid lines -->
-          <line x1="10" y1="140" x2="480" y2="140" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4 4"/>
-          <line x1="10" y1="70" x2="480" y2="70" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <div class="scene3-tree-container">
+        <svg class="scene3-tree-svg" viewBox="0 0 750 650" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2">
+          <!-- Tree branches radiating from left origin -->
+          <path d="M 50 325 Q 180 325 280 200 T 520 120 T 700 80" stroke="#FF5E36" stroke-width="2.5"/>
+          <path d="M 280 200 Q 400 240 550 210 T 710 200"/>
+          <path d="M 50 325 Q 200 325 350 340 T 560 330 T 720 310" stroke="#FFA048" stroke-width="2"/>
+          <path d="M 350 340 Q 460 420 580 430 T 710 450"/>
+          <path d="M 50 325 Q 180 325 280 480 T 500 540 T 700 580" stroke="#FF5E36" stroke-width="2"/>
+          <!-- Glowing endpoints -->
+          <circle cx="700" cy="80" r="5" fill="#FF5E36"/>
+          <circle cx="710" cy="200" r="5" fill="#FFFFFF"/>
+          <circle cx="720" cy="310" r="5" fill="#FFA048"/>
+          <circle cx="710" cy="450" r="5" fill="#FFFFFF"/>
+          <circle cx="700" cy="580" r="5" fill="#FF5E36"/>
         </svg>
 
-        <div style="display: flex; justify-content: space-between; font-size: 12px; color: #64748B; font-family: 'JetBrains Mono';">
-          <span>100 Hz</span>
-          <span>1.2 kHz (Fundamental)</span>
-          <span>8.0 kHz</span>
-        </div>
-      </div>
-
-      <!-- Right Score Sheet -->
-      <div class="scene4-card-right">
-        <div class="score-box-big">
-          <div class="score-num">9.8</div>
-          <div class="score-lbl">Acoustic Score</div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div style="display: flex; justify-content: space-between; font-size: 13px;">
-            <span style="color: #64748B;">Keystroke Life:</span>
-            <span style="font-weight: 700; color: #0F172A;">500,000 Verified</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; font-size: 13px;">
-            <span style="color: #64748B;">Debounce Latency:</span>
-            <span style="font-weight: 700; color: #0F172A;">1.2 ms</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; font-size: 13px;">
-            <span style="color: #64748B;">Case Ping:</span>
-            <span style="font-weight: 700; color: #10B981;">0.0% (Zero Hollow)</span>
-          </div>
+        <div class="scene3-counter-card">
+          <div class="scene3-counter-val" id="scene3-counter">0240</div>
+          <div class="scene3-counter-lbl">LAB SPECIMENS TESTED</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- =========================================================================
-     SCENE 5: CIRCADIAN TELEMETRY & FLOW STATE (35.0s – 40.5s)
-     ========================================================================= -->
+  <!-- =====================================================================
+       SCENE 4: AFFILIATE NOISE VS CURATION MASK (28.0s – 40.0s)
+       ========================================================================= -->
+  <div class="scene" id="scene4">
+    <div class="scene4-container">
+      <svg class="scene4-mesh-svg" viewBox="0 0 800 600" fill="none">
+        <!-- Chaotic contour tangle of affiliate clutter -->
+        <path d="M 150 300 Q 250 120 400 280 T 650 200 T 550 480 T 250 450 Z" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+        <path d="M 200 280 Q 320 180 440 310 T 600 250 T 500 420 T 300 400 Z" stroke="rgba(255,94,54,0.3)" stroke-width="1.5"/>
+        <path d="M 240 260 Q 360 220 460 330 T 540 290 T 460 380 T 340 360 Z" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+      </svg>
+
+      <!-- The Clean Curation Avatar Mask -->
+      <div class="scene4-curation-mask" id="scene4-mask">
+        <div class="mask-smiley">☺</div>
+        <div class="mask-label">100% Curated</div>
+      </div>
+
+      <div class="scene4-title-wrap">
+        <div class="scene4-noise-title">CUT THROUGH</div>
+        <div class="scene4-noise-sub">AFFILIATE NOISE.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 5: SPACETIME GRID & GRAVITATIONAL CORE (40.0s – 50.0s)
+       ========================================================================= -->
   <div class="scene" id="scene5">
-    <div class="scene5-flow-card" id="scene5-card">
-      <div class="scene5-top-row">
+    <svg class="scene5-grid-svg" viewBox="0 0 1600 900" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5">
+      <!-- Curved spacetime mesh bending into center (800, 450) -->
+      <path d="M 100 450 Q 500 450 720 450 T 800 450 T 880 450 T 1500 450"/>
+      <path d="M 800 100 Q 800 300 800 450 T 800 800"/>
+      <ellipse cx="800" cy="450" rx="500" ry="280" stroke="rgba(255,255,255,0.08)"/>
+      <ellipse cx="800" cy="450" rx="350" ry="190" stroke="rgba(255,94,54,0.2)"/>
+      <ellipse cx="800" cy="450" rx="200" ry="110" stroke="#FF5E36" stroke-width="2"/>
+    </svg>
+
+    <div class="scene5-core">
+      <div style="font-family: 'JetBrains Mono'; font-size: 13px; font-weight: 800; color: #FF7A45;">BRASS</div>
+    </div>
+
+    <div class="scene5-orbit-text" id="scene5-orbit">ACOUSTIC DENSITY</div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 6: 3D LASER PATH & MECHANICAL SWITCH (50.0s – 60.0s)
+       ========================================================================= -->
+  <div class="scene" id="scene6">
+    <div class="scene6-stage">
+      <svg class="scene6-switch-svg" viewBox="0 0 900 600" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2">
+        <!-- Mechanical Switch Housing Wireframe -->
+        <rect x="250" y="220" width="400" height="260" rx="24" stroke="rgba(255,255,255,0.2)"/>
+        <!-- Switch Stem (Cross) -->
+        <path d="M 430 140 H 470 V 220 H 430 Z" stroke="#FF5E36" stroke-width="2.5"/>
+        <path d="M 390 170 H 510 V 195 H 390 Z" stroke="#FF5E36" stroke-width="2.5"/>
+        <!-- Internal Gasket Spring -->
+        <path d="M 450 260 Q 420 280 450 300 T 450 340 T 450 380" stroke="rgba(255,160,72,0.8)" stroke-width="3"/>
+      </svg>
+
+      <div class="spark-point" id="scene6-spark"></div>
+      <div class="scene6-particle-text" id="scene6-text">re-engineering every layer</div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 7: ACOUSTIC DAMPENING CHAMBER (60.0s – 70.0s)
+       ========================================================================= -->
+  <div class="scene" id="scene7">
+    <div class="scene7-stage">
+      <svg class="scene7-voronoi-svg" viewBox="0 0 1200 700" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5">
+        <!-- Acoustic Foam Wedges Radiating -->
+        <polygon points="600,350 200,80 320,50"/>
+        <polygon points="600,350 320,50 480,30"/>
+        <polygon points="600,350 480,30 640,30"/>
+        <polygon points="600,350 640,30 800,50"/>
+        <polygon points="600,350 800,50 980,100"/>
+        <polygon points="600,350 980,100 1080,240"/>
+        <polygon points="600,350 1080,240 1100,420"/>
+        <polygon points="600,350 1100,420 1000,580"/>
+        <polygon points="600,350 1000,580 840,650"/>
+        <polygon points="600,350 840,650 620,670"/>
+        <polygon points="600,350 620,670 420,650"/>
+        <polygon points="600,350 420,650 260,560"/>
+        <polygon points="600,350 260,560 140,400"/>
+        <polygon points="600,350 140,400 160,220"/>
+      </svg>
+
+      <div class="scene7-eye-capsule">
+        <svg class="scene7-waveform" viewBox="0 0 480 120" fill="none">
+          <path id="scene7-wave-path" d="M 10 60 Q 60 20 120 60 T 240 60 T 360 60 T 470 60" stroke="#FF5E36" stroke-width="3"/>
+        </svg>
+      </div>
+
+      <div class="scene7-title">I HEAR THE <span>DEEP THOCK</span></div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 8: FORM 01-B OFFICIAL CERTIFICATION SHEET (70.0s – 82.0s)
+       ========================================================================= -->
+  <div class="scene" id="scene8">
+    <div class="form-sheet" id="scene8-form">
+      <div class="form-binder-holes">
+        <div class="binder-hole"></div>
+        <div class="binder-hole"></div>
+        <div class="binder-hole"></div>
+      </div>
+
+      <div class="form-header-bar">
+        <div class="form-title-big">FORM 01-B</div>
+        <div style="font-weight: 700; font-size: 14px;">HARDWARE ACCREDITATION OF A DESK SANCTUARY</div>
+        <div class="form-sub-right">REF: 2026-SANCTUARY // 100% HANDS-ON</div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">1. FINDINGS</div>
+        <div class="form-fill-line">That was pure focus, zero fatigue.</div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">2. AFFILIATE BIAS EVALUATION</div>
+        <div class="form-fill-line">[ ] SPONSORED GEAR &nbsp;&nbsp;&nbsp; [ ] PAID PLACEMENT &nbsp;&nbsp;&nbsp; [X] ZERO BIAS</div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">3. CONCLUSION</div>
+        <div class="form-fill-line">We tested 240+ setups to engineer your sanctuary.</div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 36px;">
         <div>
-          <div class="lux-readout">450 LUX</div>
-          <div class="lux-desc">Optimal Circadian Workspace Lighting</div>
+          <div class="form-label">4. EVALUATION LAB SIGNATURE</div>
+          <div style="font-size: 28px; font-weight: 700; font-style: italic; color: #1E293B;">iWriteTech Hardware Studio</div>
         </div>
-        <div class="stats-trio">
-          <div class="trio-item">
-            <div class="trio-val">21.5°C</div>
-            <div class="trio-lbl">Room Temp</div>
-          </div>
-          <div class="trio-item">
-            <div class="trio-val">38 dB</div>
-            <div class="trio-lbl">Ambient Noise</div>
-          </div>
-          <div class="trio-item">
-            <div class="trio-val" style="color: #10B981;">100%</div>
-            <div class="trio-lbl">Deep Focus</div>
-          </div>
+        <div style="text-align: right;">
+          <div class="form-label">5. OVERALL RATING</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 900; color: #0F172A;">9.8 / 10.0</div>
         </div>
       </div>
 
-      <div class="schedule-week-grid">
-        <div class="week-cell">
-          <div class="week-day">MON</div>
-          <div class="week-hours">5.2 HR</div>
-        </div>
-        <div class="week-cell">
-          <div class="week-day">TUE</div>
-          <div class="week-hours">6.0 HR</div>
-        </div>
-        <div class="week-cell">
-          <div class="week-day">WED</div>
-          <div class="week-hours">6.5 HR</div>
-        </div>
-        <div class="week-cell">
-          <div class="week-day">THU</div>
-          <div class="week-hours">5.8 HR</div>
-        </div>
-        <div class="week-cell">
-          <div class="week-day">FRI</div>
-          <div class="week-hours">4.5 HR</div>
-        </div>
-        <div class="week-cell">
-          <div class="week-day">SAT</div>
-          <div class="week-hours">3.0 HR</div>
-        </div>
+      <!-- Red Ink Rubber Stamp -->
+      <div class="rubber-stamp" id="rubber-stamp">
+        SANCTUARY CERTIFIED
+        <div class="rubber-stamp-sub">100% INDEPENDENT HARDWARE LAB</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 9: REVIEW SCHEDULE GANTT LASER TIMELINE (82.0s – 94.0s)
+       ========================================================================= -->
+  <div class="scene" id="scene9">
+    <div class="scene9-container">
+      <div class="scene9-header">
+        <div>REVIEW SCHEDULE — DESK SANCTUARY, v1.0</div>
+        <div>BASELINE: ZERO COMPROMISE</div>
+        <div>TEST PHASE: COMPLETE</div>
       </div>
 
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: #10B981; font-size: 14px;">
-          <span>●</span>
-          <span>SANCTUARY FOCUS SESSION ACTIVE · ZERO DISTRACTIONS</span>
+      <div class="scene9-lyrics">
+        Without a single <span>compromise</span>
+      </div>
+
+      <div class="gantt-track">
+        <div class="gantt-laser-scrubber" id="gantt-scrubber"></div>
+
+        <div class="milestone-item">
+          <div class="milestone-diamond passed"><div class="milestone-check">✓</div></div>
+          <div class="milestone-label">CHASSIS CNC</div>
         </div>
-        <div style="font-family: 'JetBrains Mono'; font-size: 13px; color: #64748B;">
-          VERIFIED BLUEPRINT #882
+        <div class="milestone-item">
+          <div class="milestone-diamond passed"><div class="milestone-check">✓</div></div>
+          <div class="milestone-label">GASKET PORON</div>
+        </div>
+        <div class="milestone-item">
+          <div class="milestone-diamond passed"><div class="milestone-check">✓</div></div>
+          <div class="milestone-label">THOCK 42.8dB</div>
+        </div>
+        <div class="milestone-item">
+          <div class="milestone-diamond passed"><div class="milestone-check">✓</div></div>
+          <div class="milestone-label">CIRCADIAN LUX</div>
+        </div>
+        <div class="milestone-item">
+          <div class="milestone-diamond passed"><div class="milestone-check">✓</div></div>
+          <div class="milestone-label">SANCTUARY OK</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- =========================================================================
-     SCENE 6: CLIMAX BRAND REVEAL & PUNCHLINE (40.5s – 46.06s)
-     ========================================================================= -->
-  <div class="scene" id="scene6">
-    <div class="scene6-brand-lockup" id="scene6-brand">
-      <div class="scene6-emblem-large">
-        <div class="emblem-square">
-          <div class="emblem-amber-dot"></div>
-        </div>
-      </div>
-      <div class="scene6-wordmark">iWriteTech</div>
-      <div class="scene6-tagline">The Definitive Standard for Desk Tech & Workspaces.</div>
-      <div class="scene6-cta-pill">explore iwritetech.com ➔</div>
+  <!-- =====================================================================
+       SCENE 10: 3D CHROME ARTISAN SPECIMEN (94.0s – 100.0s)
+       ========================================================================= -->
+  <div class="scene" id="scene10">
+    <div class="scene10-title">
+      as <span>craftsmanship</span> fills the room
     </div>
 
-    <!-- Final Punchline -->
-    <div class="scene6-punchline" id="scene6-punchline">
-      Build your sanctuary.
+    <div class="scene10-chrome-object" id="scene10-chrome">
+      <svg width="480" height="280" viewBox="0 0 480 280" fill="none">
+        <defs>
+          <linearGradient id="chrome-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="25%" stop-color="#CBD5E1"/>
+            <stop offset="50%" stop-color="#475569"/>
+            <stop offset="75%" stop-color="#E2E8F0"/>
+            <stop offset="100%" stop-color="#FFFFFF"/>
+          </linearGradient>
+        </defs>
+        <!-- Metallic Artisan Specimen Shape -->
+        <rect x="60" y="40" width="360" height="200" rx="36" fill="url(#chrome-grad)" stroke="#FFFFFF" stroke-width="2"/>
+        <rect x="90" y="70" width="300" height="140" rx="20" fill="#0F172A"/>
+        <text x="240" y="155" font-family="'Space Grotesk'" font-size="28" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">SOLID BRASS</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 11: THE BURNING FUSE ALONG 3D CABLE (100.0s – 110.0s)
+       ========================================================================= -->
+  <div class="scene" id="scene11">
+    <svg class="scene11-fuse-svg" viewBox="0 0 1600 700" fill="none">
+      <path id="fuse-cable-path" d="M 100 450 Q 400 300 800 420 T 1500 250" stroke="#334155" stroke-width="8" stroke-linecap="round"/>
+      <path id="fuse-glow-trail" d="M 100 450 Q 400 300 800 420 T 1500 250" stroke="#FF5E36" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+
+    <div class="spark-point" id="scene11-spark"></div>
+
+    <div class="scene11-kinetic-text" id="scene11-text">
+      Too late now, <span class="highlight">we set the standard</span>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 12: 3D EXPLODED ARCHITECTURE STACK (110.0s – 120.0s)
+       ========================================================================= -->
+  <div class="scene" id="scene12">
+    <div class="scene12-stage">
+      <div class="exploded-stack">
+        <div class="stack-layer" id="layer1">
+          <div>01 · TOP CHASSIS</div>
+          <div class="layer-tag">6063 CNC ALUMINUM</div>
+        </div>
+        <div class="stack-layer" id="layer2">
+          <div>02 · GASKET MOUNT</div>
+          <div class="layer-tag">PORON VIBRATION ISOLATION</div>
+        </div>
+        <div class="stack-layer" id="layer3">
+          <div>03 · SWITCH PLATE</div>
+          <div class="layer-tag">FR4 FLEX-CUT</div>
+        </div>
+        <div class="stack-layer" id="layer4">
+          <div>04 · CORE PCB</div>
+          <div class="layer-tag">HOT-SWAP · QMK/VIA</div>
+        </div>
+        <div class="stack-layer" id="layer5">
+          <div>05 · BASE WEIGHT</div>
+          <div class="layer-tag">PVD SOLID BRASS</div>
+        </div>
+      </div>
+
+      <div class="scene12-huge-title" id="scene12-title">ARCHITECTURE</div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 13: CIRCADIAN HORIZON & TELEMETRY (120.0s – 130.0s)
+       ========================================================================= -->
+  <div class="scene" id="scene13">
+    <div class="scene13-stage">
+      <div class="scene13-left">
+        <div class="scene13-title">ERGONOMICS</div>
+        <div class="scene13-sub">IN TRUE SYNC</div>
+
+        <div class="scene13-telemetry-box">
+          <div>WORKSPACE MONITORING PROTOCOL</div>
+          <span class="val-highlight">450 LUX · 21.5°C</span>
+          <div style="margin-top: 8px;">DEEP FOCUS RATING: 100% · ZERO DEFLECTION</div>
+        </div>
+      </div>
+
+      <div class="scene13-horizon-gauge">
+        <div class="horizon-line"></div>
+        <div style="font-family: 'JetBrains Mono'; font-size: 18px; font-weight: 700; color: #FFFFFF; background: #0F172A; padding: 8px 16px; border-radius: 8px; border: 1px solid var(--amber-primary);">
+          +06.4° OPTIMAL WRIST INCLINE
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 14: VOLUMETRIC STUDIO DISPLAY IN DARKROOM (130.0s – 140.0s)
+       ========================================================================= -->
+  <div class="scene" id="scene14">
+    <div class="scene14-stage">
+      <div class="scene14-question">
+        What did we discover? <span>Everything.</span>
+      </div>
+
+      <div class="volumetric-cone"></div>
+
+      <div class="studio-display-glow-mock">
+        <div class="display-inner-content">
+          <div class="display-redacted-badge">SANCTUARY BLUEPRINT #01</div>
+          <div style="font-family: 'JetBrains Mono'; font-size: 13px; color: #94A3B8; margin-top: 14px;">
+            MODE SONNET · STUDIO DISPLAY 5K · MERINO WOOL
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 15: CLIMAX SCORE COUNTDOWN (140.0s – 150.0s)
+       ========================================================================= -->
+  <div class="scene" id="scene15">
+    <div class="scene15-container">
+      <div class="scene15-sub">WAS IT ALL FOR FOCUS?</div>
+      <div class="scene15-counter" id="scene15-counter">10.0</div>
+      <div class="scene15-tag">THE DEFINITIVE SANCTUARY SCORE ACHIEVED</div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SCENE 16: CLIMAX BRAND EMBLEM & BUTTON CLICK (150.0s – 156.76s)
+       ========================================================================= -->
+  <div class="scene" id="scene16">
+    <div class="scene16-brand-block" id="scene16-brand">
+      <div class="brand-squircle-large">
+        <div class="squircle-inner-box">
+          <div class="squircle-amber-dot"></div>
+        </div>
+      </div>
+      <div class="brand-wordmark-huge">iWriteTech</div>
+      <div class="brand-tagline-sub">The Definitive Standard for Desk Tech & Workspaces.</div>
+
+      <div class="interactive-cta-btn" id="scene16-btn">
+        <span>✦</span>
+        <span>Build Your Sanctuary</span>
+      </div>
+      <div class="btn-verified-sub">VERIFIED BY INDEPENDENT HARDWARE LAB</div>
     </div>
   </div>
 
 </div>
 
 <script>
-  // Helper Easing Functions
+  // Easing Utility Functions
   function easeOutCubic(x) { return 1 - Math.pow(1 - x, 3); }
   function easeInOutCubic(x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
   function easeOutBack(x) {
@@ -1246,304 +1686,356 @@
   }
   function clamp(val, min, max) { return Math.min(Math.max(val, min), max); }
 
-  // Master Deterministic Timeline for 46.06 seconds
+  // Global Deterministic Animation Timeline
   window.seekTo = function(t) {
-    const s1 = document.getElementById('scene1');
-    const s2 = document.getElementById('scene2');
-    const s3 = document.getElementById('scene3');
-    const s4 = document.getElementById('scene4');
-    const s5 = document.getElementById('scene5');
-    const s6 = document.getElementById('scene6');
+    const scenes = [
+      document.getElementById('scene1'),
+      document.getElementById('scene2'),
+      document.getElementById('scene3'),
+      document.getElementById('scene4'),
+      document.getElementById('scene5'),
+      document.getElementById('scene6'),
+      document.getElementById('scene7'),
+      document.getElementById('scene8'),
+      document.getElementById('scene9'),
+      document.getElementById('scene10'),
+      document.getElementById('scene11'),
+      document.getElementById('scene12'),
+      document.getElementById('scene13'),
+      document.getElementById('scene14'),
+      document.getElementById('scene15'),
+      document.getElementById('scene16')
+    ];
 
-    const curMarcus = document.getElementById('cursor-marcus');
-    const curElena = document.getElementById('cursor-elena');
+    const cur = document.getElementById('cursor-main');
+
+    // Default all scenes to opacity 0
+    scenes.forEach(s => { if (s) s.style.opacity = '0'; });
+    if (cur) cur.style.opacity = '0';
 
     // -------------------------------------------------------------
-    // SCENE 1: MACRO HARDWARE & 3D PHONE CHAT REVEAL (0.0s – 7.5s)
+    // SCENE 1: SPARK OF SANCTUARY & WIREFRAME (0.0s – 10.0s)
     // -------------------------------------------------------------
-    if (t < 7.6) {
-      s1.style.opacity = '1';
-      s2.style.opacity = '0';
-      s3.style.opacity = '0';
-      s4.style.opacity = '0';
-      s5.style.opacity = '0';
-      s6.style.opacity = '0';
-      curMarcus.style.opacity = '0';
-      curElena.style.opacity = '0';
+    if (t < 10.0) {
+      scenes[0].style.opacity = '1';
+      const spark = document.getElementById('scene1-spark');
+      const l1 = document.getElementById('s1-lyric1');
+      const l2 = document.getElementById('s1-lyric2');
 
-      const macroImg = document.querySelector('.scene1-macro-img');
-      const phone = document.getElementById('scene1-phone');
-      const msg1 = document.getElementById('chat-msg1');
-      const msg2 = document.getElementById('chat-msg2');
-      const b1 = document.getElementById('burst1');
-      const b2 = document.getElementById('burst2');
-      const b3 = document.getElementById('burst3');
-      const b4 = document.getElementById('burst4');
+      const enterProg = clamp(t / 1.0, 0, 1);
+      const eEnter = easeOutCubic(enterProg);
+      scenes[0].style.transform = `scale(${0.96 + eEnter * 0.04})`;
 
-      if (t < 2.0) {
-        // Macro close-up camera pan
-        const zoom = 1.3 - (t / 2.0) * 0.15;
-        macroImg.style.display = 'block';
-        macroImg.style.opacity = '1';
-        macroImg.style.transform = `scale(${zoom}) translate(${-t * 20}px, ${t * 10}px)`;
-        phone.style.opacity = '0';
-        b1.style.opacity = '0';
-        b2.style.opacity = '0';
-        b3.style.opacity = '0';
-        b4.style.opacity = '0';
+      // Spark position travels along wireframe
+      const sparkProg = clamp(t / 6.0, 0, 1);
+      const sparkX = 700 + Math.sin(sparkProg * Math.PI) * 200;
+      const sparkY = 580 - sparkProg * 180;
+      spark.style.left = `${sparkX}px`;
+      spark.style.top = `${sparkY}px`;
+
+      // Kinetic lyric reveals
+      l1.style.opacity = String(clamp((t - 1.0) / 0.6, 0, 1));
+      l1.style.transform = `translateY(${(1 - clamp((t - 1.0) / 0.6, 0, 1)) * 20}px)`;
+
+      const l2Prog = clamp((t - 2.5) / 0.6, 0, 1);
+      const eL2 = easeOutBack(l2Prog);
+      l2.style.opacity = String(l2Prog);
+      l2.style.transform = `scale(${0.8 + eL2 * 0.2})`;
+
+      // Exit fade
+      if (t >= 9.2) {
+        const exitProg = (t - 9.2) / 0.8;
+        scenes[0].style.opacity = String(1 - exitProg);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 2: ACOUSTIC GRADIENT DESCENT VORTEX (10.0s – 22.0s)
+    // -------------------------------------------------------------
+    else if (t >= 10.0 && t < 22.0) {
+      scenes[1].style.opacity = '1';
+      const stage = document.querySelector('.scene2-stage');
+      const spark2 = document.getElementById('scene2-spark');
+
+      const enterProg = clamp((t - 10.0) / 0.8, 0, 1);
+      const eEnter = easeOutCubic(enterProg);
+      stage.style.opacity = String(eEnter);
+
+      // Trajectory spark spiral descent
+      const spiralProg = clamp((t - 11.0) / 9.0, 0, 1);
+      const radius = 450 * (1 - spiralProg);
+      const angle = spiralProg * Math.PI * 4;
+      const spX = 960 + Math.cos(angle) * radius;
+      const spY = 540 + Math.sin(angle) * (radius * 0.6);
+      spark2.style.left = `${spX}px`;
+      spark2.style.top = `${spY}px`;
+
+      if (t >= 21.2) {
+        scenes[1].style.opacity = String(1 - (t - 21.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 3: RADIAL LIGHT BLOOM & DENDRITIC TREE (22.0s – 28.0s)
+    // -------------------------------------------------------------
+    else if (t >= 22.0 && t < 28.0) {
+      scenes[2].style.opacity = '1';
+      const bloom = document.getElementById('scene3-bloom');
+      const counter = document.getElementById('scene3-counter');
+
+      // Light flash at t=22.0s
+      if (t < 23.5) {
+        const bloomProg = (t - 22.0) / 1.5;
+        bloom.style.opacity = String(Math.sin(bloomProg * Math.PI) * 0.9);
       } else {
-        // Phone mockup rises into center with 3D rotation
-        const phoneProgress = clamp((t - 2.0) / 0.8, 0, 1);
-        const ePhone = easeOutBack(phoneProgress);
+        bloom.style.opacity = '0';
+      }
 
-        const macroOp = Math.max(0, 1 - phoneProgress * 1.4);
-        macroImg.style.opacity = String(macroOp);
-        if (macroOp <= 0.01) {
-          macroImg.style.display = 'none';
+      // Counter rapid count-up
+      const cProg = clamp((t - 23.0) / 4.0, 0, 1);
+      const countVal = Math.round(cProg * 240);
+      counter.innerText = String(countVal).padStart(4, '0');
+
+      if (t >= 27.2) {
+        scenes[2].style.opacity = String(1 - (t - 27.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 4: AFFILIATE NOISE VS CURATION MASK (28.0s – 40.0s)
+    // -------------------------------------------------------------
+    else if (t >= 28.0 && t < 40.0) {
+      scenes[3].style.opacity = '1';
+      const mask = document.getElementById('scene4-mask');
+      const enterProg = clamp((t - 28.0) / 0.8, 0, 1);
+      const eMask = easeOutBack(enterProg);
+
+      mask.style.transform = `scale(${eMask}) rotate(${(1 - enterProg) * 20}deg)`;
+
+      if (t >= 39.2) {
+        scenes[3].style.opacity = String(1 - (t - 39.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 5: SPACETIME GRID & GRAVITATIONAL CORE (40.0s – 50.0s)
+    // -------------------------------------------------------------
+    else if (t >= 40.0 && t < 50.0) {
+      scenes[4].style.opacity = '1';
+      const orbit = document.getElementById('scene5-orbit');
+      const orbitAngle = (t - 40.0) * 45;
+      orbit.style.transform = `rotate(${orbitAngle}deg) translateY(-260px) rotate(${-orbitAngle}deg)`;
+
+      if (t >= 49.2) {
+        scenes[4].style.opacity = String(1 - (t - 49.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 6: 3D LASER PATH & MECHANICAL SWITCH (50.0s – 60.0s)
+    // -------------------------------------------------------------
+    else if (t >= 50.0 && t < 60.0) {
+      scenes[5].style.opacity = '1';
+      const s6Spark = document.getElementById('scene6-spark');
+      const sProg = clamp((t - 50.0) / 8.0, 0, 1);
+      s6Spark.style.left = `${500 + sProg * 600}px`;
+      s6Spark.style.top = `${400 + Math.sin(sProg * Math.PI * 3) * 80}px`;
+
+      if (t >= 59.2) {
+        scenes[5].style.opacity = String(1 - (t - 59.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 7: ACOUSTIC DAMPENING CHAMBER (60.0s – 70.0s)
+    // -------------------------------------------------------------
+    else if (t >= 60.0 && t < 70.0) {
+      scenes[6].style.opacity = '1';
+      const wave = document.getElementById('scene7-wave-path');
+      const wOsc = Math.sin((t - 60.0) * 8) * 20;
+      wave.setAttribute('d', `M 10 60 Q 60 ${20 + wOsc} 120 60 T 240 ${60 - wOsc} T 360 ${60 + wOsc} T 470 60`);
+
+      if (t >= 69.2) {
+        scenes[6].style.opacity = String(1 - (t - 69.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 8: FORM 01-B OFFICIAL CERTIFICATION SHEET (70.0s – 82.0s)
+    // -------------------------------------------------------------
+    else if (t >= 70.0 && t < 82.0) {
+      scenes[7].style.opacity = '1';
+      const stamp = document.getElementById('rubber-stamp');
+
+      // Form enters smoothly
+      const enterProg = clamp((t - 70.0) / 0.8, 0, 1);
+      const eForm = easeOutCubic(enterProg);
+      document.getElementById('scene8-form').style.transform = `scale(${0.9 + eForm * 0.1}) translateY(${(1 - eForm) * 40}px)`;
+
+      // Heavy stamp slam at t=74.5s
+      if (t >= 74.5) {
+        const stampProg = clamp((t - 74.5) / 0.3, 0, 1);
+        const eStamp = easeOutBack(stampProg);
+        stamp.style.opacity = String(stampProg);
+        stamp.style.transform = `rotate(-10deg) scale(${1.4 - stampProg * 0.4})`;
+      } else {
+        stamp.style.opacity = '0';
+      }
+
+      if (t >= 81.2) {
+        scenes[7].style.opacity = String(1 - (t - 81.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 9: REVIEW SCHEDULE GANTT LASER TIMELINE (82.0s – 94.0s)
+    // -------------------------------------------------------------
+    else if (t >= 82.0 && t < 94.0) {
+      scenes[8].style.opacity = '1';
+      const scrubber = document.getElementById('gantt-scrubber');
+      const scrubProg = clamp((t - 82.5) / 10.0, 0, 1);
+      scrubber.style.left = `${100 + scrubProg * 1240}px`;
+
+      if (t >= 93.2) {
+        scenes[8].style.opacity = String(1 - (t - 93.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 10: 3D CHROME ARTISAN SPECIMEN (94.0s – 100.0s)
+    // -------------------------------------------------------------
+    else if (t >= 94.0 && t < 100.0) {
+      scenes[9].style.opacity = '1';
+      const chrome = document.getElementById('scene10-chrome');
+      const cTime = t - 94.0;
+      chrome.style.transform = `rotateY(${cTime * 18}deg) scale(${1 + Math.sin(cTime * 2) * 0.05})`;
+
+      if (t >= 99.2) {
+        scenes[9].style.opacity = String(1 - (t - 99.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 11: THE BURNING FUSE ALONG 3D CABLE (100.0s – 110.0s)
+    // -------------------------------------------------------------
+    else if (t >= 100.0 && t < 110.0) {
+      scenes[10].style.opacity = '1';
+      const fuseSpark = document.getElementById('scene11-spark');
+      const fProg = clamp((t - 100.0) / 9.0, 0, 1);
+      fuseSpark.style.left = `${200 + fProg * 1200}px`;
+      fuseSpark.style.top = `${450 - Math.sin(fProg * Math.PI) * 120}px`;
+
+      if (t >= 109.2) {
+        scenes[10].style.opacity = String(1 - (t - 109.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 12: 3D EXPLODED ARCHITECTURE STACK (110.0s – 120.0s)
+    // -------------------------------------------------------------
+    else if (t >= 110.0 && t < 120.0) {
+      scenes[11].style.opacity = '1';
+      const layers = [
+        document.getElementById('layer1'),
+        document.getElementById('layer2'),
+        document.getElementById('layer3'),
+        document.getElementById('layer4'),
+        document.getElementById('layer5')
+      ];
+
+      const expandProg = clamp((t - 110.5) / 2.0, 0, 1);
+      const eExp = easeOutBack(expandProg);
+
+      layers[0].style.transform = `translateY(${-eExp * 90}px)`;
+      layers[1].style.transform = `translateY(${-eExp * 45}px)`;
+      layers[2].style.transform = `translateY(0px)`;
+      layers[3].style.transform = `translateY(${eExp * 45}px)`;
+      layers[4].style.transform = `translateY(${eExp * 90}px)`;
+
+      if (t >= 119.2) {
+        scenes[11].style.opacity = String(1 - (t - 119.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 13: CIRCADIAN HORIZON & TELEMETRY (120.0s – 130.0s)
+    // -------------------------------------------------------------
+    else if (t >= 120.0 && t < 130.0) {
+      scenes[12].style.opacity = '1';
+      const horizon = document.querySelector('.horizon-line');
+      const hOsc = Math.sin((t - 120.0) * 3) * 4;
+      horizon.style.transform = `rotate(${6.4 + hOsc}deg)`;
+
+      if (t >= 129.2) {
+        scenes[12].style.opacity = String(1 - (t - 129.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 14: VOLUMETRIC STUDIO DISPLAY IN DARKROOM (130.0s – 140.0s)
+    // -------------------------------------------------------------
+    else if (t >= 130.0 && t < 140.0) {
+      scenes[13].style.opacity = '1';
+      const displayMock = document.querySelector('.studio-display-glow-mock');
+      const dProg = clamp((t - 130.0) / 1.0, 0, 1);
+      displayMock.style.transform = `scale(${0.9 + easeOutCubic(dProg) * 0.1})`;
+
+      if (t >= 139.2) {
+        scenes[13].style.opacity = String(1 - (t - 139.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 15: CLIMAX SCORE COUNTDOWN (140.0s – 150.0s)
+    // -------------------------------------------------------------
+    else if (t >= 140.0 && t < 150.0) {
+      scenes[14].style.opacity = '1';
+      const counter15 = document.getElementById('scene15-counter');
+
+      const cProg = clamp((t - 140.5) / 8.0, 0, 1);
+      const scoreVal = (cProg * 10.0).toFixed(2);
+      counter15.innerText = scoreVal;
+
+      if (t >= 149.2) {
+        scenes[14].style.opacity = String(1 - (t - 149.2) / 0.8);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // SCENE 16: CLIMAX BRAND EMBLEM & BUTTON CLICK (150.0s – 156.76s)
+    // -------------------------------------------------------------
+    else if (t >= 150.0) {
+      scenes[15].style.opacity = '1';
+      const brandBlock = document.getElementById('scene16-brand');
+      const btn = document.getElementById('scene16-btn');
+
+      const enterProg = clamp((t - 150.0) / 0.8, 0, 1);
+      const eBrand = easeOutBack(enterProg);
+      brandBlock.style.opacity = String(enterProg);
+      brandBlock.style.transform = `scale(${0.9 + eBrand * 0.1})`;
+
+      // Interactive cursor glides in and clicks button
+      if (t >= 152.0) {
+        cur.style.opacity = '1';
+        const curProg = clamp((t - 152.0) / 1.8, 0, 1);
+        const eCur = easeInOutCubic(curProg);
+        const curX = 1400 - eCur * 440;
+        const curY = 800 - eCur * 150;
+        cur.style.transform = `translate(${curX}px, ${curY}px)`;
+
+        // Click trigger at t=154.5s
+        if (t >= 154.5) {
+          btn.classList.add('clicked');
+          btn.style.transform = 'scale(0.97)';
         } else {
-          macroImg.style.display = 'block';
+          btn.classList.remove('clicked');
+          btn.style.transform = 'scale(1)';
         }
-
-        phone.style.opacity = String(phoneProgress);
-        phone.style.transform = `translateY(${(1 - ePhone) * 80}px) scale(${0.88 + ePhone * 0.12}) rotateY(${(1 - ePhone) * 12}deg)`;
-
-        // Message 1 pop-in at t=2.6s
-        if (t >= 2.6) {
-          const m1Prog = clamp((t - 2.6) / 0.4, 0, 1);
-          const eM1 = easeOutBack(m1Prog);
-          msg1.style.opacity = String(m1Prog);
-          msg1.style.transform = `translateY(${(1 - eM1) * 15}px)`;
-        }
-
-        // Message 2 pop-in at t=3.6s
-        if (t >= 3.6) {
-          const m2Prog = clamp((t - 3.6) / 0.4, 0, 1);
-          const eM2 = easeOutBack(m2Prog);
-          msg2.style.opacity = String(m2Prog);
-          msg2.style.transform = `translateY(${(1 - eM2) * 15}px)`;
-        }
-
-        // Burst cards pop out at t=4.8s
-        if (t >= 4.8) {
-          const burstProg = clamp((t - 4.8) / 0.7, 0, 1);
-          const eBurst = easeOutBack(burstProg);
-
-          b1.style.opacity = String(burstProg);
-          b1.style.transform = `translate(${-(1 - eBurst) * 60}px, ${-(1 - eBurst) * 40}px) scale(${eBurst})`;
-
-          b2.style.opacity = String(burstProg);
-          b2.style.transform = `translate(${(1 - eBurst) * 60}px, ${-(1 - eBurst) * 40}px) scale(${eBurst})`;
-
-          b3.style.opacity = String(burstProg);
-          b3.style.transform = `translate(${-(1 - eBurst) * 60}px, ${(1 - eBurst) * 40}px) scale(${eBurst})`;
-
-          b4.style.opacity = String(burstProg);
-          b4.style.transform = `translate(${(1 - eBurst) * 60}px, ${(1 - eBurst) * 40}px) scale(${eBurst})`;
-        }
-      }
-
-      // Exit transition
-      if (t >= 7.0) {
-        const exitProgress = (t - 7.0) / 0.5;
-        s1.style.opacity = String(1 - exitProgress);
-        s1.style.transform = `scale(${1 + exitProgress * 0.12})`;
-      } else {
-        s1.style.transform = 'scale(1)';
-      }
-    }
-
-    // -------------------------------------------------------------
-    // SCENE 2: 3D HARDWARE SPECIMEN VIEWPORT (7.5s – 16.0s)
-    // -------------------------------------------------------------
-    else if (t >= 7.5 && t < 16.2) {
-      s1.style.opacity = '0';
-      s2.style.opacity = '1';
-      s3.style.opacity = '0';
-      s4.style.opacity = '0';
-      s5.style.opacity = '0';
-      s6.style.opacity = '0';
-      curMarcus.style.opacity = '0';
-      curElena.style.opacity = '0';
-
-      const frame = document.getElementById('scene2-frame');
-      const enterProg = clamp((t - 7.5) / 0.8, 0, 1);
-      const eFrame = easeOutCubic(enterProg);
-
-      frame.style.opacity = String(eFrame);
-      frame.style.transform = `translateY(${(1 - eFrame) * 40}px) scale(${0.92 + eFrame * 0.08})`;
-
-      // Gentle camera parallax
-      const floatTime = t - 7.5;
-      const vpImg = document.querySelector('.frame-viewport-photo');
-      if (vpImg) vpImg.style.transform = `scale(${1.02 + floatTime * 0.004}) translateY(${-floatTime * 1.5}px)`;
-
-      // Exit transition
-      if (t >= 15.3) {
-        const exitProgress = (t - 15.3) / 0.7;
-        s2.style.opacity = String(1 - exitProgress);
-        s2.style.transform = `scale(${1 + exitProgress * 0.1})`;
-      } else {
-        s2.style.transform = 'scale(1)';
-      }
-    }
-
-    // -------------------------------------------------------------
-    // SCENE 3: SWISS EDITORIAL GRID & DISSECTION (16.0s – 25.0s)
-    // -------------------------------------------------------------
-    else if (t >= 16.0 && t < 25.2) {
-      s1.style.opacity = '0';
-      s2.style.opacity = '0';
-      s3.style.opacity = '1';
-      s4.style.opacity = '0';
-      s5.style.opacity = '0';
-      s6.style.opacity = '0';
-      curMarcus.style.opacity = '0';
-      curElena.style.opacity = '0';
-
-      const artboard = document.getElementById('scene3-artboard');
-      const enterProg = clamp((t - 16.0) / 0.8, 0, 1);
-      const eArt = easeOutCubic(enterProg);
-
-      artboard.style.opacity = String(eArt);
-      artboard.style.transform = `scale(${0.92 + eArt * 0.08})`;
-
-      // Staggered dissection cards
-      const dCards = document.querySelectorAll('.dissection-card');
-      dCards.forEach((c, idx) => {
-        const cProg = clamp((t - (16.5 + idx * 0.25)) / 0.5, 0, 1);
-        const eC = easeOutCubic(cProg);
-        c.style.transform = `translateX(${(1 - eC) * 30}px)`;
-        c.style.opacity = String(cProg);
-      });
-
-      // Exit transition
-      if (t >= 24.3) {
-        const exitProgress = (t - 24.3) / 0.7;
-        s3.style.opacity = String(1 - exitProgress);
-        s3.style.transform = `scale(${1 - exitProgress * 0.08})`;
-      } else {
-        s3.style.transform = 'scale(1)';
-      }
-    }
-
-    // -------------------------------------------------------------
-    // SCENE 4: COLLABORATIVE HARDWARE LAB & SPECTROGRAM (25.0s – 35.0s)
-    // -------------------------------------------------------------
-    else if (t >= 25.0 && t < 35.2) {
-      s1.style.opacity = '0';
-      s2.style.opacity = '0';
-      s3.style.opacity = '0';
-      s4.style.opacity = '1';
-      s5.style.opacity = '0';
-      s6.style.opacity = '0';
-
-      const lab = document.getElementById('scene4-artboard');
-      const enterProg = clamp((t - 25.0) / 0.8, 0, 1);
-      const eLab = easeOutCubic(enterProg);
-
-      lab.style.opacity = String(eLab);
-      lab.style.transform = `scale(${0.94 + eLab * 0.06})`;
-
-      // Collaborative cursors
-      curMarcus.style.opacity = '1';
-      curElena.style.opacity = '1';
-
-      const mProg = clamp((t - 25.5) / 1.5, 0, 1);
-      const eM = easeOutCubic(mProg);
-      curMarcus.style.transform = `translate(${480 + eM * 40}px, ${380 + Math.sin(t * 4) * 10}px)`;
-
-      // Elena drags the frequency curve point
-      const eProg = clamp((t - 26.0) / 2.0, 0, 1);
-      const eE = easeInOutCubic(eProg);
-      const dragY = 460 + Math.sin(eProg * Math.PI) * 40;
-      curElena.style.transform = `translate(${1120}px, ${dragY}px)`;
-
-      // Dynamic curve wave
-      const liveCurve = document.getElementById('live-curve');
-      const dragPoint = document.getElementById('drag-point');
-      if (liveCurve) {
-        const wave = Math.sin((t - 25.0) * 6) * 12;
-        liveCurve.setAttribute('d', `M 10 130 Q 70 120 130 50 T 250 80 T 360 ${30 + wave} T 480 90`);
-        dragPoint.setAttribute('cy', `${30 + wave}`);
-      }
-
-      // Exit transition
-      if (t >= 34.3) {
-        const exitProgress = (t - 34.3) / 0.7;
-        s4.style.opacity = String(1 - exitProgress);
-        s4.style.transform = `scale(${1 + exitProgress * 0.1})`;
-      } else {
-        s4.style.transform = 'scale(1)';
-      }
-    }
-
-    // -------------------------------------------------------------
-    // SCENE 5: CIRCADIAN TELEMETRY & FLOW STATE (35.0s – 40.5s)
-    // -------------------------------------------------------------
-    else if (t >= 35.0 && t < 40.8) {
-      s1.style.opacity = '0';
-      s2.style.opacity = '0';
-      s3.style.opacity = '0';
-      s4.style.opacity = '0';
-      s5.style.opacity = '1';
-      s6.style.opacity = '0';
-      curMarcus.style.opacity = '0';
-      curElena.style.opacity = '0';
-
-      const card = document.getElementById('scene5-card');
-      const enterProg = clamp((t - 35.0) / 0.8, 0, 1);
-      const eCard = easeOutBack(enterProg);
-
-      card.style.opacity = String(enterProg);
-      card.style.transform = `scale(${0.92 + eCard * 0.08})`;
-
-      // Exit transition
-      if (t >= 39.8) {
-        const exitProgress = (t - 39.8) / 0.7;
-        s5.style.opacity = String(1 - exitProgress);
-        s5.style.transform = `scale(${1 - exitProgress * 0.08})`;
-      } else {
-        s5.style.transform = 'scale(1)';
-      }
-    }
-
-    // -------------------------------------------------------------
-    // SCENE 6: CLIMAX BRAND REVEAL & PUNCHLINE (40.5s – 46.06s)
-    // -------------------------------------------------------------
-    else if (t >= 40.5) {
-      s1.style.opacity = '0';
-      s2.style.opacity = '0';
-      s3.style.opacity = '0';
-      s4.style.opacity = '0';
-      s5.style.opacity = '0';
-      s6.style.opacity = '1';
-      curMarcus.style.opacity = '0';
-      curElena.style.opacity = '0';
-
-      const brand = document.getElementById('scene6-brand');
-      const punchline = document.getElementById('scene6-punchline');
-
-      if (t < 43.6) {
-        // Brand Emblem & Wordmark reveal
-        punchline.style.opacity = '0';
-        const bProg = clamp((t - 40.5) / 0.7, 0, 1);
-        const eB = easeOutBack(bProg);
-        brand.style.opacity = String(bProg);
-        brand.style.transform = `scale(${0.9 + eB * 0.1})`;
-      } else {
-        // Final Punchline: "Build your sanctuary."
-        const fadeBrand = clamp((t - 43.6) / 0.4, 0, 1);
-        brand.style.opacity = String(1 - fadeBrand);
-
-        const pProg = clamp((t - 43.8) / 0.7, 0, 1);
-        const ePunch = easeOutCubic(pProg);
-        punchline.style.opacity = String(ePunch);
-        punchline.style.transform = `scale(${0.92 + ePunch * 0.08})`;
       }
     }
   };
 
-  // Initial preview at t=0
+  // Initial render at t=0
   window.seekTo(0);
 </script>
 </body>

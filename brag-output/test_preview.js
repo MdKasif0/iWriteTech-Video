@@ -6,8 +6,8 @@ const chromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
 const outputDir = path.resolve(__dirname);
 const compositionDir = path.join(outputDir, 'composition');
 const htmlUrl = 'file://' + path.join(compositionDir, 'index.html');
-const previewDir = path.join(outputDir, 'work', 'test_previews');
-const userDataDir = path.join(outputDir, 'work', 'chrome-test-profile');
+const previewDir = path.join(outputDir, 'work', 'test_previews_ref5');
+const userDataDir = path.join(outputDir, 'work', 'chrome-test-ref5-profile');
 
 fs.mkdirSync(previewDir, { recursive: true });
 fs.mkdirSync(userDataDir, { recursive: true });
@@ -63,7 +63,7 @@ class CDPClient {
 }
 
 async function main() {
-  const port = 9556;
+  const port = 9558;
   const chromeProc = spawn(chromePath, [
     '--headless=new',
     `--remote-debugging-port=${port}`,
@@ -99,22 +99,43 @@ async function main() {
     });
 
     const testTimestamps = [
-      { t: 1.0, name: 'scene1_macro_chassis.jpg' },
-      { t: 3.0, name: 'scene1_phone_chat.jpg' },
-      { t: 5.5, name: 'scene1_card_burst.jpg' },
-      { t: 10.0, name: 'scene2_hardware_viewport.jpg' },
-      { t: 18.0, name: 'scene3_swiss_editorial.jpg' },
-      { t: 28.0, name: 'scene4_collaborative_lab.jpg' },
-      { t: 37.0, name: 'scene5_circadian_telemetry.jpg' },
-      { t: 42.0, name: 'scene6_brand_lockup.jpg' },
-      { t: 45.0, name: 'scene6_punchline.jpg' }
+      { t: 4.0, name: 'scene1_spark_sanctuary.jpg' },
+      { t: 16.0, name: 'scene2_acoustic_vortex.jpg' },
+      { t: 25.0, name: 'scene3_dendritic_tree.jpg' },
+      { t: 34.0, name: 'scene4_curation_mask.jpg' },
+      { t: 45.0, name: 'scene5_spacetime_core.jpg' },
+      { t: 55.0, name: 'scene6_laser_switch.jpg' },
+      { t: 65.0, name: 'scene7_acoustic_chamber.jpg' },
+      { t: 76.0, name: 'scene8_form_certification.jpg' },
+      { t: 88.0, name: 'scene9_gantt_laser_timeline.jpg' },
+      { t: 97.0, name: 'scene10_chrome_artisan.jpg' },
+      { t: 105.0, name: 'scene11_burning_fuse.jpg' },
+      { t: 115.0, name: 'scene12_exploded_architecture.jpg' },
+      { t: 125.0, name: 'scene13_circadian_horizon.jpg' },
+      { t: 135.0, name: 'scene14_volumetric_display.jpg' },
+      { t: 145.0, name: 'scene15_score_countdown.jpg' },
+      { t: 154.5, name: 'scene16_climax_brand_click.jpg' }
     ];
 
     for (const item of testTimestamps) {
-      await cdp.send('Runtime.evaluate', {
-        expression: `window.seekTo(${item.t})`
+      const evalRes = await cdp.send('Runtime.evaluate', {
+        expression: `
+          (() => {
+            try {
+              window.seekTo(${item.t});
+              return { success: true };
+            } catch(e) {
+              return { error: e.message, stack: e.stack };
+            }
+          })()
+        `,
+        returnByValue: true
       });
-      // Short pause for CSS paint
+
+      if (evalRes.result.value && evalRes.result.value.error) {
+        console.error(`Error at t=${item.t}s:`, evalRes.result.value.error);
+      }
+
       await new Promise(r => setTimeout(r, 120));
 
       const screenshot = await cdp.send('Page.captureScreenshot', {
@@ -127,7 +148,7 @@ async function main() {
       console.log(`Saved preview: ${item.name} at t=${item.t}s`);
     }
 
-    console.log('All test previews captured successfully!');
+    console.log('All Reference 5 test previews captured successfully!');
   } finally {
     chromeProc.kill('SIGKILL');
   }

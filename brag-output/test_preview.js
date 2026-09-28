@@ -6,8 +6,8 @@ const chromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
 const outputDir = path.resolve(__dirname);
 const compositionDir = path.join(outputDir, 'composition');
 const htmlUrl = 'file://' + path.join(compositionDir, 'index.html');
-const previewDir = path.join(outputDir, 'work', 'test_previews_ref5');
-const userDataDir = path.join(outputDir, 'work', 'chrome-test-ref5-profile');
+const previewDir = path.join(outputDir, 'work', 'test_previews_ref6');
+const userDataDir = path.join(outputDir, 'work', 'chrome-test-ref6-profile');
 
 fs.mkdirSync(previewDir, { recursive: true });
 fs.mkdirSync(userDataDir, { recursive: true });
@@ -62,8 +62,8 @@ class CDPClient {
   }
 }
 
-async function main() {
-  const port = 9558;
+async function testPreviews() {
+  const port = 9559;
   const chromeProc = spawn(chromePath, [
     '--headless=new',
     `--remote-debugging-port=${port}`,
@@ -72,7 +72,6 @@ async function main() {
     '--hide-scrollbars',
     '--enable-font-antialiasing',
     '--font-render-hinting=max',
-    '--disable-gpu',
     'about:blank'
   ]);
 
@@ -92,69 +91,45 @@ async function main() {
       mobile: false
     });
 
-    await new Promise(r => setTimeout(r, 2000));
+    await new Promise(r => setTimeout(r, 1500));
     await cdp.send('Runtime.evaluate', {
       expression: 'document.fonts.ready.then(() => true)',
       awaitPromise: true
     });
 
-    const testTimestamps = [
-      { t: 4.0, name: 'scene1_spark_sanctuary.jpg' },
-      { t: 16.0, name: 'scene2_acoustic_vortex.jpg' },
-      { t: 25.0, name: 'scene3_dendritic_tree.jpg' },
-      { t: 34.0, name: 'scene4_curation_mask.jpg' },
-      { t: 45.0, name: 'scene5_spacetime_core.jpg' },
-      { t: 55.0, name: 'scene6_laser_switch.jpg' },
-      { t: 65.0, name: 'scene7_acoustic_chamber.jpg' },
-      { t: 76.0, name: 'scene8_form_certification.jpg' },
-      { t: 88.0, name: 'scene9_gantt_laser_timeline.jpg' },
-      { t: 97.0, name: 'scene10_chrome_artisan.jpg' },
-      { t: 105.0, name: 'scene11_burning_fuse.jpg' },
-      { t: 115.0, name: 'scene12_exploded_architecture.jpg' },
-      { t: 125.0, name: 'scene13_circadian_horizon.jpg' },
-      { t: 135.0, name: 'scene14_volumetric_display.jpg' },
-      { t: 145.0, name: 'scene15_score_countdown.jpg' },
-      { t: 154.5, name: 'scene16_climax_brand_click.jpg' }
+    const testTimes = [
+      { t: 1.0, name: 'scene1_introducing_velocity.jpg' },
+      { t: 3.0, name: 'scene2_sanctuary_fan.jpg' },
+      { t: 4.5, name: 'scene2_most_refined_punch.jpg' },
+      { t: 7.0, name: 'scene3_benchmark_velocity.jpg' },
+      { t: 10.5, name: 'scene4_fraction_of_cost.jpg' },
+      { t: 14.5, name: 'scene5_pro_quality_calibrated.jpg' },
+      { t: 18.0, name: 'scene6_build_fast_mosaic.jpg' },
+      { t: 21.0, name: 'scene7_iwritetech_finale.jpg' }
     ];
 
-    for (const item of testTimestamps) {
-      const evalRes = await cdp.send('Runtime.evaluate', {
-        expression: `
-          (() => {
-            try {
-              window.seekTo(${item.t});
-              return { success: true };
-            } catch(e) {
-              return { error: e.message, stack: e.stack };
-            }
-          })()
-        `,
-        returnByValue: true
+    for (const item of testTimes) {
+      await cdp.send('Runtime.evaluate', {
+        expression: `window.seekTo(${item.t})`
       });
-
-      if (evalRes.result.value && evalRes.result.value.error) {
-        console.error(`Error at t=${item.t}s:`, evalRes.result.value.error);
-      }
-
-      await new Promise(r => setTimeout(r, 120));
+      await new Promise(r => setTimeout(r, 100));
 
       const screenshot = await cdp.send('Page.captureScreenshot', {
         format: 'jpeg',
         quality: 95
       });
-
-      const filePath = path.join(previewDir, item.name);
-      fs.writeFileSync(filePath, Buffer.from(screenshot.data, 'base64'));
+      const savePath = path.join(previewDir, item.name);
+      fs.writeFileSync(savePath, Buffer.from(screenshot.data, 'base64'));
       console.log(`Saved preview: ${item.name} at t=${item.t}s`);
     }
 
-    console.log('All Reference 5 test previews captured successfully!');
+    console.log('All Reference 6 test previews captured successfully!');
   } finally {
     chromeProc.kill('SIGKILL');
   }
 }
 
-main().catch(err => {
-  console.error('Error:', err);
+testPreviews().catch(err => {
+  console.error('Preview error:', err);
   process.exit(1);
 });

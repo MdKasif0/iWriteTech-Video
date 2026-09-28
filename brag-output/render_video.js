@@ -7,16 +7,16 @@ const workspaceDir = path.resolve(__dirname, '..');
 const outputDir = path.resolve(__dirname);
 const compositionDir = path.join(outputDir, 'composition');
 const htmlUrl = 'file://' + path.join(compositionDir, 'index.html');
-const soundtrackPath = path.join(outputDir, 'work', 'soundtrack_ref5.m4a');
+const soundtrackPath = path.join(outputDir, 'work', 'soundtrack_ref6.m4a');
 const finalMp4Path = path.join(outputDir, 'brag.mp4');
 const posterJpgPath = path.join(outputDir, 'brag.jpg');
 const posterPngPath = path.join(outputDir, 'brag-poster.png');
 const userDataDir = path.join(outputDir, 'work', 'chrome-render-profile');
 
 const FPS = 30;
-const DURATION_SEC = 156.66;
-const TOTAL_FRAMES = Math.round(DURATION_SEC * FPS); // 4700 frames
-const POSTER_FRAME = Math.round(154.5 * FPS); // Frame at t=154.5s (Scene 16 climax)
+const DURATION_SEC = 22.06;
+const TOTAL_FRAMES = Math.round(DURATION_SEC * FPS); // 662 frames
+const POSTER_FRAME = Math.round(21.0 * FPS); // Frame at t=21.0s (iWriteTech Brand Finale)
 
 async function getWsUrl(port) {
   for (let i = 0; i < 40; i++) {
@@ -77,7 +77,7 @@ async function main() {
 
   fs.mkdirSync(userDataDir, { recursive: true });
 
-  const port = 9558;
+  const port = 9560;
   const chromeProc = spawn(chromePath, [
     '--headless=new',
     `--remote-debugging-port=${port}`,

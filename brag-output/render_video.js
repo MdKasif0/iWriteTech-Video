@@ -77,7 +77,7 @@ async function main() {
 
   fs.mkdirSync(userDataDir, { recursive: true });
 
-  const port = 9555;
+  const port = 9558;
   const chromeProc = spawn(chromePath, [
     '--headless=new',
     `--remote-debugging-port=${port}`,
